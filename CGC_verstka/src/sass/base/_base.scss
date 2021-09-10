@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // this defines what a 1rem is
+  font-size: 62.5%;
+}
+
+@include font('lato-mp', normal, 400, '../fonts/Lato/Lato-Regular.ttf');
+
+
+@import 'node_modules/swiper/swiper-bundle';
+
+body {
+  box-sizing: border-box;
+  font-size: $default-font-size;
+  font-family: $defualt-font-family;
+	line-height: $default-line-height;
+	color: $color-grey-dark-4;
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+}
