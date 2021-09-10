@@ -1,0 +1,66 @@
+.main {
+  background: url('../img/Group 81.png');
+  background-size: cover;
+  min-height: 140rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 144rem;
+  margin: 0 auto;
+  
+}
+
+.header {
+  display: flex;
+	padding:  6rem;
+
+  &__logo {
+		justify-content: flex-start;
+    flex: 0.3 0 0;
+
+		img {
+			display: block;
+		}
+  }
+
+  &__nav {
+    flex: 0.7 0 0;
+		align-items: center;
+		margin: auto 0;
+  }
+}
+
+.navigation {
+	display: flex;
+
+	li {
+		list-style: none;
+		flex: 1 0 0;
+		word-break: break-all;
+	}
+
+	li:nth-child(4) {
+		flex: 2 0 0
+	}
+
+	li a {
+		text-decoration: none;
+		color: $color-white;
+	}
+}
+
+
+.info-content {
+
+}
+
+.info-block {
+	max-width: 92rem;
+	margin-top: 9.4rem;
+
+	&__title {
+		line-height: 1;
+		font-size: 7.5rem;
+	}
+}
