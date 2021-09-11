@@ -11,10 +11,23 @@
   
 }
 
+.text-accent {
+	font-weight: 500;
+}
+
+.tag {
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+	padding: 0.5rem 2rem;
+	background-color: $color-tag;
+	display: inline-block;
+	margin: 2rem 0;
+}
+
 .header {
   display: flex;
-	padding:  6rem;
-
+	padding:  6rem 0;
   &__logo {
 		justify-content: flex-start;
     flex: 0.3 0 0;
@@ -56,11 +69,296 @@
 }
 
 .info-block {
+	color: $color-white;
 	max-width: 92rem;
 	margin-top: 9.4rem;
 
 	&__title {
+		font-weight: 300;
 		line-height: 1;
 		font-size: 7.5rem;
+	}
+
+	&__description {
+		margin: 3.5rem 0 4.5rem 0
+	}
+
+	&__buttons a:nth-child(1) {
+		margin-right: 5rem;
+	}
+}
+
+.about-company {
+	position: relative;
+	display: flex;
+	margin-top: -50.4rem;
+	align-items: center;
+	justify-content: center;
+
+	&__title {
+		text-align: right;
+		padding-right: 20rem;
+		line-height: 1;
+		font-weight: 300;
+		font-size: 5.5rem;
+		color: $color-white;
+		flex: .4 0 0;
+		background-color: transparent;
+	}
+
+	&__description {
+		position: relative;
+		box-shadow: 0px 73px 221px rgba(32, 41, 69, 0.06), 0px 22.0074px 66.625px rgba(32, 41, 69, 0.0390953), 0px 9.14073px 27.6726px rgba(32, 41, 69, 0.03), 0px 3.30602px 10.0086px rgba(32, 41, 69, 0.0209047);
+		min-height: 60.5rem;
+		padding: 10.4rem;
+		flex: .6 0 0;
+		background-color: $color-white;
+		align-items: center;
+
+		p {
+			max-width: 55rem;
+			font-size: 1.8rem;
+		}
+
+	}
+}
+
+.service {
+	min-height: 60rem;
+	margin-top: 10rem;
+	&__title {
+		font-weight: 300;
+		font-size: 5.5rem;
+	}
+
+	&__description {
+		line-height: 1.5;
+		max-width: 50rem;
+	}
+}
+
+.benefit {
+	min-height: 60rem;
+}
+
+.projects {
+	min-height: 60rem;
+}
+
+.contact {
+	min-height: 60rem;
+}
+
+
+
+
+
+
+
+
+
+// ==========================================
+//   RESET
+// ==========================================
+
+dl,
+dt,
+dd { margin: 0; }
+
+
+
+
+// ==========================================================================
+// # VARIABLES
+// ==========================================================================
+
+// COLORS
+$white: #fff;
+$off-white: #fafafa;
+$black: #323232;
+$grey: #6C7A89;
+$grey-light: #95A5A6;
+$blue: #2574A9;
+$dark-blue: #34495e;
+$green: #16a085;
+
+// UNITS
+$spacing-unit: 40px;
+$half-spacing-unit: $spacing-unit / 2;
+
+// BORDER
+$accordion-border: solid 2px $grey-light;
+
+// ANIMATION
+$transition-time: 0.2s;
+
+@mixin base-trans {
+    transition: all ease-in-out $transition-time;
+}
+
+// LINKS
+@mixin link-underline($color: currentColor, $size: -2px) {
+    box-shadow: inset 0 $size $color;
+}
+
+@mixin active-link() {
+    color: $blue;
+        
+    .icon-link__text { @include link-underline($blue, -3px); }
+        
+    svg { fill: $blue; }
+}
+
+
+
+
+// ==========================================================================
+// # ESSENTIAL STYLES
+// ==========================================================================
+
+
+.badger-accordion__panel {
+    max-height: 75vh;
+    overflow: hidden;
+
+    // scss-lint:disable ImportantRule
+    &.-ba-is-hidden { max-height: 0 !important; }
+
+    // transition is added via `badger-accordion--initialized` to stop animation on initalition
+    .badger-accordion--initialized & { transition: max-height ease-in-out 0.2s; }
+}
+
+
+
+
+
+// ==========================================================================
+// # DEMO ACCORDION
+// ==========================================================================
+
+.badger-accordion {
+    box-shadow: 0 1px 10px rgba(0,0,0,.1), 0 1px 4px rgba(0,0,0,.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.badger-accordion__header {
+    &:not(:last-of-type) {
+        border-bottom: 1px solid #EFF1F0;
+    }
+}
+
+.badger-accordion__trigger {
+    align-content: space-between;
+    align-items: center;
+    background-color: $white;
+    border: 0;
+    border-radius: 0px;
+    color: $dark-blue;
+    display: flex;
+    font-family: 'Josefin Sans', Arial;
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: $half-spacing-unit;
+    text-align: left;
+    transition: all ease-in-out $transition-time;
+    width: 100%;
+
+    &[aria-expanded=true] {
+        .badger-accordion__trigger-icon {
+            &:before {
+                transform: rotate(45deg) translate3d(13px, 14px, 0);
+            }
+
+            &:after {
+                transform: rotate(-45deg) translate3d(-13px, 14px, 0);
+            }
+        }
+    }
+
+    &:focus,
+    &:hover {
+        background-color: $green;
+        cursor: pointer;
+        outline: none;
+
+        .badger-accordion__trigger-title { color: $white; }
+
+        .badger-accordion__trigger-icon {
+            &:after,
+            &:before {
+                background-color: $white;
+            }
+        }
+    }
+    
+    // Removing "inner outline" for Firefox
+    &::-moz-focus-inner {
+        border: none;
+    }
+}
+
+
+.badger-accordion__trigger-title {
+    font-size: 1.2rem;
+    transition: ease-in-out 0.3s;
+}
+
+.badger-accordion__trigger-icon {
+	display: block;
+	height: $spacing-unit;
+	margin-left: auto;
+	position: relative;
+	transition: all ease-in-out $transition-time;
+	width: $spacing-unit;
+
+	&:after,
+	&:before {
+		background-color: #333;
+		content: "";
+		height: 3px;
+		position: absolute;
+		top: 10px;
+		transition: all ease-in-out (($transition-time / 3) * 2);
+		width: 30px;
+	}
+
+	&:before {
+		left: 1px;
+		transform: rotate(45deg) translate3d(8px, 22px, 0);
+		transform-origin: 100%;
+	}
+
+	&:after {
+		transform: rotate(-45deg) translate3d(-8px, 22px, 0);
+		right: 1px;
+		transform-origin: 0;
+	}
+}
+
+.badger-accordion__panel {
+	background-color: $off-white;
+	position: relative;
+
+	&:after {
+		background-color: #EFF1F0;
+		bottom: 0;
+		content: "";
+		height: 2px;
+		left: 0;
+		position: absolute;
+		width: 100%;
+	}
+}
+
+.badger-accordion__panel-inner {
+	padding: $half-spacing-unit $half-spacing-unit $spacing-unit;
+}
+
+
+@media screen and (max-width: 767px) {
+	.badger-accordion__trigger-icon {
+		display: none;
+		padding: $half-spacing-unit;
 	}
 }

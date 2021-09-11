@@ -11,7 +11,9 @@ html {
   font-size: 62.5%;
 }
 
-@include font('lato-mp', normal, 400, '../fonts/Lato/Lato-Regular.ttf');
+@include font('GothamProCGC', normal, 300, '../fonts/GothamPro/GothamPro-Light.ttf');
+@include font('GothamProCGC', normal, 400, '../fonts/GothamPro/GothamPro.ttf');
+@include font('GothamProCGC', normal, 500, '../fonts/GothamPro/GothamPro-Medium.ttf');
 
 
 @import 'node_modules/swiper/swiper-bundle';
