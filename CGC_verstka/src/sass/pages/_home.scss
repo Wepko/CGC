@@ -1,3 +1,13 @@
+%title {
+	font-weight: 300;
+	font-size: 5.5rem;
+	line-height: 1;
+}
+
+%description {
+	font-size: 1.6rem;
+}
+
 .main {
   background: url('../img/Group 81.png');
   background-size: cover;
@@ -10,6 +20,7 @@
   margin: 0 auto;
   
 }
+
 
 .text-accent {
 	font-weight: 500;
@@ -127,29 +138,74 @@
 	min-height: 60rem;
 	margin-top: 10rem;
 	&__title {
-		font-weight: 300;
-		font-size: 5.5rem;
+		@extend %title;
 	}
 
 	&__description {
+		@extend %description;
 		line-height: 1.5;
 		max-width: 50rem;
 	}
 }
 
 .benefit {
-	min-height: 60rem;
+	padding: 8rem 0;
+	color: $color-white;
+
+	background: url('../img/layer-bg.png') no-repeat $color-blue-dark;
+	background-position: 90%;
+	&__title {
+		@extend %title;
+	}
+
+	&__description {
+		@extend %description;
+		display: flex;
+		margin: 6rem 0;
+
+		& >	p {
+			max-width: 31rem;
+		}
+	}
+
+}
+
+.mark-items {
+	display: flex;
+	margin: 0 10rem;
+	flex: 1 0 0;
+	font-weight: 300;
+	&__item {
+		flex: 1 0 0;
+		p:nth-child(1) {
+			line-height: 1;
+			font-size: 7.5rem;
+			font-weight: 500;
+		}
+
+		p:nth-child(2) {
+			max-width: 13.5rem;
+		}
+	}
 }
 
 .projects {
 	min-height: 60rem;
 }
 
-.contact {
+.contacts {
+	background-color: $color-blue-dark;
 	min-height: 60rem;
 }
 
+.contact {
+	color: $color-white;
+}
 
+.footer {
+	background-color: $color-black;
+	min-height: 60rem;
+}
 
 
 
@@ -180,7 +236,7 @@ $grey: #6C7A89;
 $grey-light: #95A5A6;
 $blue: #2574A9;
 $dark-blue: #34495e;
-$green: #16a085;
+
 
 // UNITS
 $spacing-unit: 40px;
@@ -220,11 +276,9 @@ $transition-time: 0.2s;
 .badger-accordion__panel {
     max-height: 75vh;
     overflow: hidden;
-
     // scss-lint:disable ImportantRule
     &.-ba-is-hidden { max-height: 0 !important; }
 
-    // transition is added via `badger-accordion--initialized` to stop animation on initalition
     .badger-accordion--initialized & { transition: max-height ease-in-out 0.2s; }
 }
 
@@ -237,9 +291,8 @@ $transition-time: 0.2s;
 // ==========================================================================
 
 .badger-accordion {
-    box-shadow: 0 1px 10px rgba(0,0,0,.1), 0 1px 4px rgba(0,0,0,.1);
-    border-radius: 4px;
-    overflow: hidden;
+	border-radius: 4px;
+	overflow: hidden;
 }
 
 .badger-accordion__header {
@@ -259,10 +312,10 @@ $transition-time: 0.2s;
     font-family: 'Josefin Sans', Arial;
     font-size: 1.25rem;
     line-height: 1;
-    padding: $half-spacing-unit;
-    text-align: left;
+    text-align: center;
     transition: all ease-in-out $transition-time;
     width: 100%;
+		position: relative;
 
     &[aria-expanded=true] {
         .badger-accordion__trigger-icon {
@@ -276,9 +329,24 @@ $transition-time: 0.2s;
         }
     }
 
-    &:focus,
+    &:focus {
+			transition: .5s;
+			background-image: url('../img/accordian.png');
+
+			.badger-accordion__trigger-title {
+				 color: $white; 
+				}
+
+			.badger-accordion__trigger-icon {
+					&:after,
+					&:before {
+							background-color: $white;
+					}
+			}
+		}
+
     &:hover {
-        background-color: $green;
+				box-shadow: 1px 1px 10px #000;
         cursor: pointer;
         outline: none;
 
@@ -300,8 +368,10 @@ $transition-time: 0.2s;
 
 
 .badger-accordion__trigger-title {
-    font-size: 1.2rem;
-    transition: ease-in-out 0.3s;
+	padding: 4.9rem 0; 
+	font-size: 2.4rem;
+	transition: ease-in-out 0.3s;
+	margin: 0 auto;
 }
 
 .badger-accordion__trigger-icon {
@@ -311,6 +381,8 @@ $transition-time: 0.2s;
 	position: relative;
 	transition: all ease-in-out $transition-time;
 	width: $spacing-unit;
+	position: absolute;
+	right: 2rem;
 
 	&:after,
 	&:before {
@@ -361,4 +433,9 @@ $transition-time: 0.2s;
 		display: none;
 		padding: $half-spacing-unit;
 	}
+}
+
+
+.-ba-is-active:nth-child(1) {
+	background-image: url('../img/accordian.png');
 }
