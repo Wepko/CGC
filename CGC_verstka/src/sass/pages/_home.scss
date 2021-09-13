@@ -136,7 +136,7 @@
 
 .service {
 	min-height: 60rem;
-	margin-top: 10rem;
+	padding: 10rem 0;
 	&__title {
 		@extend %title;
 	}
@@ -190,12 +190,53 @@
 }
 
 .projects {
+	padding: 8rem 0;
+	min-height: 109rem;
+	&__title {
+		@extend %title;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__filter {
+		&-top{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		&-buttons {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&-button {
+			padding: 1.8rem 6.8rem 1.8rem 0;
+			text-decoration: none;
+			color: $color-grey-dark-4;
+		}
+	}
+
+	&__product {
+		position: relative;
+	}
+
+}
+.card-product {
+	border: 1px solid Black;
+	max-width: 40rem;
 	min-height: 60rem;
+	position: relative;
+	&__components {
+		position: absolute;
+		top: 0;
+	}
 }
 
 .contacts {
 	background-color: $color-blue-dark;
 	min-height: 60rem;
+	padding: 8rem 0;
 }
 
 .contact {
@@ -208,7 +249,10 @@
 }
 
 
-
+.swiper {
+  width: 40rem;
+  height: 300px;
+}
 
 
 
