@@ -6,10 +6,32 @@
   box-sizing: inherit;
 }
 
+
 html {
   // this defines what a 1rem is
   font-size: 62.5%;
+
+  @include respond(big-desktop) {
+    font-size: 62.5%; //1rem = 10px, 
+  }
+  
+  @include respond(tab-land) { // width < 1400?
+    font-size: 53.25%; //1 rem = 9px, (50)
+  }
+  
+  @include respond(tab-port) { // width < 900?
+    font-size: 42.5%; //1 rem = 8px, 8/16 = 50%
+  }
+  
+  @include respond(phone) { // width < 600?
+    font-size: 37.5%; //1 rem = 9px, 9/16 = 50%
+  }
+  
+
+
+
 }
+
 
 @include font('GothamProCGC', normal, 300, '../fonts/GothamPro/GothamPro-Light.ttf');
 @include font('GothamProCGC', normal, 400, '../fonts/GothamPro/GothamPro.ttf');
