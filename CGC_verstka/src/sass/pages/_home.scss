@@ -55,26 +55,6 @@
   }
 }
 
-.navigation {
-	display: flex;
-
-	li {
-		list-style: none;
-		flex: 1 0 0;
-		word-break: break-all;
-	}
-
-	li:nth-child(4) {
-		flex: 2 0 0
-	}
-
-	li a {
-		text-decoration: none;
-		color: $color-white;
-	}
-}
-
-
 .info-content {
 
 }

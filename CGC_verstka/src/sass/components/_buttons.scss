@@ -1,6 +1,6 @@
-%btn-icon {
+%btn {
 	display: inline-block;
-	padding: 2rem 7rem 2rem  3.5rem;
+	padding: 2rem 3.5rem 2rem  3.5rem;
 	letter-spacing: 1.5px;
 	text-transform: uppercase;
 	font-weight: 500;
@@ -10,45 +10,64 @@
 	font-size: 1.4rem;
 }
 
-.btn-gift {
-	@extend %btn-icon;
+%icon-position {
+	position: absolute;
+	right: 3.7rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.btn-primary {
+	@extend %btn;
 	color: $color-white;
 	background-color: $color-primary;
 
 	&::before {
-		content: '';
-		position: absolute;
-		left: 82%;
-		background: url('../img/icon/icon-gift.png') no-repeat;
-		background-position: center;
-		width: 2rem;
-		height: 2rem;
+		@extend %icon-position;
+		font-size: 1.7rem;
 	} 
 
 	&:hover {
 		background-color: $color-primary-dark;
 	}
+
+	&_icon {
+		padding-right: 7rem;
+	}
+
+	&_outline {
+		color: $color-primary;
+		background-color: transparentize($color-primary, 1);
+		outline: .2rem solid transparentize($color-primary, .4);
+		outline-offset: -0.2rem;
+
+		&:hover {
+			background-color: $color-primary;
+			color: $color-white;
+		}
+	}
 }
 
 .btn-secondary {
 	box-sizing: border-box;
-	@extend %btn-icon;
+	@extend %btn;
 	color: $color-white;
-	outline: 2px solid #ffffff55;
-	padding: 1.9rem 6.9rem 1.9rem  3.4rem;
+	outline: .2rem solid transparentize($color-white, .4);
+	outline-offset: -0.2rem;
 
 	&::before {
-		content: '';
-		position: absolute;
-		left: 82%;
-		background: url('../img/icon/icon-gift.png') no-repeat;
-		background-position: center;
-		width: 2rem;
-		height: 2rem;
+		@extend %icon-position;
+		font-size: 1.4rem;
 	} 
 
 	&:hover {
-		background-color: $color-primary-dark;
+		color: $color-primary;
+		background-color: $color-white;
+		outline-color: $color-white;
+	}
+	
+	&_icon {
+		padding-right: 7rem;
 	}
 	
 }
