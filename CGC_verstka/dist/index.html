@@ -9,9 +9,9 @@
 </head>
 <body>
 
-	<section class="main">
+	<header class="header">
 		<div class="container">
-			<header class="header">
+			<div class="header__wrapper">
 				<a href="#" class="header__logo">
 					<img src="img/icon/logo-white.svg" alt="" class="logo">				
 				</a>
@@ -40,26 +40,118 @@
 						<li><a href="#">Контакты</a></li>
 					</ul>	
 				</nav>
-			</header>
-			<div class="info-content">
-				<div class="info-block">
-					<div class="info-blog__tag tag">Спецпредложение</div>
-					<div class="info-block__title">
-						<span class="text-accent">Получи подарок</span>	<br> <span>при заказе до 6 июля</span>
-					</div>
-					<p class="info-block__description">
-						Как принято считать, базовые сценарии поведения пользователей неоднозначны и будут 
-						<br> смешаны с не уникальными данными до степени совершенной.
-					</p>
-					<div class="info-block__buttons">
-						<a href="#" class="btn-primary btn-primary_icon icon-gift">Забрать подарок</a>
-						<a href="#" class="btn-secondary btn-secondary_icon icon-arrow-right">Посмотреть подарок</a>
-					</div>
-				</div>
-				<div class="info-content__slider"></div>
 			</div>
 		</div>
-	</section>
+	</header>
+
+	<div class="slider-header">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+			<!-- Slides -->
+			<div class="swiper-slide">
+
+				<section  style="background: url('img/bg-image.png'); background-size:cover;" class="main">
+
+					<div class="bg-wrapper"></div>
+					
+					<div class="container">
+						<div class="info-content">
+							<div class="info-block">
+								<div class="info-blog__tag tag">Спецпредложение</div>
+								<div class="info-block__title">
+									<span class="text-accent">Получи подарок</span>	<br> <span>при заказе до 6 июля</span>
+								</div>
+								<p class="info-block__description">
+									Как принято считать, базовые сценарии поведения пользователей неоднозначны и будут 
+									<br> смешаны с не уникальными данными до степени совершенной.
+								</p>
+								<div class="info-block__buttons">
+									<a href="#" class="btn-primary btn-primary_icon icon-gift">Забрать подарок</a>
+									<a href="#" class="btn-secondary btn-secondary_icon icon-arrow-right">Посмотреть подарок</a>
+								</div>
+							</div>
+							<div class="info-content__slider"></div>
+						</div>
+			
+					</div>
+				</section>
+			</div>
+			<div class="swiper-slide">
+				<section class="main" style="background: url('img/bg-image2.png'); background-size:cover;" >
+					<div class="bg-wrapper"></div>
+					<div class="container">
+						<div class="info-content">
+							<div class="info-block">
+								<div class="info-block__title">
+									<span>Проект дома</span>	<br> <span class="text-accent">Дан-Бланш G+</span>
+								</div>
+								<p class="info-block__description">
+									Дом спроектирован в лучших традициях архитектурного стиля прерий. <br>	Четкие линии и парящие крыши идеально вписывают здание в ландшафт, а панорамн...
+								</p>
+								<div class="info-block__buttons">
+									<a href="#" class="btn-primary">Заказать проект</a>
+									<a href="#" class="btn-secondary btn-secondary_icon icon-arrow-right">Посмотреть проект</a>
+								</div>
+								<div class="info-block__features">
+									<div class="info-block__features-el">
+										<h4>191 м<sup>2</sup></h4>
+										<p>Общая площадь</p>
+									</div>
+									<div class="info-block__features-el">
+										<h4>2</h4>
+										<p>Количество этажей</p>
+									</div>
+									<div class="info-block__features-el">
+										<h4>5</h4>
+										<p>Количество комнат</p>
+									</div>
+									<div class="info-block__features-el">
+										<h4>4</h4>
+										<p></p>
+									</div>	
+								</div>
+							</div>
+							<div class="info-content__slider"></div>
+						</div>
+			
+					</div>
+				</section>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="swiper slider-thumbs">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="img/bg-image.png" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="img/bg-image2.png" alt="">
+			</div>
+		</div>
+		<div class="swiper-buttons">
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<section class="about-company">
 		<div class="about-company__title">
@@ -203,7 +295,7 @@
 			<div class="projects__product">
 				
 
-				<div class="swiper">
+				<div class="slider-project">
 					<!-- Additional required wrapper -->
 					<div class="swiper-wrapper">
 						<!-- Slides -->

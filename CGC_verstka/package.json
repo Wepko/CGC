@@ -41,6 +41,6 @@
   "dependencies": {
     "badger-accordion": "^1.2.4",
     "sass": "^1.39.0",
-    "swiper": "^6.8.0"
+    "swiper": "^6.8.4"
   }
 }
