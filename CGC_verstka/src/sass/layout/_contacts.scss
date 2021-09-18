@@ -1,0 +1,51 @@
+.contacts {
+	background: url('../img/bg-contact.svg') no-repeat $color-blue-dark;
+  min-height: 60rem;
+  padding: 8rem 0;
+
+	&__wrapper {
+		display: flex;
+	}
+
+	&__info {
+		flex: 1 0 0;
+		color: $color-white;
+		&-title {
+			@extend %title;
+		}
+
+		&-description {
+			margin: 3.5rem 0 4.5rem 0 ;
+			max-width: 30rem;
+		}
+
+		&-content {
+
+			p {
+				margin: 2.4rem 0 2.4rem 2.4rem;
+				position: relative;
+		
+				&::before {
+					position: absolute;
+					left: -2.4rem;
+					width: 2.4rem;
+					height: 2.4rem;
+					line-height: 2.4rem;
+					background-size: cover;
+				}
+
+			}
+		}
+
+	}
+
+	&__form {
+		margin: 0 auto;
+		flex: 1 0 0;
+		& .form {
+			max-width: 46rem;
+		}
+
+	}
+}
+
