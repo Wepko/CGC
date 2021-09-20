@@ -37,6 +37,10 @@ import BadgerAccordion from 'badger-accordion';
       el: ".swiper-pagination",
       clickable: true,
     },
+    scrollbar: {
+			el: '.swiper-scrollbar',
+			draggable: true,
+		},
   });
 
 	headerSlider.controller.control = thumbsSlider
@@ -51,6 +55,16 @@ import BadgerAccordion from 'badger-accordion';
 
   const accordion = new BadgerAccordion(accordionDomNode);
   window.accordion = accordion;
+
+}
+
+{
+
+  const control = document.querySelector('.o-play-btn');
+  control.addEventListener('click', (e) => {
+    control.classList.toggle('o-play-btn--playing');
+  })
+
 
 }
 

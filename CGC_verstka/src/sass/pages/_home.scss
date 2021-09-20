@@ -268,7 +268,14 @@
 		bottom: -2rem;
 	
 	}
-
+	
+	.swiper-scrollbar {
+		width: 60%;
+		height: 1px;
+		background-color: $color-white;
+		bottom: -2.5rem;
+		left: 6rem;
+	}
 
 }
   
