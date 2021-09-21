@@ -246,6 +246,14 @@
 	width: 100%;
 }
 
+.swiper-button-next::after {
+	content: 'Вперед';
+}
+
+.swiper-button-prev::after {
+	content: 'Назад';
+}
+
 .slider-thumbs {
 	position: absolute;
 	right: 8.8rem;
