@@ -36,12 +36,12 @@
 			background-color: $color-white;
 			transform: translateY(15%);
 
-			& li { margin: 0; }
+			& li { margin: 0;}
 
 			a {
 				text-align: left;
 				display: block;
-				padding: .5rem 1rem;
+				padding: 2rem;
 				color: $color-grey-dark;
 				transition:  .5s; 
 				&:hover {

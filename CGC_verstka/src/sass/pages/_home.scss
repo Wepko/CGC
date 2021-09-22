@@ -95,6 +95,7 @@
 				font-size: 1.6rem;
 				font-weight: 300;
 			}
+
 		}
 	}
 }
@@ -102,7 +103,7 @@
 .about-company {
 	position: relative;
 	display: flex;
-	margin-top: -50.4rem;
+	margin-top: -54.4rem;
 	align-items: center;
 	justify-content: center;
 	z-index: 100;
@@ -131,6 +132,14 @@
 			font-size: 1.8rem;
 		}
 
+		p:nth-child(2) {
+			margin: 2rem 0;
+		}
+
+	}
+
+	&__button {
+		margin-top: 6rem;
 	}
 }
 
