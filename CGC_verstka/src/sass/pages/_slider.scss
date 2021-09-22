@@ -2,7 +2,7 @@
 
 @mixin can-toggle-branding(
   $can-toggle-off-color: #777, 
-  $can-toggle-on-color: #5fc054,
+  $can-toggle-on-color: red,
   $can-toggle-inactive-text: rgba(red, 0.5),
   $can-toggle-transition: cubic-bezier(0,1,0.5,1)
 ) {
@@ -68,7 +68,7 @@
   $can-toggle-offset: 0.2rem,
   $can-toggle-label-font-size: 14px,
   $can-toggle-switch-font-size: 12px,
-  $can-toggle-shadow: 0 3px 3px rgba(black, 0.4)
+  $can-toggle-shadow: 0 3px 3px rgba(white, 0.0)
 ){
   $can-toggle-switch-width: $can-toggle-width/2;
   
@@ -128,6 +128,9 @@
 
 
 .can-toggle {
+	&__switch {
+		outline: 2px solid $color-primary;
+	}
   position: relative;
   *, *:before, *:after { box-sizing: border-box; }
   //overflow: hidden;
@@ -193,7 +196,7 @@
         z-index: 5;
         text-transform: uppercase;
         text-align: center;
-        background: white;
+        background: $color-primary;
         transform: translate3d(0,0,0);
       }
 
@@ -236,9 +239,9 @@
   &.demo-rebrand-1 {
     @include can-toggle-branding
     (
-      #b53e74,  // Off state color
-      #3d9c72,  // On state color
-      rgba(white, 0.6),  // Off state text color
+      white,  // Off state color
+      white,  // On state color
+      rgba(#000, 0.6),  // Off state text color
       ease-in-out  // Transition timing function
     ); 
   }
