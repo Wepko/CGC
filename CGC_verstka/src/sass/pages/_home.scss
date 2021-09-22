@@ -202,14 +202,21 @@
 .projects {
 	padding: 8rem 0;
 	min-height: 109rem;
+
 	&__title {
 		@extend %title;
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: 5.5rem;
 	}
 
 	&__filter {
-		&-top{
+
+		&-switcher {
+			width: 33rem;
+		}
+
+		&-top {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
