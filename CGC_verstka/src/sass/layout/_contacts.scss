@@ -10,17 +10,19 @@
 	&__info {
 		flex: 1 0 0;
 		color: $color-white;
+		display: flex;
+		flex-direction: column;
+
 		&-title {
 			@extend %title;
 		}
 
 		&-description {
-			margin: 3.5rem 0 4.5rem 0 ;
+			margin: 2rem 0 1rem 0 ;
 			max-width: 30rem;
 		}
 
 		&-content {
-
 			p {
 				margin: 2.4rem 0 2.4rem 2.4rem;
 				position: relative;
@@ -37,6 +39,9 @@
 			}
 		}
 
+		&-social {
+			margin-top: auto;
+		}
 	}
 
 	&__form {
@@ -59,6 +64,7 @@
 		textarea {
 			resize: vertical;
 			min-height: 4rem;
+			max-height: 10rem;
 			overflow: auto;
 			line-height: 1.4;
 		}

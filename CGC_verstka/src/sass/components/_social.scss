@@ -1,5 +1,7 @@
 .social {
     &__element {
+        font-size: 1.4rem;
+        margin: 0 0.5rem;
         display: inline-block;
         border-radius: 50%;
         width: 3rem;
@@ -9,5 +11,9 @@
         background: transparentize($color-white, .9);
         text-decoration: none;
         color: $color-white;
+    }
+
+    &__element:first-child {
+        margin-left: 0;
     }
 }
