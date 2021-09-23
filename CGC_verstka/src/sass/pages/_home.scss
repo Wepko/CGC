@@ -49,6 +49,11 @@
 	background-color: $color-tag;
 	display: inline-block;
 	margin: 2rem 0;
+
+	&_solid {
+		color: $color-white;
+		background-color: $color-grey;
+	}
 }
 
 
@@ -239,16 +244,8 @@
 	}
 
 }
-.card-product {
-	border: 1px solid Black;
-	max-width: 40rem;
-	min-height: 60rem;
-	position: relative;
-	&__components {
-		position: absolute;
-		top: 0;
-	}
-}
+
+
 
 
 

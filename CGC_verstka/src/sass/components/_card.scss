@@ -1,0 +1,58 @@
+.card-product {
+	max-width: 40rem;
+	min-height: 60rem;
+	position: relative;
+    display: block;
+    text-decoration: none;
+    color: $color-grey-dark-4;
+    transition: .5s;
+    img {
+        display: block;
+    }
+
+	&__components {
+        transition: .5s;
+        padding: 4.4rem;
+        display: flex;
+        flex-direction: column;
+		position: absolute;
+		top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(326.33% 120.1% at 48% 16.97%, rgba(32, 41, 69, 0) 0%, #202945 100%);
+       
+        &:hover {
+            background: linear-gradient(180deg, rgba(32, 41, 69, 0.8) 0%, #202945 67.19%);
+            transition: .5s;
+        }
+    }
+
+    &__tag {
+        
+    }
+
+    &__title {
+        color: $color-white;
+        font-size: 2.4rem;
+        transform: translateY(28rem);
+
+        &::before {
+            content: 'Дом';
+            display: block;
+            color: $color-white;
+            font-size: 2.4rem;
+        }
+    }
+
+    &__description {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__button {
+        margin-top: auto;
+    }
+
+
+}
