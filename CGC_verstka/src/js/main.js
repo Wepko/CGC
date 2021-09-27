@@ -19,7 +19,7 @@ import BadgerAccordion from 'badger-accordion';
   const headerSlider = new Swiper('.slider-header', {
     // Optional parameters
     //direction: 'vertical',
-    loop: false,
+    loop: true,
     effect: "fade",
     slidesPerView: 1,
     centeredSlides: true,
@@ -27,6 +27,7 @@ import BadgerAccordion from 'badger-accordion';
   });
 
   const thumbsSlider = new Swiper('.slider-thumbs', {
+    loop: true,
     spaceBetween: 30,
     effect: "fade",
     navigation: {

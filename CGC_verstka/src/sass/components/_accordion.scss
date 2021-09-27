@@ -89,9 +89,7 @@ $transition-time: 0.2s;
 .badger-accordion__trigger {
 	align-content: space-between;
 	align-items: center;
-	background: no-repeat transparent;
-	background-size: cover;
-	background-position-y: 13rem;
+	background: transparent;
 	border: 0;
 	color: $dark-blue;
 	display: flex;
@@ -101,7 +99,31 @@ $transition-time: 0.2s;
 	width: 100%;
 	position: relative;
 	min-height: 13rem;
-	transition: all ease-in-out $transition-time;
+
+	&::before {
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-image: url('../img/accordian.png');
+		background-size: cover;
+		content: "";
+		position: absolute;
+		opacity: 0;
+		transition: .5s;
+	}
+
+	&:hover {
+		color: $color-white;
+	}
+
+	&:hover::before {
+		opacity: 1;
+	}
+
+
 
 	&[aria-expanded=true] {
 		.badger-accordion__trigger-icon i {
@@ -129,18 +151,7 @@ $transition-time: 0.2s;
 			}
 		}
 
-	&:hover {
-		background-repeat: no-repeat;
-		background-image: url('../img/accordian.png');
-		background-size: cover;
-		background-position-y: 0;
-		cursor: pointer;
-		outline: none;
-		transition: all ease-in-out $transition-time;
 
-		.badger-accordion__trigger-title { color: $white; }
-
-	}
 
 	&:hover .badger-accordion__trigger-icon {
 		border: 2px solid rgba(255, 255, 255, 0.4);
@@ -160,7 +171,7 @@ $transition-time: 0.2s;
 		color: $white;
 	}
 
-	// Removing "inner outline" for Firefox
+
 	&::-moz-focus-inner {
 		border: none;
 	}

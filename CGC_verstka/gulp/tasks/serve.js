@@ -23,7 +23,7 @@ module.exports  = function serve(cb) {
   })
 
   watch('src/sass/**/*.scss', series(styles, fn => src('dist/css').pipe(server.stream()).on('end', fn)))
-  watch('src/**/*.html', series(pugtohtml, readyReload))
+  watch('src/**/*.pug', series(pugtohtml, readyReload))
   watch('src/img/*.{gif,png,jpg,svg,webp}', series(imageMinify, readyReload))
   //watch('src/img/sprite/*.svg', series(svgSprite, readyReload))
   watch('src/js/**/*.js', series(scripts, readyReload))
