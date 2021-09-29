@@ -3,12 +3,15 @@
   min-height: 60rem;
   padding: 8rem 0;
 
+
+
 	&--dark {
 		background: url('../img/bg-contact.svg') no-repeat $color-black;
 	}
 
 	&__wrapper {
 		display: flex;
+		flex-wrap: wrap;
 	}
 
 	&__info {

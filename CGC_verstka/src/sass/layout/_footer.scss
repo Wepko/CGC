@@ -5,9 +5,10 @@
 	min-height: 60rem;
 	padding: 10rem 0 0 0;
 	font-size: 1.6rem;
-
+	
 	&__wrapper {
 		display: flex;
+		flex-wrap: wrap;
 		margin-bottom: 4.5rem - $margin-column-link;
 	}
 
@@ -18,8 +19,11 @@
 	&__links {
 		flex: 7 0 0;
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-around;
-
+		@include respond(phone) {
+			justify-content: flex-start;
+		}
 		&-column {
 			& a {
 				display: block;

@@ -9,6 +9,10 @@
 	font-weight: 300;
 	font-size: 5.5rem;
 	line-height: 1;
+
+	@include respond(phone) {
+		font-size: 3.5rem;
+	}
 }
 
 %description {
@@ -70,8 +74,6 @@
 
 
 
-
-
 .info-block {
 	position: relative;
 	z-index: 10;
@@ -103,10 +105,17 @@
 
 	&__buttons a:nth-child(1) {
 		margin-right: 5rem;
+
+		@include respond(phone) {
+			margin-bottom: 2rem;
+			margin-right: 0rem;
+			
+		}
 	}
 
 	&__features {
 		display: flex;
+		flex-wrap: wrap;
 		margin-top: 12rem;
 		&-el {
 			margin-right: 1rem;
@@ -206,9 +215,9 @@
 .benefit {
 	padding: 8rem 0;
 	color: $color-white;
-
 	background: url('../img/layer-bg.png') no-repeat $color-blue-dark;
 	background-position: 90%;
+
 	&__title {
 		@extend %title;
 	}
@@ -216,6 +225,7 @@
 	&__description {
 		@extend %description;
 		display: flex;
+		flex-wrap: wrap;
 		margin: 6rem 0;
 
 		& >	p {
@@ -227,6 +237,7 @@
 
 .mark-items {
 	display: flex;
+	flex-wrap: wrap;
 	margin: 0 10rem;
 	flex: 1 0 0;
 	font-weight: 300;
@@ -253,12 +264,24 @@
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 5.5rem;
+
+		@include respond(phone) {
+			a {
+				display:  none;
+			}
+		}
 	}
 
 	&__filter {
-
+		@include respond(phone) {
+			display: none;
+		}
 		&-switcher {
 			width: 33rem;
+
+			@include respond(phone) {
+				display: none;
+			}
 		}
 
 		&-top {
@@ -294,6 +317,12 @@
 .slider-project {
   width: 40rem;
   height: 300px;
+	overflow: hidden;
+	@include respond(phone) {
+		width: 27rem;
+		height: 40rem;
+		overflow: hidden;
+	}
 }
 
 .slider-header {
@@ -316,8 +345,10 @@
 	height: 20rem;
 	z-index: 1000;
 
-	@include respond(phone) {
-		display: none;
+	.swiper-wrapper, .swiper-pagination, button{
+		@include respond(phone) {
+			display: none;
+		}
 	}
 
 	& .swiper-slide {
@@ -332,6 +363,10 @@
 	& .swiper-buttons {
 		position: relative;
 		bottom: -2rem;
+
+		@include respond(phone) {
+			bottom: -10rem;
+		}
 	
 	}
 	
@@ -341,6 +376,10 @@
 		background-color: $color-white;
 		bottom: -2.5rem;
 		left: 6rem;
+
+		@include respond(phone) {
+			bottom: 9.8rem;
+		}
 	}
 
 }

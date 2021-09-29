@@ -6,6 +6,11 @@
 	text-decoration: none;
 	color: $color-grey-dark-4;
 	transition: .5s;
+	
+	@include respond(phone) {
+		max-width: 27.4rem;
+		min-height: 45rem;
+	}
 
 	img {
 		width: 100%;

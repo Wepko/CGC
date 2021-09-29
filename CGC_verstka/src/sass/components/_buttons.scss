@@ -11,6 +11,11 @@
 
     @include respond(phone) {
         width: 100%;
+        text-align: center;
+        &::before {
+           right: 10rem;
+        }
+
 	}
 
 }
