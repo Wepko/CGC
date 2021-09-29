@@ -1,7 +1,11 @@
 .navigation {
 	display: flex;
 	justify-content: flex-end;
+	flex-wrap: wrap;
 
+	@include respond(phone) { // width < 600?
+		display: none;
+	}
 	// a:focus {
 	// 	outline: none;
 	// }

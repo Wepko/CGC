@@ -61,10 +61,10 @@ import BadgerAccordion from 'badger-accordion';
 
 {
 
-  const control = document.querySelector('.o-play-btn');
-  control.addEventListener('click', (e) => {
-    control.classList.toggle('o-play-btn--playing');
-  })
+  // const control = document.querySelector('.o-play-btn');
+  // control.addEventListener('click', (e) => {
+  //   control.classList.toggle('o-play-btn--playing');
+  // })
 
 
 }

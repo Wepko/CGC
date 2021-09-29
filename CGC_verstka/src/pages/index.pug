@@ -4,55 +4,7 @@ block title
 	| CGC Carat Global Construction
 
 block content
-	header.header
-		.container
-			.header__wrapper
-				a.header__logo(href='#')
-					img.logo(src='img/icon/logo-white.svg' alt='')
-				nav.header__nav
-					ul.navigation
-						li
-							a(href='#') О нас
-						li.navigation__subnav.icon-arrow-down
-							a(href='#') Улсуги
-							ul
-								li
-									a(href='#') Проектирование
-								li
-									a(href='#') Сбор исходно-разрешительной документации
-								li
-									a(href='#') Архитектурное проектирование
-								li
-									a(href='#') Проектирование зданий
-								li
-									a(href='#') Проектирование инженерных коммуникаций
-								li
-									a(href='#') Проектирование инженерных коммуникаций
-								li
-									a(href='#') Проектирование систем безопасности и связи
-								li
-									a(href='#') Ландшафтное проектирование
-								li
-									a(href='#') Строительство
-								li
-									a(href='#') Сопровождение
-						li.navigation__subnav.icon-arrow-down
-							a(href='#') Проекты
-							ul
-								li
-									a(href='') Каталог проектов
-								li
-									a(href='') Текущие проекты
-								li
-									a(href='') Реализованные проекты
-						li
-							a(href='#') Объекты в продаже
-						li
-							a(href='#') Партнёры
-						li
-							a(href='#') Новости
-						li
-							a(href='#') Контакты
+	include common/header.pug
 	.slider-header
 		// Additional required wrapper
 		.swiper-wrapper
@@ -139,6 +91,7 @@ block content
 				| Мы неустанно продолжаем совершенствовать наш процесс, чтобы идти в ногу со временем и даже опережать его.
 			.about-company__button
 				a.btn-primary.btn-primary_outline.btn-primary_icon.icon-arrow-right(href='#') Прочитать полностью
+	
 	section.service.container
 		.service__title
 			| Наши 
@@ -195,6 +148,7 @@ block content
 							| Hog Badgers are omnivores and they feed on a variety of things from honey and fruit to insects and small mammals.
 						p
 							| A young / baby of a hog badger is called a 'kit'. The females are called 'sow' and males 'boar'. A hog badger group is called a 'cete, colony, set or company'.
+	
 	section.benefit
 		.container
 			.benefit__title

@@ -8,6 +8,11 @@
 	transition: .5s;
 	text-decoration: none;
 	font-size: 1.4rem;
+
+    @include respond(phone) {
+        width: 100%;
+	}
+
 }
 
 %icon-position {
