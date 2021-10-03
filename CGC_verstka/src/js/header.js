@@ -4,10 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // === logo loading on class
     const header = document.querySelector('.header');
     
-    const isActiveClass = Boolean(header.getAttribute('.header--light'));
+    const isActiveClass = header.classList.contains('header--light');
 
     if (isActiveClass) {
-        console.log('im tyt');
         const logo = header.querySelector('img.logo');
         logo.src = 'img/icon/logo-dark.svg';
     }

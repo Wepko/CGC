@@ -1,16 +1,11 @@
 .card-product {
-  max-width: 40rem;
-  min-height: 60rem;
-  position: relative;
+	max-width: 40rem;
+	min-height: 60rem;
+	position: relative;
 	display: block;
 	text-decoration: none;
 	color: $color-grey-dark-4;
 	transition: .5s;
-	
-	@include respond(phone) {
-		max-width: 27.4rem;
-		min-height: 45rem;
-	}
 
 	img {
 		width: 100%;
@@ -83,6 +78,10 @@
 		visibility: hidden;
 		font-size: 1.6rem;
 		margin: 2.5rem 0;
+		@include respond(phone) {
+			margin: 0;
+		}
+		
 		&-icons {
 			display: flex;
 			flex-wrap: wrap;
