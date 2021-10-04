@@ -16,7 +16,7 @@ block content
 					section.main(style="background: url('img/bg-image.png'); background-size:cover;")
 						.bg-wrapper
 						.container
-							.info-block
+							.info-block.gs_reveal.gs_reveal_fromLeft
 								.info-block__tag
 									.tag Спецпредложение
 								.info-block__title
@@ -53,7 +53,7 @@ block content
 											| 191 м
 											sup 2
 										p Общая площадь
-									.info-block__features-el
+									.info-block__features-el.gs_reveal
 										h4 2
 										p Количество этажей
 									.info-block__features-el
@@ -62,7 +62,8 @@ block content
 									.info-block__features-el
 										h4 4
 										p
-		.swiper.slider-thumbs
+		
+		.swiper.slider-thumbs.gs_reveal
 			.swiper-wrapper
 				.swiper-slide
 					img(src='img/bg-image.png' alt='')
@@ -77,14 +78,14 @@ block content
 				i.o-play-btn__icon
 					.o-play-btn__mask
 
-	section.about-company
-		.about-company__title
+	section.about-company.gs_reveal
+		.about-company__title.gs_reveal
 			h2
 				span.text-accent Информация
 				br
 				|  о компании
 		p
-		.about-company__description
+		.about-company__description.gs_reveal
 			h2
 				|	Информация 
 				br
@@ -100,29 +101,29 @@ block content
 
 	include common/services.pug
 
-	section.benefit
+	section.benefit.gs_reveal
 		.container
-			.benefit__title
+			.benefit__title.gs_reveal
 				| Наши 
 				br
 				span.text-accent преимущества
-			.benefit__description
+			.benefit__description.gs_reveal
 				p
 					| Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но
-				.mark-items
-					.mark-items__item
+				.mark-items.gs_reveal
+					.mark-items__item.gs_reveal
 						p 10
 						p Лет успешно работаем
-					.mark-items__item
+					.mark-items__item.gs_reveal
 						p 253
 						p Выполненых проекта
-					.mark-items__item
+					.mark-items__item.gs_reveal
 						p 43
 						p Как уже неоднократно
-					.mark-items__item
+					.mark-items__item.gs_reveal
 						p 94
 						p Предварительные выводы
-			.benefit__statistics
+			.benefit__statistics.gs_reveal
 	
 	include common/projects.pug
 	+contacts()

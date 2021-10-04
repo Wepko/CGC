@@ -1,6 +1,6 @@
 
 mixin header(nameClass) 
-	header(class=['header', nameClass])
+	header(class=['header', nameClass]).gs_reveal
 		.container
 			.header__wrapper
 				a.header__logo(href='index.html')
@@ -58,10 +58,10 @@ mixin header(nameClass)
 							a(href='contacts.html') Контакты
 
 mixin contacts(nameClass)
-	section(class=['contacts', nameClass])
+	section(class=['contacts', nameClass]).gs_reveal
 		.container
 			.contacts__wrapper
-				.contacts__info
+				.contacts__info.gs_reveal.gs_reveal_fromLeft
 					.contacts__info-title.text-accent Контакты
 					.contacts__info-description Есть над чем задуматься: сторонники тоталитаризма в науке.
 					.contacts__info-content
@@ -73,7 +73,7 @@ mixin contacts(nameClass)
 							a.icon-facebook.social__element(href='#')
 							a.icon-twiter.social__element(href='#')
 							a.icon-instagram.social__element(href='#')
-				.contacts__form
+				.contacts__form.gs_reveal.gs_reveal_fromRight
 					.contacts__form-title
 						|Обратная 
 						span.text-accent связь
