@@ -1,0 +1,27 @@
+.questions {
+    padding: 10rem 0;
+    background-color: $color-blue-dark;
+    color: $color-white;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__title {
+        @extend %title;
+        flex: 1 0 55%;
+    }
+
+    &__description {
+        font-size: 1.4rem;
+        flex: 1 0 25%;
+        max-width: 30rem;
+    }
+
+    &__buttons {
+        flex: 1 0 20%;
+        margin-left: auto;
+    }
+}
