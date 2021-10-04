@@ -1,6 +1,7 @@
 const { src, dest} = require('gulp')
 const webpack = require('webpack-stream')
 const rename = require('gulp-rename')
+const TerserPlugin = require('terser-webpack-plugin');
 
 const webpackConfig = {
   mode: 'production',
@@ -41,7 +42,12 @@ module.exports = function scripts() {
 						loader: 'babel-loader',
 					}
 				]
-			}
+			},
+			optimization: {
+				minimizer: [new TerserPlugin({
+				  extractComments: false,
+				})],
+			  },
 		})).on('error', function handleError() {
 			this.emit('end')
 		})
