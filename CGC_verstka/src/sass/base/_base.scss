@@ -27,9 +27,6 @@ html {
     font-size: 50%; //1 rem = 9px, 9/16 = 50%
   }
 
-
-
-
 }
 
 
@@ -38,7 +35,6 @@ html {
 @include font('GothamProCGC', normal, 500, '../fonts/GothamPro/GothamPro-Medium.ttf');
 
 //@include font('icomoon', normal, 400, '../iconfonts/fonts/icomoon/icomoon.ttf');
-
 
 
 @import 'node_modules/swiper/swiper-bundle';
@@ -53,8 +49,6 @@ body {
 	position: relative;
 	overflow-x: hidden;
 }
-
-
 
 
 @font-face {

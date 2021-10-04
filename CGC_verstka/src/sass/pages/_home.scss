@@ -23,6 +23,11 @@ h2 {
 %description {
 	font-size: 1.6rem;
 }
+
+.hidden-js {
+	display: none!important;
+}
+
 .main-page {
 	position: relative;
 }
@@ -347,6 +352,21 @@ h2 {
 			text-decoration: none;
 			color: $color-grey-dark-4;
 		}
+
+		&-next {
+			cursor: pointer;
+			i::before {
+				font-size: 1.25rem;
+
+				
+			}
+			i {
+				transform: rotate(90deg);
+				display: inline-block;
+				margin-left: 0.5rem;
+			}
+			color: $color-primary;
+		}
 	}
 
 	&__product {
@@ -379,10 +399,10 @@ h2 {
 
 .slider-project {
 	position: relative;
-	font-size: 1rem;
-	width: 40em;
+	width: 40rem;
 	@include respond(phone) {
 		font-size: 0.8rem;
+		width: 35rem;
 	}
 
 	.swiper-button-next::after, .swiper-button-prev::after {
@@ -403,8 +423,8 @@ h2 {
 	.swiper-buttons {
 		position: relative;
 		bottom: -5rem;
-    left: 100rem;
-    font-size: 1.6rem;
+		left: 100rem;
+		font-size: 1.6rem;
 		@include respond(phone) {
 			left: 0;
 			bottom: -10rem;
@@ -420,7 +440,7 @@ h2 {
 			bottom: -10rem;
 			left: 80%;
 			width: 80%;
-    	transform: translateX(-80%);
+		transform: translateX(-80%);
 		}
 	}
 }
@@ -488,7 +508,7 @@ h2 {
 			bottom: 0;
 			left: 50%;
 			width: 50%;
-    	transform: translateX(-50%);
+		transform: translateX(-50%);
 		}
 	}
 
