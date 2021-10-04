@@ -6,7 +6,9 @@
 	text-decoration: none;
 	color: $color-grey-dark-4;
 	transition: .5s;
-
+	@include respond(phone) {
+		min-height: auto;
+	}
 	img {
 		width: 100%;
 		display: block;
@@ -24,21 +26,35 @@
 		right: 0;
 		bottom: 0;
 		background: radial-gradient(326.33% 120.1% at 48% 16.97%, rgba(32, 41, 69, 0) 0%, #202945 100%);
-
+		@include respond(phone) {
+			box-shadow: 2rem 5rem 10rem $color-blue-dark inset,
+			-2rem -5rem 10rem $color-blue-dark inset,
+			0 -20rem 15rem $color-blue-dark inset;
+		}
 		&:hover {
 			box-shadow: 
 				5rem 10rem 20rem $color-blue-dark inset,
 				-5rem -10rem 20rem $color-blue-dark inset,
 				0 -40rem 30rem $color-blue-dark inset;
+
+			@include respond(phone) {
+				box-shadow: none;
+			}
 		}
 
 		&:hover .card-product__title {
 			transform: translateY(0);
+			text-shadow: 0px 0px 4px $color-blue-dark,  2px 2px 8px $color-blue-dark,  4px 4px 16px $color-blue-dark, -2px -2px 8px $color-blue-dark, -4px -4px 16px $color-blue-dark;
 		}
-
+		.card-product__title::before {
+			@include respond(phone) {
+				display: none;
+			}
+		}
 		&:hover .card-product__title::before {
 			transform: translateY(5rem);
 			opacity: 0;
+	
 		}
 
 		&:hover .card-product__description {
@@ -60,6 +76,10 @@
 		font-size: 2.4rem;
 		transform: translateY(28rem);
 		transition:  .5s;
+		@include respond(phone) {
+			margin: 2rem 0;
+			transform: translateY(5rem);
+		}
 
 		&::before {
 			transition:  .5s;
@@ -79,13 +99,15 @@
 		font-size: 1.6rem;
 		margin: 2.5rem 0;
 		@include respond(phone) {
-			margin: 0;
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(5rem);
 		}
 		
 		&-icons {
 			display: flex;
 			flex-wrap: wrap;
-
+			text-shadow: 0px 0px 4px $color-blue-dark,  2px 2px 8px $color-blue-dark,  4px 4px 16px $color-blue-dark, -2px -2px 8px $color-blue-dark, -4px -4px 16px $color-blue-dark;
 			span {
 				margin: 1rem 0;
 				flex: 1 0 50%;	
@@ -104,6 +126,9 @@
 
 		&-text {
 			margin: 2.4rem 0;
+			@include respond(phone) {
+				display: none;
+			}
 		}
 	}
 

@@ -402,7 +402,7 @@ h2 {
 	width: 40rem;
 	@include respond(phone) {
 		font-size: 0.8rem;
-		width: 35rem;
+		width: 32.5rem;
 	}
 
 	.swiper-button-next::after, .swiper-button-prev::after {
@@ -411,7 +411,7 @@ h2 {
 
 	.swiper-button-next {
 		@include respond(phone) {
-			right: -4.5rem;
+			right: 2.5rem;
 		}
 	}
 	.swiper-button-prev {
@@ -438,9 +438,9 @@ h2 {
 
 		@include respond(phone) {
 			bottom: -10rem;
-			left: 80%;
-			width: 80%;
-		transform: translateX(-80%);
+			left: 65%;
+			width: 55%;
+			transform: translateX(-85%);
 		}
 	}
 }
