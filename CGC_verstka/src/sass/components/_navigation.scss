@@ -2,6 +2,12 @@
 	display: flex;
 	justify-content: flex-end;
 	flex-wrap: wrap;
+	transition: .5s;
+	&.active {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
 
 	@include respond(phone) { // width < 600?
 		position: absolute;
@@ -10,6 +16,9 @@
 		width: 100%;
 		z-index: 1;
 		display: block;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(10rem);
 	}
 	// a:focus {
 	// 	outline: none;
@@ -54,7 +63,13 @@
 			transition:  .5s .2s;
 			background-color: $color-white;
 			transform: translateY(15%);
-
+			@include respond(phone) { // width < 600?
+				transform: translateY(0);
+				position: inherit;
+				visibility: visible;
+				opacity: 1;
+				background-color: transparentize( $color-black, 0.4);
+			}
 			& li { margin: 0;}
 
 			a {
@@ -75,6 +90,9 @@
 			transition: opacity .5s;
 			opacity: 1;
 			transform: translateY(5%);
+			@include respond(phone) { // width < 600?
+				transform: translateY(0);
+			}
 		}
 
 		&:hover::before {
@@ -92,6 +110,7 @@
 
 			@include respond(phone) { // width < 600?
 				right: 1.5rem;	
+				transform: translateY(0%);
 			}
 		}
 	}

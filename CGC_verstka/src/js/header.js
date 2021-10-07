@@ -15,9 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
     ///// humburger
 
     const humburger = document.querySelector('.menu-toggle');
-    console.log(humburger)
+    const menu = document.querySelector('.navigation');
+ 
+    const links = menu.querySelectorAll('.navigation__subnav');
+
+    for (let link of links) {
+        link.addEventListener('click', () => {
+            const ul = link.querySelector('ul');
+            ul.classList.toggle('active')
+        });
+    }
+
     humburger.addEventListener('click', () => {
         humburger.classList.toggle('active');
+        menu.classList.toggle('active');
     })
 
 })

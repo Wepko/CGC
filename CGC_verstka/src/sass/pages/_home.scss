@@ -28,6 +28,11 @@ h2 {
 	display: none!important;
 }
 
+.anim-arrow-js {
+	transition: .5s;
+	transform: rotate(-90deg)!important;
+}
+
 .main-page {
 	position: relative;
 }
@@ -354,6 +359,7 @@ h2 {
 		}
 
 		&-next {
+			transition: .5s;
 			cursor: pointer;
 			i::before {
 				font-size: 1.25rem;
@@ -361,6 +367,7 @@ h2 {
 				
 			}
 			i {
+				transition: .2s;
 				transform: rotate(90deg);
 				display: inline-block;
 				margin-left: 0.5rem;
