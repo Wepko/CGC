@@ -1,4 +1,5 @@
 import BadgerAccordion from 'badger-accordion';
+
 {
   //const swiperOne = new Swiper('.slider', {loop:false})
     
@@ -8,6 +9,16 @@ import BadgerAccordion from 'badger-accordion';
   const accordion = new BadgerAccordion(accordionDomNode);
   window.accordion = accordion;
 
+  // const accordions = document.querySelectorAll('.js-badger-accordion');
+  // const arr = []; 
+  // Array.from(accordions).forEach((accordion, index) => {
+
+  //     const ba = new BadgerAccordion(accordion);
+
+  //     // console.log(ba.getState([0]));
+  // });
+
+ 
 }
 
 {

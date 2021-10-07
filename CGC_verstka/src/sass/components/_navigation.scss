@@ -4,7 +4,12 @@
 	flex-wrap: wrap;
 
 	@include respond(phone) { // width < 600?
-		display: none;
+		position: absolute;
+		top: 10rem;
+		left: 0;
+		width: 100%;
+		z-index: 1;
+		display: block;
 	}
 	// a:focus {
 	// 	outline: none;
@@ -18,6 +23,10 @@
 		list-style: none;
 		margin: 0 2.5rem;
 		text-align: center;
+		
+		@include respond(phone) { // width < 600?
+			margin: 0;
+		}
 	}
 
 
@@ -25,6 +34,12 @@
 		text-decoration: none;
 		color: $color-white;
 		display: inline-block;
+
+		@include respond(phone) { // width < 600?
+			padding: 1.5rem 0;
+			display: block;
+			background-color: transparentize( $color-black, 0.4);
+		}
 	}
 
 	&__subnav {
@@ -74,6 +89,10 @@
 			top: 50%;
 			right: -1.5rem;
 			transform: translateY(-35%);
+
+			@include respond(phone) { // width < 600?
+				right: 1.5rem;	
+			}
 		}
 	}
 }

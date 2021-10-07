@@ -44,7 +44,6 @@
 
 		&:hover .card-product__title {
 			transform: translateY(0);
-			text-shadow: 0px 0px 4px $color-blue-dark,  2px 2px 8px $color-blue-dark,  4px 4px 16px $color-blue-dark, -2px -2px 8px $color-blue-dark, -4px -4px 16px $color-blue-dark;
 		}
 		.card-product__title::before {
 			@include respond(phone) {
@@ -114,7 +113,6 @@
 			transition: .5s;
 			display: flex;
 			flex-wrap: wrap;
-			text-shadow: 0px 0px 4px $color-blue-dark,  2px 2px 8px $color-blue-dark,  4px 4px 16px $color-blue-dark, -2px -2px 8px $color-blue-dark, -4px -4px 16px $color-blue-dark;
 			span {
 				margin: 1rem 0;
 				flex: 1 0 50%;	
