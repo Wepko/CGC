@@ -11,6 +11,7 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 		slidesPerView: 1,
 		centeredSlides: true,
 		spaceBetween: 30,
+		slidesPerGroup: 3,
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
@@ -25,15 +26,12 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
   const headerSlider = new Swiper('.slider-header', {
 		// Optional parameters
 		//direction: 'vertical',
-		loop: true,
+		loop: false,
 		effect: "fade",
-		slidesPerView: 1,
-		centeredSlides: true,
 	});
 
   const thumbsSlider = new Swiper('.slider-thumbs', {
-		loop: true,
-		spaceBetween: 30,
+		loop: false,
 		effect: "fade",
 		navigation: {
 			nextEl: ".swiper-button-next",

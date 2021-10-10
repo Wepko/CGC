@@ -379,6 +379,17 @@ h2 {
 	&__product {
 		position: relative;
 		margin: 4rem 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill,minmax(200px, 40rem));
+		grid-gap: 1rem;
+		@include respond(phone) {
+			justify-content: center;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
 	}
 
 }
@@ -465,7 +476,7 @@ h2 {
 	top: 52rem;
 	width: 32rem;
 	height: 20rem;
-	z-index: 1000;
+	z-index: 10;
 
 	@include respond(phone) {
 		width: 100%;
@@ -475,7 +486,9 @@ h2 {
 		height: 2rem;
 	}
 
+
 	.swiper-wrapper, .swiper-pagination, button {
+		visibility: hidden;
 		@include respond(phone) {
 			display: none;
 		}

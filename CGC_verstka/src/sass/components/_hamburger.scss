@@ -10,6 +10,7 @@
     cursor:pointer;
     position:relative;
     display: none;
+    z-index: 100;
 
     @include respond(phone) { // width < 600?
         display: block;
@@ -73,10 +74,25 @@ transition:transform ease 200ms;
 .cross span:last-child{
 transform:translateY(-50%) rotate(-45deg) scaleX(0);
 }
-.menu-toggle.active .cross span{
-transition-delay:450ms;
-transform:translateY(50%) rotate(45deg) scaleX(1);
+.menu-toggle.active .cross span {
+  transition-delay:450ms;
+  transform:translateY(50%) rotate(45deg) scaleX(1);
+  @include respond(phone) {
+    background-color: $color-black;
+  }
 }
-.menu-toggle.active .cross span:last-child{
-transform:translateY(-50%) rotate(-45deg) scaleX(1);
+.menu-toggle.active .cross span:last-child {
+  transform:translateY(-50%) rotate(-45deg) scaleX(1);
+}
+
+.menu-toggle.active {
+  @include respond(phone) {
+    border-color: $color-black
+  }
+} 
+
+html.active {
+  @include respond(phone) {
+    overflow: hidden;
+  }
 }

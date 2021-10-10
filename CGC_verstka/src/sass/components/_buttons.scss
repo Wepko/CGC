@@ -41,11 +41,11 @@
 		background-color: $color-primary-dark;
 	}
 
-	&_icon {
+	&--icon {
 		padding-right: 7rem;
 	}
 
-	&_outline {
+	&--outline {
 		color: $color-primary;
 		background-color: transparentize($color-primary, 1);
 		outline: .2rem solid transparentize($color-primary, .4);
@@ -76,7 +76,7 @@
 		outline-color: $color-white;
 	}
 	
-	&_icon {
+	&--icon {
 		padding-right: 7rem;
 	}
 	

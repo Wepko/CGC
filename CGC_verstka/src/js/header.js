@@ -11,24 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
         logo.src = 'img/icon/logo-dark.svg';
     }
 
+    
 
     ///// humburger
+    const html = document.querySelector('html');
+    const humburger = html.querySelector('.menu-toggle');
+    const menu = html.querySelector('.navigation');
 
-    const humburger = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.navigation');
- 
     const links = menu.querySelectorAll('.navigation__subnav');
 
     for (let link of links) {
         link.addEventListener('click', () => {
             const ul = link.querySelector('ul');
-            ul.classList.toggle('active')
+            const a = link.querySelector('a')
+
+            a.classList.toggle('active');
+            ul.classList.toggle('active');
         });
     }
 
     humburger.addEventListener('click', () => {
         humburger.classList.toggle('active');
         menu.classList.toggle('active');
+        html.classList.toggle('active')
     })
 
 })

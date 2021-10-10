@@ -15,7 +15,7 @@ const pugLinter = require('gulp-pug-linter')
 module.exports = function pug2html() {
   return src('src/pages/*.pug')
     .pipe(plumber())
-    .pipe(pug())
+    .pipe(pug({pretty: true}))
     // .pipe(htmlValidator.analyzer())
     // .pipe(htmlValidator.reporter())
    // .pipe(bemValidator())
