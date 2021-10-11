@@ -22,11 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (let link of links) {
         link.addEventListener('click', () => {
-            const ul = link.querySelector('ul');
-            const a = link.querySelector('a')
-
-            a.classList.toggle('active');
-            ul.classList.toggle('active');
+            link.classList.toggle('active');
         });
     }
 

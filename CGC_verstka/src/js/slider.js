@@ -8,10 +8,9 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 		// Optional parameters
 		//direction: 'vertical',
 		loop: false,
-		slidesPerView: 1,
+		slidesPerView: 'auto',
 		centeredSlides: true,
 		spaceBetween: 30,
-		slidesPerGroup: 3,
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",

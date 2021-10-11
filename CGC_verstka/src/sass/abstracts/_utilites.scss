@@ -1,0 +1,26 @@
+%title-h1 {
+	font-weight: 300;
+	line-height: 1;
+	font-size: 7.5rem;
+}
+
+%title {
+	font-weight: 300;
+	font-size: 5.5rem;
+	line-height: 1;
+
+	@include respond(phone) {
+		font-size: 3.5rem;
+	}
+}
+
+
+%description {
+	font-size: 1.6rem;
+}
+
+%bg-wrapper {
+    padding: 10rem;
+    background-color: $color-blue-dark;
+    color: $color-white;
+}

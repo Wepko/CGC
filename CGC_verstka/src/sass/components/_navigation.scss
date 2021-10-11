@@ -61,15 +61,6 @@
 
 	&__subnav {
 		position: relative;
-		a.active {
-			color: $color-primary;
-		}
-
-		&.active::before {
-			@include respond(phone) { // width < 600?
-				transform: rotate(180deg);
-			}
-		}
 		
 		& ul {
 			white-space: nowrap;
@@ -88,11 +79,7 @@
 				box-shadow: 0px 73px 221px rgba(32, 41, 69, 0.06), 0px 22.0074px 66.625px rgba(32, 41, 69, 0.0390953), 0px 9.14073px 27.6726px rgba(32, 41, 69, 0.03), 0px 3.30602px 10.0086px rgba(32, 41, 69, 0.0209047);
 			}
 
-			&.active li {
-				display: block;
-				transform: translateX(0);
-				transition: .5s;
-			}
+			
 
 			
 			
@@ -139,7 +126,8 @@
 			position: absolute;
 			top: 50%;
 			right: -1.5rem;
-			transform: rotate(0);
+			transform: translateY(-50%) rotate(0);
+			transform-origin: 50% 25%;
 			transition: .5s;
 
 			@include respond(phone) { // width < 600?
@@ -167,8 +155,22 @@
 		} 
 	}
 
-	&__subnav ul.active {
-		display: block;
+	&__subnav.active {
+		& > a {
+			color: $color-primary;
+		}
+
+		&::before {
+			@include respond(phone) { // width < 600?
+				transform: rotate(180deg);
+			}
+		}
+
+		&.active li {
+			display: block;
+			transform: translateX(0);
+			transition: .5s;
+		}
 	}
 }
 

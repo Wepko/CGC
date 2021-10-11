@@ -1,28 +1,13 @@
 
 :root {
 	--swiper-theme-color: #fff;
-
 }
 
 h2 {
 	font-weight: normal;
 }
 
-%title {
-	font-weight: 300;
-	font-size: 5.5rem;
-	line-height: 1;
 
-	@include respond(phone) {
-		font-size: 3.5rem;
-	}
-}
-
-
-
-%description {
-	font-size: 1.6rem;
-}
 
 .hidden-js {
 	display: none!important;
@@ -168,6 +153,11 @@ h2 {
 	align-items: center;
 	justify-content: center;
 	z-index: 100;
+
+	&.reset {
+		margin-top: 0;
+		background-color: $color-blue-dark;
+	}
 
 	@include respond(phone) {
 		display: block;
@@ -417,7 +407,7 @@ h2 {
 
 .slider-project {
 	position: relative;
-	width: 40rem;
+	width: auto;
 	@include respond(phone) {
 		font-size: 0.8rem;
 		width: 32.5rem;
