@@ -32,6 +32,36 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
   
   document.addEventListener("DOMContentLoaded", function() {
     gsap.registerPlugin(ScrollTrigger);
+
+    const scrollUp = document.querySelector('.header');
+
+    ScrollTrigger.create({
+      start: 'top -100',
+      end: 99999,
+      toggleClass: {className: 'header--scrolled', targets: '.header'}
+    });
+    
+    ScrollTrigger.create({
+      start: 'top -300',
+      end: 99999,
+      toggleClass: {className: 'header--up', targets: '.header'},
+      onUpdate: ({direction}) => {
+        console.log(direction);
+        if (direction == -1) {
+          scrollUp.classList.remove('header--up');
+        } else {
+          scrollUp.classList.add('header--up');
+        }}
+    });
+    
+    // gsap.from(".header--scrolled", {
+    //   position:"absolute", 
+    //       scrollTrigger: {
+    //       trigger:".header--scrolled",
+    //       start: 'top -300',
+    //       end: 99999,   
+    //     }
+    // }) 
     
     gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
       hide(elem); // assure that the element is hidden when scrolled into view
