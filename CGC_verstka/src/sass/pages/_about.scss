@@ -2,6 +2,9 @@
     &__title {
         @extend %title-h1;
         margin: 8rem 0 10rem 0;
+        @include respond(phone) {
+            margin: 4rem 0 5rem 0;
+        }
     }
 
     &__content {
@@ -22,6 +25,11 @@
 
     &-benefit {
         flex: 1 0 50%;
+
+        @include respond(phone) {
+            flex: 1 0 100%;
+        }
+
         ul {
             margin: 1rem 0;
             padding-left: 2rem;
@@ -45,6 +53,9 @@
         margin: 14rem 0;
         p:nth-child(2) {
             margin: 4.5rem 0 4.5rem 10rem;
+            @include respond(phone) {
+                margin: 4.5rem 0 4.5rem 0rem;
+            }
         }
     }
 

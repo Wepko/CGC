@@ -2,6 +2,9 @@
     display: flex;
     flex-wrap: wrap;
 
+    @include respond(phone) {
+      display: block;
+    }
 
     &__title {
         h2 {

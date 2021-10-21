@@ -2,6 +2,10 @@
 	font-weight: 300;
 	line-height: 1;
 	font-size: 7.5rem;
+	
+	@include respond(phone) {
+		font-size: 5.5rem;
+	}
 }
 
 %title {
@@ -20,7 +24,7 @@
 }
 
 %bg-wrapper {
-    padding: 10rem;
+    padding: 10rem 0;
     background-color: $color-blue-dark;
     color: $color-white;
 }
