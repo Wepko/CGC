@@ -18,6 +18,23 @@
         @include respond(phone) {
             flex-basis: 100%;
         } 
+
+        &::before {
+            position: absolute;
+            top: 5.5rem;
+            left: -2rem;
+            content: '';
+            background: url('../img/Ellipse 13.svg') no-repeat 0 0;
+            background-size: contain;
+            width: 32rem;
+            height: 7rem;
+
+            @include respond(phone) {
+                top: 3.5rem;
+                left: 0;
+                height: 4rem;
+            } 
+        }
     }
 
     &__description {
