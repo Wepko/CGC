@@ -8,11 +8,6 @@ h2 {
 }
 
 
-
-.hidden-js {
-	display: none!important;
-}
-
 .anim-arrow-js {
 	transition: .5s;
 	transform: rotate(-90deg)!important;
@@ -339,6 +334,13 @@ h2 {
 			position: relative;
 			max-height: 6.5rem;
 			overflow: hidden;
+			transition: .5s;
+
+		}
+		&-top.active {
+			max-height: inherit;
+			overflow: inherit;
+			transition: .5s;
 		}
 
 		&-buttons {

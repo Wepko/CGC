@@ -23,3 +23,16 @@ import BadgerAccordion from 'badger-accordion';
 
 
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const q = document.querySelector('.projects__filter-next');
+    const a1 = document.querySelector('.projects__filter-top'); 
+    console.log(a1);
+    q.onclick = () => {
+      a1.classList.toggle('active');
+    }
+
+  })
+
+
+
+
