@@ -1,0 +1,20 @@
+extends common/layout.pug
+
+
+
+include common/mixins.pug
+
+
+block title 
+	| CGC Carat Global Construction
+
+
+
+block content
+	section.container
+		.test-block
+			.can-toggle.demo-rebrand-1.can-toggle--size-large
+				input#d(type="checkbox", name="")
+				label(for="d")
+					.can-toggle__switch(data-checked="Фото", data-unchecked="Видео")
+	include common/projects.pug

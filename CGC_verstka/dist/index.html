@@ -212,7 +212,7 @@
         <div class="projects__title">
           <p>Наши <span class="text-accent">проекты</span></p><a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="#"> Все проекты</a>
         </div>
-        <div class="projects__filter">
+        <form class="projects__filter">
           <div class="projects__filter-top">
             <div class="projects__filter-switcher">
               <div class="can-toggle demo-rebrand-1">
@@ -223,25 +223,54 @@
               </div>
             </div>
             <div class="projects__filter-buttons">
-              <div class="projects__filter-button">Все</div>
-              <div class="projects__filter-button">Проектирование</div>
-              <div class="projects__filter-button">Сбор исходно-разрешительной документации</div>
+              <div class="projects__filter-button">
+                <input id="service1" type="radio" name="service">
+                <label for="service1">  Все</label>
+              </div>
+              <div class="projects__filter-button">
+                <input id="service2" type="radio" name="service">
+                <label for="service2">  Проектирование</label>
+              </div>
+              <div class="projects__filter-button"> 
+                <input id="service3" type="radio" name="service">
+                <label for="service3">  Сбор исходно-разрешительной документации</label>
+              </div>
+              <div class="projects__filter-button"> 
+                <input id="service4" type="radio" name="service">
+                <label for="service4">  Архитектурное проектирование</label>
+              </div>
+              <div class="projects__filter-button"> 
+                <input id="service5" type="radio" name="service">
+                <label for="service5">  Проектирование зданий</label>
+              </div>
+              <div class="projects__filter-button"> 
+                <input id="service6" type="radio" name="service">
+                <label for="service6">  Проектирование инженерных коммуникаций</label>
+              </div>
+              <div class="projects__filter-button"> 
+                <input id="service7" type="radio" name="service">
+                <label for="service7">  Дизайн проект</label>
+              </div>
+              <div class="projects__filter-button"> 
+                <input id="service8" type="radio" name="service">
+                <label for="service8">  Проектирование систем безопасности и связи</label>
+              </div>
+              <div class="projects__filter-button"> 
+                <input id="service9" type="radio" name="service">
+                <label for="service9">Ландшафтное проектирование</label>
+              </div>
+              <div class="projects__filter-button"> 
+                <input id="service10" type="radio" name="service">
+                <label for="service10">  Строительство</label>
+              </div>
+              <div class="projects__filter-button"> 
+                <input id="service11" type="radio" name="service">
+                <label for="service1">  Сопровождение</label>
+              </div>
             </div>
             <div class="projects__filter-next"><span>Еще</span><i class="icon-arrow-right"> </i></div>
           </div>
-          <div class="projects__filter-bottom">
-            <div class="projects__filter-buttons hidden-js">
-              <div class="projects__filter-button">Архитектурное проектирование</div>
-              <div class="projects__filter-button">Проектирование зданий</div>
-              <div class="projects__filter-button">Проектирование инженерных коммуникаций</div>
-              <div class="projects__filter-button">Дизайн проект</div>
-              <div class="projects__filter-button">Проектирование систем безопасности и связи</div>
-              <div class="projects__filter-button">Ландшафтное проектирование</div>
-              <div class="projects__filter-button">Строительство</div>
-              <div class="projects__filter-button">Сопровождение</div>
-            </div>
-          </div>
-        </div>
+        </form>
         <div class="projects__product">
           <div class="slider-project">
             <!-- Additional required wrapper-->

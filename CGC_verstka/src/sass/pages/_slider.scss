@@ -1,4 +1,8 @@
 
+.test-block {
+  margin: 20rem auto;
+}
+
 
 @mixin can-toggle-branding(
   $can-toggle-off-color: #777, 
@@ -131,6 +135,7 @@
 	&__switch {
 		outline: 2px solid $color-primary;
 	}
+  width: 33rem;
   position: relative;
   *, *:before, *:after { box-sizing: border-box; }
   //overflow: hidden;

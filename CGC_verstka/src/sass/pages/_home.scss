@@ -323,9 +323,12 @@ h2 {
 		@include respond(phone) {
 			display: none;
 		}
+
 		&-switcher {
 			width: 33rem;
-
+			position: absolute;
+			top: 0;
+			padding: 0.2rem;
 			@include respond(phone) {
 				display: none;
 			}
@@ -333,8 +336,9 @@ h2 {
 
 		&-top {
 			display: flex;
-			align-items: center;
-			justify-content: space-between;
+			position: relative;
+			max-height: 6.5rem;
+			overflow: hidden;
 		}
 
 		&-buttons {
@@ -345,17 +349,39 @@ h2 {
 		&-button {
 			padding: 1.8rem 4rem 1.8rem 0;
 			text-decoration: none;
-			color: $color-grey-dark-4;
+			
+
+			&:nth-child(1) {
+				padding-left: 40rem;
+			}
+
+			input {
+				position: absolute;
+				top: 0;
+				opacity: 0;
+				z-index: -1000;
+			}
+
+			input:checked ~ label {
+				color: $color-grey-dark-4;
+				border-bottom:  1px dashed $color-grey-dark-4;
+			}
+
+			label {
+				cursor: pointer;
+				color: $color-grey;
+			}
 		}
 
 		&-next {
 			transition: .5s;
 			cursor: pointer;
+			flex-basis: 15%;
+			line-height: 6rem;
 			i::before {
 				font-size: 1.25rem;
-
-				
 			}
+
 			i {
 				transition: .2s;
 				transform: rotate(90deg);
