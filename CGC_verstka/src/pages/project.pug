@@ -12,4 +12,351 @@ block title
 
 block content
 	+header('header--light')
+	section.project-header.header-clear
+		.container
+			.project-header__title 
+				h1 Дом 
+					span.text-accent Дан-Бланш G+
+				.project-header__square
+					.square
+						i.icon-icon1
+		.project-header__image 
+			img(src="img/project.png", alt="")
+			p Описание фотографии — Дом Дан-Бланш G+
+	section.project-content
+		.container
+			.project-content__wrapper
+				+layout('Информация')
+					.project-content__info
+						.project-content__info-block.icon-adress-bold
+							h3 Место реализации
+							p Проект реализован в коттеджном посёлке Прерий
+						.project-content__info-block.icon-time
+							h3 Время реализации
+							p 12 месяцев
+						.project-content__info-button
+							a(href="").btn-live live Камера
+			.project-content__wrapper
+				+layout('Характеристики')
+					.project-content__description 
+						.project-content__description-text
+							p Представляем вам проект дома «Гран-Парадизо»!
+							p Дом спроектирован в лучших традициях архитектурного стиля прерий. Четкие линии и парящие крыши идеально вписывают здание в ландшафт, а панорамное остекление наполняет помещение естественным светом. При отделке используются натуральные материалы и естественные цвета, которые гармонично сливаются с пейзажем.
+							p Архитектура в стиле прерий вписывает здания в окружающую среду, сохраняя уют и простор.
+							p Объект сдается по договору подряда с полученным на заказчика правом собственности на дом и комплектом исходно-разрешительной документацией.
+						.project-content_description-feature
+							.features.features--light
+								.features-row 
+									.features-el
+										h4
+											| 191 м
+											sup 2
+										p Общая площадь
+									.features-el.gs_reveal
+										h4 2
+										p Количество этажей
+									.features-el
+										h4 5
+										p Количество комнат
+									.features-el
+										h4 4
+										p Спален
+								
+								.features-row 
+									.features-el
+										h4
+											| 191 м
+											sup 2
+										p Общая площадь
+									.features-el.gs_reveal
+										h4 2
+										p Количество этажей
+									.features-el
+										h4 5
+										p Количество комнат
+									.features-el
+										h4 4
+										p Спален
+								
+								.features-row 
+									.features-el
+										h4
+											| 191 м
+											sup 2
+										p Общая площадь
+									.features-el.gs_reveal
+										h4 2
+										p Количество этажей
+									.features-el
+										h4 5
+										p Количество комнат
+									.features-el
+										h4 4
+										p Спален
 	
+	section.service.container
+		.service__title.gs_reveal.gs_reveal_fromLeft
+			| Перечень 
+			span.text-accent услуг
+		.service__description.gs_reveal.gs_reveal_fromLeft
+			| Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.
+		.service__accordion.gs_reveal.gs_reveal_fromRight
+			dl.badger-accordion.js-badger-accordion
+				dt.badger-accordion__header
+					a.badger-accordion__trigger.js-badger-accordion-header
+						.badger-accordion__trigger-title
+							| Сбор исходно-разрешительной документации
+						.badger-accordion__trigger-icon
+							i.icon-plus
+				dd.badger-accordion__panel.js-badger-accordion-panel
+					.badger-accordion__panel-inner.js-badger-accordion-panel-inner
+						dl.badger-accordion.js-badger-accordion
+							dt.badger-accordion__header
+								a.badger-accordion__trigger.js-badger-accordion-header
+									.badger-accordion__trigger-title
+										| Кровля
+									.badger-accordion__trigger-icon
+										i.icon-plus
+							dd.badger-accordion__panel.js-badger-accordion-panel
+								.badger-accordion__panel-inner.js-badger-accordion-panel-inner
+									.accordion
+										.accordion__description 
+											p Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.
+										.accordion__switcher
+											.can-toggle.demo-rebrand-1.can-toggle--size-large
+												input#d(type='checkbox')
+												label(for='d')
+													.can-toggle__switch(data-checked='Видео' data-unchecked='Фото') 
+										
+										.accordion__gallery
+											.slider-gallery-min
+												// Additional required wrapper
+												.swiper-wrapper
+
+													.swiper-slide 
+														.card-gallery
+															.card-gallery__img 
+																img(src="img/gallery1.png", alt="")
+		
+													.swiper-slide 
+														.card-gallery
+															.card-gallery__img 
+																img(src="img/gallery2.png", alt="")
+						
+													.swiper-slide 
+															.card-gallery
+																.card-gallery__img 
+																	img(src="img/gallery3.png", alt="")
+													.swiper-slide 
+														.card-gallery
+															.card-gallery__img 
+																img(src="img/gallery1.png", alt="")
+													.swiper-slide 
+														.card-gallery
+															.card-gallery__img 
+																img(src="img/gallery1.png", alt="")
+													.swiper-slide 
+														.card-gallery
+															.card-gallery__img 
+																img(src="img/gallery1.png", alt="")
+													.swiper-slide 
+														.card-gallery
+															.card-gallery__img 
+																img(src="img/gallery1.png", alt="")
+		
+												.swiper-buttons
+													.swiper-button-next
+													.swiper-button-prev
+												.swiper-scrollbar
+															
+										.accordion__buttons
+											a.btn-primary Узнать больше
+											a.btn-primary.btn-primary--outline.btn-primary--icon.icon-arrow-right Готовые проекты
+					
+						dl.badger-accordion.js-badger-accordion
+								dt.badger-accordion__header
+									a.badger-accordion__trigger.js-badger-accordion-header
+										.badger-accordion__trigger-title
+											| Кровля
+										.badger-accordion__trigger-icon
+											i.icon-plus
+								dd.badger-accordion__panel.js-badger-accordion-panel
+									.badger-accordion__panel-inner.js-badger-accordion-panel-inner
+										.accordion
+											.accordion__description 
+												p Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.
+											.accordion__switcher
+												.can-toggle.demo-rebrand-1.can-toggle--size-large
+													input#d(type='checkbox')
+													label(for='d')
+														.can-toggle__switch(data-checked='Видео' data-unchecked='Фото') 
+											.accordion__gallery
+												.slider-gallery
+													// Additional required wrapper
+													.swiper-wrapper
+
+														.swiper-slide 
+															.card-gallery
+																.card-gallery__img 
+																	img(src="img/gallery1.png", alt="")
+			
+														.swiper-slide 
+															.card-gallery
+																.card-gallery__img 
+																	img(src="img/gallery2.png", alt="")
+							
+														.swiper-slide 
+																.card-gallery
+																	.card-gallery__img 
+																		img(src="img/gallery3.png", alt="")
+
+													.swiper-buttons
+														.swiper-button-next
+														.swiper-button-prev
+													.swiper-scrollbar
+																
+											.accordion__buttons
+												a.btn-primary Узнать больше
+												a.btn-primary.btn-primary--outline.btn-primary--icon.icon-arrow-right Готовые проекты
+								
+						dl.badger-accordion.js-badger-accordion
+									dt.badger-accordion__header
+										a.badger-accordion__trigger.js-badger-accordion-header
+											.badger-accordion__trigger-title
+												| Кровля
+											.badger-accordion__trigger-icon
+												i.icon-plus
+									dd.badger-accordion__panel.js-badger-accordion-panel
+										.badger-accordion__panel-inner.js-badger-accordion-panel-inner
+											.accordion
+												.accordion__description 
+													p Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.
+												.accordion__switcher
+													.can-toggle.demo-rebrand-1.can-toggle--size-large
+														input#d(type='checkbox')
+														label(for='d')
+															.can-toggle__switch(data-checked='Видео' data-unchecked='Фото') 
+												.accordion__gallery
+													.slider-gallery
+														// Additional required wrapper
+														.swiper-wrapper
+
+															.swiper-slide 
+																.card-gallery
+																	.card-gallery__img 
+																		img(src="img/gallery1.png", alt="")
+				
+															.swiper-slide 
+																.card-gallery
+																	.card-gallery__img 
+																		img(src="img/gallery2.png", alt="")
+								
+															.swiper-slide 
+																	.card-gallery
+																		.card-gallery__img 
+																			img(src="img/gallery3.png", alt="")
+
+														.swiper-buttons
+															.swiper-button-next
+															.swiper-button-prev
+														.swiper-scrollbar
+																	
+												.accordion__buttons
+													a.btn-primary Узнать больше
+													a.btn-primary.btn-primary--outline.btn-primary--icon.icon-arrow-right Готовые проекты
+							
+									
+
+						dl.badger-accordion.js-badger-accordion
+									dt.badger-accordion__header
+										a.badger-accordion__trigger.js-badger-accordion-header
+											.badger-accordion__trigger-title
+												| Кровля
+											.badger-accordion__trigger-icon
+												i.icon-plus
+									dd.badger-accordion__panel.js-badger-accordion-panel
+										.badger-accordion__panel-inner.js-badger-accordion-panel-inner
+											.accordion
+												.accordion__description 
+													p Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.
+												.accordion__switcher
+													.can-toggle.demo-rebrand-1.can-toggle--size-large
+														input#d(type='checkbox')
+														label(for='d')
+															.can-toggle__switch(data-checked='Видео' data-unchecked='Фото') 
+												.accordion__gallery
+													.slider-gallery
+														// Additional required wrapper
+														.swiper-wrapper
+
+															.swiper-slide 
+																.card-gallery
+																	.card-gallery__img 
+																		img(src="img/gallery1.png", alt="")
+				
+															.swiper-slide 
+																.card-gallery
+																	.card-gallery__img 
+																		img(src="img/gallery2.png", alt="")
+								
+															.swiper-slide 
+																	.card-gallery
+																		.card-gallery__img 
+																			img(src="img/gallery3.png", alt="")
+
+														.swiper-buttons
+															.swiper-button-next
+															.swiper-button-prev
+														.swiper-scrollbar
+																	
+												.accordion__buttons
+													a.btn-primary Узнать больше
+													a.btn-primary.btn-primary--outline.btn-primary--icon.icon-arrow-right Готовые проекты
+							
+
+
+
+
+				dt.badger-accordion__header
+					a.badger-accordion__trigger.js-badger-accordion-header
+						.badger-accordion__trigger-title
+							| Проектирование
+						.badger-accordion__trigger-icon
+							i.icon-plus
+				dd.badger-accordion__panel.js-badger-accordion-panel
+					.badger-accordion__panel-inner.text-module.js-badger-accordion-panel-inner
+						a.badger-accordion__panel-subitem(href='#') Архитектурное проектирование
+						a.badger-accordion__panel-subitem(href='#') Проектирование зданий
+						a.badger-accordion__panel-subitem(href='#') Проектирование инженерных коммуникаций
+						a.badger-accordion__panel-subitem(href='#') Дизайн проектирование
+						a.badger-accordion__panel-subitem(href='#') Ландшафтное проектирование
+				dt.badger-accordion__header
+					a.badger-accordion__trigger.js-badger-accordion-header
+						.badger-accordion__trigger-title
+							| Строительство
+						.badger-accordion__trigger-icon
+							i.icon-plus
+				dd.badger-accordion__panel.js-badger-accordion-panel
+					.badger-accordion__panel-inner.text-module.js-badger-accordion-panel-inner
+						a.badger-accordion__panel-subitem(href='#') Строительство объекта
+						a.badger-accordion__panel-subitem(href='#') Внешняя отделка
+						a.badger-accordion__panel-subitem(href='#') Внутренняя отделка
+						a.badger-accordion__panel-subitem(href='#') Благоустройство территории
+				dt.badger-accordion__header
+					a.badger-accordion__trigger.js-badger-accordion-header
+						.badger-accordion__trigger-title
+							| Сопровождение
+						.badger-accordion__trigger-icon
+							i.icon-plus
+				dd.badger-accordion__panel.js-badger-accordion-panel
+					.badger-accordion__panel-inner.text-module.js-badger-accordion-panel-inner
+						p
+							| Although badgers are a solitary animal the young Hog Badger tends to be quite playful and social.  I would be careful playing with any animal that has extremely large claws.  Remember folks, it is all fun and games until someone loses an eye.
+						p
+							| Hog Badgers are omnivores and they feed on a variety of things from honey and fruit to insects and small mammals.
+						p
+							| A young / baby of a hog badger is called a 'kit'. The females are called 'sow' and males 'boar'. A hog badger group is called a 'cete, colony, set or company'.
+
+						
+	include common/question.pug
+	+contacts('contacts--dark')

@@ -11,4 +11,103 @@ block title
 
 
 block content
-	+header('header--light')
+	+header()
+	section.service-header.header-clear(style="background: url('img/img-service.png'); background-size:cover;")
+		.container
+			.bg-service-header 
+			.service-header__wrapper
+				.service-header__title
+					span.text-access Дизайн 
+					|проект
+				.service-header__buttons
+					a.btn-primary(href="") Узнайте больше
+					a(href="").btn-secondary Готовые проекты
+	section.service-content
+		.container
+			.service-content__info
+				+layout('Информация', '')
+					p Большую часть жизни мы проводим внутри зданий — дом, в котором живём, офисы и промышленные объекты, в которых мы работаем или отдыхаем. Поэтому так важно основательно подойти к вопросу интерьера и внутренней отделки помещения.
+					p Фактура материалов, расположение мебели, цветовая гамма — это те вещи, которые сильно влияют на наши ощущения, а значит и на эмоции. Именно окружение настраивает нас на определённое времяпрепровождение: дома мы создаём атмосферу уюта, заботы и отдыха, а в офисах и промышленных объектах обращаем внимание на удобство для рабочего процесса.
+					p Наши специалисты разработают для вас дизайн-проект, учитывающий ваши пожелания и особенности эксплуатации помещения, чтобы создать идеальные условия для жизни, работы и отдыха.
+			.service-content__services
+				+layout('Перечень', 'услуг')
+					.service-content__slider
+						.slider-service
+							// Additional required wrapper
+							.swiper-wrapper
+								// Slides
+								.swiper-slide 
+									.card-service 
+										.card-service__title
+											| Консультация
+										.card-service__description
+											p Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.
+										.card-service__button
+											a.btn-secondary.btn-secondary--icon.icon-arrow-right Заказать услугу
+								
+								.swiper-slide 
+									.card-service 
+										.card-service__title
+											| Консультация
+										.card-service__description
+											p Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.
+										.card-service__button
+											a.btn-secondary.btn-secondary--icon.icon-arrow-right Заказать услугу
+								
+
+								.swiper-slide 
+									.card-service 
+										.card-service__title
+											| Консультация
+										.card-service__description
+											p Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.
+										.card-service__button
+											a.btn-secondary.btn-secondary--icon.icon-arrow-right Заказать услугу
+								
+
+
+								.swiper-slide 
+									.card-service 
+										.card-service__title
+											| Консультация
+										.card-service__description
+											p Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.
+										.card-service__button
+											a.btn-secondary.btn-secondary--icon.icon-arrow-right Заказать услугу
+							.swiper-buttons
+								.swiper-button-next
+								.swiper-button-prev
+							.swiper-scrollbar
+				.service-content__gallery
+					.service-content__gallery-title Галерея
+					.service-content__gallery-slider 
+						.slider-gallery
+							// Additional required wrapper
+							.swiper-wrapper
+
+								.swiper-slide 
+									.card-gallery
+										.card-gallery__img 
+											img(src="img/gallery1.png", alt="")
+										.card-gallery__description
+											p Противоположная точка зрения подразумевает, что представители современных социальных.
+								.swiper-slide 
+									.card-gallery
+										.card-gallery__img 
+											img(src="img/gallery2.png", alt="")
+										.card-gallery__description
+											p Противоположная точка зрения подразумевает, что представители современных социальных.
+								.swiper-slide 
+									.card-gallery
+										.card-gallery__img 
+											img(src="img/gallery3.png", alt="")
+										.card-gallery__description
+											p Противоположная точка зрения подразумевает, что представители современных социальных.
+
+							.swiper-buttons
+								.swiper-button-next
+								.swiper-button-prev
+							.swiper-scrollbar
+	include common/projects.pug
+	include common/question.pug
+	+contacts('contacts--dark')

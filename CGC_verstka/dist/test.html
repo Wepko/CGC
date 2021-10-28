@@ -24,12 +24,13 @@
     </div>
     <section class="container">
       <div class="test-block">
-        <div class="can-toggle demo-rebrand-1 can-toggle--size-large">
-          <input id="d" type="checkbox" name="">
-          <label for="d">
-            <div class="can-toggle__switch" data-checked="Фото" data-unchecked="Видео"></div>
-          </label>
-        </div>
+        <label class="field" id="img_category_label" for="img_category" data-value=""><span>Pick a site</span>
+          <div class="psuedo_select" id="img_category" name="img_category"><span class="selected"></span>
+            <ul class="options" id="img_category_options"></ul>
+            <li class="option" data-value="opt_1" onclick="goToSite('https://www.reddit.com/')">Reddit</li>
+            <li class="option" data-value="opt_2" onclick="goToSite('https://www.google.com/')">Google</li>
+          </div>
+        </label>
       </div>
     </section>
     <section class="projects">

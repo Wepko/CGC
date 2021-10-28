@@ -1,5 +1,16 @@
 import BadgerAccordion from 'badger-accordion';
 
+
+
+const accordions = document.querySelectorAll('.js-badger-accordion');
+
+Array.from(accordions).forEach((accordion) => {
+    const ba = new BadgerAccordion(accordion);
+
+    console.log(ba.getState([0]));
+});
+
+
 {
   //const swiperOne = new Swiper('.slider', {loop:false})
     
@@ -19,20 +30,6 @@ import BadgerAccordion from 'badger-accordion';
   }
   
 }
-
-
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const q = document.querySelector('.projects__filter-next');
-    const a1 = document.querySelector('.projects__filter-top'); 
-    console.log(a1);
-    q.onclick = () => {
-      a1.classList.toggle('active');
-    }
-
-  })
-
 
 
 

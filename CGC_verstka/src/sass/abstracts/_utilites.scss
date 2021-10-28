@@ -1,7 +1,7 @@
 %title-h1 {
 	font-weight: 300;
 	line-height: 1;
-	font-size: 7.5rem;
+	font-size: 7.5rem!important;
 	
 	@include respond(phone) {
 		font-size: 5.5rem;
@@ -27,4 +27,10 @@
     padding: 10rem 0;
     background-color: $color-blue-dark;
     color: $color-white;
+}
+
+@mixin parent {
+	&:nth-child(1) {
+		padding-left: 40rem;
+	}
 }

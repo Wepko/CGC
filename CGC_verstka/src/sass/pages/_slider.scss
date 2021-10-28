@@ -232,11 +232,11 @@
     (
       160px, // Toggle width
       50px,  // Toggle height
-      4px,   // Toggle border radius
-      2px,   // Offset (distance btw switch and box)
+      0px,   // Toggle border radius
+      4px,   // Offset (distance btw switch and box)
       14px,  // Label font size
       14px,  // Switch font size
-      0 4px 4px rgba(black, 0.4) // Switch shadow on hover/focus
+      none // Switch shadow on hover/focus
     ); 
   }
   

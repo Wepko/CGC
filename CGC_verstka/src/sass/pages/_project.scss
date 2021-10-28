@@ -1,0 +1,115 @@
+.project-header {
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title h1 {
+        @extend %title-h1;
+        margin: 4rem 0;
+    }
+
+    &__image img {
+        width: 100%;
+    }
+}
+
+.square {
+    border: 2px solid #e3e1db;
+    display: block;
+    height: 6rem;
+    margin-left: auto;
+    width: 6rem;
+
+    i {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: all ease-in-out .2s;
+        color:  #dfd5ba;
+        font-size: 2.5rem;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.project-content {
+    &__wrapper {
+        margin: 10rem 0;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+       
+        &-block {
+            max-width: 25rem;
+            margin-left: 4.5rem;
+            position: relative;
+
+
+            h3 {
+                font-size: 1.8rem;
+                color: $color-blue-dark;
+                font-weight: 500;
+            }
+
+            p {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            &::before {
+                font-size: 2rem;
+                position: absolute;
+                top: 0;
+                left: -4rem;
+                color: $color-primary;
+            }
+        }
+
+        &-button {
+            margin-left: auto;
+        }
+    }
+
+    &__description {
+        &-text p {
+            margin: 1.5rem 0;
+        }
+    }
+
+}
+
+
+
+// section.project-content
+// 		.container
+// 			+layout('Информация')
+// 				.project-content__info
+// 					.project-content__info-place
+// 						h4 Место реализации
+// 						p Проект реализован в коттеджном посёлке Прерий
+// 					.project-content__info-time
+// 						h4 Время реализации
+// 						p 12 месяцев
+// 					.project-content__info-button
+// 						a.btn-primary live Камера
+// 			+layout('Характеристики')
+// 				.project-content__description 
+// 					.project-content__description-text
+// 						p Представляем вам проект дома «Гран-Парадизо»!
+// 						p Дом спроектирован в лучших традициях архитектурного стиля прерий. Четкие линии и парящие крыши идеально вписывают здание в ландшафт, а панорамное остекление наполняет помещение естественным светом. При отделке используются натуральные материалы и естественные цвета, которые гармонично сливаются с пейзажем.
+// 						p Архитектура в стиле прерий вписывает здания в окружающую среду, сохраняя уют и простор.
+// 						p Объект сдается по договору подряда с полученным на заказчика правом собственности на дом и комплектом исходно-разрешительной документацией.
+// 					.project-content_description-feature
+// 						.features
+// 							.features-row 
+// \

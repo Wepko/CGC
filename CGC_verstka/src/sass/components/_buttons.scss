@@ -82,6 +82,31 @@
 	
 }
 
+.btn-live {
+    box-sizing: border-box;
+	@extend %btn;
+    color: $color-white;
+    background: #D25858;
+    position: relative;
+    padding-left: 4rem;
+    transition: .5s;
+    &::before {
+        content: '';
+        width: 0.6rem;
+        height: 0.6rem;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 2rem;
+        clip-path: circle(50% at 50% 50%);
+    }
+
+    &:hover {
+        background: #ae4545;
+    }
+}
+
 
 
 $backgroundColor: $color-primary;

@@ -6,9 +6,237 @@ include common/mixins.pug
 
 
 block title 
-	| catalog CGC Carat Global Construction
+	| projects CGC Carat Global Construction
 
 
 
 block content
 	+header('header--light')
+	section.catalog.header-clear
+		.container
+			.catalog__title
+				h1
+					| Каталог 
+					span.text-accent проектов
+			.catalog__filter
+				.catalog__filter-area 
+					select#s(name="r") 
+						option(value="", data-display="Площадь") Любая1
+						option(value="") До 2001
+						option(value="")  От 200 до 300
+						option(value="")  От 300 до 400
+						option(value="")  Более 400
+				.catalog__filter-bedroom
+					select#s(name="r") 
+						option(value="", data-display="Колличество спален") Любая2
+						option(value="") До 2002
+						option(value="")  От 200 до 300
+						option(value="")  От 300 до 400
+						option(value="")  Более 400
+				.catalog__filter-bathroom 
+					select#s(name="r") 
+						option(value="", data-display="Колличество сан узлов") Любая3
+						option(value="") До 2003
+						option(value="")  От 200 до 300
+						option(value="")  От 300 до 400
+						option(value="")  Более 400
+				.catalog__filter-backspace
+					span Сбросить фильтр
+					i.icon-backspace
+
+			.projects__product
+				.card-product
+					img(src='img/home4.png' alt='')
+					.card-product__components
+						.card-product__tag
+							p.tag.tag_solid Обьект в продаже
+						.card-product__title Монблан VS
+						.card-product__description
+							.card-product__description-icons
+								span.icon-icon1
+									| 160 м
+									sup 2
+								span.icon-icon2 4
+								span.icon-icon3 от 6.0 соток
+								span.icon-icon4 2
+							.card-product__description-text
+								p
+									| Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...
+						.card-product__button
+							a.btn-secondary.btn-secondary--icon.icon-arrow-right(href='#')  Подробнее
+				.card-product
+					img(src='img/home4.png' alt='')
+					.card-product__components
+						.card-product__tag
+							p.tag.tag_solid Обьект в продаже
+						.card-product__title Монблан VS
+						.card-product__description
+							.card-product__description-icons
+								span.icon-icon1
+									| 160 м
+									sup 2
+								span.icon-icon2 4
+								span.icon-icon3 от 6.0 соток
+								span.icon-icon4 2
+							.card-product__description-text
+								p
+									| Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...
+						.card-product__button
+							a.btn-secondary.btn-secondary--icon.icon-arrow-right(href='#')  Подробнее
+				.card-product
+					img(src='img/home4.png' alt='')
+					.card-product__components
+						.card-product__tag
+							p.tag.tag_solid Обьект в продаже
+						.card-product__title Монблан VS
+						.card-product__description
+							.card-product__description-icons
+								span.icon-icon1
+									| 160 м
+									sup 2
+								span.icon-icon2 4
+								span.icon-icon3 от 6.0 соток
+								span.icon-icon4 2
+							.card-product__description-text
+								p
+									| Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...
+						.card-product__button
+							a.btn-secondary.btn-secondary--icon.icon-arrow-right(href='#')  Подробнее
+				.card-product
+					img(src='img/home4.png' alt='')
+					.card-product__components
+						.card-product__tag
+							p.tag.tag_solid Обьект в продаже
+						.card-product__title Монблан VS
+						.card-product__description
+							.card-product__description-icons
+								span.icon-icon1
+									| 160 м
+									sup 2
+								span.icon-icon2 4
+								span.icon-icon3 от 6.0 соток
+								span.icon-icon4 2
+							.card-product__description-text
+								p
+									| Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...
+						.card-product__button
+							a.btn-secondary.btn-secondary--icon.icon-arrow-right(href='#')  Подробнее
+				.card-product
+					img(src='img/home4.png' alt='')
+					.card-product__components
+						.card-product__tag
+							p.tag.tag_solid Обьект в продаже
+						.card-product__title Монблан VS
+						.card-product__description
+							.card-product__description-icons
+								span.icon-icon1
+									| 160 м
+									sup 2
+								span.icon-icon2 4
+								span.icon-icon3 от 6.0 соток
+								span.icon-icon4 2
+							.card-product__description-text
+								p
+									| Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...
+						.card-product__button
+							a.btn-secondary.btn-secondary--icon.icon-arrow-right(href='#')  Подробнее
+				.card-product
+					img(src='img/home4.png' alt='')
+					.card-product__components
+						.card-product__tag
+							p.tag.tag_solid Обьект в продаже
+						.card-product__title Монблан VS
+						.card-product__description
+							.card-product__description-icons
+								span.icon-icon1
+									| 160 м
+									sup 2
+								span.icon-icon2 4
+								span.icon-icon3 от 6.0 соток
+								span.icon-icon4 2
+							.card-product__description-text
+								p
+									| Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...
+						.card-product__button
+							a.btn-secondary.btn-secondary--icon.icon-arrow-right(href='#')  Подробнее
+				.card-product
+					img(src='img/home4.png' alt='')
+					.card-product__components
+						.card-product__tag
+							p.tag.tag_solid Обьект в продаже
+						.card-product__title Монблан VS
+						.card-product__description
+							.card-product__description-icons
+								span.icon-icon1
+									| 160 м
+									sup 2
+								span.icon-icon2 4
+								span.icon-icon3 от 6.0 соток
+								span.icon-icon4 2
+							.card-product__description-text
+								p
+									| Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...
+						.card-product__button
+							a.btn-secondary.btn-secondary--icon.icon-arrow-right(href='#')  Подробнее
+				.card-product
+					img(src='img/home4.png' alt='')
+					.card-product__components
+						.card-product__tag
+							p.tag.tag_solid Обьект в продаже
+						.card-product__title Монблан VS
+						.card-product__description
+							.card-product__description-icons
+								span.icon-icon1
+									| 160 м
+									sup 2
+								span.icon-icon2 4
+								span.icon-icon3 от 6.0 соток
+								span.icon-icon4 2
+							.card-product__description-text
+								p
+									| Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...
+						.card-product__button
+							a.btn-secondary.btn-secondary--icon.icon-arrow-right(href='#')  Подробнее
+				.card-product
+					img(src='img/home4.png' alt='')
+					.card-product__components
+						.card-product__tag
+							p.tag.tag_solid Обьект в продаже
+						.card-product__title Монблан VS
+						.card-product__description
+							.card-product__description-icons
+								span.icon-icon1
+									| 160 м
+									sup 2
+								span.icon-icon2 4
+								span.icon-icon3 от 6.0 соток
+								span.icon-icon4 2
+							.card-product__description-text
+								p
+									| Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...
+						.card-product__button
+							a.btn-secondary.btn-secondary--icon.icon-arrow-right(href='#')  Подробнее
+				.card-product
+					img(src='img/home4.png' alt='')
+					.card-product__components
+						.card-product__tag
+							p.tag.tag_solid Обьект в продаже
+						.card-product__title Монблан VS
+						.card-product__description
+							.card-product__description-icons
+								span.icon-icon1
+									| 160 м
+									sup 2
+								span.icon-icon2 4
+								span.icon-icon3 от 6.0 соток
+								span.icon-icon4 2
+							.card-product__description-text
+								p
+									| Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...
+						.card-product__button
+							a.btn-secondary.btn-secondary--icon.icon-arrow-right(href='#')  Подробнее
+			.projects__buttons
+				a(href="").btn-primary.btn-primary--outline.btn-primary--icon.icon-arrow-right
+					| Загрузить еще
+	include common/question.pug
+	+contacts('contacts--dark')

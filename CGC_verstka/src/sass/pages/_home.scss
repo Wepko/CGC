@@ -115,29 +115,7 @@ h2 {
 	}
 
 	&__features {
-		display: flex;
-		flex-wrap: wrap;
 		margin-top: 12rem;
-			
-		@include respond(phone) {
-			display: none;
-		}
-		&-el {
-			margin-right: 1rem;
-			padding: 0 2.4rem;
-			border-left: 2px solid transparentize($color-white, 0.7);
-			
-			h4 {
-				font-weight: 500;
-				font-size: 2.4rem;
-			}
-
-			p {
-				font-size: 1.6rem;
-				font-weight: 300;
-			}
-
-		}
 	}
 }
 
@@ -297,10 +275,12 @@ h2 {
 }
 
 .projects {
-	padding: 8rem 0 16rem 0;
 	overflow: hidden;
-
-
+	margin-bottom: 10rem;
+	
+	@include respond(phone) {
+		margin-bottom: 5rem;
+	}
 	&__title {
 		@extend %title;
 		display: flex;
@@ -337,7 +317,7 @@ h2 {
 			transition: .5s;
 
 		}
-		&-top.active {
+		&-top.activate {
 			max-height: inherit;
 			overflow: inherit;
 			transition: .5s;
@@ -436,6 +416,14 @@ h2 {
 .slider-project {
 	position: relative;
 	width: auto;
+
+	// margin-left: auto;
+    // margin-right: auto;
+    // position: relative;
+    // overflow: hidden;
+    // list-style: none;
+    // padding: 0;
+    // z-index: 1;
 	@include respond(phone) {
 		font-size: 0.8rem;
 		width: 32.5rem;
@@ -480,6 +468,207 @@ h2 {
 		}
 	}
 }
+
+.slider-service {
+	width: 120rem;
+	height: 100%;
+
+	margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+	@include respond(phone) {
+		font-size: 0.8rem;
+		width: 32.5rem;
+	}
+
+	.swiper-button-next::after, .swiper-button-prev::after {
+		color: $color-black;
+	}
+
+	.swiper-button-next {
+		right: 21rem;
+		@include respond(phone) {
+			right: 1rem;
+		}
+	}
+	.swiper-button-prev {
+		left: 73rem;
+		@include respond(phone) {
+			left: 0rem;
+		}
+	}
+
+	.swiper-buttons {
+		position: relative;
+		bottom: 1rem;
+		left: 0rem;
+		font-size: 1.4rem;
+		@include respond(phone) {
+			left: 0;
+			bottom: -10rem;
+		}
+	}
+
+	.swiper-scrollbar {
+		width: 15.5rem;
+		bottom: 1rem;
+		left: 78rem;
+		background: transparentize(#101820, 0.7);
+
+		@include respond(phone) {
+			bottom: -10rem;
+			left: 65%;
+			width: 55%;
+			transform: translateX(-85%);
+		}
+	}
+}
+
+
+
+.slider-gallery {
+	position: relative;
+	width: 60rem;
+
+	// margin-left: auto;
+    // margin-right: auto;
+    // position: relative;
+    // overflow: hidden;
+    // list-style: none;
+    // padding: 0;
+    // z-index: 1;
+	@include respond(phone) {
+		font-size: 0.8rem;
+		width: 32.5rem;
+	}
+
+	.swiper-button-next::after, .swiper-button-prev::after {
+		color: $color-black;
+	}
+
+	.swiper-button-next {
+		@include respond(phone) {
+			right: 2.5rem;
+		}
+	}
+	.swiper-button-prev {
+		@include respond(phone) {
+			left: 0rem;
+		}
+	}
+
+	.swiper-buttons {
+		position: relative;
+		bottom: -5rem;
+		left: 100rem;
+		font-size: 1.6rem;
+		@include respond(phone) {
+			left: 0;
+			bottom: -10rem;
+		}
+	}
+
+	.swiper-scrollbar {
+		bottom: -5.3rem;
+		left: 107rem;
+		background: transparentize(#101820, 0.7);
+
+		@include respond(phone) {
+			bottom: -10rem;
+			left: 65%;
+			width: 55%;
+			transform: translateX(-85%);
+		}
+	}
+}
+
+
+.slider-gallery-min {
+	position: relative;
+	width: 120rem;
+
+	// margin-left: auto;
+    // margin-right: auto;
+    // position: relative;
+    // overflow: hidden;
+    // list-style: none;
+    // padding: 0;
+    // z-index: 1;
+	@include respond(phone) {
+		font-size: 0.8rem;
+		width: 32.5rem;
+	}
+
+	.swiper-button-next::after, .swiper-button-prev::after {
+		color: $color-black;
+	}
+
+	.swiper-button-next {
+		right: 14rem;
+		@include respond(phone) {
+			right: 2.5rem;
+		}
+	}
+	.swiper-button-prev {
+		left: 75rem;
+		@include respond(phone) {
+			left: 0rem;
+		}
+	}
+
+	.swiper-buttons {
+		position: relative;
+		bottom: -5rem;
+		font-size: 1.6rem;
+		@include respond(phone) {
+			left: 0;
+			bottom: -10rem;
+		}
+	}
+
+	.swiper-scrollbar {
+		width: 20rem;
+		bottom: -5rem;
+		left: 80rem;
+		background: transparentize(#101820, 0.7);
+
+		@include respond(phone) {
+			bottom: -10rem;
+			left: 65%;
+			width: 55%;
+			transform: translateX(-85%);
+		}
+	}
+}
+
+
+.accordion__gallery .card-gallery {
+	width: 29rem;
+	height: 16rem;
+}
+
+.accordion__gallery {
+	width: 100%;
+}
+
+.accordion__gallery .slider-gallery {
+	max-width: 200rem;
+	width: 100%;
+	margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+
+}
+
+
 
 
 

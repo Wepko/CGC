@@ -1,0 +1,36 @@
+.catalog {
+    margin-bottom: 10rem;
+    @include respond(phone) {
+        margin-bottom: 5rem;
+    }
+
+    &__title h1 {
+        @extend %title-h1;
+        margin: 5rem 0;
+    }
+
+    &__filter {
+        display:  flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 3rem 0;
+        font-size: 1.4rem;
+        &-backspace {
+            text-align: right;
+            flex: 1 0 18%!important;
+        }
+        span {
+            color: $color-blue-dark;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+    }
+
+    [class^="catalog__filter-"] {
+        flex: 1 0 25%;
+        margin-right: 2rem;
+    }
+}

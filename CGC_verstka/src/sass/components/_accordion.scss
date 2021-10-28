@@ -247,9 +247,9 @@ $transition-time: 0.2s;
 .badger-accordion__panel-subitem {
 	background-color: transparent;
 	padding: 4.9rem 0;
-  font-size: 2.4rem;
-  transition: ease-in-out .3s;
-  margin: 0 auto;
+	font-size: 2.4rem;
+	transition: ease-in-out .3s;
+	margin: 0 auto;
 	display: block;
 	min-height: 13rem;
 	text-align: center;
@@ -273,8 +273,52 @@ $transition-time: 0.2s;
 
 
 .-ba-is-active:nth-child(1) {
-		transition: .5s;
-		background: url('../img/accordian.png') no-repeat;
-		background-size: cover;
+	transition: .5s;
+	background: url('../img/accordian.png') no-repeat;
+	background-size: cover;
+	color: $color-white;
+}
+
+dl dl .-ba-is-active:nth-child(1) {
+	transition: .5s;
+	background-color: $color-primary;
+	color: $color-white;
+}
+
+dl dl {
+	overflow: hidden;
+}
+
+dl dl .badger-accordion__trigger {
+
+	background-color: transparent;
+	font-size: 2.4rem;
+	transition: ease-in-out .3s;
+	margin: 0 auto;
+	text-align: center;
+	color: $color-black;
+	text-decoration: none;
+
+	&:hover {
+		background-color: $color-primary;
 		color: $color-white;
+	}
+}
+
+
+
+.accordion {
+	padding: 4.5rem;
+
+	&__description {
+		max-width: 82.5rem;
+	}
+
+	&__switcher {
+		margin: 2rem 0;
+	}
+
+	&__buttons {
+		margin: 2rem 0;
+	}
 }

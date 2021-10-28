@@ -13,8 +13,12 @@ block title
 block content
 	section.container
 		.test-block
-			.can-toggle.demo-rebrand-1.can-toggle--size-large
-				input#d(type="checkbox", name="")
-				label(for="d")
-					.can-toggle__switch(data-checked="Фото", data-unchecked="Видео")
+			label#img_category_label.field(for='img_category' data-value='')
+				span Pick a site
+				#img_category.psuedo_select(name='img_category')
+					span.selected
+					ul#img_category_options.options
+					li.option(data-value='opt_1' onclick="goToSite('https://www.reddit.com/')") Reddit
+					li.option(data-value='opt_2' onclick="goToSite('https://www.google.com/')") Google
+
 	include common/projects.pug
