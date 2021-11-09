@@ -1,0 +1,254 @@
+.card-product {
+	max-width: 40rem;
+	min-height: 60rem;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	color: $color-grey-dark-4;
+	transition: .5s;
+
+	@include respond(phone) {
+		min-height: auto;
+	}
+
+
+
+	img {
+		width: 100%;
+		display: block;
+	}
+
+  &__components {
+		transition: .5s;
+		padding: 4.4rem;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		z-index: 5;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: radial-gradient(326.33% 120.1% at 48% 16.97%, rgba(32, 41, 69, 0) 0%, #202945 100%);
+		
+
+		&:hover {
+			box-shadow: 
+				5rem 10rem 20rem $color-blue-dark inset,
+				-5rem -10rem 20rem $color-blue-dark inset,
+				0 -40rem 30rem $color-blue-dark inset;
+
+			@include respond(phone) {
+				box-shadow: none;
+			}
+		}
+
+		&:hover .card-product__title {
+			transform: translateY(0);
+
+			@include respond(phone) {
+				transform: translateY(0rem);
+			}
+		}
+		.card-product__title::before {
+			@include respond(phone) {
+				display: none;
+			}
+		}
+		&:hover .card-product__title::before {
+			transform: translateY(5rem);
+			opacity: 0;
+	
+		}
+
+		&:hover .card-product__description {
+			opacity: 1;
+			visibility: inherit;
+			transform: translateY(0);
+
+			@include respond(phone) {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(0);
+			}
+		}
+
+		&:hover .card-product__description-icons {
+			transform: translateY(0);
+			@include respond(phone) {
+				transform: translateY(0);
+			}
+		}
+		
+	}
+
+	&__tag {
+		margin-top: 3.6rem;
+		line-height: 1;
+	}
+
+	&__title {
+		line-height: 1;
+		color: $color-white;
+		font-size: 2.4rem;
+		transform: translateY(28rem);
+		transition:  .5s;
+
+		@include respond(phone) {
+			margin: 2rem 0;
+			transform: translateY(0);
+		}		
+
+		&::before {
+			transition:  .5s;
+			content: 'Дом';
+			display: block;
+			color: $color-white;
+			font-size: 2.4rem;
+		}
+	}
+
+	&__description {
+		transform: translateY(28rem);
+		transition: .5s .1s;
+		color: $color-white;
+		opacity: 0;
+		visibility: hidden;
+		font-size: 1.6rem;
+		margin: 2.5rem 0;
+
+		@include respond(phone) {
+			transform: translateY(0);
+		}	
+		
+		&-icons {
+			transition: .5s;
+			display: flex;
+			flex-wrap: wrap;
+			span {
+				margin: 1rem 0;
+				flex: 1 0 50%;	
+				position: relative;
+				padding-left: 3.4rem;
+
+				&::before {
+					font-size: 2.4rem;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translateY(-50%);
+				}
+			}
+		}
+
+		&-text {
+			margin: 2.4rem 0;
+			@include respond(phone) {
+				display: none;
+			}
+		}
+	}
+
+	&__button {
+		margin-top: auto;
+	}
+
+
+}
+
+
+.card-product-js {
+	.card-product__components {
+
+		@include respond(phone) {
+			box-shadow: 2rem 5rem 10rem $color-blue-dark inset,
+			-2rem -5rem 10rem $color-blue-dark inset,
+			0 -20rem 15rem $color-blue-dark inset!important;
+		}
+
+		
+	}
+
+	&__tag {
+
+	}
+
+	.card-product__title {
+		@include respond(phone) {
+			transform: translateY(5rem)!important;
+		}
+
+		&::before {
+
+		}
+	}
+
+	.card-product__description {
+
+		@include respond(phone) {
+			opacity: 1!important;
+			visibility: visible!important;
+			transform: translateY(5rem)!important;
+		}
+		
+		&-icons {
+			opacity: 1!important;
+			visibility: visible!important;
+			
+		}
+
+		&-text {
+
+			@include respond(phone) {
+				display: none;
+			}
+		}
+	}
+
+	&__button {
+
+	}
+}
+
+
+.card-service {
+	max-width: 40rem;
+	min-height: 52rem;
+	padding: 4rem;
+	transition: .5s;
+	border-top: 0.2rem solid $color-primary;
+	display: flex;
+	flex-direction: column;
+	&:hover {
+		background: $color-primary;
+		color: $color-white;
+	}
+
+	&__title {
+		font-size: 1.8rem;
+		font-weight: 500;
+	}
+
+	&__description {
+		margin: 2.5rem 0;
+		line-height: 1.2;
+		font-size: 1.4rem;
+	}
+
+	&__button {
+		margin-top: auto;
+	}
+}
+
+.card-gallery {
+	max-width: 60rem;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	color: $color-grey-dark-4;
+	transition: .5s;
+
+	&__img img {
+		width: 100%;
+	}
+}

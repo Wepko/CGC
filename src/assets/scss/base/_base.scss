@@ -1,0 +1,164 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+h1,h2,h3 {font-size:100%; font-weight: 400;}
+
+
+
+
+
+html {
+  // this defines what a 1rem is
+  font-size: 62.5%;
+
+  @include respond(big-desktop) {
+    font-size: 62.5%; //1rem = 10px, 
+  }
+
+  @include respond(tab-land) { // width < 1400?
+    font-size: 53.25%; //1 rem = 9px, (50)
+  }
+
+  @include respond(tab-port) { // width < 900?
+    font-size: 42.5%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(phone) { // width < 600?
+    font-size: 50%; //1 rem = 9px, 9/16 = 50%
+  }
+
+}
+
+
+@include font('GothamProCGC', normal, 300, '../fonts/GothamPro/GothamPro-Light.ttf');
+@include font('GothamProCGC', normal, 400, '../fonts/GothamPro/GothamPro.ttf');
+@include font('GothamProCGC', normal, 500, '../fonts/GothamPro/GothamPro-Medium.ttf');
+
+//@include font('icomoon', normal, 400, '../iconfonts/fonts/icomoon/icomoon.ttf');
+
+
+@import 'node_modules/swiper/swiper-bundle';
+
+body {
+  box-sizing: border-box;
+  font-size: $default-font-size;
+  font-family: $defualt-font-family;
+	line-height: $default-line-height;
+	color: $color-grey-dark-4;
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+}
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/iconfont/fonts/icomoon.eot?bg0zp2');
+  src:  url('../fonts/iconfont/fonts/icomoon.eot?bg0zp2#iefix') format('embedded-opentype'),
+    url('../fonts/iconfont/fonts/icomoon.ttf?bg0zp2') format('truetype'),
+    url('../fonts/iconfont/fonts/icomoon.woff?bg0zp2') format('woff'),
+    url('../fonts/iconfont/fonts/icomoon.svg?bg0zp2#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+
+.header-clear {
+  padding-top: 20rem!important;
+}
+
+.title-h1 {
+  @extend %title-h1;
+}
+
+[class^="icon-"]::before, [class*=" icon-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.icon-adress-bold:before {
+  content: "\e915";
+}
+.icon-backspace:before {
+  content: "\e904";
+}
+.icon-time:before {
+  content: "\e905";
+}
+.icon-magic:before {
+  content: "\e903";
+}
+.icon-professional:before {
+  content: "\e900";
+}
+.icon-socail:before {
+  content: "\e901";
+}
+.icon-rocet:before {
+  content: "\e902";
+}
+.icon-icon4:before {
+  content: "\e906";
+}
+.icon-icon3:before {
+  content: "\e907";
+}
+.icon-icon2:before {
+  content: "\e908";
+}
+.icon-icon1:before {
+  content: "\e909";
+}
+.icon-instagram:before {
+  content: "\e90a";
+}
+.icon-twiter:before {
+  content: "\e90b";
+}
+.icon-facebook:before {
+  content: "\e90c";
+}
+.icon-phone:before {
+  content: "\e90d";
+}
+.icon-email:before {
+  content: "\e90e";
+  font-size: 1.2rem;
+}
+.icon-clip:before {
+  content: "\e90f";
+}
+.icon-plus:before {
+  content: "\e910";
+}
+.icon-arrow-down:before {
+  content: "\e911";
+  font-size: .8rem;
+}
+.icon-arrow-right:before {
+  content: "\e912";
+}
+.icon-gift:before {
+  content: "\e914";
+}
+.icon-adress:before {
+  content: "\e913";
+}

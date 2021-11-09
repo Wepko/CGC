@@ -1,0 +1,153 @@
+.about {
+    &__title {
+        @extend %title-h1;
+        margin: 8rem 0 10rem 0;
+        @include respond(phone) {
+            margin: 4rem 0 5rem 0;
+        }
+    }
+
+    &__content {
+
+    }
+
+    &__description {
+        p:nth-child(even) {
+            margin: 2rem 0;
+        }
+    }
+
+    &__benefit {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    &-benefit {
+        flex: 1 0 50%;
+
+        @include respond(phone) {
+            flex: 1 0 100%;
+        }
+
+        ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+            list-style: inherit;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+        &::before {
+            display: inline-block;
+            margin: 2rem 0;
+            font-size: 2.5rem;
+            color: $color-primary;
+        }
+    }
+
+    &__command {
+        margin: 14rem 0;
+        p:nth-child(2) {
+            margin: 4.5rem 0 4.5rem 10rem;
+            @include respond(phone) {
+                margin: 4.5rem 0 4.5rem 0rem;
+            }
+        }
+    }
+
+}
+
+.process {
+    @extend %bg-wrapper;
+
+    &__title {
+        @extend %title;
+    }
+
+    &__description {
+        margin:  3rem 0;
+        max-width: 80rem;
+
+        p:nth-child(even) {
+            margin: 2rem 0;
+        }
+    }
+
+    &__steps {
+
+    }
+
+    .steps {
+        counter-reset: li; 
+        padding: 1rem 2rem;
+        max-width: 80rem;
+
+        &__item {
+            border-left: 2px dashed transparentize($color-white, 0.6);
+            position: relative;
+            transition: .5s;
+
+      
+
+            &:nth-last-child(1) {
+                border: none;
+            }
+
+            h3, .steps__content {
+                margin-left: 7rem;
+            }
+
+            h3 {
+                font-size: 1.8rem;
+                font-weight: 500;
+                padding-top: 1rem;
+                line-height: 1;
+            }
+
+            .steps__content {
+                margin-top: 3rem;
+                padding-bottom: 15rem;
+            }
+
+            ul {
+                margin-top: 4rem;
+                list-style: disc;
+                padding: 0 2rem;
+            }
+
+            li {
+                margin: 2rem 0;
+            }
+
+            &::before {
+                font-size: 1.8rem;
+                font-weight: 500;
+                text-align: center;
+                line-height: 5.8rem;
+                counter-increment: li;
+                position: absolute;
+                left: -2.9rem;
+                top: -5px;
+                content: counter(li);
+                border-radius: 500%;
+                background: $color-white;
+                color: $color-primary;
+                height: 5.8rem;
+                width: 5.8rem;
+                transition: all 500ms ease-in-out;
+            }
+
+
+        }
+
+        .steps__item:hover::before {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+    }
+
+}

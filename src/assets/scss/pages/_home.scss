@@ -1,0 +1,759 @@
+
+:root {
+	--swiper-theme-color: #fff;
+}
+
+h2 {
+	font-weight: normal;
+}
+
+
+.anim-arrow-js {
+	transition: .5s;
+	transform: rotate(-90deg)!important;
+}
+
+.main-page {
+	position: relative;
+}
+
+.main {
+	min-height: 140rem;
+	padding-top: 15.5rem;
+	padding-bottom: 10rem;
+
+	@include respond(phone) {
+		min-height: 100vh;
+	}
+}
+
+.bg-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 0;
+	min-height: 140rem;
+	transform: matrix(1, 0, 0, -1, 0, 0);
+	background: radial-gradient(180.27% 129.8% at 76.25% 114.75%, rgba(32, 41, 69, 0) 0%, rgba(32, 41, 69, 0.441149) 25.57%, rgba(32, 41, 69, 0.685816) 50.45%, #202945 100%);
+	box-sizing: content-box;
+
+	@include respond(phone) {
+		min-height: 100vh;
+	}
+}
+
+.container {
+  width: 100%;
+  max-width: 124rem;
+  margin: 0 auto;
+  padding: 0 3.5rem;
+}
+
+
+.text-accent {
+	font-weight: 500;
+}
+
+.tag {
+	font-size: 1.4rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+	padding: 1rem 2rem;
+	background-color: $color-tag;
+	display: inline-block;
+	line-height: 1;
+
+	&_solid {
+		color: $color-white;
+		background-color: $color-grey;
+	}
+}
+
+
+
+.info-block {
+	position: relative;
+	z-index: 10;
+	color: $color-white;
+	max-width: 92rem;
+	margin-top: 9.4rem;
+
+	@include respond(phone) {
+		margin-top: 1rem;
+	}
+
+	&__tag {
+		margin: 2rem 0;
+	}
+
+	&__title {
+		font-weight: 300;
+		line-height: 1;
+		font-size: 7.5rem;
+
+		@include respond(phone) {
+			font-size: 4.5rem;
+		}
+	}
+
+	&__description {
+		margin: 3.5rem 0 4.5rem 0
+	}
+
+	&__buttons a:nth-child(1) {
+		margin-right: 5rem;
+
+		@include respond(phone) {
+			margin-bottom: 2rem;
+			margin-right: 0rem;
+			
+		}
+	}
+
+	&__features {
+		margin-top: 12rem;
+	}
+}
+
+.about-company {
+	position: relative;
+	display: flex;
+	margin-top: -54.4rem;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+
+	&.reset {
+		margin-top: 0;
+		background-color: $color-blue-dark;
+	}
+
+	@include respond(phone) {
+		display: block;
+		width: 100%;
+		margin-top: 0;
+	}
+
+	&__title {
+		text-align: right;
+		padding-right: 20rem;
+		line-height: 1;
+		font-weight: 300;
+		font-size: 5.5rem;
+		color: $color-white;
+		flex: .4 0 0;
+		background-color: transparent;
+
+		h2 {
+			font-size: inherit;
+			font-weight: inherit;
+		}
+
+		@include respond(phone) {
+			display: none;
+			position: absolute;
+			top: 0;
+		}
+	
+	}
+
+	&__description {
+		position: relative;
+		box-shadow: 0px 73px 221px rgba(32, 41, 69, 0.06), 0px 22.0074px 66.625px rgba(32, 41, 69, 0.0390953), 0px 9.14073px 27.6726px rgba(32, 41, 69, 0.03), 0px 3.30602px 10.0086px rgba(32, 41, 69, 0.0209047);
+		min-height: 60.5rem;
+		padding: 10.4rem;
+		flex: .6 0 0;
+		background-color: $color-white;
+		align-items: center;
+
+
+		h2 {
+			@extend %title;
+			display: none;
+
+			@include respond(phone) {
+				display: block;
+			}
+		}
+
+		@include respond(phone) {
+			padding: 6rem 3.5rem ;
+		}
+
+		p {
+			max-width: 55rem;
+			font-size: 1.8rem;
+		}
+
+		p:nth-child(2) {
+			margin: 2rem 0;
+		}
+
+	}
+
+	&__button {
+		margin-top: 6rem;
+	}
+}
+
+.service {
+	min-height: 60rem;
+	padding: 10rem 0;
+	&__title {
+		@extend %title;
+		padding: 0 3.5rem;
+	}
+
+	&__description {
+		@extend %description;
+		line-height: 1.5;
+		max-width: 50rem;
+		margin: 3rem 0 1rem 0;
+		padding: 0 3.5rem;
+	}
+}
+
+.benefit {
+	padding: 8rem 0;
+	color: $color-white;
+	background: url('../img/layer-bg.png') no-repeat $color-blue-dark;
+	background-position: 90%;
+
+	&__title {
+		@extend %title;
+	}
+
+	&__description {
+		@extend %description;
+		display: flex;
+		flex-wrap: wrap;
+		margin: 6rem 0;
+
+		& >	p {
+			max-width: 31rem;
+			margin-right: 10rem;
+		}
+	}
+
+}
+
+.mark-items {
+	display: flex;
+	flex-wrap: wrap;
+	// margin: 0 10rem;
+	flex: 1 0 0;
+	font-weight: 300;
+
+	@include respond(phone) {
+		margin: 0;
+	}
+
+	&__item {
+		flex: 1 0 0;
+		@include respond(phone) {
+			flex-basis: 50%;
+		}
+		p:nth-child(1) {
+			line-height: 1;
+			font-size: 7.5rem;
+			font-weight: 500;
+		}
+		
+		p:nth-child(2) {
+			max-width: 13.5rem;
+		}
+		p:nth-child(1),	p:nth-child(2)  {
+			@include respond(phone) {
+				line-height: 1.8;
+			}
+		}
+	}
+}
+
+.projects {
+	overflow: hidden;
+	margin-bottom: 10rem;
+	padding-top: 10rem;
+	@include respond(phone) {
+		margin-bottom: 5rem;
+	}
+
+	&__title {
+		@extend %title;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 5.5rem;
+
+		@include respond(phone) {
+			a {
+				display:  none;
+			}
+		}
+	}
+
+	&__filter {
+		@include respond(phone) {
+			display: none;
+		}
+
+		&-switcher {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin: 2rem 0;
+			@include respond(phone) {
+				display: none;
+			}
+		}
+
+		&-services {
+			display: flex;
+		}
+
+		&-services.active {
+			max-height: 6rem;
+			overflow: hidden;
+		}
+
+		&-buttons {
+			display: flex;
+			flex-wrap: wrap;
+			flex: .95 0 0;
+		}
+
+		&-button {
+			padding: 1.8rem 4rem 1.8rem 0;
+			text-decoration: none;
+
+			input {
+				position: absolute;
+				top: 0;
+				opacity: 0;
+				z-index: -1000;
+			}
+
+			input:checked ~ label {
+				color: $color-grey-dark-4;
+				border-bottom:  1px dashed $color-grey-dark-4;
+			}
+
+			label {
+				cursor: pointer;
+				color: $color-grey;
+			}
+		}
+
+		&-next {
+			flex: .05 0 0;
+			transition: .5s;
+			cursor: pointer;
+			line-height: 6rem;
+			i::before {
+				font-size: 1.25rem;
+			}
+
+			i {
+				transition: .2s;
+				transform: rotate(90deg);
+				display: inline-block;
+				margin-left: 0.5rem;
+			}
+			color: $color-primary;
+		}
+	}
+
+	&__product {
+		position: relative;
+		margin: 4rem 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill,minmax(200px, 38rem));
+		grid-gap: 1rem;
+		@include respond(phone) {
+			justify-content: center;
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+	}
+
+}
+
+
+
+
+.swiper-button-next::after {
+	content: 'Вперед';
+}
+
+.swiper-button-prev::after {
+	content: 'Назад';
+}
+
+.swiper-container-horizontal>.swiper-scrollbar {
+	width: 60%;
+	height: 1px;
+	background-color: $color-white;
+}
+
+
+
+
+
+.slider-project {
+	position: relative;
+	width: auto;
+
+	// margin-left: auto;
+    // margin-right: auto;
+    // position: relative;
+    // overflow: hidden;
+    // list-style: none;
+    // padding: 0;
+    // z-index: 1;
+	@include respond(phone) {
+		font-size: 0.8rem;
+		width: 32.5rem;
+	}
+
+	.swiper-button-next::after, .swiper-button-prev::after {
+		color: $color-black;
+	}
+
+	.swiper-button-next {
+		@include respond(phone) {
+			right: 2.5rem;
+		}
+	}
+	.swiper-button-prev {
+		@include respond(phone) {
+			left: 0rem;
+		}
+	}
+
+	.swiper-buttons {
+		position: relative;
+		bottom: -5rem;
+		left: 100rem;
+		font-size: 1.6rem;
+		@include respond(phone) {
+			left: 0;
+			bottom: -10rem;
+		}
+	}
+
+	.swiper-scrollbar {
+		bottom: -5.3rem;
+		left: 107rem;
+		background: transparentize(#101820, 0.7);
+
+		@include respond(phone) {
+			bottom: -10rem;
+			left: 65%;
+			width: 55%;
+			transform: translateX(-85%);
+		}
+	}
+}
+
+.slider-service {
+	width: 120rem;
+	height: 100%;
+
+	margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+	@include respond(phone) {
+		font-size: 0.8rem;
+		width: 32.5rem;
+	}
+
+	.swiper-button-next::after, .swiper-button-prev::after {
+		color: $color-black;
+	}
+
+	.swiper-button-next {
+		right: 21rem;
+		@include respond(phone) {
+			right: 1rem;
+		}
+	}
+	.swiper-button-prev {
+		left: 73rem;
+		@include respond(phone) {
+			left: 0rem;
+		}
+	}
+
+	.swiper-buttons {
+		position: relative;
+		bottom: 1rem;
+		left: 0rem;
+		font-size: 1.4rem;
+		@include respond(phone) {
+			left: 0;
+			bottom: -10rem;
+		}
+	}
+
+	.swiper-scrollbar {
+		width: 15.5rem;
+		bottom: 1rem;
+		left: 78rem;
+		background: transparentize(#101820, 0.7);
+
+		@include respond(phone) {
+			bottom: -10rem;
+			left: 65%;
+			width: 55%;
+			transform: translateX(-85%);
+		}
+	}
+}
+
+
+
+.slider-gallery {
+	position: relative;
+	width: 60rem;
+
+	// margin-left: auto;
+    // margin-right: auto;
+    // position: relative;
+    // overflow: hidden;
+    // list-style: none;
+    // padding: 0;
+    // z-index: 1;
+	@include respond(phone) {
+		font-size: 0.8rem;
+		width: 32.5rem;
+	}
+
+	.swiper-button-next::after, .swiper-button-prev::after {
+		color: $color-black;
+	}
+
+	.swiper-button-next {
+		@include respond(phone) {
+			right: 2.5rem;
+		}
+	}
+	.swiper-button-prev {
+		@include respond(phone) {
+			left: 0rem;
+		}
+	}
+
+	.swiper-buttons {
+		position: relative;
+		bottom: -5rem;
+		left: 100rem;
+		font-size: 1.6rem;
+		@include respond(phone) {
+			left: 0;
+			bottom: -10rem;
+		}
+	}
+
+	.swiper-scrollbar {
+		bottom: -5.3rem;
+		left: 107rem;
+		background: transparentize(#101820, 0.7);
+
+		@include respond(phone) {
+			bottom: -10rem;
+			left: 65%;
+			width: 55%;
+			transform: translateX(-85%);
+		}
+	}
+}
+
+
+.slider-gallery-min {
+	position: relative;
+	width: 120rem;
+
+	// margin-left: auto;
+    // margin-right: auto;
+    // position: relative;
+    // overflow: hidden;
+    // list-style: none;
+    // padding: 0;
+    // z-index: 1;
+	@include respond(phone) {
+		font-size: 0.8rem;
+		width: 32.5rem;
+	}
+
+	.swiper-button-next::after, .swiper-button-prev::after {
+		color: $color-black;
+	}
+
+	.swiper-button-next {
+		right: 14rem;
+		@include respond(phone) {
+			right: 2.5rem;
+		}
+	}
+	.swiper-button-prev {
+		left: 75rem;
+		@include respond(phone) {
+			left: 0rem;
+		}
+	}
+
+	.swiper-buttons {
+		position: relative;
+		bottom: -5rem;
+		font-size: 1.6rem;
+		@include respond(phone) {
+			left: 0;
+			bottom: -10rem;
+		}
+	}
+
+	.swiper-scrollbar {
+		width: 20rem;
+		bottom: -5rem;
+		left: 80rem;
+		background: transparentize(#101820, 0.7);
+
+		@include respond(phone) {
+			bottom: -10rem;
+			left: 65%;
+			width: 55%;
+			transform: translateX(-85%);
+		}
+	}
+}
+
+.slider-project-single {
+	position: relative;
+	overflow: hidden;
+	.swiper-button-next::after {
+		content: 'next';
+		font-family: 'swiper-icons';
+		font-size: 4rem;
+		@include respond(phone) {
+			font-size: 1rem;
+		}
+	}
+	
+	.swiper-button-prev::after {
+		content: 'prev';
+		font-family: 'swiper-icons';
+		font-size: 4rem;
+		@include respond(phone) {
+			font-size: 1rem;
+		}
+	}
+}
+
+
+.accordion__gallery .card-gallery {
+	width: 29rem;
+	height: 16rem;
+}
+
+.accordion__gallery {
+	width: 100%;
+}
+
+.accordion__gallery .slider-gallery {
+	max-width: 200rem;
+	width: 100%;
+	margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+
+}
+
+
+
+
+
+.slider-header {
+	width: 100%;
+}
+
+
+.slider-thumbs {
+	position: absolute;
+	right: 8.8rem;
+	top: 52rem;
+	width: 32rem;
+	height: 20rem;
+	z-index: 10;
+
+	@include respond(phone) {
+		width: 100%;
+		bottom: 6rem;
+		top: auto;
+		right: 0;
+		height: 2rem;
+	}
+
+
+	.swiper-wrapper, .swiper-pagination, button {
+		visibility: hidden;
+		@include respond(phone) {
+			display: none;
+		}
+	}
+
+	.swiper-slide {
+		width: 32rem;
+		height: 20rem;
+		overflow: hidden;
+		& img {
+			width: 100%;
+		}
+	}
+
+	.swiper-buttons {
+		position: relative;
+		bottom: -2rem;
+		color: #fff;
+	}
+
+	.swiper-button-next {
+		@include respond(phone) {
+			right: 4rem;
+		}
+	}
+	.swiper-button-prev {
+		@include respond(phone) {
+			left: 4rem;
+		}
+	}
+	
+	.swiper-scrollbar {
+		bottom: -2.5rem;
+		left: 6rem;
+
+		@include respond(phone) {
+			bottom: 0;
+			left: 50%;
+			width: 50%;
+		transform: translateX(-50%);
+		}
+	}
+
+}
+  
+
+

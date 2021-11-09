@@ -1,0 +1,105 @@
+.contacts {
+	background: url('../img/bg-contact.svg') no-repeat $color-blue-dark;
+	min-height: 60rem;
+	padding: 8rem 0;
+
+
+
+	&--dark {
+		background: url('../img/bg-contact.svg') no-repeat $color-black;
+		border-bottom: 1px solid transparentize($color-white, $amount: 0.8) ;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__info {
+		flex: 1 0 0;
+		color: $color-white;
+		display: flex;
+		flex-direction: column;
+
+		@include respond(phone) {
+			flex-basis: 100%;
+		}
+
+		&-title {
+			@extend %title;
+		}
+
+		&-description {
+			margin: 2rem 0 1rem 0 ;
+			max-width: 30rem;
+		}
+
+		&-content {
+			p {
+				margin: 2.4rem 0 2.4rem 2.4rem;
+				position: relative;
+		
+				&::before {
+					position: absolute;
+					left: -2.4rem;
+					width: 2.4rem;
+					height: 2.4rem;
+					line-height: 2.4rem;
+					background-size: cover;
+				}
+
+			}
+		}
+
+		&-social {
+			margin-top: auto;
+		}
+	}
+
+	&__form {
+		color: $color-white;
+		&-title {
+			display: none;
+			@extend %title;
+
+			@include respond(phone) {
+				display: block;
+				font-size: 2.5rem!important;
+				margin: 5rem 0 0 0;
+			}
+		}	
+
+		margin: 0 auto;
+		flex: 1 0 0;
+		& .form {
+			max-width: 46rem;
+		}		
+	}
+}
+
+
+
+.form {
+	font-size: 1.6rem;
+	&__field:nth-child(3){
+		margin-top: 8rem;
+	}
+
+	&__field {
+		textarea {
+			resize: vertical;
+			min-height: 4rem;
+			max-height: 10rem;
+			overflow: auto;
+			line-height: 1.4;
+		}
+	}
+
+	.checkbox.path {
+		margin: 4rem 0 5rem 0;
+		span {
+			line-height: 1.7rem;
+			margin: 0 1rem;
+		}
+	}
+}

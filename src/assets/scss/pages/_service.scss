@@ -1,0 +1,65 @@
+.service-header {
+    position: relative;
+    // padding-bottom: 10rem;
+    min-height: 52rem;
+
+    &__wrapper {
+        position: relative;
+        z-index: 10;
+    }
+
+    &__title {
+        @extend %title-h1;
+        color: $color-white;
+        padding: 5rem 0;
+    }
+
+	&__buttons a:nth-child(1) {
+		margin-right: 5rem;
+
+		@include respond(phone) {
+			margin-bottom: 2rem;
+			margin-right: 0rem;
+			
+		}
+	}
+}
+
+.service-content {
+    padding: 10rem 0;
+
+    &__info p {
+        margin-bottom: 1.5rem;
+
+    }
+
+    &__services {
+        margin: 5rem 0;
+    }
+
+    &__slider {
+       padding-bottom: 57rem;
+       position: relative;
+    }
+
+    &__gallery {
+        margin: 5rem 0;
+    }
+
+    &__gallery-title {
+        font-size: 2.4rem;
+        font-weight: 400;
+        margin: 1.5rem 0;
+    }
+}
+
+.bg-service-header  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/bg-service.png) no-repeat;
+    background-size: cover;
+    z-index: 0;
+}

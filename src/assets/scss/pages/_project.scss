@@ -1,0 +1,146 @@
+.project-header {
+    &__title {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__title h1 {
+        @extend %title-h1;
+        margin: 4rem 0;
+    }
+
+    &__slider img {
+        width: 100%;
+    }
+
+    &__square {
+        @include respond(phone) {
+            width: 100%;
+        }
+
+    }
+}
+
+#plan {
+    margin-bottom: 4rem;
+    display: none;
+    @include respond(phone) {
+        display: block;
+    }
+
+}
+
+
+.square {
+    border: 2px solid #e3e1db;
+    display: flex;
+    flex-wrap: wrap;
+    height: 6rem;
+    margin-left: auto;
+    width: 6rem;
+
+
+    @include respond(phone) {
+        display: none;
+    }
+
+
+
+    i {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: all ease-in-out .2s;
+        color:  #dfd5ba;
+        font-size: 2.5rem;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.project-content {
+    &__wrapper {
+        margin: 10rem 0;
+        @include respond(phone) {
+            margin: 5rem 0;
+        }
+    }
+
+    &__stock {
+        h2 {
+            @extend %title;
+        }
+
+        &-text {
+            background: $color-primary;
+            padding: 4.5rem;
+            margin: 4.5rem 0;
+            p {
+                color: $color-white;
+                margin: 1rem 0;
+                max-width: 80rem;
+            }
+        }
+    }
+
+
+    &__info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+
+        &-block {
+            max-width: 25rem;
+            margin-left: 4.5rem;
+            position: relative;
+            @include respond(phone) {
+                margin: 2rem 0 2rem 4.5rem;
+                flex-grow: 1;
+            }
+
+            h3 {
+                font-size: 1.8rem;
+                color: $color-blue-dark;
+                font-weight: 500;
+            }
+
+            p {
+                font-size: 1.4rem;
+                margin-top: 1.5rem;
+            }
+
+            &::before {
+                font-size: 2rem;
+                position: absolute;
+                top: 0;
+                left: -4rem;
+                color: $color-primary;
+            }
+        }
+
+        &-button {
+            margin-left: auto;
+            @include respond(phone) {
+                margin: inherit;
+                flex-grow: 1;
+            }
+        }
+    }
+
+    &__description {
+        &-text p {
+            margin: 1.5rem 0;
+        }
+    }
+
+}

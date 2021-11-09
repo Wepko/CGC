@@ -1,0 +1,42 @@
+@import "node_modules/swiper/swiper-bundle";
+@import "node_modules/badger-accordion/dist/badger-accordion";
+
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+@import 'abstracts/utilites';
+
+@import 'base/base';
+@import 'components/buttons';
+@import 'components/accordion';
+@import 'components/navigation';
+@import 'components/form';
+@import 'components/social';
+@import 'components/switcher';
+@import 'components/card';
+@import 'components/hamburger';
+@import 'components/loader';
+@import 'components/feature';
+@import 'components/selected';
+/* @import 'components/bg-video';
+
+@import 'components/composition';
+@import 'components/feature-box';
+@import 'components/popup';
+@import 'components/story'; */
+
+@import 'layout/footer';
+//@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/contacts';
+@import 'layout/questions';
+@import 'layout/post';
+//@import 'layout/navigation';
+
+@import 'pages/home';
+@import 'pages/slider';
+@import 'pages/about';
+@import 'pages/partners';
+@import 'pages/service';
+@import 'pages/project';
+@import 'pages/catalog';

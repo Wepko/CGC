@@ -1,0 +1,51 @@
+.partners {
+    &__title {
+        @extend %title-h1;
+        margin: 8rem 0 10rem 0;
+        @include respond(phone) {
+            margin: 4rem 0 5rem 0;
+        }
+    }
+
+    &__description {
+        p:nth-child(even) {
+            margin: 2rem 0;
+        }
+    }
+
+    &__brand {
+        margin: 5rem 0 10rem 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 25rem));
+		row-gap: 10rem;
+        column-gap: 7rem;
+    }
+
+    &-brand {
+        max-width: 25rem;
+        span {
+            color: #2342A1;
+        }
+
+        &__contacts {
+            margin: 1.5rem 0;
+        }
+    }
+
+}
+
+// .partners__title
+// 					h1 Наши
+// 					span.text-accent партнеры 
+// 			.partners__content 
+// 				+layout('Нам', 'доверяют')
+// 					.partners__description
+// 						p.text-accent Мы вынуждены отталкиваться.
+// 						p Есть над чем задуматься: действия представителей оппозиции объявлены нарушающими общечеловеческие нормы этики и морали. Но сторонники тоталитаризма в науке являются только методом политического участия и своевременно верифицированы. Следует отметить, что социально-экономическое развитие требует от нас анализа анализа существующих паттернов поведения. Есть над чем задуматься: реплицированные с зарубежных источников, современные исследования преданы социально-демократической анафеме! Имеется спорная точка зрения.
+// 					.partners__brand
+// 						.partners-brand
+// 							img(src="", alt="")
+// 							.partners-brand__contacts
+// 								p 
+// 								p 
+// 							p

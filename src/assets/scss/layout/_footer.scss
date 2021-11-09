@@ -1,0 +1,62 @@
+.footer {
+	$margin-column-link: 1.8rem; 
+	color: $color-white;
+	background-color: $color-black;
+	min-height: 60rem;
+	padding: 10rem 0 0 0;
+	font-size: 1.6rem;
+	
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 4.5rem - $margin-column-link;
+	}
+
+	&__logo {
+		flex: 3 0 0;
+		
+		@include respond(phone) {
+			flex-basis: 100%;
+
+		}
+	}
+
+	&__links {
+		flex: 7 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		@include respond(phone) {
+			justify-content: flex-start;
+			margin: 2rem 0;
+		}
+		&-column {
+
+			@include respond(phone) {
+				width: 100%;
+			}
+
+			& a {
+				display: block;
+				color: $color-grey-light-1;
+				text-decoration: none;
+				margin: $margin-column-link 0;
+				transform: translateX(0);
+				transition: .5s;
+				&:hover {
+					transform: translateX(0.5rem);
+				}
+			}
+
+			& h4 {
+				font-weight: 500;
+			}
+		}
+
+	}
+
+	&__copyright {
+		padding: 2.3rem;
+		border-top: 1px solid transparentize($color-white, .8);
+	}
+}
