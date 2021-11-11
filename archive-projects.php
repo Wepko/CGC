@@ -25,7 +25,7 @@ $filter = ['switcher' => true ];
 						]);
 						$i = 0;
 				?>
-
+				
 				<form class="projects__filter">
           <div class="projects__filter-switcher">
             <div class="can-toggle demo-rebrand-1">

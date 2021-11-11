@@ -46,13 +46,13 @@ get_header();
 	</div>
 
 
-	
-	
+
 	<div class="main-page">
 		<header class="header">
 			<div class="container">
-				<?php include 'parts/nav.php'; ?>
+				<?php get_template_directory( 'template-parts/nav' ); ?>
 			</div>
+			<p>hemde top bro</p>
 		</header>
 		<div class="slider-header">
 			<!-- Additional required wrapper-->

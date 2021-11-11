@@ -25,7 +25,7 @@
 	<?php if(!is_front_page()) :?>
 		<header class="header header--light">
 			<div class="container">
-				<?php include 'parts/nav.php';?>
+				<?php get_template_directory( 'template-parts/nav' ); ?>
 			</div>
 		</header>
 		<div class="header-clear"></div>
