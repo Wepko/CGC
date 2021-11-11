@@ -21,11 +21,11 @@ const paths = {
 	},
 
 	images: {
-		src: 'src/assets/images/**/*.{jpg, jpeg, png, svg, gif}',
-		dest: 'dist/assets/images'
+		src: 'src/assets/img/**/*.{jpg,jpeg,png,svg,gif}',
+		dest: 'dist/assets/img'
 	},
 	other: {
-		src: ['src/assets/**/*', '!src/assets/{images,js,scss}', '!src/assets/{images,js,scss}/**/*'],
+		src: ['src/assets/**/*', '!src/assets/{img,js,scss}', '!src/assets/{img,js,scss}/**/*'],
 		dest: 'dist/assets/'
 	},
 	scripts: {

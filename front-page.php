@@ -50,15 +50,14 @@ get_header();
 	<div class="main-page">
 		<header class="header">
 			<div class="container">
-				<?php get_template_directory( 'template-parts/nav' ); ?>
+				<?php get_template_part( 'template-parts/nav' ); ?>
 			</div>
-			<p>hemde top bro</p>
 		</header>
 		<div class="slider-header">
 			<!-- Additional required wrapper-->
 			<div class="swiper-wrapper">
-				<?php if( have_rows('main-slider') ): ?>
-					<?php while( have_rows('main-slider') ): the_row(); 
+				<?php if( have_rows('main-slider') ) : ?>
+					<?php while( have_rows('main-slider') ) : the_row(); 
 						$image = get_sub_field('fon');
 					?>
 						<div class="swiper-slide">
@@ -90,6 +89,10 @@ get_header();
 							</section>
 						</div>
 					<?php endwhile; ?>
+				<?php else : ?>
+					<div class="swiper-slide">
+						<section class="main"></section>
+					</div>
 				<?php endif; ?>
 
 			</div>
@@ -191,7 +194,7 @@ get_header();
 		<div class="benefit__statistics"></div>
 		</div>
 	</section>
-	<?php include 'parts/slider-projects.php';?>
+	<?php get_template_part( 'template-parts/slider-projects' ); ?>
 	<section class="contacts">
 		<div class="container">
 		<div class="contacts__wrapper">

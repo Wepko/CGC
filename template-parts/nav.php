@@ -1,6 +1,6 @@
 <div class="header__wrapper">
 	<a class="header__logo" href="<?php echo get_site_url()?>">
-		<img class="logo" src="<?php echo  get_template_directory_uri() . '/assets/img/icon/logo-white.svg' ?>" alt="" />
+		<img class="logo" src="<?php echo  get_template_directory_uri() . '/dist/assets/img/icon/logo-white.svg' ?>" alt="" />
 	</a>
 	<nav class="header__nav">
 		<div class="header__nav-menu">
@@ -39,7 +39,7 @@
 		</ul> -->
 
 		<?php wp_nav_menu([
-			container => fasle,
+			'container' => false,
 			'menu_class' => 'navigation',
 			//'walker' => new My_Walker_Nav_Menu(),
 		]); ?> 
