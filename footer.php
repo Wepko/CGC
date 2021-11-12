@@ -10,7 +10,7 @@
         <div class="footer__wrapper">
           <div class="footer__logo">
             <a  href="<?php echo get_site_url()?>">
-              <img src="<?php echo  get_template_directory_uri() . '/assets/img/icon/logo-white.svg' ?>" alt="">
+              <img src="<?php echo  get_template_directory_uri() . '/dist/assets/img/icon/logo-white.svg' ?>" alt="">
           </a>
         </div>
           <div class="footer__links">

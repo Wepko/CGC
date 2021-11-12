@@ -29,7 +29,7 @@ const paths = {
 		dest: 'dist/assets/'
 	},
 	scripts: {
-		src: 'src/assets/js/main.js',
+		src: ['src/assets/js/main.js', 'src/assets/js/filter.js'],
 		dest: 'dist/assets/js'
 	}
 }

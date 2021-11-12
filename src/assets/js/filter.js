@@ -19,6 +19,33 @@ jQuery($ => {
 		return obj;
 	}
 
+	function createHTMLCardProduct(projects) {
+		const htmlProjects = [];
+		for (const project of projects) {
+			
+			const htmlProject = `<div class="card-product"><img src="img/home4.png" alt="">
+				<div class="card-product__components">
+				<div class="card-product__tag">
+					<p class="tag tag_solid">${project['type']} </p>
+				</div>
+				<div class="card-product__title">${project['title']}</div>
+				<div class="card-product__description">
+					<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
+					<div class="card-product__description-text">
+					<p>${project['content']}</p>
+					</div>
+				</div>
+				<div class="card-product__button">
+					<a class="btn-secondary btn-secondary--icon icon-arrow-right" href="<?php the_permalink(); ?>"> Подробнее</a>
+				</div>
+				</div>
+			</div>`
+
+			htmlProjects.push(htmlProject);
+		}
+		return htmlProjects;
+}
+
 	const filterArg = {
 		swithcerType: 'implemented',
 		servicesId: 'all'
@@ -66,13 +93,18 @@ jQuery($ => {
 				}
 
 			},
-			success(data) {
+			success(result) {
 				$('#d').prop('disabled', false);
 				if (typeSlider) {
-					$('.projects .swiper-wrapper').html(data);
-					console.log(data)
+					$('.projects .swiper-wrapper').html(result);
+					const received = JSON.parse(result);
+					const projects = received['projects'];
+					const projectsToFilter = createHTMLCardProduct(projects);
+					console.log(projectsToFilter);
+					$('.projects__product').html(projectsToFilter);
 				} else {
-					$('.projects__product').html(data);
+					console.log(result);
+					$('.projects__product').html(result);
 				}
 	
 			}
@@ -157,10 +189,10 @@ jQuery($ => {
 	const btnMore = $('#more');
 	const startParam =  btnMore.data('param');
 	//param = {paged: 1, maxPages: ???, type: 'current', services: 'all'}
-	
+	//paged: startParam['paged']
 	const data = {
 		action: 'more',
-		paged: startParam['paged'], 
+		paged: 1, 
 		filter: filterArg
 	}
 

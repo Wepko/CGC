@@ -29,7 +29,7 @@ $filter = ['switcher' => true ];
 				<form class="projects__filter">
           <div class="projects__filter-switcher">
             <div class="can-toggle demo-rebrand-1">
-							<input id="d" type="checkbox" <? echo  false ? 'checked' : ''?> >
+							<input id="d" type="checkbox" checked>
               <label for="d">
                 <div class="can-toggle__switch" data-checked="Текущие" data-unchecked="Реализованные"></div>
               </label>
