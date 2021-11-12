@@ -7,8 +7,6 @@ function cgc_scripts() {
 	
 	wp_enqueue_script( 'cgc-navigation', get_template_directory_uri() . '/dist/assets/js/main.js', array('jquery'), null, true );
 
-
-
 	wp_enqueue_script( 'my-ajax-request', get_template_directory_uri() . '/dist/assets/js/filter.js');
 
 	wp_localize_script( 'my-ajax-request', 'true_obj', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );

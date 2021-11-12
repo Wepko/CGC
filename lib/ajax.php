@@ -11,23 +11,16 @@ function sayHello() {
 
 
 	if ($swithcerType == 'current') {
-		// $query = new WP_Query([
-		// 	'post_type' => 'projects',
-		// 	'type' => 'implemented'
-		// 	'type' => 'current',
-		// ]);
 
 		if ($servicesId == 'all') {
 
 			$query = new WP_Query([
 				'post_type' => 'projects',
 				'type' => $swithcerType,
+				'status' => 'object_sale'
 			]);
-			// echo "<pre>";
-			// print_r($query);
-			// echo "</pre>";
+
 		} else {
-			echo "don't false";
 			$query = new WP_Query([
 				'post_type' => 'projects',
 				'type' => $swithcerType,
@@ -46,7 +39,6 @@ function sayHello() {
 
 	if ($swithcerType == 'implemented') {
 
-		
 		if ($servicesId == 'all') {
 			$query = new WP_Query([
 				'post_type' => 'projects',
@@ -69,38 +61,34 @@ function sayHello() {
 		}
 	}
 
-	$response = []; 
-
 	$response = [
-		'projects' => [
-			
-		],
+		'projects' => [],
 		 'param' => [
 			'maxPages' => $max_pages,
 			'type' => $swithcerType,
 			'services' => $servicesId
 		 ]
 	];
+
 	if ($query->have_posts()) {
 		while($query->have_posts()) {
 			$query->the_post();
 			$data_response = [
 				'title' => get_the_title(),
 				'type' => get_the_terms( get_the_ID(), 'type' )[0]->name,
-				'content' => get_the_content()
+				'content' => get_the_content(),
+				'link' => get_the_permalink()
 			];
 	
-
-
 			array_push($response['projects'], $data_response);
 		}
 
 		echo json_encode($response, JSON_UNESCAPED_UNICODE);
 	} else {
-		echo 'Записей нет';
+		echo  json_encode($response, JSON_UNESCAPED_UNICODE);
 	}
 
-
+	wp_reset_postdata();
 	die();
 }
 

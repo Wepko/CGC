@@ -23,23 +23,27 @@ jQuery($ => {
 		const htmlProjects = [];
 		for (const project of projects) {
 			
-			const htmlProject = `<div class="card-product"><img src="img/home4.png" alt="">
-				<div class="card-product__components">
-				<div class="card-product__tag">
-					<p class="tag tag_solid">${project['type']} </p>
-				</div>
-				<div class="card-product__title">${project['title']}</div>
-				<div class="card-product__description">
-					<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-					<div class="card-product__description-text">
-					<p>${project['content']}</p>
+			const htmlProject = 
+			`<div class="swiper-slide">
+				<div class="card-product"><img src="img/home4.png" alt="">
+					<div class="card-product__components">
+					<div class="card-product__tag">
+						<p class="tag tag_solid">${project['type']} </p>
+					</div>
+					<div class="card-product__title">${project['title']}</div>
+					<div class="card-product__description">
+						<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
+						<div class="card-product__description-text">
+						<p>${project['content']}</p>
+						</div>
+					</div>
+					<div class="card-product__button">
+						<a class="btn-secondary btn-secondary--icon icon-arrow-right" href="${project['link']}"> Подробнее</a>
+					</div>
 					</div>
 				</div>
-				<div class="card-product__button">
-					<a class="btn-secondary btn-secondary--icon icon-arrow-right" href="<?php the_permalink(); ?>"> Подробнее</a>
-				</div>
-				</div>
-			</div>`
+			</div>
+			`
 
 			htmlProjects.push(htmlProject);
 		}
@@ -95,16 +99,15 @@ jQuery($ => {
 			},
 			success(result) {
 				$('#d').prop('disabled', false);
+				console.log('result', result);
+				const received = JSON.parse(result);
+				const projects = createHTMLCardProduct(received['projects']);
+				console.log(projects);
 				if (typeSlider) {
-					$('.projects .swiper-wrapper').html(result);
-					const received = JSON.parse(result);
-					const projects = received['projects'];
-					const projectsToFilter = createHTMLCardProduct(projects);
-					console.log(projectsToFilter);
-					$('.projects__product').html(projectsToFilter);
+					$('.projects .swiper-wrapper').html(projects);
 				} else {
 					console.log(result);
-					$('.projects__product').html(result);
+					$('.projects__product').html(projects);
 				}
 	
 			}
@@ -163,7 +166,7 @@ jQuery($ => {
 
 
 	$('.projects__filter-buttons label').on('click', (e) => {
-		e.preventDefault();
+		// e.preventDefault();
 		const inputId = e.target.htmlFor;
 		const input = $(`.projects__filter-buttons input[id=${inputId}]`);
 		const inputValue = input.val();

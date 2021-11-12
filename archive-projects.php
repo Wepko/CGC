@@ -26,7 +26,7 @@ $filter = ['switcher' => true ];
 						$i = 0;
 				?>
 				
-				<form class="projects__filter">
+				<div class="projects__filter">
           <div class="projects__filter-switcher">
             <div class="can-toggle demo-rebrand-1">
 							<input id="d" type="checkbox" checked>
@@ -55,7 +55,7 @@ $filter = ['switcher' => true ];
 							</div>
             <div class="projects__filter-next"><span>Еще</span><i class="icon-arrow-right"> </i></div>
           </div>
-        </form>
+        </div>
 
 				<div class="projects__product">
 
