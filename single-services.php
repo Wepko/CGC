@@ -43,80 +43,80 @@
           </div>
         </div>
         <div class="service-content__services">
-          <div class="post">
-            <div class="post__title"> 
-              <h2> <span class="text-accent">Перечень </span><span>услуг</span></h2>
-            </div>
-            <div class="post__content">
-              <div class="service-content__slider">
-                <div class="slider-service">
-                  <!-- Additional required wrapper-->
-                  <div class="swiper-wrapper">
-                    <!-- Slides-->
-                    
-											<?php $service_slider = get_field('service-slider');?>
-											<?php if ( is_array( $service_slider ) ) : ?>
-												<?php foreach ($service_slider as $slide) : ?>
-													<div class="swiper-slide"> 
-														<div class="card-service"> 
-															<div class="card-service__title"><?php echo $slide['service-slider-title']; ?></div>
-															<div class="card-service__description">
-																<p><?php echo $slide['service-slider-description']; ?></p>
+					<?php if( get_field('service_switch_1') ): ?>
+						<div class="post">
+							<div class="post__title"> 
+								<h2> <span class="text-accent">Перечень </span><span>услуг</span></h2>
+							</div>
+							<div class="post__content">
+								<div class="service-content__slider">
+									<div class="slider-service">
+										<!-- Additional required wrapper-->
+										<div class="swiper-wrapper">
+											<!-- Slides-->
+											
+												<?php $service_slider = get_field('service-slider');?>
+												<?php if ( is_array( $service_slider ) ) : ?>
+													<?php foreach ($service_slider as $slide) : ?>
+														<div class="swiper-slide"> 
+															<div class="card-service"> 
+																<div class="card-service__title"><?php echo $slide['service-slider-title']; ?></div>
+																<div class="card-service__description">
+																	<p><?php echo $slide['service-slider-description']; ?></p>
+																</div>
+																<div class="card-service__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right">Заказать услугу</a></div>
 															</div>
-															<div class="card-service__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right">Заказать услугу</a></div>
+														</div>
+													<?php endforeach; ?>
+												<?php endif; ?>
+										</div>
+										<div class="swiper-buttons">
+											<div class="swiper-button-next"></div>
+											<div class="swiper-button-prev"></div>
+										</div>
+										<div class="swiper-scrollbar"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<?php endif; ?>
+					<?php if( get_field('service_switch_2') ): ?>
+						<div class="service-content__gallery">
+							<div class="service-content__gallery-title">Галерея</div>
+							<div class="service-content__gallery-slider"> 
+								<div class="slider-gallery">
+									<!-- Additional required wrapper-->
+									<div class="swiper-wrapper">
+
+										<?php $service_gallery = get_field('service-gallery');?>
+										<?php if ( is_array( $service_gallery ) ) : ?>
+											<?php foreach ($service_gallery as $slide) : ?>
+												<div class="swiper-slide"> 
+													<div class="card-gallery">
+														<div class="card-gallery__img"> 
+															
+															<img src="<?php echo $slide['sercice-gallery-img']['url']; ?>" alt="">
+														</div>
+														<div class="card-gallery__description">
+															<p><?php echo $slide['sercice-gallery-description']; ?></p>
 														</div>
 													</div>
-												<?php endforeach; ?>
-											<?php endif; ?>
-                  </div>
-                  <div class="swiper-buttons">
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                  </div>
-                  <div class="swiper-scrollbar"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="service-content__gallery">
-            <div class="service-content__gallery-title">Галерея</div>
-            <div class="service-content__gallery-slider"> 
-              <div class="slider-gallery">
-                <!-- Additional required wrapper-->
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide"> 
-                    <div class="card-gallery">
-                      <div class="card-gallery__img"> <img src="img/gallery1.png" alt=""></div>
-                      <div class="card-gallery__description">
-                        <p>Противоположная точка зрения подразумевает, что представители современных социальных.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide"> 
-                    <div class="card-gallery">
-                      <div class="card-gallery__img"> <img src="img/gallery2.png" alt=""></div>
-                      <div class="card-gallery__description">
-                        <p>Противоположная точка зрения подразумевает, что представители современных социальных.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide"> 
-                    <div class="card-gallery">
-                      <div class="card-gallery__img"> <img src="img/gallery3.png" alt=""></div>
-                      <div class="card-gallery__description">
-                        <p>Противоположная точка зрения подразумевает, что представители современных социальных.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-buttons">
-                  <div class="swiper-button-next"></div>
-                  <div class="swiper-button-prev"></div>
-                </div>
-                <div class="swiper-scrollbar"></div>
-              </div>
-            </div>
-          </div>
+												</div>
+											<?php endforeach; ?>
+										<?php endif; ?>
+
+
+
+									</div>
+									<div class="swiper-buttons">
+										<div class="swiper-button-next"></div>
+										<div class="swiper-button-prev"></div>
+									</div>
+									<div class="swiper-scrollbar"></div>
+								</div>
+							</div>
+						</div>
+					<?php endif; ?>
         </div>
       </div>
     </section>
