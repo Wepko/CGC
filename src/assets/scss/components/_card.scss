@@ -1,6 +1,7 @@
 .card-product {
 	max-width: 40rem;
-	min-height: 60rem;
+	max-height: 60rem;
+	min-height: 57.8rem;
 	position: relative;
 	display: block;
 	text-decoration: none;
@@ -30,7 +31,8 @@
 		right: 0;
 		bottom: 0;
 		background: radial-gradient(326.33% 120.1% at 48% 16.97%, rgba(32, 41, 69, 0) 0%, #202945 100%);
-		
+		overflow: hidden;
+
 
 		&:hover {
 			box-shadow: 
@@ -83,15 +85,18 @@
 	}
 
 	&__tag {
-		margin-top: 3.6rem;
 		line-height: 1;
+		min-height: 8rem;
+		p {
+			margin: 0.5rem 0;
+		}
 	}
 
 	&__title {
 		line-height: 1;
 		color: $color-white;
 		font-size: 2.4rem;
-		transform: translateY(28rem);
+		transform: translateY(22rem);
 		transition:  .5s;
 
 		@include respond(phone) {

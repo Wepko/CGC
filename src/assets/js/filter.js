@@ -7,8 +7,6 @@ jQuery($ => {
 	const filter = $('.can-toggle');
 	const input = document.querySelector('#d');
 
-
-
 	function createData(filter, typeSlider = false) {
 		const obj = {
 			action: 'hello',
@@ -20,19 +18,42 @@ jQuery($ => {
 	}
 
 	function createHTMLCardProduct(projects) {
+		
 		const htmlProjects = [];
 		for (const project of projects) {
-			
+			console.log(project['img']);
+			const tag = () => {
+				
+				if (project['tag'] == 'object_sale')  {
+					return `<p class="tag tag_solid">объект в продаже</p>`;
+				} 
+	
+				return '';
+			}
+			const tagStock = () => {
+
+				if (project['stock']) {
+					return `<p class="tag tag_primary">Спецпредложение</p>`;
+				}
+				return '';
+			}
+
 			const htmlProject = 
 			`<div class="swiper-slide">
-				<div class="card-product"><img src="img/home4.png" alt="">
+				<div class="card-product">
+					<img src="${project['img']['url']}" alt="">
 					<div class="card-product__components">
 					<div class="card-product__tag">
-						<p class="tag tag_solid">${project['type']} </p>
+						${tag()}
+						${tagStock()}
 					</div>
 					<div class="card-product__title">${project['title']}</div>
 					<div class="card-product__description">
-						<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
+						<div class="card-product__description-icons">
+							<span class="icon-icon1">${project['total_area']} м<sup>2</sup></span>
+							<span class="icon-icon2">${project['rooms']}</span>
+							<span class="icon-icon3">от ${project['min_area']} соток</span>
+							<span class="icon-icon4">${project['bathrooms']}</span></div>
 						<div class="card-product__description-text">
 						<p>${project['content']}</p>
 						</div>
@@ -48,7 +69,10 @@ jQuery($ => {
 			htmlProjects.push(htmlProject);
 		}
 		return htmlProjects;
-}
+	}
+
+
+	
 
 	const filterArg = {
 		swithcerType: 'implemented',
@@ -99,14 +123,12 @@ jQuery($ => {
 			},
 			success(result) {
 				$('#d').prop('disabled', false);
-				console.log('result', result);
 				const received = JSON.parse(result);
 				const projects = createHTMLCardProduct(received['projects']);
-				console.log(projects);
+
 				if (typeSlider) {
 					$('.projects .swiper-wrapper').html(projects);
 				} else {
-					console.log(result);
 					$('.projects__product').html(projects);
 				}
 	
@@ -200,29 +222,7 @@ jQuery($ => {
 	}
 
 	const renderProjects = (place, projects) => {
-		const htmlProjects = [];
-		for (const project of projects) {
-			
-			const htmlProject = `<div class="card-product"><img src="img/home4.png" alt="">
-				<div class="card-product__components">
-				<div class="card-product__tag">
-					<p class="tag tag_solid">${project['type']} </p>
-				</div>
-				<div class="card-product__title">${project['title']}</div>
-				<div class="card-product__description">
-					<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-					<div class="card-product__description-text">
-					<p>${project['content']}</p>
-					</div>
-				</div>
-				<div class="card-product__button">
-					<a class="btn-secondary btn-secondary--icon icon-arrow-right" href="<?php the_permalink(); ?>"> Подробнее</a>
-				</div>
-				</div>
-			</div>`
-
-			htmlProjects.push(htmlProject);
-		}
+		const htmlProjects = createHTMLCardProduct(projects);
 
 		$(place).append(htmlProjects)
 	}
@@ -239,16 +239,16 @@ jQuery($ => {
 				btnMore.prop('disabled', true);
 			},
 			success(result) {
-				console.log('Запрос',data)
+				console.log('Запрос',data);
 				const received = JSON.parse(result);
 				const projects = received['projects'];
 				const param = received['param'];
 				console.log('Ответ', received);
-				console.log(param);
-				console.log('start', data.paged)
+				//console.log(param);
+				//console.log('start', data.paged)
 
 				
-				console.log(data.paged, param['maxPages'] )
+
 				if (data.paged < param['maxPages'] ) {
 					console.log('условие прошло');
 					data.paged++;

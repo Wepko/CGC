@@ -30,6 +30,7 @@
 	&--light {
 		.features-el {
 			border-left: 2px solid $color-primary;
+			min-width: 20rem;
 		}
 	}
 }

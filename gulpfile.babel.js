@@ -46,7 +46,6 @@ export const serve = done => {
 
 export const reload = done => {
 	server.reload();
-	browserSync.reload();
 	done();
 }
 

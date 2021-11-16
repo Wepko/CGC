@@ -281,7 +281,7 @@ $transition-time: 0.2s;
 
 dl dl .-ba-is-active:nth-child(1) {
 	transition: .5s;
-	background-color: $color-primary;
+	background: $color-primary;
 	color: $color-white;
 }
 
@@ -320,5 +320,8 @@ dl dl .badger-accordion__trigger {
 
 	&__buttons {
 		margin: 2rem 0;
+		max-width: 55rem;
+    display: flex;
+    justify-content: space-between;
 	}
 }

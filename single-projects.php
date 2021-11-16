@@ -34,10 +34,23 @@ get_header();
       </div>
       <div class="project-header__slider"> 
         <div class="swiper slider-project-single">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"> <img src="img/project.png" alt=""></div>
-            <div class="swiper-slide"> <img src="img/project.png" alt=""></div>
-          </div>
+         
+
+					<?php 
+						$images = get_field('pl_photo_gallery');
+						$size = 'full'; // (thumbnail, medium, large, full или произвольный размер)
+
+						if( $images ): ?>
+								 <div class="swiper-wrapper">
+										<?php foreach( $images as $image ): ?>
+											<div class="swiper-slide"> 
+												<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+											</div>
+													
+										<?php endforeach; ?>
+									</div>
+						<?php endif; ?>
+
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </div>
@@ -46,26 +59,36 @@ get_header();
     <section class="project-content">
       <div class="container">
         <div class="project-content__wrapper">
-          <div class="project-content__stock"> 
-            <h2>Действует <span class="text-accent">акция </span></h2>
-            <div class="project-content__stock-text"> 
-              <p class="text-accent">Задача организации, в особенности же понимание сути ресурсосберегающих технологий создаёт предпосылки для экспериментов,  </p>
-              <p>поражающих по своей масштабности и грандиозности. Лишь предприниматели в сети интернет призывают нас к новым свершениям, которые, в свою очередь, должны быть представлены в исключительно положительном свете. Как принято считать, явные признаки </p>
-            </div>
-          </div>
+					<?php 
+						$stock = get_field('stock'); 
+						// echo '<pre>';
+						// print_r( $stock  );
+						// echo '</pre>';
+						$content = trim($stock->post_content);
+						$text = "<p>Это акция существует, но пока в ней нету текста, за помощью обратитесь к администрации сайта</p>";
+					?>
+					<?php if (!empty(	$stock)) : ?>
+						<div class="project-content__stock"> 
+							<h2>Действует <span class="text-accent">акция</span></h2>
+							
+							<div class="project-content__stock-text"> 
+								<?php echo strlen($content) != 0 ? $content : $text; ?>
+							</div>
+						</div>
+					<?php endif ?>
           <div class="post">
             <div class="post__title"> 
-              <h2> <span class="text-accent">Информация </span><span></span></h2>
+              <h2> <span class="text-accent">Информация </span></h2>
             </div>
             <div class="post__content">
               <div class="project-content__info">
                 <div class="project-content__info-block icon-adress-bold">
                   <h3>Место реализации</h3>
-                  <p>Проект реализован в коттеджном посёлке Прерий</p>
+                  <p><?php echo the_field('info_place')?></p>
                 </div>
                 <div class="project-content__info-block icon-time">
                   <h3>Время реализации</h3>
-                  <p>12 месяцев</p>
+                  <p><?php echo the_field('info_time')?></p>
                 </div>
                 <?php  if( has_term( 'implemented', 'type' ) ) :?>
                     <div class="project-content__info-button">
@@ -95,11 +118,11 @@ get_header();
                       </div>
                       <div class="features-el ">
                         <h4><?the_field('floors')?></h4>
-                        <p>Количество этажей</p>
+                        <p>Этажа</p>
                       </div>
                       <div class="features-el">
                         <h4><?the_field('rooms')?></h4>
-                        <p>Количество комнат</p>
+                        <p>Комнат</p>
                       </div>
                       <div class="features-el">
                         <h4><?the_field('bedrooms')?></h4>
@@ -143,264 +166,120 @@ get_header();
             <div class="service__title gs_reveal gs_reveal_fromLeft">Перечень <span class="text-accent">услуг</span></div>
             <div class="service__description gs_reveal gs_reveal_fromLeft">Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.</div>
             <div class="service__accordion gs_reveal gs_reveal_fromRight">
-                <dl class="badger-accordion js-badger-accordion">
-                <dt class="badger-accordion__header"><a class="badger-accordion__trigger js-badger-accordion-header">
-                    <div class="badger-accordion__trigger-title">Сбор исходно-разрешительной документации</div>
-                    <div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div></a></dt>
-                <dd class="badger-accordion__panel js-badger-accordion-panel">
-                    <div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
-                    <dl class="badger-accordion js-badger-accordion">
-                        <dt class="badger-accordion__header"><a class="badger-accordion__trigger js-badger-accordion-header">
-                            <div class="badger-accordion__trigger-title">Кровля</div>
-                            <div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div></a></dt>
-                        <dd class="badger-accordion__panel js-badger-accordion-panel">
-                        <div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
-                            <div class="accordion">
-                            <div class="accordion__description"> 
-                                <p>Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.</p>
-                            </div>
-                            <div class="accordion__switcher">
-                                <div class="can-toggle demo-rebrand-1 can-toggle--size-large">
-                                <input id="d" type="checkbox">
-                                <label for="d">
-                                    <div class="can-toggle__switch" data-checked="Видео" data-unchecked="Фото"> </div>
-                                </label>
-                                </div>
-                            </div>
-                            <div class="accordion__gallery">
-                                <div class="slider-gallery-min">
-                                <!-- Additional required wrapper-->
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery1.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery2.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery3.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery1.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery1.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery1.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery1.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-buttons">
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
-                                </div>
-                                <div class="swiper-scrollbar"></div>
-                                </div>
-                            </div>
-                            <div class="accordion__buttons"><a class="btn-primary">Узнать больше</a><a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Готовые проекты</a></div>
-                            </div>
-                        </div>
-                        </dd>
-                    </dl>
-                    <dl class="badger-accordion js-badger-accordion">
-                        <dt class="badger-accordion__header"><a class="badger-accordion__trigger js-badger-accordion-header">
-                            <div class="badger-accordion__trigger-title">Кровля</div>
-                            <div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div></a></dt>
-                        <dd class="badger-accordion__panel js-badger-accordion-panel">
-                        <div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
-                            <div class="accordion">
-                            <div class="accordion__description"> 
-                                <p>Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.</p>
-                            </div>
-                            <div class="accordion__switcher">
-                                <div class="can-toggle demo-rebrand-1 can-toggle--size-large">
-                                <input id="d" type="checkbox">
-                                <label for="d">
-                                    <div class="can-toggle__switch" data-checked="Видео" data-unchecked="Фото"> </div>
-                                </label>
-                                </div>
-                            </div>
-                            <div class="accordion__gallery">
-                                <div class="slider-gallery">
-                                <!-- Additional required wrapper-->
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery1.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery2.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery3.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-buttons">
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
-                                </div>
-                                <div class="swiper-scrollbar"></div>
-                                </div>
-                            </div>
-                            <div class="accordion__buttons"><a class="btn-primary">Узнать больше</a><a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Готовые проекты</a></div>
-                            </div>
-                        </div>
-                        </dd>
-                    </dl>
-                    <dl class="badger-accordion js-badger-accordion">
-                        <dt class="badger-accordion__header"><a class="badger-accordion__trigger js-badger-accordion-header">
-                            <div class="badger-accordion__trigger-title">Кровля</div>
-                            <div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div></a></dt>
-                        <dd class="badger-accordion__panel js-badger-accordion-panel">
-                        <div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
-                            <div class="accordion">
-                            <div class="accordion__description"> 
-                                <p>Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.</p>
-                            </div>
-                            <div class="accordion__switcher">
-                                <div class="can-toggle demo-rebrand-1 can-toggle--size-large">
-                                <input id="d" type="checkbox">
-                                <label for="d">
-                                    <div class="can-toggle__switch" data-checked="Видео" data-unchecked="Фото"> </div>
-                                </label>
-                                </div>
-                            </div>
-                            <div class="accordion__gallery">
-                                <div class="slider-gallery">
-                                <!-- Additional required wrapper-->
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery1.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery2.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery3.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-buttons">
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
-                                </div>
-                                <div class="swiper-scrollbar"></div>
-                                </div>
-                            </div>
-                            <div class="accordion__buttons"><a class="btn-primary">Узнать больше</a><a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Готовые проекты</a></div>
-                            </div>
-                        </div>
-                        </dd>
-                    </dl>
-                    <dl class="badger-accordion js-badger-accordion">
-                        <dt class="badger-accordion__header"><a class="badger-accordion__trigger js-badger-accordion-header">
-                            <div class="badger-accordion__trigger-title">Кровля</div>
-                            <div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div></a></dt>
-                        <dd class="badger-accordion__panel js-badger-accordion-panel">
-                        <div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
-                            <div class="accordion">
-                            <div class="accordion__description"> 
-                                <p>Принимая во внимание показатели успешности, дальнейшее развитие различных форм деятельности в значительной степени обусловливает важность поэтапного и последовательного развития общества. Ясность нашей позиции очевидна: выбранный нами инновационный путь играет определяющее значение для вывода текущих активов. Семантический разбор внешних противодействий является качественно новой ступенью инновационных методов управления процессами. Противоположная точка зрения.</p>
-                            </div>
-                            <div class="accordion__switcher">
-                                <div class="can-toggle demo-rebrand-1 can-toggle--size-large">
-                                <input id="d" type="checkbox">
-                                <label for="d">
-                                    <div class="can-toggle__switch" data-checked="Видео" data-unchecked="Фото"> </div>
-                                </label>
-                                </div>
-                            </div>
-                            <div class="accordion__gallery">
-                                <div class="slider-gallery">
-                                <!-- Additional required wrapper-->
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery1.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery2.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                    <div class="swiper-slide"> 
-                                    <div class="card-gallery">
-                                        <div class="card-gallery__img"> <img src="img/gallery3.png" alt=""></div>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-buttons">
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
-                                </div>
-                                <div class="swiper-scrollbar"></div>
-                                </div>
-                            </div>
-                            <div class="accordion__buttons"><a class="btn-primary">Узнать больше</a><a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Готовые проекты</a></div>
-                            </div>
-                        </div>
-                        </dd>
-                    </dl>
-                    </div>
-                </dd>
-                <dt class="badger-accordion__header"><a class="badger-accordion__trigger js-badger-accordion-header">
-                    <div class="badger-accordion__trigger-title">Проектирование</div>
-                    <div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div></a></dt>
-                <dd class="badger-accordion__panel js-badger-accordion-panel">
-                    <div class="badger-accordion__panel-inner text-module js-badger-accordion-panel-inner"><a class="badger-accordion__panel-subitem" href="#">Архитектурное проектирование</a><a class="badger-accordion__panel-subitem" href="#">Проектирование зданий</a><a class="badger-accordion__panel-subitem" href="#">Проектирование инженерных коммуникаций</a><a class="badger-accordion__panel-subitem" href="#">Дизайн проектирование</a><a class="badger-accordion__panel-subitem" href="#">Ландшафтное проектирование</a></div>
-                </dd>
-                <dt class="badger-accordion__header"><a class="badger-accordion__trigger js-badger-accordion-header">
-                    <div class="badger-accordion__trigger-title">Строительство</div>
-                    <div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div></a></dt>
-                <dd class="badger-accordion__panel js-badger-accordion-panel">
-                    <div class="badger-accordion__panel-inner text-module js-badger-accordion-panel-inner"><a class="badger-accordion__panel-subitem" href="#">Строительство объекта</a><a class="badger-accordion__panel-subitem" href="#">Внешняя отделка</a><a class="badger-accordion__panel-subitem" href="#">Внутренняя отделка</a><a class="badger-accordion__panel-subitem" href="#">Благоустройство территории</a></div>
-                </dd>
-                <dt class="badger-accordion__header"><a class="badger-accordion__trigger js-badger-accordion-header">
-                    <div class="badger-accordion__trigger-title">Сопровождение</div>
-                    <div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div></a></dt>
-                <dd class="badger-accordion__panel js-badger-accordion-panel">
-                    <div class="badger-accordion__panel-inner text-module js-badger-accordion-panel-inner">
-                    <p>Although badgers are a solitary animal the young Hog Badger tends to be quite playful and social.  I would be careful playing with any animal that has extremely large claws.  Remember folks, it is all fun and games until someone loses an eye.</p>
-                    <p>Hog Badgers are omnivores and they feed on a variety of things from honey and fruit to insects and small mammals.</p>
-                    <p>A young / baby of a hog badger is called a 'kit'. The females are called 'sow' and males 'boar'. A hog badger group is called a 'cete, colony, set or company'.</p>
-                    </div>
-                </dd>
-                </dl>
+
+
+              <dl class="badger-accordion js-badger-accordion">
+								<?php if( have_rows('services_tab_1') ): ?>
+
+									<dt class="badger-accordion__header">
+										<a class="badger-accordion__trigger js-badger-accordion-header">
+											<div class="badger-accordion__trigger-title">Сбор исходно-разрешительной документации</div>
+											<div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div>
+										</a>
+									</dt>
+									<dd class="badger-accordion__panel js-badger-accordion-panel">
+											<div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
+
+													<?php while( have_rows('services_tab_1') ): 
+														the_row(); 
+														$photos = get_sub_field('services_tab_photo');
+													?>
+
+														<dl class="badger-accordion js-badger-accordion">
+																<dt class="badger-accordion__header">
+																	<a class="badger-accordion__trigger js-badger-accordion-header">
+																		<div class="badger-accordion__trigger-title">
+																			<?php the_sub_field('services_tab_title'); ?>
+																		</div>
+																		<div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div>
+																	</a>
+																</dt>
+																<dd class="badger-accordion__panel js-badger-accordion-panel">
+																<div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
+																		<div class="accordion">
+																		<div class="accordion__description"> 
+																				<p><?php the_sub_field('services_tab_description'); ?></p>
+																		</div>
+																		<div class="accordion__switcher">
+																				<div class="can-toggle demo-rebrand-1 can-toggle--size-large">
+																				<input id="mini_galary" type="checkbox">
+																				<label for="mini_galary">
+																						<div class="can-toggle__switch" data-checked="Видео" data-unchecked="Фото"> </div>
+																				</label>
+																				</div>
+																		</div>
+																		<div class="accordion__gallery">
+																				<div class="slider-gallery-min">
+																				<!-- Additional required wrapper-->
+																				<div class="swiper-wrapper">
+																				<?php if ( is_array( $photos ) ) : ?>
+																					<?php foreach ($photos as $photo) : ?>
+																						<div class="swiper-slide"> 
+																							<div class="card-gallery">
+																								<div class="card-gallery__img"><img src="<?php echo $photo['url']?>" alt=""></div>
+																							</div>
+																						</div>
+																					<?php endforeach; ?>
+																				<?php endif; ?>
+																				
+																				</div>
+																				<div class="swiper-buttons">
+																						<div class="swiper-button-next"></div>
+																						<div class="swiper-button-prev"></div>
+																				</div>
+																				<div class="swiper-scrollbar"></div>
+																				</div>
+																		</div>
+																		<div class="accordion__buttons"><a class="btn-primary">Узнать больше</a><a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Готовые проекты</a></div>
+																		</div>
+																</div>
+																</dd>
+														</dl>
+													<?php endwhile; ?>
+									
+											</div>
+									</dd>
+								<?php endif; ?>
+								<?php if( have_rows('services_tab_2') ): ?>
+									<dt class="badger-accordion__header"><a class="badger-accordion__trigger js-badger-accordion-header">
+											<div class="badger-accordion__trigger-title">Проектирование</div>
+											<div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div></a>
+									</dt>
+									<dd class="badger-accordion__panel js-badger-accordion-panel">
+											<div class="badger-accordion__panel-inner text-module js-badger-accordion-panel-inner"><a class="badger-accordion__panel-subitem" href="#">Архитектурное проектирование</a><a class="badger-accordion__panel-subitem" href="#">Проектирование зданий</a><a class="badger-accordion__panel-subitem" href="#">Проектирование инженерных коммуникаций</a><a class="badger-accordion__panel-subitem" href="#">Дизайн проектирование</a><a class="badger-accordion__panel-subitem" href="#">Ландшафтное проектирование</a></div>
+									</dd>
+								<?php endif; ?>
+								<!-- <?php if( have_rows('services_tab_3') ): ?>
+									<dt class="badger-accordion__header"><a class="badger-accordion__trigger js-badger-accordion-header">
+											<div class="badger-accordion__trigger-title">Строительство</div>
+											<div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div></a>
+									</dt>
+									<dd class="badger-accordion__panel js-badger-accordion-panel">
+											<div class="badger-accordion__panel-inner text-module js-badger-accordion-panel-inner"><a class="badger-accordion__panel-subitem" href="#">Строительство объекта</a><a class="badger-accordion__panel-subitem" href="#">Внешняя отделка</a><a class="badger-accordion__panel-subitem" href="#">Внутренняя отделка</a><a class="badger-accordion__panel-subitem" href="#">Благоустройство территории</a></div>
+									</dd>
+								<?php endif; ?>
+								<?php if( have_rows('services_tab_4') ): ?>
+									<dt class="badger-accordion__header"><a class="badger-accordion__trigger js-badger-accordion-header">
+										<div class="badger-accordion__trigger-title">Сопровождение</div>
+										<div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div></a>
+									</dt>
+									<dd class="badger-accordion__panel js-badger-accordion-panel">
+											<div class="badger-accordion__panel-inner text-module js-badger-accordion-panel-inner">
+											<p>Although badgers are a solitary animal the young Hog Badger tends to be quite playful and social.  I would be careful playing with any animal that has extremely large claws.  Remember folks, it is all fun and games until someone loses an eye.</p>
+											<p>Hog Badgers are omnivores and they feed on a variety of things from honey and fruit to insects and small mammals.</p>
+											<p>A young / baby of a hog badger is called a 'kit'. The females are called 'sow' and males 'boar'. A hog badger group is called a 'cete, colony, set or company'.</p>
+											</div>
+									</dd>
+								<?php endif; ?> -->
+              </dl>
             </div>
         </section>
     <?php endif; ?>
 
     <?php  if( has_term( 'implemented', 'type' ) ) :?>
-        <?php include 'parts/slider-projects.php';?>
+        <?php  get_template_part( 'template-parts/slider-projects' );?>
     <?php endif; ?>
+
     <div class="questions">
       <div class="container">
         <div class="questions__wrapper">
@@ -412,6 +291,7 @@ get_header();
         </div>
       </div>
     </div>
+
     <section class="contacts contacts--dark">
       <div class="container">
         <div class="contacts__wrapper">
