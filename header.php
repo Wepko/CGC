@@ -21,8 +21,15 @@
 	</head>
 	<body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
+
+<?php
+
+	$cgc_is_single = (is_single() && get_post_type() == 'services');
+	// Если ты на ходишься не на главной странице то выводи header и
+	// Если ты на ходишься не на странице single к категории services то выводи header
+?>
 	
-	<?php if(!is_front_page()) :?>
+	<?php if(!(is_front_page() || $cgc_is_single)) : ?>
 		<header class="header header--light">
 			<div class="container">
 				<?php get_template_part( 'template-parts/nav' ); ?>
@@ -30,5 +37,6 @@
 		</header>
 		<div class="header-clear"></div>
 	<?php endif ?>
+
 
 

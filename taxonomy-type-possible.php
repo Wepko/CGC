@@ -35,158 +35,47 @@
 				<div class="catalog__filter-backspace"><span>Сбросить фильтр</span><i class="icon-backspace"></i></div>
 			</div>
 			<div class="projects__product">
-				<div class="card-product"><img src="img/home4.png" alt="">
-					<div class="card-product__components">
-						<div class="card-product__tag">
-							<p class="tag tag_solid">Обьект в продаже</p>
-						</div>
-						<div class="card-product__title">Монблан VS</div>
-						<div class="card-product__description">
-							<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-							<div class="card-product__description-text">
-								<p>Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...</p>
-							</div>
-						</div>
-						<div class="card-product__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#"> Подробнее</a></div>
-					</div>
-				</div>
-				<div class="card-product"><img src="img/home4.png" alt="">
-					<div class="card-product__components">
-						<div class="card-product__tag">
-							<p class="tag tag_solid">Обьект в продаже</p>
-						</div>
-						<div class="card-product__title">Монблан VS</div>
-						<div class="card-product__description">
-							<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-							<div class="card-product__description-text">
-								<p>Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...</p>
-							</div>
-						</div>
-						<div class="card-product__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#"> Подробнее</a></div>
-					</div>
-				</div>
-				<div class="card-product"><img src="img/home4.png" alt="">
-					<div class="card-product__components">
-						<div class="card-product__tag">
-							<p class="tag tag_solid">Обьект в продаже</p>
-							<p class="tag tag_primary">Обьект в продаже</p>
-						</div>
-						<div class="card-product__title">Монблан VS</div>
-						<div class="card-product__description">
-							<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-							<div class="card-product__description-text">
-								<p>Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...</p>
-							</div>
-						</div>
-						<div class="card-product__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#"> Подробнее</a></div>
-					</div>
-				</div>
-				<div class="card-product"><img src="img/home4.png" alt="">
-					<div class="card-product__components">
-						<div class="card-product__tag">
-							<p class="tag tag_solid">Обьект в продаже</p>
-						</div>
-						<div class="card-product__title">Монблан VS</div>
-						<div class="card-product__description">
-							<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-							<div class="card-product__description-text">
-								<p>Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...</p>
-							</div>
-						</div>
-						<div class="card-product__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#"> Подробнее</a></div>
-					</div>
-				</div>
-				<div class="card-product"><img src="img/home4.png" alt="">
-					<div class="card-product__components">
-						<div class="card-product__tag">
-							<p class="tag tag_solid">Обьект в продаже</p>
-						</div>
-						<div class="card-product__title">Монблан VS</div>
-						<div class="card-product__description">
-							<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-							<div class="card-product__description-text">
-								<p>Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...</p>
-							</div>
-						</div>
-						<div class="card-product__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#"> Подробнее</a></div>
-					</div>
-				</div>
-				<div class="card-product"><img src="img/home4.png" alt="">
-					<div class="card-product__components">
-						<div class="card-product__tag">
-							<p class="tag tag_solid">Обьект в продаже</p>
-						</div>
-						<div class="card-product__title">Монблан VS</div>
-						<div class="card-product__description">
-							<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-							<div class="card-product__description-text">
-								<p>Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...</p>
-							</div>
-						</div>
-						<div class="card-product__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#"> Подробнее</a></div>
-					</div>
-				</div>
-				<div class="card-product"><img src="img/home4.png" alt="">
-					<div class="card-product__components">
-						<div class="card-product__tag">
-							<p class="tag tag_solid">Обьект в продаже</p>
-						</div>
-						<div class="card-product__title">Монблан VS</div>
-						<div class="card-product__description">
-							<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-							<div class="card-product__description-text">
-								<p>Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...</p>
-							</div>
-						</div>
-						<div class="card-product__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#"> Подробнее</a></div>
-					</div>
-				</div>
-				<div class="card-product"><img src="img/home4.png" alt="">
-					<div class="card-product__components">
-						<div class="card-product__tag">
-							<p class="tag tag_solid">Обьект в продаже</p>
-						</div>
-						<div class="card-product__title">Монблан VS</div>
-						<div class="card-product__description">
-							<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-							<div class="card-product__description-text">
-								<p>Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...</p>
-							</div>
-						</div>
-						<div class="card-product__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#"> Подробнее</a></div>
-					</div>
-				</div>
-				<div class="card-product"><img src="img/home4.png" alt="">
-					<div class="card-product__components">
-						<div class="card-product__tag">
-							<p class="tag tag_solid">Обьект в продаже</p>
-						</div>
-						<div class="card-product__title">Монблан VS</div>
-						<div class="card-product__description">
-							<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-							<div class="card-product__description-text">
-								<p>Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...</p>
-							</div>
-						</div>
-						<div class="card-product__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#"> Подробнее</a></div>
-					</div>
-				</div>
-				<div class="card-product"><img src="img/home4.png" alt="">
-					<div class="card-product__components">
-						<div class="card-product__tag">
-							<p class="tag tag_solid">Обьект в продаже</p>
-						</div>
-						<div class="card-product__title">Монблан VS</div>
-						<div class="card-product__description">
-							<div class="card-product__description-icons"><span class="icon-icon1">160 м<sup>2</sup></span><span class="icon-icon2">4</span><span class="icon-icon3">от 6.0 соток</span><span class="icon-icon4">2</span></div>
-							<div class="card-product__description-text">
-								<p>Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но неопровержимые выводы...</p>
-							</div>
-						</div>
-						<div class="card-product__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#"> Подробнее</a></div>
-					</div>
-				</div>
+
+				<?php 
+					$query = new WP_Query([
+						'post_type' => 'projects',
+						'type' => 'possible',
+						'status' => ['object_sale', 'object_not_sale'],
+					]);
+
+					function is_tag_cgc() {
+						$slug = get_the_terms( get_the_ID(), 'status' )[0]->slug;
+
+						if ($slug == 'object_sale') {
+							return '<p class="tag tag_solid"> Обьект в продаже</p>';
+						} else {	
+							return ' ';
+						} 
+						return false;
+					}
+
+					function is_stocs_cgc() {
+						$stock = get_field('stock'); 
+						if (!empty($stock)) {
+							return '<p class="tag tag_primary">Спецпредложение</p>';
+						} else {
+							return '  ';
+						}
+					}
+					
+
+				?>
+
+				<?php if ($query->have_posts()) :?>
+					<?php while($query->have_posts()) : $query->the_post()?>
+						<?php get_template_part( 'template-parts/card-product' );?>
+					<?php endwhile;?>
+				<?php else :?>
+					<p>Записей нет</p>
+				<?php endif;?>
+
 			</div>
+
 			<div class="projects__buttons"><a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="">Загрузить еще</a></div>
 		</div>
 	</section>

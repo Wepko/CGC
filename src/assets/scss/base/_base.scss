@@ -9,7 +9,15 @@
 h1,h2,h3 {font-size:100%; font-weight: 400;}
 
 
+ol ol, ul ol { 
+	list-style-type: lower-latin; 
+	list-style-position: inside; 
+	margin-left: 2rem; 
+}
 
+ul {
+	margin-left: 2rem; 
+}
 
 
 html {
@@ -38,6 +46,7 @@ html {
 @include font('GothamProCGC', normal, 300, '../fonts/GothamPro/GothamPro-Light.ttf');
 @include font('GothamProCGC', normal, 400, '../fonts/GothamPro/GothamPro.ttf');
 @include font('GothamProCGC', normal, 500, '../fonts/GothamPro/GothamPro-Medium.ttf');
+@include font('GothamProCGC', normal, 600, '../fonts/GothamPro/GothamPro-Medium.ttf');
 
 //@include font('icomoon', normal, 400, '../iconfonts/fonts/icomoon/icomoon.ttf');
 
@@ -70,11 +79,15 @@ body {
 
 
 .header-clear {
-  padding-top: 20rem!important;
+  padding-top: 15rem!important;
 }
 
 .title-h1 {
   @extend %title-h1;
+}
+
+.bg-primary {
+	@extend %bg-primary;
 }
 
 .swiper-button-prev:after, .swiper-button-next:after {
