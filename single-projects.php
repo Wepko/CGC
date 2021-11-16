@@ -12,7 +12,7 @@ get_header();
 
 ?>
 
-<?php 
+<!-- <?php 
 
     if( has_term( 'current', 'type') ){
         echo '<p>Это страница archive-projects.php current</p>';
@@ -21,7 +21,7 @@ get_header();
     if( has_term( 'implemented', 'type' ) ){
         echo '<p>Это страница archive-projects.php implemented</p>';
     }
-?>
+?> -->
 
     <section class="project-header">
       <div class="container">
@@ -33,27 +33,61 @@ get_header();
         </div>
       </div>
       <div class="project-header__slider"> 
-        <div class="swiper slider-project-single">
-         
 
-					<?php 
-						$images = get_field('pl_photo_gallery');
-						$size = 'full'; // (thumbnail, medium, large, full или произвольный размер)
+				<div id="planning" >
+					<div class="swiper slider-project-single">
+					
 
-						if( $images ): ?>
-								 <div class="swiper-wrapper">
-										<?php foreach( $images as $image ): ?>
-											<div class="swiper-slide"> 
-												<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
-											</div>
-													
-										<?php endforeach; ?>
-									</div>
-						<?php endif; ?>
+						<?php 
+							$images_pl = get_field('pl_photo_gallery');
+							$images_ex = get_field('ex_photo_gallery');
+							//print_r($images_ex);
+							$size = 'full'; // (thumbnail, medium, large, full или произвольный размер)
 
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
+							if( $images_pl ): ?>
+									<div  class="swiper-wrapper">
+											<?php foreach( $images_pl as $image ): ?>
+												<div class="swiper-slide"> 
+													<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+												</div>
+														
+											<?php endforeach; ?>
+										</div>
+							<?php endif; ?>
+
+
+
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+				</div>	
+				<div id="exterior" class="slider-hidden">
+					<div class="swiper slider-project-single">
+					 
+	
+					 <?php 
+						 $images_ex = get_field('ex_photo_gallery');
+						 //print_r($images_ex);
+						 $size = 'full'; // (thumbnail, medium, large, full или произвольный размер)
+	
+						 if( $images_ex ): ?>
+									<div  class="swiper-wrapper">
+										 <?php foreach( $images_ex as $image ): ?>
+											 <div class="swiper-slide"> 
+												 <?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+											 </div>
+													 
+										 <?php endforeach; ?>
+									 </div>
+						 <?php endif; ?>
+	
+	
+	
+					 <div class="swiper-button-next"></div>
+					 <div class="swiper-button-prev"></div>
+				 </div>
+				</div>
+
       </div>
     </section>
     <section class="project-content">

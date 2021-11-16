@@ -641,7 +641,14 @@ h2 {
 	}
 }
 
+.slider-hidden {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+}
+
 .slider-project-single {
+	width: 100vw;
 	position: relative;
 	overflow: hidden;
 	.swiper-button-next::after {
