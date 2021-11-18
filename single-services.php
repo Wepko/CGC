@@ -94,7 +94,6 @@
 												<div class="swiper-slide"> 
 													<div class="card-gallery">
 														<div class="card-gallery__img"> 
-															
 															<img src="<?php echo $slide['sercice-gallery-img']['url']; ?>" alt="">
 														</div>
 														<div class="card-gallery__description">

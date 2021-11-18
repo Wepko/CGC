@@ -15,7 +15,8 @@
 			</div>
 			<div class="contacts__form">
 				<div class="contacts__form-title">Обратная <span class="text-accent">связь</span></div>
-				<form class="form" action="#" method="POST">
+				<?php echo do_shortcode( '[contact-form-7 id="441" title="Контактная форма 1"]' ); ?>
+				<!-- <form class="form" action="#" method="POST">
 					<div class="form__field">
 						<div class="inputbox">
 							<input id="input0" type="text" required=""/>
@@ -42,8 +43,9 @@
 							</svg><span id="ch1" name="ch1">Даю согласие на обработку персональных данных</span>
 						</label>
 					</div><a class="btn-primary" href="#">Заказать звонок</a>
-				</form>
+				</form> -->
 			</div>
+		
 		</div>
 	</div>
 </section>
