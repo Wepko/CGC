@@ -5,6 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.setTimeout(() => {
       document.body.classList.add('loaded');
       document.body.classList.remove('loaded-hiding');
-    }, 5000);
+    }, 1200);
 
 })

@@ -1,6 +1,5 @@
 import MicroModal from 'micromodal';
 
-console.log('modal');
 
 MicroModal.init({
 	onShow: modal => console.info(`${modal.id} is shown`), // [1]

@@ -6,4 +6,7 @@ import './components/loader';
 import './components/generic';
 import './components/generics';
 import './components/modal';
+import './components/catalog';
+import './components/filter';
+
 

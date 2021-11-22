@@ -34,7 +34,7 @@ $filter = ['switcher' => true ];
                 <div class="can-toggle__switch" data-checked="Текущие" data-unchecked="Реализованные"></div>
               </label>
             </div>
-						<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="#"> Каталог проектов</a>
+						<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="<?php echo get_term_link( 'possible', 'type' ); ?>"> Каталог проектов</a>
           </div>
           <div class="projects__filter-services active">
 						<div class="projects__filter-buttons">
@@ -85,8 +85,6 @@ $filter = ['switcher' => true ];
 								return '  ';
 							}
 						}
-						
-
 					?>
 					
 					<?php if ($query->have_posts()) :?>
@@ -96,15 +94,15 @@ $filter = ['switcher' => true ];
 					<?php else :?>
 						<p>Записей нет</p>
 					<?php endif;?>
-
 				</div>
+
 				<?php 
 
 						$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
 						$query = new WP_Query([
 							'post_type' => 'projects',
-							'type' => 'current',
+							'type' => 'implemented',
 							'paged' => $paged,
 						]);
 
@@ -113,7 +111,7 @@ $filter = ['switcher' => true ];
 						$param = [
 							'paged' => $paged,
 							'maxPages' => $max_pages,
-							'type' => 'current',
+							'type' => 'implemented',
 							'services' => 'all',
 
 						];
@@ -121,7 +119,7 @@ $filter = ['switcher' => true ];
 				?>
 				<?php if ($paged <= $max_pages) : ?>
 					<div class="projects__buttons">
-						<a id="more" data-param='<?php echo json_encode($param, JSON_UNESCAPED_UNICODE) ?>' class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="">Загрузить еще</a>
+						<a id="more" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="">Загрузить еще</a>
 					</div>
 				<?php else : ?>
 					<p></p>

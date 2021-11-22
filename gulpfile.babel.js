@@ -9,6 +9,8 @@ import del from 'del';
 import webpackStream from 'webpack-stream';
 import browserSync from 'browser-sync';
 
+const path = require('path');
+
 const sass = require('gulp-sass')(require('sass'));
 const server = browserSync.create();
 
@@ -29,7 +31,7 @@ const paths = {
 		dest: 'dist/assets/'
 	},
 	scripts: {
-		src: ['src/assets/js/main.js', 'src/assets/js/filter.js'],
+		src: ['src/assets/js/main.js'],
 		dest: 'dist/assets/js'
 	}
 }
@@ -79,12 +81,20 @@ export const copy = () => {
 	return src(paths.other.src)
 		.pipe(dest(paths.other.dest))
 }
-
+console.log(__dirname);
 export const scripts = () => {
 	return src (paths.scripts.src)
 		.pipe(webpackStream({
 			mode: 'production',
 			performance: { hints: false },
+			entry: {
+				main : path.resolve(__dirname + "/src/assets/js/main.js"),
+				slider : path.resolve(__dirname + "/src/assets/js/components/slider.js")
+			},
+			output: {
+				path: path.resolve(__dirname + "/dist/assets/js"),
+				filename: '[name].js'
+			},
 			module: {
 				rules: [
 					{

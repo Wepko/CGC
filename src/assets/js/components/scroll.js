@@ -46,7 +46,6 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
       end: 99999,
       toggleClass: {className: 'header--up', targets: '.header'},
       onUpdate: ({direction}) => {
-        console.log(direction);
         if (direction == -1) {
           scrollUp.classList.remove('header--up');
         } else {
