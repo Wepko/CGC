@@ -14,23 +14,6 @@
 
 get_header();
 ?>
-   
-   <?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package cgc
- */
-
-get_header();
-?>
 
 
 
@@ -61,20 +44,6 @@ get_header();
 
 
 <button data-custom-open="modal-1" class="myButton">Clic Clic</button>
-
-	<div class="preloader">
-		<div class="banter-loader">
-		<div class="banter-loader__box"></div>
-		<div class="banter-loader__box"></div>
-		<div class="banter-loader__box"></div>
-		<div class="banter-loader__box"></div>
-		<div class="banter-loader__box"></div>
-		<div class="banter-loader__box"></div>
-		<div class="banter-loader__box"></div>
-		<div class="banter-loader__box"></div>
-		<div class="banter-loader__box"></div>
-		</div>
-	</div>
 
 
 

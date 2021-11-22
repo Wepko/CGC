@@ -38,5 +38,21 @@
 		<div class="header-clear"></div>
 	<?php endif ?>
 
+	
+	<div class="preloader">
+		<div class="banter-loader">
+		<div class="banter-loader__box"></div>
+		<div class="banter-loader__box"></div>
+		<div class="banter-loader__box"></div>
+		<div class="banter-loader__box"></div>
+		<div class="banter-loader__box"></div>
+		<div class="banter-loader__box"></div>
+		<div class="banter-loader__box"></div>
+		<div class="banter-loader__box"></div>
+		<div class="banter-loader__box"></div>
+		</div>
+	</div>
+
+
 
 

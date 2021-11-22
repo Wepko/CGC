@@ -1,7 +1,7 @@
-<div class="card-product">
-	<?php if( get_field('thumb') ): ?>
-		<img src="<?php echo get_field('thumb')['url']; ?>" />
-	<?php endif; ?>
+<div class="card-product" style="background-image: url(<?php echo get_field('thumb')['url']; ?>);">
+	<!-- <?php if( get_field('thumb') ): ?>
+		<img src="" />
+	<?php endif; ?> -->
 	<div class="card-product__components">
 		<div class="card-product__tag">
 			<?php 
@@ -18,7 +18,7 @@
 				<span class="icon-icon4"><?php echo get_field('bathrooms')?></span>
 			</div>
 			<div class="card-product__description-text">
-			<p><?php the_content(); ?></p>
+			<p><?php echo get_field('content'); ?></p>
 			</div>
 		</div>
 		<div class="card-product__button">

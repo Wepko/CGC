@@ -42,6 +42,7 @@ $filter = ['switcher' => true ];
 									<input id="service<?=$i?>" type="radio" name="service" checked value="all">
 									<label for="service<?=$i?>">Все</label>
 								</div>
+
 								<?php if($query->have_posts()) : ?>
 									<?php while($query->have_posts()) : $query->the_post(); $i++; ?>
 										<div class="projects__filter-button">
@@ -52,6 +53,7 @@ $filter = ['switcher' => true ];
 								<?php else :?>
 									<p>Ничего нет</p>
 								<?php endif;?>
+								
 							</div>
             <div class="projects__filter-next"><span>Еще</span><i class="icon-arrow-right"> </i></div>
           </div>
