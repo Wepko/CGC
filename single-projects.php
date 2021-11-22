@@ -12,16 +12,7 @@ get_header();
 
 ?>
 
-<!-- <?php 
 
-    if( has_term( 'current', 'type') ){
-        echo '<p>Это страница archive-projects.php current</p>';
-    }
-
-    if( has_term( 'implemented', 'type' ) ){
-        echo '<p>Это страница archive-projects.php implemented</p>';
-    }
-?> -->
 
     <section class="project-header">
       <div class="container">
@@ -34,7 +25,7 @@ get_header();
       </div>
       <div class="project-header__slider"> 
 
-				<div id="planning" >
+				<div id="planning" class="slider-hidden">
 					<div class="swiper slider-project-single">
 					
 
@@ -55,16 +46,12 @@ get_header();
 										</div>
 							<?php endif; ?>
 
-
-
 						<div class="swiper-button-next"></div>
 						<div class="swiper-button-prev"></div>
 					</div>
 				</div>	
-				<div id="exterior" class="slider-hidden">
+				<div id="exterior" >
 					<div class="swiper slider-project-single">
-					 
-	
 					 <?php 
 						 $images_ex = get_field('ex_photo_gallery');
 						 //print_r($images_ex);
@@ -95,16 +82,12 @@ get_header();
         <div class="project-content__wrapper">
 					<?php 
 						$stock = get_field('stock'); 
-						// echo '<pre>';
-						// print_r( $stock  );
-						// echo '</pre>';
 						$content = trim($stock->post_content);
 						$text = "<p>Это акция существует, но пока в ней нету текста, за помощью обратитесь к администрации сайта</p>";
 					?>
 					<?php if (!empty(	$stock)) : ?>
 						<div class="project-content__stock"> 
 							<h2>Действует <span class="text-accent">акция</span></h2>
-							
 							<div class="project-content__stock-text"> 
 								<?php echo strlen($content) != 0 ? $content : $text; ?>
 							</div>
