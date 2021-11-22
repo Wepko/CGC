@@ -14,15 +14,18 @@
     }
 
     &__brand {
-        margin: 5rem 0 10rem 0;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 25rem));
-		row-gap: 10rem;
-        column-gap: 7rem;
+			margin: 5rem 0 10rem 0;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(200px, 25rem));
+			row-gap: 10rem;
+			column-gap: 6rem;
     }
 
     &-brand {
         max-width: 25rem;
+				img {
+					width: 100%;
+				}
         span {
             color: #2342A1;
         }
