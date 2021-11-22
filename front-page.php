@@ -24,9 +24,6 @@ get_header();
         <h2 class="modal__title" id="modal-1-title">
 					Заказать проект
         </h2>
-				<!-- <p class="modal__description">
-					
-				</p> -->
         <button class="modal__close" aria-label="Close modal" data-custom-close="modal-1"></button>
       </header>
       <main class="modal__content" id="modal-1-content">
@@ -35,15 +32,10 @@ get_header();
         </p>
 				<?php echo do_shortcode( '[contact-form-7 id="441" title="Контактная форма 1"]' ); ?>
       </main>
-      <!-- <footer class="modal__footer">
-        <button data-custom-close="modal-1">close</button>
-      </footer> -->
+
     </div>
   </div>
 </div>
-
-
-<button data-custom-open="modal-1" class="myButton">Clic Clic</button>
 
 
 
@@ -80,7 +72,7 @@ get_header();
 										</div>
 										<p class="info-block__description" style="max-width: 75rem"><?php the_sub_field('slide-description'); ?></p>
 										<div class="info-block__buttons">
-											<a class="btn-primary btn-primary--icon icon-gift" href="#"><?php the_sub_field('slide-button-1'); ?></a>
+											<a class="btn-primary btn-primary--icon icon-gift" data-custom-open="modal-1" href="#"><?php the_sub_field('slide-button-1'); ?></a>
 											<a class="btn-secondary btn-secondary--icon icon-arrow-right" href="catalog.html"><?php the_sub_field('slide-button-2'); ?></a>
 										</div>
 										
