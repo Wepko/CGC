@@ -647,7 +647,10 @@ h2 {
 }
 
 .slider-project-single {
-	width: 100vw;
+	max-width: 144rem;
+	max-height: 70rem;
+	width: 100%;
+	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
 	.swiper-button-next::after {
