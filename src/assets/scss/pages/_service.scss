@@ -12,6 +12,9 @@
         @extend %title-h1;
         color: $color-white;
         padding: 5rem 0;
+				span {
+					word-break: break-all;
+				}
     }
 
 	&__buttons a:nth-child(1) {
