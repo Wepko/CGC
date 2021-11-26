@@ -2,7 +2,7 @@ import { Swiper, EffectFade, Navigation, Pagination, Scrollbar, Controller, Para
 Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax, Mousewheel])
 
 
-
+	console.log('slider');
 
   new Swiper('.slider-project', {
 		// Optional parameters
@@ -19,6 +19,24 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 			el: '.swiper-scrollbar',
 			draggable: true,
 		},
+
+		breakpoints: {
+			// when window width is >= 320px
+			320: {
+				slidesPerView: 1,
+				spaceBetween: 20
+			},
+			// when window width is >= 480px
+			480: {
+				slidesPerView: 2,
+				spaceBetween: 30
+			},
+			// when window width is >= 640px
+			1140: {
+				slidesPerView: 3,
+				spaceBetween: 40
+			}
+		}
   });
 
 

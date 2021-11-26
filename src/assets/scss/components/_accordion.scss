@@ -99,7 +99,8 @@ $transition-time: 0.2s;
 	width: 100%;
 	position: relative;
 	min-height: 13rem;
-
+	cursor: pointer;
+	user-select: none;
 	&::before {
 		z-index: -1;
 		top: 0;

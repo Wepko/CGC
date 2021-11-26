@@ -105,6 +105,7 @@ $filter = ['switcher' => true ];
 						$query = new WP_Query([
 							'post_type' => 'projects',
 							'type' => 'implemented',
+							'status' => ['object_sale', 'object_not_sale'],
 							'paged' => $paged,
 						]);
 
@@ -121,7 +122,7 @@ $filter = ['switcher' => true ];
 				?>
 				<?php if ($paged <= $max_pages) : ?>
 					<div class="projects__buttons">
-						<a id="more" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="">Загрузить еще</a>
+						<a id="more" data-param="<?php echo $max_pages?>" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="">Загрузить еще</a>
 					</div>
 				<?php else : ?>
 					<p></p>

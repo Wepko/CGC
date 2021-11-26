@@ -160,7 +160,16 @@ get_header();
                         <p>Высота</p>
                       </div>
                       <div class="features-el">
-                        <h4><?the_field('min_width')?> x <?the_field('min_length')?> м</h4>
+												<?php 
+													$width = floatval(get_field('min_width'));
+													$length = floatval(get_field('min_length'));
+
+													$coefficient_witdth = floatval(get_field('coefficient_witdth'));
+													$coefficient_length = floatval(get_field('coefficient_length'));
+													$sumW =	$width +	$coefficient_witdth;
+													$sumH = $length + $coefficient_length;
+												?>
+                        <h4><?php echo $sumW ." " . "x". " " . $sumH?> м<sup>2</sup></h4>
                         <p>Минимальные размеры участка</p>
                       </div>
                       

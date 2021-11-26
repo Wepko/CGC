@@ -18,13 +18,13 @@
         &-backspace {
             text-align: right;
             flex: 1 0 18%!important;
+						cursor: pointer;
         }
         span {
             color: $color-blue-dark;
             text-transform: uppercase;
             letter-spacing: 1.2px;
             font-weight: 500;
-            cursor: pointer;
             margin-right: 1rem;
         }
     }

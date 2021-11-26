@@ -42,7 +42,7 @@
 				<div class="projects__filter-next"><span>Еще</span><i class="icon-arrow-right"> </i></div>
 			</div>
 		</div>
-		<div class="projects__product">
+		<div class="projects__product-slider">
 			<?php 
 				$query = new WP_Query([
 					'post_type' => 'projects',

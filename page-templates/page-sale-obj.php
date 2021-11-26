@@ -5,41 +5,42 @@
 		Template Name: sale-obj
 	*/
 ?>
-
-	<section class="catalog">
+	<section class="catalog" data-type="objsale">
 		<div class="container">
 			<div class="catalog__title">
 				<h1><span class="text-accent">Готовые объекты </span> в продаже</h1>
 			</div>
 			<div class="catalog__filter">
 				<div class="catalog__filter-area"> 
-					<select id="s" name="r"> 
-						<option value="" data-display="Площадь">Любая1</option>
-						<option value="">До 2001</option>
-						<option value=""> От 200 до 300</option>
-						<option value=""> От 300 до 400</option>
-						<option value=""> Более 400</option>
+					<select id="area" name="area"> 
+						<option value="full" data-display="Площадь">Любая</option>
+						<option value="0:200">До 200</option>
+						<option value="200:300"> От 200 до 300</option>
+						<option value="300:400"> От 300 до 400</option>
+						<option value="400:9999"> Более 400</option>
 					</select>
 				</div>
 				<div class="catalog__filter-bedroom">
-					<select id="s" name="r"> 
-						<option value="" data-display="Колличество спален">Любая2</option>
-						<option value="">До 2002</option>
-						<option value=""> От 200 до 300</option>
-						<option value=""> От 300 до 400</option>
-						<option value=""> Более 400</option>
+					<select id="bedroom" name="bedroom"> 
+						<option value="full" data-display="Колличество спален">Любое</option>
+						<option value="0:2">2</option>
+						<option value="2:4"> От 2 до 4</option>
+						<option value="4:99"> Более 4</option>
 					</select>
 				</div>
 				<div class="catalog__filter-bathroom"> 
-					<select id="s" name="r"> 
-						<option value="" data-display="Колличество сан узлов">Любая3</option>
-						<option value="">До 2003</option>
-						<option value=""> От 200 до 300</option>
-						<option value=""> От 300 до 400</option>
-						<option value=""> Более 400</option>
+					<select id="bathroom" name="bathroom"> 
+						<option value="full" data-display="Колличество сан узлов">Любое</option>
+						<option value="0:2">2</option>
+						<option value="3:3">3</option>
+						<option value="4:4">4</option>
+						<option value="4:99"> Более 4</option>
 					</select>
 				</div>
-				<div class="catalog__filter-backspace"><span>Сбросить фильтр</span><i class="icon-backspace"></i></div>
+				<div class="catalog__filter-backspace" id="reset">
+					<span>Сбросить фильтр</span>
+					<i class="icon-backspace"></i>
+				</div>
 			</div>
 			<div class="projects__product">
 
@@ -49,6 +50,7 @@
 						'type' => ['implemented', 'current'],
 						'status' => 'object_sale',
 					]);
+
 
 					function is_tag_cgc() {
 						$slug = get_the_terms( get_the_ID(), 'status' )[0]->slug;
@@ -80,19 +82,24 @@
 				<?php else :?>
 					<p>Записей нет</p>
 				<?php endif;?>
+
 			</div>
+			<?php
+				$query = new WP_Query([
+					'post_type' => 'projects',
+					'type' => ['implemented', 'current'],
+					'status' => 'object_sale',
+				]);
+
+				$max_pages = $query->max_num_pages;
+			?>
 
 
-			<div class="projects__buttons"><a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="">Загрузить еще</a></div>
+			<div class="projects__buttons">
+				<a id="more2" data-param="<?php echo $max_pages; ?>" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="">Загрузить еще</a>
+			</div>
 		</div>
 	</section>
-
-	<?php get_template_part( 'template-parts/question'); ?>
-
-	<?php 
-		$theme = 'dark';
-		get_template_part( 'template-parts/contact', null, $theme ); 	
-	?>
 
 
 

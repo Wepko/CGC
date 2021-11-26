@@ -44,12 +44,16 @@ const switcherCheckbox = switcher.find('input');
 const labels = $('.projects__filter-buttons label');
 const btnMore = $('#more');
 // Состояние фильтра
+
+
 const filterArg = {
 	swithcerType: 'implemented',
 	servicesId: 'all',
 	paged: 1,
-	maxPages: 1,
+	maxPages: typeof(btnMore.data('param')) == 'number' ? btnMore.data('param') : 1,
 }
+
+console.log('max', filterArg.maxPages);
 
 const queryAjax = (data, type) => {
 	$.ajax({
@@ -89,8 +93,8 @@ const queryAjax = (data, type) => {
 					sliderWrapper.reduce( (prevProject, project) => prevProject + project ) :
 					' ';
 				
-					const script = '<script src="//localhost:3000/wp-content/themes/wp-pro/dist/assets/js/slider.js"></script>';
-					//const script = '';
+					const script = `<script src="//${location.hostname}/wp-content/themes/wp-pro/dist/assets/js/slider.js"></script>`;
+					//const script = '';d
 					
 					$('.projects__product .swiper-wrapper').html(sliderProjects + script);
 
@@ -162,11 +166,11 @@ labels.on('click', (e) => {
 	const data = createData(filterArg);
 
 	queryAjax(data);
-	return false;
 })
 
 btnMore.on('click', (e) => {
 	e.preventDefault();
+	console.log(filterArg);
 	console.log('btnMore', filterArg.maxPages, '>', filterArg.paged);
 	if (filterArg.maxPages > filterArg.paged) {
 		filterArg.paged += 1; 

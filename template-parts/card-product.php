@@ -7,6 +7,13 @@
 			<?php 
 				echo is_tag_cgc();
 				echo is_stocs_cgc();
+				$width = floatval(get_field('min_width'));
+				$length = floatval(get_field('min_length'));
+
+				$coefficient_witdth = floatval(get_field('coefficient_witdth'));
+				$coefficient_length = floatval(get_field('coefficient_length'));
+				$sumW =	$width +	$coefficient_witdth;
+				$sumH = $length + $coefficient_length;
 			?>
 		</div>
 		<div class="card-product__title"><?php the_title(); ?></div>
@@ -14,7 +21,8 @@
 			<div class="card-product__description-icons">
 				<span class="icon-icon1"><?php echo get_field('total_area')?> м<sup>2</sup></span>
 				<span class="icon-icon2"><?php echo get_field('rooms')?></span>
-				<span class="icon-icon3">от <?php echo get_field('min_area')?> соток</span>
+			
+				<span class="icon-icon3"><?php echo $sumW . "x" . $sumH?> м</span>
 				<span class="icon-icon4"><?php echo get_field('bathrooms')?></span>
 			</div>
 			<div class="card-product__description-text">

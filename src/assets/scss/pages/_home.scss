@@ -380,12 +380,25 @@ h2 {
 		}
 	}
 
+	&__product-slider {
+		position: relative;
+		margin: 4rem 0;
+		display: grid;
+		//grid-template-columns: repeat(auto-fill,minmax(200px, 38rem));
+		grid-gap: 1rem;
+		@include respond(phone) {
+			justify-content: center;
+		}
+	}
+
 	&__buttons {
 		display: flex;
 		justify-content: center;
 	}
 
 }
+
+ 
 
 
 
@@ -409,9 +422,8 @@ h2 {
 
 
 .slider-project {
-	position: relative;
-	width: auto;
-
+	width: inherit;
+	overflow: hidden;
 	// margin-left: auto;
     // margin-right: auto;
     // position: relative;
