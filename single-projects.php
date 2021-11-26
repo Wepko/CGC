@@ -77,22 +77,34 @@ get_header();
 
       </div>
     </section>
+
     <section class="project-content">
       <div class="container">
-        <div class="project-content__wrapper">
+				<div class="project-content__wrapper">
+					
 					<?php 
 						$stock = get_field('stock'); 
 						$content = trim($stock->post_content);
 						$text = "<p>Это акция существует, но пока в ней нету текста, за помощью обратитесь к администрации сайта</p>";
 					?>
-					<?php if (!empty(	$stock)) : ?>
 						<div class="project-content__stock"> 
-							<h2>Действует <span class="text-accent">акция</span></h2>
-							<div class="project-content__stock-text"> 
-								<?php echo strlen($content) != 0 ? $content : $text; ?>
+
+							<h2>Объект <span class="text-accent">в продаже</span></h2>
+
+							<?php if (!empty(	$stock)) : ?>
+								<div class="project-content__stock-text"> 
+									<span class="tag tag--light tag--icon-left icon-gift">Спецпредложение</span>
+									<?php echo strlen($content) != 0 ? $content : $text; ?>
+								</div>
+							<?php endif ?>
+
+							<div class="project-content__stock-text bg-greay"> 
+								<p>Описание темы</p>
 							</div>
+							
 						</div>
-					<?php endif ?>
+				</div>
+        <div class="project-content__wrapper">
           <div class="post">
             <div class="post__title"> 
               <h2> <span class="text-accent">Информация </span></h2>
@@ -111,11 +123,11 @@ get_header();
                   	<p><?php echo the_field('info_time')?> месяцев</p>
 									</div>
 								<?php endif; ?>
-                <?php  if( has_term( 'implemented', 'type' ) ) :?>
+          
 									<div class="project-content__info-button">
 										<a class="btn-live" href="">live Камера</a>
 									</div>
-                <?php endif; ?>
+
               </div>
             </div>
           </div>
@@ -189,9 +201,39 @@ get_header();
             </div>
           </div>
         </div>
+
+				<?php  if( has_term( ['current', 'implemented'], 'type' ) ) :?>
+					<div class="project-content__wrapper">
+						<div class="post">
+							<div class="post__title"> 
+								<h2> <span class="text-accent">Понравился проект?</span></h2>
+							</div>
+							<div class="post__content">
+								<p>Если вам понравился проект вы можете перейти в каталог проектов и ознакомиться с проектом более детально, если у вас останутся вопросы мы с удовольсвтем ответим на них и проконсультируем вас. </p>
+									
+							</div>
+						</div>
+					</div>
+				<?php endif; ?>
+
       </div>
     </section>
-    <?php  if( has_term( 'current', 'type' ) ) :?>
+
+		<?php  if( has_term( 'current', 'type' ) ) :?>
+			<div class="questions">
+				<div class="container">
+					<div class="questions__wrapper">
+						<div class="questions__title">Остались 
+							<div class="text-accent">вопросы?</div>
+						</div>
+						<div class="questions__description">Оставьте свой номер телефона и мы перезвоним вам в ближайшее время</div>
+						<div class="questions__buttons"><a class="btn-primary">Заказать звонок</a></div>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+
+    <?php  if( has_term( ['current', 'implemented'], 'type' ) ) :?>
 			<section class="service container">
 				<div class="service__title gs_reveal gs_reveal_fromLeft">Перечень <span class="text-accent">услуг</span></div>
 				<div class="service__description gs_reveal gs_reveal_fromLeft">Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.</div>
@@ -479,8 +521,8 @@ get_header();
 			</section>
     <?php endif; ?>
 
-    <?php  if( has_term( 'implemented', 'type' ) ) :?>
-        <?php  get_template_part( 'template-parts/slider-projects' );?>
+		<?php  if( has_term( 'implemented', 'type' ) ) :?>
+      <?php  get_template_part( 'template-parts/slider-projects' );?>
     <?php endif; ?>
 
 		<?php get_template_part( 'template-parts/question'); ?>

@@ -66,6 +66,15 @@ h2 {
 	background-color: $color-tag;
 	display: inline-block;
 	line-height: 1;
+	position: relative;
+
+	&::before {
+		position: absolute;
+		left: 1.7rem;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 1.7rem;
+	} 
 
 	&_solid {
 		color: $color-white;
@@ -76,6 +85,17 @@ h2 {
 		color: $color-white;
 		background-color: $color-primary;
 	}
+
+	&--icon-left {
+		padding-left: 5rem;
+		
+	}
+
+	&--light {
+		background-color: $color-white;
+		color: $color-primary;
+	}
+
 }
 
 

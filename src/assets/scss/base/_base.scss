@@ -91,6 +91,11 @@ body {
 	@extend %bg-primary;
 }
 
+.bg-greay {
+	background-color: #7B868C!important;
+	color: #fff!important;
+}
+
 .swiper-button-prev:after, .swiper-button-next:after {
 	font-family: 'GothamProCGC';
 	font-size: var(--swiper-navigation-size)/1 swiper-icons;

@@ -41,7 +41,9 @@
 				</div>
 				<div class="projects__filter-next"><span>Еще</span><i class="icon-arrow-right"> </i></div>
 			</div>
+
 		</div>
+
 		<div class="projects__product-slider">
 			<?php 
 				$query = new WP_Query([
@@ -99,5 +101,6 @@
 			<div class="swiper-scrollbar"></div>
 			</div>
 		</div>
+		
 	</div>
 </section>
