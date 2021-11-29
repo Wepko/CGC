@@ -262,7 +262,7 @@
 	text-decoration: none;
 	color: $color-grey-dark-4;
 	transition: .5s;
-
+	overflow: hidden;
 	&__img img {
 		width: 100%;
 	}

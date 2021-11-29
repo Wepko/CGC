@@ -29,9 +29,9 @@ get_header();
 					<a class="square" href="#"><i class="icon-icon1"></i></a>
 					<a class="btn-primary btn-primary--outline btn-primary--icon icon-icon1" href="#" id="plan">Планировка</a></div>
 			</div>
-			<div class="project-header__tags">
-			<?php if (!empty($obj_sale_description)) : ?>
-				<span class="tag tag_solid"> Обьект в продаже</span>
+			<div class="project-header__tags mh">
+			<?php if (empty($obj_sale_description)) : ?>
+				<span class="tag tag_solid mrib"> Обьект в продаже</span>
 			<?php endif ?>
 			<?php if (!empty($stock)) : ?>
 				<span class="tag tag_primary">Спецпредложение</span>
@@ -214,7 +214,7 @@ get_header();
 							<div class="project-content__stock-text  bg-greay"> 
 								<h4><span class="">Об объекте</span></h4>
 								<?php echo $obj_sale_description?>
-								<p><a href="#" class="btn-secondary">Узнать больше</a></p>
+								<p class="mh"><a href="#" class="btn-secondary">Узнать больше</a></p>
 							</div>
 							
 						<?php endif ?>
@@ -234,7 +234,18 @@ get_header();
 					<div class="questions__title">Подпишись 
 						<div class="text-accent">На проект</div>
 					</div>
+					<div class="fc">
 					<div class="questions__description">Укажите адрес электронной почты, на который вы хотели бы  получать уведомления об изменениях на донном объекте</div>
+						<div class="form__field">
+							<div class="inputbox">
+							<span class="wpcf7-form-control-wrap text-phone">
+								<input type="text" required="required" name="text-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" id="input20" aria-required="true" aria-invalid="false">
+								<label for="input20">Email</label>
+								<span class="underline"></span>
+							</span>
+							</div>
+						</div>
+					</div>
 					<div></div>
 					<div class="questions__buttons"><a class="btn-primary">Подписаться</a></div>
 				</div>
@@ -246,9 +257,9 @@ get_header();
 	<?php  if( has_term( ['current', 'implemented'], 'type' ) ) :?>
 		<?php  if( get_field('services_tab_1') || get_field('services_tab_2') ||  get_field('services_tab_3') ||  get_field('services_tab_4'))  :?>
 			<section class="service container">
-				<div class="service__title gs_reveal gs_reveal_fromLeft">Перечень <span class="text-accent">услуг</span></div>
-				<div class="service__description gs_reveal gs_reveal_fromLeft">Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.</div>
-				<div class="service__accordion gs_reveal gs_reveal_fromRight">
+				<div class="service__title">Перечень <span class="text-accent">услуг</span></div>
+				<div class="service__description">Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.</div>
+				<div class="service__accordion">
 					<dl class="badger-accordion js-badger-accordion">
 						<?php if( have_rows('services_tab_1') ): ?>
 							<dt class="badger-accordion__header">
@@ -307,8 +318,7 @@ get_header();
 															</div>
 														</div>
 														<div class="accordion__buttons">
-															<a class="btn-primary">Узнать больше</a>
-															<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Готовые проекты</a>
+															<a href="<?php echo get_post_type_archive_link( 'services' ); ?>" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Перейти к услугам</a>
 														</div>
 													</div>
 												</div>
@@ -376,8 +386,7 @@ get_header();
 															</div>
 														</div>
 														<div class="accordion__buttons">
-															<a class="btn-primary">Узнать больше</a>
-															<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Готовые проекты</a>
+														<a href="<?php echo get_post_type_archive_link( 'services' ); ?>" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Перейти к услугам</a>
 														</div>
 													</div>
 												</div>
@@ -445,9 +454,8 @@ get_header();
 															</div>
 														</div>
 														<div class="accordion__buttons">
-															<a class="btn-primary">Узнать больше</a>
-															<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Готовые проекты</a>
-														</div>
+														<a href="<?php echo get_post_type_archive_link( 'services' ); ?>" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Перейти к услугам</a>
+													</div>
 													</div>
 												</div>
 											</dd>
@@ -516,8 +524,7 @@ get_header();
 															</div>
 														</div>
 														<div class="accordion__buttons">
-															<a class="btn-primary">Узнать больше</a>
-															<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Готовые проекты</a>
+															<a href="<?php echo get_post_type_archive_link( 'services' ); ?>" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Перейти к услугам</a>
 														</div>
 													</div>
 												</div>
@@ -549,8 +556,8 @@ get_header();
 						</div>
 						<div class="post__content">
 							<p>Если вам понравился проект вы можете перейти в каталог проектов и ознакомиться с проектом более детально, если у вас останутся вопросы мы с удовольсвтем ответим на них и проконсультируем вас. </p>
-							<p>
-								<a href="#" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Перейти в каталог</a>
+							<p class="mh">
+								<a href="#" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right mrib">Перейти в каталог</a>
 								<a href="#" class="btn-primary">связаться с менеджером</a>
 							</p>
 						</div>

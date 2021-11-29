@@ -614,22 +614,23 @@ h2 {
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
-	.swiper-button-next::after {
-		content: 'next';
+	.swiper-button-next::after,.swiper-button-prev::after {
+		content: 'prev';
 		font-family: 'swiper-icons';
 		font-size: 4rem;
+		padding: 3rem;
+		color: $color-blue-dark;
+		background: transparentize($color-white, 0.1);
 		@include respond(phone) {
 			font-size: 1rem;
 		}
 	}
+	.swiper-button-next::after {
+		content: 'next';
+	}
 	
 	.swiper-button-prev::after {
 		content: 'prev';
-		font-family: 'swiper-icons';
-		font-size: 4rem;
-		@include respond(phone) {
-			font-size: 1rem;
-		}
 	}
 }
 

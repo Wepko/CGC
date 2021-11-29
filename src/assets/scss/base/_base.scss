@@ -82,6 +82,19 @@ body {
   padding-top: 15rem!important;
 }
 
+.mh {
+	margin: 1.5rem 0;
+}
+
+.fc {
+	display: flex;
+	flex-direction: column;
+}
+
+.mrib {
+	display: inline-block;
+	margin-right: 2.2rem; 
+} 
 
 .title-h1 {
   @extend %title-h1;
