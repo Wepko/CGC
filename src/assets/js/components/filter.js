@@ -96,7 +96,7 @@ const queryAjax = (data, type) => {
 					const script = `<script src="//${location.hostname}/wp-content/themes/wp-pro/dist/assets/js/slider.js"></script>`;
 					//const script = '';d
 					
-					$('.projects__product .swiper-wrapper').html(sliderProjects + script);
+					$('.projects__product-slider .swiper-wrapper').html(sliderProjects + script);
 
 					filterArg.maxPages = response.maxPages;
 					break;

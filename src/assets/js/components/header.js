@@ -21,9 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			html.classList.toggle('active')
     })
 
-		const linkProjects = document.querySelector('#menu-item-267 a');
+
+		const linkProjects = document.querySelector(`a[href$="projects/"]`);
+		console.log(linkProjects);
 		linkProjects.addEventListener('click', e => {
 			e.preventDefault();
 		});
+	 
+
 })
 
