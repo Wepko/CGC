@@ -401,14 +401,7 @@ h2 {
 	}
 
 	&__product-slider {
-		position: relative;
-		margin: 4rem 0;
-		display: grid;
-		//grid-template-columns: repeat(auto-fill,minmax(200px, 38rem));
-		grid-gap: 1rem;
-		@include respond(phone) {
-			justify-content: center;
-		}
+
 	}
 
 	&__buttons {
@@ -439,62 +432,6 @@ h2 {
 
 
 
-
-
-.slider-project {
-	width: inherit;
-	overflow: hidden;
-	// margin-left: auto;
-    // margin-right: auto;
-    // position: relative;
-    // overflow: hidden;
-    // list-style: none;
-    // padding: 0;
-    // z-index: 1;
-	@include respond(phone) {
-		font-size: 0.8rem;
-		width: 32.5rem;
-	}
-
-	.swiper-button-next::after, .swiper-button-prev::after {
-		color: $color-black;
-	}
-
-	.swiper-button-next {
-		@include respond(phone) {
-			right: 2.5rem;
-		}
-	}
-	.swiper-button-prev {
-		@include respond(phone) {
-			left: 0rem;
-		}
-	}
-
-	.swiper-buttons {
-		position: relative;
-		bottom: -5rem;
-		left: 100rem;
-		font-size: 1.6rem;
-		@include respond(phone) {
-			left: 0;
-			bottom: -10rem;
-		}
-	}
-
-	.swiper-scrollbar {
-		bottom: -5.3rem;
-		left: 107rem;
-		background: transparentize(#101820, 0.7);
-
-		@include respond(phone) {
-			bottom: -10rem;
-			left: 65%;
-			width: 55%;
-			transform: translateX(-85%);
-		}
-	}
-}
 
 .slider-service {
 	width: 120rem;
@@ -618,13 +555,6 @@ h2 {
 	position: relative;
 	width: 120rem;
 
-	// margin-left: auto;
-    // margin-right: auto;
-    // position: relative;
-    // overflow: hidden;
-    // list-style: none;
-    // padding: 0;
-    // z-index: 1;
 	@include respond(phone) {
 		font-size: 0.8rem;
 		width: 32.5rem;

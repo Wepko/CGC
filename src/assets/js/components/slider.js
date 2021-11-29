@@ -5,11 +5,7 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 	console.log('slider');
 
   new Swiper('.slider-project', {
-		// Optional parameters
-		//direction: 'vertical',
-		loop: false,
-		slidesPerView: 'auto',
-		centeredSlides: true,
+		slidesPerView: 3,
 		spaceBetween: 30,
 		navigation: {
 			nextEl: ".swiper-button-next",
@@ -26,15 +22,10 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 				slidesPerView: 1,
 				spaceBetween: 20
 			},
-			// when window width is >= 480px
-			480: {
-				slidesPerView: 2,
-				spaceBetween: 30
-			},
 			// when window width is >= 640px
 			1140: {
-				slidesPerView: 3,
-				spaceBetween: 40
+				slidesPerView: 'auto',
+				spaceBetween: 30
 			}
 		}
   });

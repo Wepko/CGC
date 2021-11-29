@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const links = menu.querySelectorAll('.navigation__subnav');
 
     for (let link of links) {
-        link.addEventListener('click', () => {
-            link.classList.toggle('active');
-        });
+			link.addEventListener('click', () => {
+				link.classList.toggle('active');
+			});
     }
 
     humburger.addEventListener('click', () => {
-        humburger.classList.toggle('active');
-        menu.classList.toggle('active');
-        html.classList.toggle('active')
+			humburger.classList.toggle('active');
+			menu.classList.toggle('active');
+			html.classList.toggle('active')
     })
 
 		const linkProjects = document.querySelector('#menu-item-267 a');

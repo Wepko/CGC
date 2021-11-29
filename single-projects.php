@@ -12,228 +12,239 @@ get_header();
 
 ?>
 
+<?php 
+	$stock = get_field('stock'); 
+	$content = trim($stock->post_content);
+	$text = "<p>Это акция существует, но пока в ней нету текста, за помощью обратитесь к администрации сайта</p>";
 
+	$obj_sale_description = get_field('obj_sale_description');
+?>
 
-    <section class="project-header">
-      <div class="container">
-        <div class="project-header__title"> 
-          <h1>Дом <span class="text-accent"><?= the_title();?></span></h1>
-          <div class="project-header__square">
-              <a class="square" href="#"><i class="icon-icon1"></i></a>
-              <a class="btn-primary btn-primary--outline btn-primary--icon icon-icon1" href="#" id="plan">Планировка</a></div>
-        </div>
-      </div>
-      <div class="project-header__slider"> 
+<!-- Слайдер -->
+	<section class="project-header">
+		<div class="container">
+			<div class="project-header__title"> 
+				<h1>Дом <span class="text-accent"><?= the_title();?></span></h1>
+				<div class="project-header__square">
+					<a class="square" href="#"><i class="icon-icon1"></i></a>
+					<a class="btn-primary btn-primary--outline btn-primary--icon icon-icon1" href="#" id="plan">Планировка</a></div>
+			</div>
+			<div class="project-header__tags">
+			<?php if (!empty($obj_sale_description)) : ?>
+				<span class="tag tag_solid"> Обьект в продаже</span>
+			<?php endif ?>
+			<?php if (!empty($stock)) : ?>
+				<span class="tag tag_primary">Спецпредложение</span>
+			<?php endif ?>
+			</div>
+		</div>
+		<div class="project-header__slider"> 
+			<div id="planning" class="slider-hidden">
+				<div class="swiper slider-project-single">
+				
 
-				<div id="planning" class="slider-hidden">
-					<div class="swiper slider-project-single">
-					
-
-						<?php 
-							$images_pl = get_field('pl_photo_gallery');
-							$images_ex = get_field('ex_photo_gallery');
-							//print_r($images_ex);
-							$size = 'full'; // (thumbnail, medium, large, full или произвольный размер)
-
-							if( $images_pl ): ?>
-									<div  class="swiper-wrapper">
-											<?php foreach( $images_pl as $image ): ?>
-												<div class="swiper-slide"> 
-													<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
-												</div>
-														
-											<?php endforeach; ?>
-										</div>
-							<?php endif; ?>
-
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
-					</div>
-				</div>	
-				<div id="exterior" >
-					<div class="swiper slider-project-single">
-					 <?php 
-						 $images_ex = get_field('ex_photo_gallery');
-						 //print_r($images_ex);
-						 $size = 'full'; // (thumbnail, medium, large, full или произвольный размер)
-	
-						 if( $images_ex ): ?>
-									<div  class="swiper-wrapper">
-										 <?php foreach( $images_ex as $image ): ?>
-											 <div class="swiper-slide"> 
-												 <?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
-											 </div>
-													 
-										 <?php endforeach; ?>
-									 </div>
-						 <?php endif; ?>
-	
-	
-	
-					 <div class="swiper-button-next"></div>
-					 <div class="swiper-button-prev"></div>
-				 </div>
-				</div>
-
-      </div>
-    </section>
-
-    <section class="project-content">
-      <div class="container">
-				<div class="project-content__wrapper">
-					
 					<?php 
-						$stock = get_field('stock'); 
-						$content = trim($stock->post_content);
-						$text = "<p>Это акция существует, но пока в ней нету текста, за помощью обратитесь к администрации сайта</p>";
-					?>
-						<div class="project-content__stock"> 
+						$images_pl = get_field('pl_photo_gallery');
+						$images_ex = get_field('ex_photo_gallery');
+						//print_r($images_ex);
+						$size = 'full'; // (thumbnail, medium, large, full или произвольный размер)
 
-							<h2>Объект <span class="text-accent">в продаже</span></h2>
+						if( $images_pl ): ?>
+								<div  class="swiper-wrapper">
+										<?php foreach( $images_pl as $image ): ?>
+											<div class="swiper-slide"> 
+												<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+											</div>
+													
+										<?php endforeach; ?>
+									</div>
+						<?php endif; ?>
 
-							<?php if (!empty(	$stock)) : ?>
-								<div class="project-content__stock-text"> 
-									<span class="tag tag--light tag--icon-left icon-gift">Спецпредложение</span>
-									<?php echo strlen($content) != 0 ? $content : $text; ?>
-								</div>
-							<?php endif ?>
-
-							<div class="project-content__stock-text bg-greay"> 
-								<p>Описание темы</p>
-							</div>
-							
-						</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
 				</div>
-        <div class="project-content__wrapper">
-          <div class="post">
-            <div class="post__title"> 
-              <h2> <span class="text-accent">Информация </span></h2>
-            </div>
-            <div class="post__content">
-              <div class="project-content__info">
-								<?php if (!empty(get_field('info_place'))) : ?>
-									<div class="project-content__info-block icon-adress-bold">
-										<h3>Место реализации</h3>
-										<p><?php echo the_field('info_place')?></p>
-									</div>
-								<?php endif; ?>
-								<?php if (!empty(get_field('info_time'))) : ?>
-                	<div class="project-content__info-block icon-time">
-                 		<h3>Время реализации</h3>
-                  	<p><?php echo the_field('info_time')?> месяцев</p>
-									</div>
-								<?php endif; ?>
-          
-									<div class="project-content__info-button">
-										<a class="btn-live" href="">live Камера</a>
-									</div>
+			</div>	
+			<div id="exterior" >
+				<div class="swiper slider-project-single">
+					<?php 
+						$images_ex = get_field('ex_photo_gallery');
+						//print_r($images_ex);
+						$size = 'full'; // (thumbnail, medium, large, full или произвольный размер)
 
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project-content__wrapper">
-          <div class="post">
-            <div class="post__title"> 
-              <h2> <span class="text-accent">Характеристики </span><span></span></h2>
-            </div>
-            <div class="post__content">
-              <div class="project-content__description"> 
-                <div class="project-content__description-text">
-                    <?= the_field('content');?>
-                </div>
-                <div class="project-content_description-feature">
-                  <div class="features features--light">
-                    <div class="features-row"> 
-                      <div class="features-el">
-                        <h4><?the_field('total_area')?> м<sup>2</sup></h4>
-                        <p>Общая площадь</p>
-                      </div>
-                      <div class="features-el ">
-                        <h4><?the_field('floors')?></h4>
-                        <p>Этажа</p>
-                      </div>
-                      <div class="features-el">
-                        <h4><?the_field('rooms')?></h4>
-                        <p>Комнат</p>
-                      </div>
-                      <div class="features-el">
-                        <h4><?the_field('bedrooms')?></h4>
-                        <p>Спален</p>
-                      </div>
-                    </div>
-                    <div class="features-row"> 
-                      <div class="features-el">
-                        <h4><?the_field('bathrooms')?></h4>
-                        <p>Количество с/у</p>
-                      </div>
-                      <div class="features-el">
-                        <h4><?the_field('height')?>м</h4>
-                        <p>Высота</p>
-                      </div>
-                      <div class="features-el">
-												<?php 
-													$width = floatval(get_field('min_width'));
-													$length = floatval(get_field('min_length'));
+						if( $images_ex ): ?>
+								<div  class="swiper-wrapper">
+										<?php foreach( $images_ex as $image ): ?>
+											<div class="swiper-slide"> 
+												<?php echo wp_get_attachment_image( $image['ID'], $size ); ?>
+											</div>
+													
+										<?php endforeach; ?>
+									</div>
+						<?php endif; ?>
 
-													$coefficient_witdth = floatval(get_field('coefficient_witdth'));
-													$coefficient_length = floatval(get_field('coefficient_length'));
-													$sumW =	$width +	$coefficient_witdth;
-													$sumH = $length + $coefficient_length;
-												?>
-                        <h4><?php echo $sumW ." " . "x". " " . $sumH?> м<sup>2</sup></h4>
-                        <p>Минимальные размеры участка</p>
-                      </div>
-                      
-                    <div class="features-row"> 
-                      <div class="features-el">
-                        <h4>Гараж</h4>
-                        <p><?the_field('garage')?></p>
-                      </div>
-                      <div class="features-el ">
-                        <h4>Особенности</h4>
-                        <p><?the_field('features')?></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-				<?php  if( has_term( ['current', 'implemented'], 'type' ) ) :?>
-					<div class="project-content__wrapper">
-						<div class="post">
-							<div class="post__title"> 
-								<h2> <span class="text-accent">Понравился проект?</span></h2>
-							</div>
-							<div class="post__content">
-								<p>Если вам понравился проект вы можете перейти в каталог проектов и ознакомиться с проектом более детально, если у вас останутся вопросы мы с удовольсвтем ответим на них и проконсультируем вас. </p>
-									
-							</div>
-						</div>
+
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Информация и харакктеристики -->
+	<section class="project-content">
+		<div class="container">
+			<div class="project-content__wrapper">
+				<div class="post">
+					<div class="post__title"> 
+						<h2> <span class="text-accent">Информация </span></h2>
 					</div>
-				<?php endif; ?>
+					<div class="post__content">
+						<div class="project-content__info">
+							<?php if (!empty(get_field('info_place'))) : ?>
+								<div class="project-content__info-block icon-adress-bold">
+									<h3>Место реализации</h3>
+									<p><?php echo the_field('info_place')?></p>
+								</div>
+							<?php endif; ?>
+							<?php if (!empty(get_field('info_time'))) : ?>
+								<div class="project-content__info-block icon-time">
+									<h3>Время реализации</h3>
+									<p><?php echo the_field('info_time')?> месяцев</p>
+								</div>
+							<?php endif; ?>
+				
+								<div class="project-content__info-button">
+									<a class="btn-live" href="">live Камера</a>
+								</div>
 
-      </div>
-    </section>
-
-		<?php  if( has_term( 'current', 'type' ) ) :?>
-			<div class="questions">
-				<div class="container">
-					<div class="questions__wrapper">
-						<div class="questions__title">Остались 
-							<div class="text-accent">вопросы?</div>
 						</div>
-						<div class="questions__description">Оставьте свой номер телефона и мы перезвоним вам в ближайшее время</div>
-						<div class="questions__buttons"><a class="btn-primary">Заказать звонок</a></div>
 					</div>
 				</div>
 			</div>
-		<?php endif; ?>
+			<div class="project-content__wrapper">
+				<div class="post">
+					<div class="post__title"> 
+						<h2> <span class="text-accent">Характеристики </span><span></span></h2>
+					</div>
+					<div class="post__content">
+						<div class="project-content__description"> 
+							<div class="project-content__description-text">
+									<?= the_field('content');?>
+							</div>
+							<div class="project-content_description-feature">
+								<div class="features features--light">
+									<div class="features-row"> 
+										<div class="features-el">
+											<h4><?the_field('total_area')?> м<sup>2</sup></h4>
+											<p>Общая площадь</p>
+										</div>
+										<div class="features-el ">
+											<h4><?the_field('floors')?></h4>
+											<p>Этажа</p>
+										</div>
+										<div class="features-el">
+											<h4><?the_field('rooms')?></h4>
+											<p>Комнат</p>
+										</div>
+										<div class="features-el">
+											<h4><?the_field('bedrooms')?></h4>
+											<p>Спален</p>
+										</div>
+									</div>
+									<div class="features-row"> 
+										<div class="features-el">
+											<h4><?the_field('bathrooms')?></h4>
+											<p>Количество с/у</p>
+										</div>
+										<div class="features-el">
+											<h4><?the_field('height')?>м</h4>
+											<p>Высота</p>
+										</div>
+										<div class="features-el">
+											<?php 
+												$width = floatval(get_field('min_width'));
+												$length = floatval(get_field('min_length'));
 
-    <?php  if( has_term( ['current', 'implemented'], 'type' ) ) :?>
+												$coefficient_witdth = floatval(get_field('coefficient_witdth'));
+												$coefficient_length = floatval(get_field('coefficient_length'));
+												$sumW =	$width +	$coefficient_witdth;
+												$sumH = $length + $coefficient_length;
+											?>
+											<h4><?php echo $sumW ." " . "x". " " . $sumH?> м<sup>2</sup></h4>
+											<p>Минимальные размеры участка</p>
+										</div>
+										
+									<div class="features-row"> 
+										<div class="features-el">
+											<h4>Гараж</h4>
+											<p><?the_field('garage')?></p>
+										</div>
+										<div class="features-el ">
+											<h4>Особенности</h4>
+											<p><?the_field('features')?></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Акция и обьект в продаже -->
+	<?php if ( (!empty($stock)) || (!empty($obj_sale_description)) ) : ?>
+		<section class="project-content">
+			<div class="container">
+				<div class="project-content__wrapper">
+					<div class="project-content__stock"> 
+		
+						<h2>Доступен<span class="text-accent"> к заказу</span></h2>
+		
+						<?php if (!empty(	$stock)) : ?>
+							<div class="project-content__stock-text"> 
+								<h4><span class="">Спецпредложение</span></h4>
+								<?php echo strlen($content) != 0 ? $content : $text; ?>
+							</div>
+						<?php endif ?>
+		
+						<?php if (!empty(	$obj_sale_description)) : ?>
+							<div class="project-content__stock-text  bg-greay"> 
+								<h4><span class="">Об объекте</span></h4>
+								<?php echo $obj_sale_description?>
+								<p><a href="#" class="btn-secondary">Узнать больше</a></p>
+							</div>
+							
+						<?php endif ?>
+
+						
+					</div>
+				</div>
+			</div>
+		</section>
+	<?php endif ?>
+
+	<!-- Подпишись на проект -->
+	<?php  if( has_term( 'current', 'type' ) ) :?>
+		<div class="questions">
+			<div class="container">
+				<div class="questions__wrapper">
+					<div class="questions__title">Подпишись 
+						<div class="text-accent">На проект</div>
+					</div>
+					<div class="questions__description">Укажите адрес электронной почты, на который вы хотели бы  получать уведомления об изменениях на донном объекте</div>
+					<div></div>
+					<div class="questions__buttons"><a class="btn-primary">Подписаться</a></div>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+
+	<!-- Аккардион -->
+	<?php  if( has_term( ['current', 'implemented'], 'type' ) ) :?>
+		<?php  if( get_field('services_tab_1') || get_field('services_tab_2') ||  get_field('services_tab_3') ||  get_field('services_tab_4'))  :?>
 			<section class="service container">
 				<div class="service__title gs_reveal gs_reveal_fromLeft">Перечень <span class="text-accent">услуг</span></div>
 				<div class="service__description gs_reveal gs_reveal_fromLeft">Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.</div>
@@ -519,17 +530,41 @@ get_header();
 					</dl>
 				</div>
 			</section>
-    <?php endif; ?>
+		<?php endif; ?>
+	<?php endif; ?>
 
-		<?php  if( has_term( 'implemented', 'type' ) ) :?>
-      <?php  get_template_part( 'template-parts/slider-projects' );?>
-    <?php endif; ?>
-
+	<!-- Задай вопрос  -->
+	<?php  if( has_term( 'possible' ) ) :?>	
 		<?php get_template_part( 'template-parts/question'); ?>
+	<?php endif; ?>
 
-		<?php 
-			$theme = 'dark';
-			get_template_part( 'template-parts/contact', null, $theme ); 	
-		?>
+	<!-- Понравился проект  -->
+	<?php  if( has_term( ['current', 'implemented'], 'type' ) ) :?>
+		<section class="project-content">
+			<div class="container">
+				<div class="project-content__wrapper">
+					<div class="post">
+						<div class="post__title"> 
+							<h2><span class="text-accent">Понравился проект?</span></h2>
+						</div>
+						<div class="post__content">
+							<p>Если вам понравился проект вы можете перейти в каталог проектов и ознакомиться с проектом более детально, если у вас останутся вопросы мы с удовольсвтем ответим на них и проконсультируем вас. </p>
+							<p>
+								<a href="#" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Перейти в каталог</a>
+								<a href="#" class="btn-primary">связаться с менеджером</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	<?php endif; ?>
+
+	<?php 
+		$theme = 'dark';
+		get_template_part( 'template-parts/contact', null, $theme ); 	
+	?>
+
+
 
 <?php get_footer(); ?>

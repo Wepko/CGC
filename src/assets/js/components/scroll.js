@@ -45,22 +45,13 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
       start: 'top -300',
       end: 99999,
       toggleClass: {className: 'header--up', targets: '.header'},
-      onUpdate: ({direction}) => {
-        if (direction == -1) {
+      onUpdate: (obj) => {
+        if (obj.direction == -1) {
           scrollUp.classList.remove('header--up');
         } else {
           scrollUp.classList.add('header--up');
         }}
     });
-    
-    // gsap.from(".header--scrolled", {
-    //   position:"absolute", 
-    //       scrollTrigger: {
-    //       trigger:".header--scrolled",
-    //       start: 'top -300',
-    //       end: 99999,   
-    //     }
-    // }) 
     
     gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
       hide(elem); // assure that the element is hidden when scrolled into view

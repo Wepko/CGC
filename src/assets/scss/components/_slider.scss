@@ -1,0 +1,60 @@
+.slider {
+	&__overflow {
+		position: relative;
+		overflow: hidden;
+		margin: 4rem 0;
+		width: 100vw;
+		@include respond(phone) {
+			width: inherit;
+		}
+	}
+
+	
+	&__navigation {
+		display: flex;
+		align-items: center;
+		justify-content: end;
+		margin: 2rem 0;
+		@include respond(phone) {
+			justify-content: center;
+		}
+		.swiper-button-next, .swiper-button-prev {
+			position: static;
+			color: $color-black;
+			margin: 0;
+			height: auto;
+			width: auto;
+			display: inline-block;
+		}
+	}
+
+	&__scrollbar {
+		margin: 0 1rem;
+	}
+
+}
+
+
+
+
+
+.slider-project {
+	width: 124rem;
+
+	@include respond(phone) {
+		width: 80%;
+	}
+	.swiper-slide {
+		width: 33%;
+	}
+
+	.swiper-button-next::after, .swiper-button-prev::after {
+		color: $color-black;
+	}
+}
+
+.swiper-scrollbar {
+	background: transparentize(#101820, 0.7);
+	height: 1px;
+	width: 25rem;
+}
