@@ -94,17 +94,15 @@
 		
 		
 						</div>
+						<div class="slider__navigation">
+							<div class="swiper-button-next"></div>
+							<div class="slider__scrollbar">
+								<div class="swiper-scrollbar"></div>
+							</div>
+							<div class="swiper-button-prev"></div>
+						</div>
 					</div>
-				</div>
-				<div class="slider__navigation">
-					<div class="swiper-button-next"></div>
-					<div class="slider__scrollbar">
-						<div class="swiper-scrollbar"></div>
-					</div>
-					<div class="swiper-button-prev"></div>
 				</div>
 			</div>
-
-
 	</div>
 </section>
