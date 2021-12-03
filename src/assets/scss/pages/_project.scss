@@ -11,6 +11,9 @@
       @extend %title-h1;
     }
 
+		&__slider {
+			position: relative;
+		}
 
     &__slider img {
       width: 100%;
