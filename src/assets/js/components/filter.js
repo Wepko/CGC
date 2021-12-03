@@ -93,8 +93,8 @@ const queryAjax = (data, type) => {
 					sliderWrapper.reduce( (prevProject, project) => prevProject + project ) :
 					' ';
 				
-					const script = `<script src="//${location.hostname}/wp-content/themes/wp-pro/dist/assets/js/slider.js"></script>`;
-					//const script = '';d
+					//const script = `<script src="//${location.hostname}/wp-content/themes/wp-pro/dist/assets/js/slider.js"></script>`;
+					const script = '';
 					
 					$('.projects__product-slider .swiper-wrapper').html(sliderProjects + script);
 

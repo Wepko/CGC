@@ -433,122 +433,8 @@ h2 {
 
 
 
-.slider-service {
-	width: 120rem;
-	height: 100%;
-
-	margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    overflow: hidden;
-    list-style: none;
-    padding: 0;
-    z-index: 1;
-	@include respond(phone) {
-		font-size: 0.8rem;
-		width: 32.5rem;
-	}
-
-	.swiper-button-next::after, .swiper-button-prev::after {
-		color: $color-black;
-	}
-
-	.swiper-button-next {
-		right: 21rem;
-		@include respond(phone) {
-			right: 1rem;
-		}
-	}
-	.swiper-button-prev {
-		left: 73rem;
-		@include respond(phone) {
-			left: 0rem;
-		}
-	}
-
-	.swiper-buttons {
-		position: relative;
-		bottom: 1rem;
-		left: 0rem;
-		font-size: 1.4rem;
-		@include respond(phone) {
-			left: 0;
-			bottom: -10rem;
-		}
-	}
-
-	.swiper-scrollbar {
-		width: 15.5rem;
-		bottom: 1rem;
-		left: 78rem;
-		background: transparentize(#101820, 0.7);
-
-		@include respond(phone) {
-			bottom: -10rem;
-			left: 65%;
-			width: 55%;
-			transform: translateX(-85%);
-		}
-	}
-}
 
 
-
-.slider-gallery {
-	position: relative;
-	width: 60rem;
-
-	// margin-left: auto;
-    // margin-right: auto;
-    // position: relative;
-    // overflow: hidden;
-    // list-style: none;
-    // padding: 0;
-    // z-index: 1;
-	@include respond(phone) {
-		font-size: 0.8rem;
-		width: 32.5rem;
-	}
-
-	.swiper-button-next::after, .swiper-button-prev::after {
-		color: $color-black;
-	}
-
-	.swiper-button-next {
-		@include respond(phone) {
-			right: 2.5rem;
-		}
-	}
-	.swiper-button-prev {
-		@include respond(phone) {
-			left: 0rem;
-		}
-	}
-
-	.swiper-buttons {
-		position: relative;
-		bottom: -5rem;
-		left: 100rem;
-		font-size: 1.6rem;
-		@include respond(phone) {
-			left: 0;
-			bottom: -10rem;
-		}
-	}
-
-	.swiper-scrollbar {
-		bottom: -5.3rem;
-		left: 107rem;
-		background: transparentize(#101820, 0.7);
-
-		@include respond(phone) {
-			bottom: -10rem;
-			left: 65%;
-			width: 55%;
-			transform: translateX(-85%);
-		}
-	}
-}
 
 
 .slider-gallery-min {
@@ -609,9 +495,9 @@ h2 {
 }
 
 .slider-project-single {
-	width: 144rem;
-	height: 70rem;
-	margin: 0 auto;
+	width: 100%;
+	max-height: 70rem;
+	min-height: 15rem;
 	position: relative;
 	overflow: hidden;
 	.swiper-button-next::after,.swiper-button-prev::after {
@@ -644,7 +530,7 @@ h2 {
 	width: 100%;
 }
 
-.accordion__gallery .slider-gallery {
+.accordion__gallery {
 	max-width: 200rem;
 	width: 100%;
 	margin-left: auto;
@@ -654,7 +540,6 @@ h2 {
 	list-style: none;
 	padding: 0;
 	z-index: 1;
-
 }
 
 

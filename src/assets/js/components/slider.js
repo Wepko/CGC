@@ -5,8 +5,9 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 	console.log('slider');
 
   new Swiper('.slider-project', {
-		slidesPerView: 3,
+		slidesPerView: 'auto',
 		spaceBetween: 30,
+		observer: true,
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
@@ -19,7 +20,7 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 		breakpoints: {
 			// when window width is >= 320px
 			320: {
-				slidesPerView: 1,
+				slidesPerView: 'auto',
 				spaceBetween: 20
 			},
 			// when window width is >= 640px
@@ -36,7 +37,7 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 	// Optional parameters
 	//direction: 'vertical',
 	loop: false,
-	slidesPerView: 1,
+	slidesPerView: 'auto',
 	spaceBetween: 30,
 	navigation: {
 		nextEl: ".swiper-button-next",
@@ -45,7 +46,7 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 	scrollbar: {
 		el: '.swiper-scrollbar',
 		draggable: true,
-	},
+	}
 });
 
 
@@ -95,12 +96,12 @@ new Swiper('.slider-gallery-min', {
 
 
 	new Swiper('.slider-service', {
-		slidesPerView: 3,
-        spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        },
+		slidesPerView: 'auto',
+		spaceBetween: 30,
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true
+		},
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev",
@@ -109,6 +110,18 @@ new Swiper('.slider-gallery-min', {
 			el: '.swiper-scrollbar',
 			draggable: true,
 		},
+		breakpoints: {
+			// when window width is >= 320px
+			320: {
+				slidesPerView: 'auto',
+				spaceBetween: 20
+			},
+			// when window width is >= 640px
+			1140: {
+				slidesPerView: 'auto',
+				spaceBetween: 30
+			}
+		}
   });
 
   new Swiper('.slider-project-single', {

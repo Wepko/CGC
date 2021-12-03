@@ -74,35 +74,41 @@
 
 			?>
 
-			<div class="slider">
+			<div class="slider slider--one-sided">
 				<div class="slider__overflow">
 					<div class="slider-project">
-						<div class="swiper-wrapper">
-							<!-- Slides-->
 					
-								
-								<?php if ($query->have_posts()) :?>
-									<?php while($query->have_posts()) : $query->the_post()?>
-										<div class="swiper-slide">
-											<?php get_template_part( 'template-parts/card-product' );?>
-										</div>			
-									<?php endwhile;?>
-		
-								<?php else :?>
-									<p>Записей нет</p>
-								<?php endif;?>
-		
-		
-						</div>
-						<div class="slider__navigation">
-							<div class="swiper-button-next"></div>
-							<div class="slider__scrollbar">
-								<div class="swiper-scrollbar"></div>
+							<div class="swiper-wrapper">
+								<!-- Slides-->
+						
+									
+									<?php if ($query->have_posts()) :?>
+										<?php while($query->have_posts()) : $query->the_post()?>
+											<div class="swiper-slide">
+												<?php get_template_part( 'template-parts/card-product' );?>
+											</div>			
+										<?php endwhile;?>
+			
+									<?php else :?>
+										<p>Записей нет</p>
+									<?php endif;?>
+			
+			
 							</div>
-							<div class="swiper-button-prev"></div>
-						</div>
+	
+	
+							<div class="slider__navigation">
+								<div class="swiper-button-next"></div>
+								<div class="slider__scrollbar">
+									<div class="swiper-scrollbar"></div>
+								</div>
+								<div class="swiper-button-prev"></div>
+							</div>
 					</div>
 				</div>
+
 			</div>
+
+
 	</div>
 </section>

@@ -18,7 +18,7 @@
       <div class="container">
         <div class="bg-service-header"> </div>
         <div class="service-header__wrapper">
-          <div class="service-header__title"><span class="text-access"><?php the_title(); ?></span></div>
+          <div class="service-header__title"><span class="text-access"<?php echo strlen(get_the_title()) > 30 ? " style='font-size: 7rem' " : "" ?> ><?php echo get_the_title(); ?></span></div>
           <div class="service-header__buttons">
 						<a class="btn-primary" href="#">Узнайте больше</a>
 						<a class="btn-secondary btn-secondary--icon icon-arrow-right" href=#">Готовые проекты</a></div>
@@ -38,7 +38,9 @@
 							 echo $group1['service-info'];
 							?>
 							<br>
-							<p class="bg-primary"><?php echo $group1['service-select'];?></p>
+							<?php if(  !empty($group1['service-select']) ): ?>
+								<p class="bg-primary"><?php echo $group1['service-select'];?></p>
+							<?php endif; ?>
             </div>
           </div>
         </div>
@@ -50,68 +52,88 @@
 							</div>
 							<div class="post__content">
 								<div class="service-content__slider">
-									<div class="slider-service">
-										<!-- Additional required wrapper-->
-										<div class="swiper-wrapper">
-											<!-- Slides-->
+
+									<div class="slider slider--one-sided">
+										<div class="slider__overflow">
 											
-												<?php $service_slider = get_field('service-slider');?>
-												<?php if ( is_array( $service_slider ) ) : ?>
-													<?php foreach ($service_slider as $slide) : ?>
-														<div class="swiper-slide"> 
-															<div class="card-service"> 
-																<div class="card-service__title"><?php echo $slide['service-slider-title']; ?></div>
-																<div class="card-service__description">
-																	<p><?php echo $slide['service-slider-description']; ?></p>
+											<div class="slider-service">
+												<!-- Additional required wrapper-->
+												<div class="swiper-wrapper">
+													<!-- Slides-->
+														<?php $service_slider = get_field('service-slider');?>
+
+														<?php if ( is_array( $service_slider ) ) : ?>
+															<?php foreach ($service_slider as $slide) : ?>
+																<div class="swiper-slide"> 
+																	<div class="card-service"> 
+																		<div class="card-service__title"><?php echo $slide['service-slider-title']; ?></div>
+																		<div class="card-service__description">
+																			<p><?php echo $slide['service-slider-description']; ?></p>
+																		</div>
+																		<div class="card-service__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right">Заказать услугу</a></div>
+																	</div>
 																</div>
-																<div class="card-service__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right">Заказать услугу</a></div>
-															</div>
-														</div>
-													<?php endforeach; ?>
-												<?php endif; ?>
+															<?php endforeach; ?>
+														<?php endif; ?>
+												</div>
+													
+												<div class="slider__navigation">
+													<div class="swiper-button-next"></div>
+													<div class="slider__scrollbar">
+														<div class="swiper-scrollbar"></div>
+													</div>
+													<div class="swiper-button-prev"></div>
+												</div>
+											</div>
 										</div>
-										<div class="swiper-buttons">
-											<div class="swiper-button-next"></div>
-											<div class="swiper-button-prev"></div>
-										</div>
-										<div class="swiper-scrollbar"></div>
 									</div>
+
+
+
 								</div>
 							</div>
 						</div>
 						<?php endif; ?>
+
 					<?php if( get_field('service_switch_2') ): ?>
 						<div class="service-content__gallery">
 							<div class="service-content__gallery-title">Галерея</div>
 							<div class="service-content__gallery-slider"> 
-								<div class="slider-gallery">
-									<!-- Additional required wrapper-->
-									<div class="swiper-wrapper">
+								<div class="slider slider--one-sided">
+									<div class="slider__overflow">
+										<div class="slider-gallery">
 
-										<?php $service_gallery = get_field('service-gallery');?>
-										<?php if ( is_array( $service_gallery ) ) : ?>
-											<?php foreach ($service_gallery as $slide) : ?>
-												<div class="swiper-slide"> 
-													<div class="card-gallery">
-														<div class="card-gallery__img"> 
-															<img src="<?php echo $slide['sercice-gallery-img']['url']; ?>" alt="">
+											<div class="swiper-wrapper">
+
+												<?php $service_gallery = get_field('service-gallery');?>
+												<?php if ( is_array( $service_gallery ) ) : ?>
+													<?php foreach ($service_gallery as $slide) : ?>
+														<div class="swiper-slide"> 
+															<div class="card-gallery">
+																<div class="card-gallery__img"> 
+																	<img src="<?php echo $slide['sercice-gallery-img']['url']; ?>" alt="">
+																</div>
+																<div class="card-gallery__description">
+																	<p><?php echo $slide['sercice-gallery-description']; ?></p>
+																</div>
+															</div>
 														</div>
-														<div class="card-gallery__description">
-															<p><?php echo $slide['sercice-gallery-description']; ?></p>
-														</div>
-													</div>
+													<?php endforeach; ?>
+												<?php endif; ?>
+
+
+														
+											</div>
+											
+											<div class="slider__navigation">
+												<div class="swiper-button-next"></div>
+												<div class="slider__scrollbar">
+													<div class="swiper-scrollbar"></div>
 												</div>
-											<?php endforeach; ?>
-										<?php endif; ?>
-
-
-
+												<div class="swiper-button-prev"></div>
+											</div>
+										</div>
 									</div>
-									<div class="swiper-buttons">
-										<div class="swiper-button-next"></div>
-										<div class="swiper-button-prev"></div>
-									</div>
-									<div class="swiper-scrollbar"></div>
 								</div>
 							</div>
 						</div>
