@@ -30,7 +30,7 @@ get_header();
 					<a class="btn-primary btn-primary--outline btn-primary--icon icon-icon1" href="#" id="plan">Планировка</a></div>
 			</div>
 			<div class="project-header__tags mh">
-			<?php if (empty($obj_sale_description)) : ?>
+			<?php if (!empty($obj_sale_description)) : ?>
 				<span class="tag tag_solid mrib"> Обьект в продаже</span>
 			<?php endif ?>
 			<?php if (!empty($stock)) : ?>
@@ -205,16 +205,16 @@ get_header();
 		
 						<?php if (!empty(	$stock)) : ?>
 							<div class="project-content__stock-text"> 
-								<h4><span class="">Спецпредложение</span></h4>
+								<h4 style="margin: 1.6rem 0"><span class="">Спецпредложение</span></h4>
 								<?php echo strlen($content) != 0 ? $content : $text; ?>
 							</div>
 						<?php endif ?>
 		
 						<?php if (!empty(	$obj_sale_description)) : ?>
 							<div class="project-content__stock-text  bg-greay"> 
-								<h4><span class="">Об объекте</span></h4>
+								<h4 style="margin: 1.6rem 0"><span class="">Об объекте</span></h4>
 								<?php echo $obj_sale_description?>
-								<p class="mh"><a href="#" class="btn-secondary">Узнать больше</a></p>
+								<p style="margin-top: 4rem"><a href="#" class="btn-secondary">Заказать проект</a></p>
 							</div>
 							
 						<?php endif ?>
@@ -228,7 +228,7 @@ get_header();
 
 	<!-- Подпишись на проект -->
 	<?php  if( has_term( 'current', 'type' ) ) :?>
-		<div class="questions">
+		<div class="questions questions--subscribe">
 			<div class="container">
 				<div class="questions__wrapper">
 					<div class="questions__title">Подпишись 

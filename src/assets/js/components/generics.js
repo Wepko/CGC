@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 console.log('generics');
-$('.square').on('click', (e) => {
+$('.project-header__square').on('click', (e) => {
 	e.preventDefault();
 	console.log('click');
 

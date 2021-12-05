@@ -84,11 +84,18 @@ body {
 
 .mh {
 	margin: 4.4rem 0;
+	& > a, & > span {
+		@include respond(phone) {
+			margin: 0.5rem 0;
+		}
+	}
 }
+
 
 .fc {
 	display: flex;
 	flex-direction: column;
+	flex: 1 0 20%;
 }
 
 .mrib {

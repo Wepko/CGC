@@ -1,58 +1,74 @@
 .questions {
-    padding: 10rem 0;
-    background-color: $color-blue-dark;
-    color: $color-white;
+	padding: 10rem 0;
+	background-color: $color-blue-dark;
+	color: $color-white;
 
-    &__wrapper {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-    }
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+}
 
-    &__title {
-        @extend %title;
-        flex: 1 0 45%;
-        position: relative;
+	&__title {
+		@extend %title;
+		flex: 1 0 45%;
+		position: relative;
 
-        
-        @include respond(phone) {
-            flex-basis: 100%;
-        } 
+		
+		@include respond(phone) {
+			flex-basis: 100%;
+		} 
 
-        &::before {
-            position: absolute;
-            top: 5.5rem;
-            left: -2rem;
-            content: '';
-            background: url('../img/Ellipse 13.svg') no-repeat 0 0;
-            background-size: contain;
-            width: 32rem;
-            height: 7rem;
+		&::before {
+			position: absolute;
+			top: 5.5rem;
+			left: -2rem;
+			content: '';
+			background: url('../img/Ellipse 13.svg') no-repeat 0 0;
+			background-size: contain;
+			width: 32rem;
+			height: 7rem;
 
-            @include respond(phone) {
-                top: 3.5rem;
-                left: 0;
-                height: 4rem;
-            } 
-        }
-    }
+			@include respond(phone) {
+				top: 3.5rem;
+				left: 0;
+				height: 4rem;
+			} 
+		}
+	}
 
-    &__description {
-        font-size: 1.4rem;
-        flex: 1 0 20%;
-        max-width: 30rem;
-        margin: 2rem 0;
-        @include respond(phone) {
-            flex-basis: 100%;
-            max-width: 100%;
-        } 
-    }
+	&__description {
+		font-size: 1.4rem;
+		flex: 1 0 20%;
+		max-width: 30rem;
+		margin: 2rem 0;
+		@include respond(phone) {
+				flex-basis: 100%;
+				max-width: 100%;
+		} 
+	}
 
-    &__buttons {
-        flex: 1 0 25%;
-        text-align: right;
-        @include respond(phone) {
-            flex-basis: 100%;
-        } 
-    }
+	&__buttons {
+			flex: 1 0 25%;
+			text-align: right;
+			@include respond(phone) {
+					flex-basis: 100%;
+			} 
+	}
+
+	&--subscribe {
+		.questions__description {
+			max-width: none;
+		}
+
+		.questions__title {
+			flex: 1 0 25%;
+		}
+
+		.questions__buttons {
+			flex: 1 0 15%;
+		}
+
+
+	}
 }
