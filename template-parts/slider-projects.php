@@ -3,6 +3,7 @@
 		<div class="projects__title">
 			<p>Наши <span class="text-accent">проекты</span>
 		</div>
+
 		<div class="projects__filter">
 			<?php 
 				$query = new WP_Query([
@@ -43,7 +44,8 @@
 			</div>
 
 		</div>
-
+	</div>
+	<div class="container-one-side">
 		<div class="projects__product-slider">
 			<?php 
 				$query = new WP_Query([
@@ -51,7 +53,7 @@
 					'type' => 'implemented',
 					'status' => ['object_sale', 'object_not_sale'],
 				]);
-
+	
 				function is_tag_cgc() {
 					$slug = get_the_terms( get_the_ID(), 'status' )[0]->slug;
 			
@@ -71,32 +73,32 @@
 						return '  ';
 					}
 				}
-
+	
 			?>
-
+	
 			<div class="slider slider--one-sided">
 				<div class="slider__overflow">
 					<div class="slider-project">
+	
+	
+	
+						<div class="swiper-wrapper">
+							<!-- Slides-->
 					
-							<div class="swiper-wrapper">
-								<!-- Slides-->
-						
-									
-									<?php if ($query->have_posts()) :?>
-										<?php while($query->have_posts()) : $query->the_post()?>
-											<div class="swiper-slide">
-												<?php get_template_part( 'template-parts/card-product' );?>
-											</div>			
-										<?php endwhile;?>
-			
-									<?php else :?>
-										<p>Записей нет</p>
-									<?php endif;?>
-			
-			
-							</div>
+								<?php if ($query->have_posts()) :?>
+									<?php while($query->have_posts()) : $query->the_post()?>
+										<div class="swiper-slide">
+											<?php get_template_part( 'template-parts/card-product' );?>
+										</div>			
+									<?php endwhile;?>
+		
+								<?php else :?>
+									<p>Записей нет</p>
+								<?php endif;?>
+						</div>
+				
 	
-	
+					
 							<div class="slider__navigation">
 								<div class="swiper-button-next"></div>
 								<div class="slider__scrollbar">
@@ -104,11 +106,10 @@
 								</div>
 								<div class="swiper-button-prev"></div>
 							</div>
+	
 					</div>
 				</div>
-
 			</div>
-
-
+		</div>
 	</div>
 </section>

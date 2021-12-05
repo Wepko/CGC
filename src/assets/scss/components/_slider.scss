@@ -29,7 +29,7 @@
 		justify-content: end;
 		margin: 2rem 0;
 		@include respond(phone) {
-			justify-content: center;
+			justify-content: start;
 		}
 		.swiper-button-next, .swiper-button-prev {
 			position: static;
