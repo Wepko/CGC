@@ -328,7 +328,7 @@ h2 {
 
 	&__filter {
 		@include respond(phone) {
-			display: none;
+
 		}
 
 		&-switcher {
@@ -337,12 +337,17 @@ h2 {
 			justify-content: space-between;
 			margin: 2rem 0;
 			@include respond(phone) {
-				display: none;
+				& > a {
+					display: none;
+				}
 			}
+
+
 		}
 
 		&-services {
 			display: flex;
+			
 		}
 
 		&-services.active {
@@ -359,7 +364,7 @@ h2 {
 		&-button {
 			padding: 1.8rem 4rem 1.8rem 0;
 			text-decoration: none;
-
+			display: inline-block;
 			input {
 				position: absolute;
 				opacity: 0;

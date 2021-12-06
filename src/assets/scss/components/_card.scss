@@ -136,7 +136,7 @@
 			flex-wrap: wrap;
 			span {
 				margin: 1rem 0;
-				flex: 1 0 50%;	
+				flex: 1 0 60%;	
 				position: relative;
 				padding-left: 3.4rem;
 
@@ -147,6 +147,10 @@
 					left: 0;
 					transform: translateY(-50%);
 				}
+			}
+
+			span:nth-child(even) {
+				flex: 1 0 40%;	
 			}
 		}
 

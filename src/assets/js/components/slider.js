@@ -20,17 +20,15 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 		breakpoints: {
 			// when window width is >= 320px
 			320: {
-				slidesPerView: 'auto',
 				spaceBetween: 20
 			},
-			// when window width is >= 640px
-			1140: {
-				slidesPerView: 'auto',
-				spaceBetween: 30
-			}
 		}
   });
 
+  new Swiper('.slider-services-filter', {
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+  });
 
   
   new Swiper('.slider-gallery', {

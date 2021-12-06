@@ -4,7 +4,6 @@
 			<p>Наши <span class="text-accent">проекты</span>
 		</div>
 
-		<div class="projects__filter">
 			<?php 
 				$query = new WP_Query([
 					'post_type' => 'services',
@@ -12,6 +11,8 @@
 				]);
 				$i = 0;
 			?>
+
+		<div class="projects__filter">
 
 			<div class="projects__filter-switcher">
 				<div class="can-toggle demo-rebrand-1">
@@ -23,7 +24,8 @@
 				<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="#"> Каталог проектов</a>
 			</div>
 
-			<div class="projects__filter-services active">
+
+			<div id="typeStatic" class="projects__filter-services active">
 				<div class="projects__filter-buttons">
 					<div class="projects__filter-button">
 						<input id="service<?=$i?>" type="radio" name="service" checked value="all">
@@ -43,9 +45,41 @@
 				<div class="projects__filter-next"><span>Еще</span><i class="icon-arrow-right"> </i></div>
 			</div>
 
+
+
 		</div>
+
 	</div>
+
 	<div class="container-one-side">
+			<?php $i = 0;?>
+		<div id="typeSlider" class="projects__filter-services active">
+			<div class="slider slider--one-sided">
+				<div class="slider__overflow">
+					<div class="slider-services-filter">
+						<div class="swiper-wrapper">
+							<div class="projects__filter-button">
+								<input id="service<?=$i?>" type="radio" name="service" checked value="all">
+								<label for="service<?=$i?>">Все</label>
+							</div>
+							<?php if($query->have_posts()) : ?>
+								<?php while($query->have_posts()) : $query->the_post(); $i++; ?>
+									<div class="swiper-slide">
+										<div class="projects__filter-button">
+											<input id="service<?=$i?>" type="radio" name="service" value="<?= $query->post->ID?>">
+											<label for="service<?=$i?>"> <?php the_title(); ?></label>
+										</div>
+									</div>
+								<?php endwhile;?>
+							<?php else :?>
+								<p>Ничего нет</p>
+							<?php endif;?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="projects__product-slider">
 			<?php 
 				$query = new WP_Query([
@@ -81,7 +115,6 @@
 					<div class="slider-project">
 	
 	
-	
 						<div class="swiper-wrapper">
 							<!-- Slides-->
 					
@@ -97,19 +130,19 @@
 								<?php endif;?>
 						</div>
 				
-	
-					
-							<div class="slider__navigation">
-								<div class="swiper-button-next"></div>
-								<div class="slider__scrollbar">
-									<div class="swiper-scrollbar"></div>
-								</div>
-								<div class="swiper-button-prev"></div>
+						<div class="slider__navigation">
+							<div class="swiper-button-prev"></div>
+							<div class="slider__scrollbar">
+								<div class="swiper-scrollbar"></div>
 							</div>
+							<div class="swiper-button-next"></div>
+						</div>
 	
 					</div>
 				</div>
 			</div>
 		</div>
+		
 	</div>
+
 </section>

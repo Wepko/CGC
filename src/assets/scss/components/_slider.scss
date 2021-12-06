@@ -48,9 +48,6 @@
 }
 
 
-
-
-
 .slider-project {
 	width: 117rem;
 
@@ -63,6 +60,10 @@
 		@include respond(phone) {
 			width: 85%;
 		}
+	}
+
+	.swiper-slide:last-child {
+		padding-right: 3.5rem;
 	}
 
 	.swiper-button-next::after, .swiper-button-prev::after {
@@ -114,5 +115,30 @@
 	}
 
 }
+
+.slider-services-filter {
+	width: 5%;
+	list-style: none;
+	padding: 0;
+
+	.swiper-slide {
+		width: auto;
+	}
+}
+
+
+#typeStatic {
+	@include respond(phone) {
+		display: none;
+	}
+}
+
+#typeSlider {
+	display: none;
+	@include respond(phone) {
+		display: block;
+	}
+}
+
 
 

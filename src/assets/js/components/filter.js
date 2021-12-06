@@ -41,7 +41,7 @@ const switcher = $('.can-toggle');
 
 const switcherCheckbox = switcher.find('input');
 
-const labels = $('.projects__filter-buttons label');
+const labels = $('.projects__filter-services label');
 const btnMore = $('#more');
 // Состояние фильтра
 
@@ -73,7 +73,7 @@ const queryAjax = (data, type) => {
 
 			const projects = response['projects'].length != 0  ? 
 			response['projects'].reduce( (prevProject, project) => prevProject + project ) :
-			' ';
+			'';
 
 			if ($('.projects').data('slider')) {
 				type = 'slider';
@@ -87,11 +87,11 @@ const queryAjax = (data, type) => {
 				case 'slider': 
 					const sliderWrapper = response['projects'].length != 0  ? 
 					response['projects'].map( (elem) => `<div class="swiper-slide">${elem}</div>`) :
-					' ';
-
-					const sliderProjects = sliderWrapper.length != 0  ? 
+					'';
+					console.log(typeof sliderWrapper, Boolean(sliderWrapper));
+					const sliderProjects = (sliderWrapper.length != 0 || Boolean(sliderWrapper)) ? 
 					sliderWrapper.reduce( (prevProject, project) => prevProject + project ) :
-					' ';
+					'';
 				
 					//const script = `<script src="//${location.hostname}/wp-content/themes/wp-pro/dist/assets/js/slider.js"></script>`;
 					const script = '';
@@ -158,7 +158,7 @@ switcher.on('change', (e) => {
 labels.on('click', (e) => {
 
 	const inputId = e.target.htmlFor;
-	const input = $(`.projects__filter-buttons input[id=${inputId}]`);
+	const input = $(`.projects__filter-services input[id=${inputId}]`);
 	const inputValue = input.val();
 
 	filterArg.servicesId = inputValue;
