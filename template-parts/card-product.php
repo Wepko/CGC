@@ -22,7 +22,7 @@
 				<span class="icon-icon1"><?php echo get_field('total_area')?> м<sup>2</sup></span>
 				<span class="icon-icon3"><?php echo get_field('bedrooms')?></span>
 			
-				<span class="icon-icon2"><?php echo $sumW . "x" . $sumH?> м</span>
+				<span class="icon-icon2"><?php echo $sumW . " ". "x". " " . $sumH?> м</span>
 				<span class="icon-icon4"><?php echo get_field('bathrooms')?></span>
 			</div>
 			<div class="card-product__description-text">
