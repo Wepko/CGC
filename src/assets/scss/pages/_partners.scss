@@ -19,6 +19,9 @@
 			grid-template-columns: repeat(auto-fill, minmax(200px, 25rem));
 			row-gap: 10rem;
 			column-gap: 6rem;
+			@include respond(phone) {
+				justify-content: center;
+			}
     }
 
     &-brand {
