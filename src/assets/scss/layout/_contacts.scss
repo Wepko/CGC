@@ -53,6 +53,13 @@
 
 		&-social {
 			margin-top: auto;
+			& a {
+				transition: .5s;
+				transform: translateY(0);
+			}
+			& a:hover {
+				transform: translateY(-0.5rem);
+			}
 		}
 	}
 

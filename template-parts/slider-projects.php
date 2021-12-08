@@ -52,9 +52,9 @@
 	</div>
 
 	<div class="container-one-side">
-			<?php $i = 0;?>
+		<?php $i = 0;?>
 		<div id="typeSlider" class="projects__filter-services active">
-			<div class="slider slider--one-sided">
+			<div class="slider slider--one-sided" style="overflow: hidden">
 				<div class="slider__overflow">
 					<div class="slider-services-filter">
 						<div class="swiper-wrapper">

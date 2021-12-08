@@ -13,7 +13,7 @@ $filter = ['switcher' => true ];
 
 ?>
 
-	<section class="projects header-clear">
+	<section class="projects projects--main header-clear">
 			<div class="container">
 				<div class="projects__title title-h1">
 					<p>Наши <span class="text-accent">проекты</span></p>
@@ -36,7 +36,7 @@ $filter = ['switcher' => true ];
             </div>
 						<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="<?php echo get_term_link( 'possible', 'type' ); ?>"> Каталог проектов</a>
           </div>
-          <div class="projects__filter-services active">
+          <div  id="typeStatic" class="projects__filter-services  active">
 						<div class="projects__filter-buttons">
 								<div class="projects__filter-button">
 									<input id="service<?=$i?>" type="radio" name="service" checked value="all">
@@ -57,6 +57,33 @@ $filter = ['switcher' => true ];
 							</div>
             <div class="projects__filter-next"><span>Еще</span><i class="icon-arrow-right"> </i></div>
           </div>
+					<?php $i = 0;?>
+					<div id="typeSlider" class="projects__filter-services active">
+						<div class="slider slider--one-sided" style="overflow: hidden">
+							<div class="slider__overflow">
+								<div class="slider-services-filter">
+									<div class="swiper-wrapper">
+										<div class="projects__filter-button">
+											<input id="service<?=$i?>" type="radio" name="service" checked value="all">
+											<label for="service<?=$i?>">Все</label>
+										</div>
+										<?php if($query->have_posts()) : ?>
+											<?php while($query->have_posts()) : $query->the_post(); $i++; ?>
+												<div class="swiper-slide">
+													<div class="projects__filter-button">
+														<input id="service<?=$i?>" type="radio" name="service" value="<?= $query->post->ID?>">
+														<label for="service<?=$i?>"> <?php the_title(); ?></label>
+													</div>
+												</div>
+											<?php endwhile;?>
+										<?php else :?>
+											<p>Ничего нет</p>
+										<?php endif;?>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
         </div>
 
 				<div class="projects__product">

@@ -7,7 +7,6 @@
 ?>
 
 		<?php get_template_part( 'template-parts/contact' ); ?>
-
     <section class="about-company reset gs_reveal">
       <div class="about-company__title gs_reveal">
         <h2><span class="text-accent">Информация</span><br> о компании</h2>

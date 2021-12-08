@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<?php get_template_part( 'template-parts/service' ); ?>
+	<?php get_template_part( 'template-parts/service', null, 'main'); ?>
 	<?php get_template_part( 'template-parts/slider-projects'); ?>
 	<?php get_template_part( 'template-parts/question'); ?>
 	<?php get_template_part( 'template-parts/contact', null, 'dark'); ?>

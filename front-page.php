@@ -90,7 +90,7 @@ get_header();
 			<div class="o-play-btn__mask"></div></i></button>
 		</div>
 	</div>
-	
+
 	<section class="about-company gs_reveal">
 		<div class="about-company__title gs_reveal">
 			<h2><span class="text-accent">Информация</span><br> о компании</h2>

@@ -107,6 +107,13 @@ body {
   @extend %title-h1;
 }
 
+.title-small {
+	font-size: 7rem;
+	@include respond(phone) {
+		font-size: 4rem;
+	}
+}
+
 .bg-primary {
 	@extend %bg-primary;
 }

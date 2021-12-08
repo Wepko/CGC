@@ -10,7 +10,22 @@
 					<p class="icon-adress">ул. Герасима Курина, д. 10, корп. 2</p>
 				</div>
 				<div class="contacts__info-social">
-					<div class="social"><a class="icon-facebook social__element" href="#"></a><a class="icon-twiter social__element" href="#"></a><a class="icon-instagram social__element" href="#"></a></div>
+					<div class="social">
+						<?php
+							$facebook = get_field("facebook", 232);
+							$twiter = get_field("twiter", 232);
+							$instagram = get_field("instagram", 232);
+						?>
+						<?php if (!empty($facebook)) : ?>
+							<a class="icon-facebook social__element" href="<?php echo $facebook?>"></a>
+						<?php endif; ?>
+						<?php if (!empty($twiter)) : ?>
+							<a class="icon-twiter social__element" href="<?php echo $twiter?>"></a>
+						<?php endif; ?>
+						<?php  if (!empty($instagram)) : ?> 
+							<a class="icon-instagram social__element" href="<?php echo $instagram?>"></a>
+						<?php endif; ?>
+					</div>
 				</div>
 			</div>
 			<div class="contacts__form">
