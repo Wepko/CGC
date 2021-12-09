@@ -174,7 +174,7 @@ get_header();
 											<h4><?php echo $sumW ." " . "x". " " . $sumH?> м<sup>2</sup></h4>
 											<p>Минимальные размеры участка</p>
 										</div>
-										
+									</div>
 									<div class="features-row"> 
 										<div class="features-el">
 											<h4>Гараж</h4>
