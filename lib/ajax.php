@@ -133,15 +133,20 @@ function catalog() {
 
 	$argQuery = [
 		'post_type' => 'projects',
+		'post_status' => 'publish',
 		'type' => 'possible',
 		'status' => ['object_sale', 'object_not_sale'],
 		'paged' => $paged,
+		
 		'meta_query' => [
 			[	
 				'relation'		=> 'AND',
 
 			],
 		],
+		'orderby' => 'meta_value',
+		'meta_key' => 'total_area',
+		'order' => 'ASC'
 	];
 	
 	if ($area != 'full')  {
@@ -172,7 +177,9 @@ function catalog() {
 	$query = new WP_Query($argQuery);
 
 
-
+	// echo '<pre>';
+	// print_r($query);
+	// echo '</pre>';
 
 	function is_tag_cgc() {
 		$slug = get_the_terms( get_the_ID(), 'status' )[0]->slug;

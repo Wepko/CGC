@@ -43,6 +43,9 @@
 						'post_type' => 'projects',
 						'type' => 'possible',
 						'status' => ['object_sale', 'object_not_sale'],
+						'orderby' => 'meta_value',
+						'meta_key' => 'total_area',
+						'order' => 'ASC'
 					]);
 
 					function is_tag_cgc() {
