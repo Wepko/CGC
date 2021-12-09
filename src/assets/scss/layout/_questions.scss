@@ -60,13 +60,23 @@
 		.questions__description {
 			max-width: none;
 		}
+		.questions__wrapper {
+			justify-content: space-between;
+		}
+		.questions__wrapper .fc {
+			flex: none;
+			max-width: 52rem;
+		}
 
 		.questions__title {
-			flex: 1 0 25%;
+			flex: none;
 		}
 
 		.questions__buttons {
-			flex: 1 0 15%;
+			flex: none;
+			@include respond(phone) {
+				flex-grow: 1;
+			}
 		}
 
 
