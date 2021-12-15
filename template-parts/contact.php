@@ -12,9 +12,9 @@
 				<div class="contacts__info-social">
 					<div class="social">
 						<?php
-							$facebook = get_field("facebook", 232);
-							$twiter = get_field("twiter", 232);
-							$instagram = get_field("instagram", 232);
+							$facebook = get_field("facebook", 117);
+							$twiter = get_field("twiter", 117);
+							$instagram = get_field("instagram", 117);
 						?>
 						<?php if (!empty($facebook)) : ?>
 							<a class="icon-facebook social__element" href="<?php echo $facebook?>"></a>

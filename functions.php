@@ -13,7 +13,8 @@ require_once('lib/nav-menu.php');
 require_once('lib/custom-taxonomy.php');
 require_once('lib/ajax.php');
 require_once('lib/contact_form_7.php');
-require_once('lib/watermarks.php');
+require_once('lib/widgets.php');
+//require_once('lib/watermarks.php');
 
 
 
