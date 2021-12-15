@@ -52,7 +52,7 @@ get_header();
 										<p class="info-block__description" style="max-width: 75rem"><?php the_sub_field('slide-description'); ?></p>
 										<div class="info-block__buttons">
 											<a class="btn-primary btn-primary--icon" data-custom-open="modal-1" href="#"><?php the_sub_field('slide-button-1'); ?></a>
-											<a class="btn-secondary btn-secondary--icon icon-arrow-right" href="catalog.html"><?php the_sub_field('slide-button-2'); ?></a>
+											<a class="btn-secondary btn-secondary--icon icon-arrow-right" href="<?php echo get_term_link( 'possible', 'type' ); ?>"><?php the_sub_field('slide-button-2'); ?></a>
 										</div>
 										
 									</div>

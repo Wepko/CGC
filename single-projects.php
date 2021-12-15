@@ -19,7 +19,7 @@ get_header();
 
 	$obj_sale_description = get_field('obj_sale_description');
 ?>
-
+<?php get_template_part( 'template-parts/modal' ); ?>
 <!-- Слайдер -->
 	<section class="project-header">
 		<div class="container">
@@ -214,7 +214,7 @@ get_header();
 							<div class="project-content__stock-text  bg-greay"> 
 								<h4 style="margin: 1.6rem 0"><span class="">Об объекте</span></h4>
 								<?php echo $obj_sale_description?>
-								<p style="margin-top: 4rem"><a href="#" class="btn-secondary">Заказать проект</a></p>
+								<p style="margin-top: 4rem"><a href="#" data-custom-open="modal-1" class="btn-secondary">Заказать проект</a></p>
 							</div>
 							
 						<?php endif ?>
@@ -557,8 +557,8 @@ get_header();
 						<div class="post__content">
 							<p>Если вам понравился проект вы можете перейти в каталог проектов и ознакомиться с проектом более детально, если у вас останутся вопросы мы с удовольсвтем ответим на них и проконсультируем вас. </p>
 							<p class="mh">
-								<a href="#" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right mrib">Перейти в каталог</a>
-								<a href="#" class="btn-primary">связаться с менеджером</a>
+								<a href="<?php echo get_term_link( 'possible', 'type' ); ?>" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right mrib">Перейти в каталог</a>
+								<a href="#"  data-custom-open="modal-1" class="btn-primary">Cвязаться с менеджером</a>
 							</p>
 						</div>
 					</div>
