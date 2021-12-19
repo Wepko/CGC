@@ -13,6 +13,7 @@
  */
 
 get_header();
+	require_once 'lib/helpers.php';
 ?>
 
 
@@ -26,13 +27,34 @@ get_header();
 		</header>
 		<div class="slider-header">
 			<!-- Additional required wrapper-->
+			<?php 
+				$slider = get_field('main-slider');
+				$swedfty = get_field('swedfty');
+
+
+			?>
 			<div class="swiper-wrapper">
 				<?php if( have_rows('main-slider') ) : ?>
-					<?php while( have_rows('main-slider') ) : the_row(); 
-						$image = get_sub_field('fon');
+					<?php while( have_rows('main-slider') ) : 
+						the_row(); 
+						$image = get_sub_field('fon')['url']; 
+						
+						$select_home = get_sub_field('select_home');
+						$select_home_id = $select_home->ID;
+						$select_home_title = $select_home->post_title;
+						$select_home_total_area = $select_home->total_area;
+						$select_home_floors = $select_home->floors;
+						$select_home_rooms = $select_home->rooms;
+						$select_home_bathrooms = $select_home->bathrooms;
+						$select_home_features = $select_home->features;
+						//get_metadata('post', get_sub_field('select_home')->ID,)['features'][0]
+						$select_home_thumb = wp_get_attachment_url($select_home->thumb);
+				
 					?>
+	
 						<div class="swiper-slide">
-							<section class="main" style="background: url(<?php echo $image['url'] ?>); background-size:cover;">
+						<?php $cgc_background_url = cgc_if($image, $select_home_thumb);?>
+							<section class="main" style='<?php echo "background: url($cgc_background_url); background-size:cover;" ?>'>
 								<div class="bg-wrapper"></div>
 								<div class="container">
 									<div class="info-block gs_reveal gs_reveal_fromLeft">
@@ -42,19 +64,60 @@ get_header();
 										</div>
 									<?php endif; ?>
 										<div class="info-block__title" >
-											<?php $slide_title = get_sub_field('zagolovok');?>
-										<span class="text-accent"><?php echo $slide_title['slide-title-bold']; ?></span><br>
-										<span><?php echo $slide_title['slide-title']; ?></span>
-											
-											<!-- <span class="text-accent">Получи подарок</span><br>
-											<span>при заказе до 6 июля</span> -->
+											<?php
+												$slide_title = get_sub_field('zagolovok');
+											?>
+						
+											<span class="text-accent"><?php echo cgc_if($slide_title['slide-title-bold'], "Проект дома") ?> </span><br>
+											<span><?php echo cgc_if($slide_title['slide-title'],  $select_home_title) ?></span>
 										</div>
-										<p class="info-block__description" style="max-width: 75rem"><?php the_sub_field('slide-description'); ?></p>
+						
+
+										<p class="info-block__description" style="max-width: 75rem"><?php echo cgc_if(get_sub_field('slide-description'), $select_home_features); ?></p>
 										<div class="info-block__buttons">
-											<a class="btn-primary btn-primary--icon" data-custom-open="modal-1" href="#"><?php the_sub_field('slide-button-1'); ?></a>
-											<a class="btn-secondary btn-secondary--icon icon-arrow-right" href="<?php echo get_term_link( 'possible', 'type' ); ?>"><?php the_sub_field('slide-button-2'); ?></a>
+											<a class="btn-primary" data-custom-open="modal-1" href="#"><?php echo cgc_if(get_sub_field('slide-button-1'), "Заказать проект"); ?></a>
+											<a class="btn-secondary btn-secondary--icon icon-arrow-right" href="<?php echo get_term_link( 'possible', 'type' ); ?>"><?php echo cgc_if(get_sub_field('slide-button-2'), "Посмотреть проект"); ?></a>
 										</div>
-										
+										<?php
+											$feature = get_sub_field('features')[0]['cells'];
+										?>
+
+										<?php if (get_sub_field('slide-switcher-feature')) :?>
+											<div class="info-block__features">
+												<div class="features features">
+													<?php if ($feature) :?>
+														<div class="features-row"> 
+															<?php foreach($feature as $key => $value) : ?>
+																<div class="features-el">
+																	<h4><?php echo $value['cell_name'] ?></h4>
+																	<p><?php echo $value['cell_description'] ?></p>
+																</div>
+															<?php endforeach; ?>
+														</div>
+													<?php elseif ($select_home) : ?>
+														<div class="features-row"> 
+															<div class="features-el">
+																<h4><?php echo $select_home_total_area; ?> м<sup>2</sup></h4>
+																<p>Общая площадь</p>
+															</div>
+															<div class="features-el ">
+																<h4><?php echo $select_home_floors; ?></h4>
+																<p>Количество этажей</p>
+															</div>
+															<div class="features-el">
+																<h4><?php echo $select_home_rooms; ?></h4>
+																<p>Количество комнат</p>
+															</div>
+															<div class="features-el">
+																<h4><?php echo $select_home_bathrooms; ?></h4>
+																<p>Количество сан.узлов</p>
+															</div>
+														</div>
+													<?php endif; ?>
+												</div>
+											</div>
+										<?php endif; ?>
+
 									</div>
 								</div>
 							</section>
