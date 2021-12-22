@@ -14,9 +14,12 @@
       <p></p>
       <div class="about-company__description gs_reveal">
         <h2>	Информация <br><span class="text-accent">о компании</span></h2>
-        <p>Залогом успеха нашей компании является <span class="text-accent">строгая последовательность</span>	 выполнения строительных работ. Благодаря обширному опыту, мы разработали план, по которому осуществляем все процессы подготовки, проектирования и реализации. За годы деятельности наши клиенты не раз проверили его эффективность на практике.</p>
-        <p>Мы неустанно продолжаем совершенствовать наш процесс, чтобы идти в ногу со временем и даже опережать его.</p>
-        <div class="about-company__button"><a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="about.html">Прочитать полностью</a></div>
+				<?php echo get_field('info_description'); ?>
+        <div class="about-company__button">
+					<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="<?php echo get_field('info_link'); ?>">
+						<?php echo get_field('info_button'); ?>
+					</a>
+				</div>
       </div>
     </section>
 
