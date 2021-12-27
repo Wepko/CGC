@@ -5,15 +5,7 @@
 				<?php get_template_part( 'template-parts/nav' ); ?>
 			</div>
 		</header>
-<!-- 
-		<?php
-		$bg_image = get_field('bg-services');
 
-		if( !empty($bg_image) ): ?>
-
-			<img src="<?php echo $bg_image['url']; ?>" alt="<?php echo $bg_image['alt']; ?>" />
-
-<?php endif; ?> -->
     <section class="service-header header-clear" style="background: url('<?php echo $bg_image['url']; ?>'); background-size:cover;">
       <div class="container">
         <div class="bg-service-header"> </div>
@@ -21,7 +13,7 @@
           <div class="service-header__title"><span class="text-access <?php echo strlen(get_the_title()) > 30 ? "title-small" : "" ?>" ><?php echo get_the_title(); ?></span></div>
           <div class="service-header__buttons">
 						<a class="btn-primary" href="#">Узнайте больше</a>
-						<a class="btn-secondary btn-secondary--icon icon-arrow-right" href=#">Готовые проекты</a></div>
+						<!-- <a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#">Готовые проекты</a></div> -->
         </div>
       </div>
     </section>

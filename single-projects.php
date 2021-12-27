@@ -209,16 +209,28 @@ get_header();
 								<?php echo strlen($content) != 0 ? $content : $text; ?>
 							</div>
 						<?php endif ?>
-		
-						<?php if (!empty(	$obj_sale_description)) : ?>
-							<div class="project-content__stock-text  bg-greay"> 
-								<h4 style="margin: 1.6rem 0"><span class="">Об объекте</span></h4>
-								<?php echo $obj_sale_description?>
-								<p style="margin-top: 4rem"><a href="#" data-custom-open="modal-1" class="btn-secondary">Заказать проект</a></p>
-							</div>
 							
-						<?php endif ?>
 
+
+						<?php  if( has_term( ['current', 'implemented'], 'type' ) ) : ?>
+							<?php if (!empty(	$obj_sale_description)) : ?>
+								<div class="project-content__stock-text  bg-greay"> 
+									<h4 style="margin: 1.6rem 0"><span class="">Об объекте</span></h4>
+									<?php echo $obj_sale_description?>
+									<p style="margin-top: 4rem"><a href="#" data-custom-open="modal-1" class="btn-secondary">Узнать больше</a></p>
+								</div>
+							<?php endif ?>
+						<?php endif ?>
+						
+						<?php  if( has_term( 'possible', 'type' ) ) : ?>
+							<?php if (!empty(	$obj_sale_description)) : ?>
+								<div class="project-content__stock-text  bg-greay"> 
+									<h4 style="margin: 1.6rem 0"><span class="">Проект <?php echo the_title()?></span></h4>
+									<?php echo $obj_sale_description?>
+									<p style="margin-top: 4rem"><a href="#" data-custom-open="modal-1" class="btn-secondary">Заказать проект</a></p>
+								</div>
+							<?php endif ?>
+						<?php endif ?>
 						
 					</div>
 				</div>
@@ -298,24 +310,68 @@ get_header();
 															</div>
 														</div>
 														<div class="accordion__gallery">
-															<div class="slider-gallery-min">
-																<div class="swiper-wrapper">
-																	<?php if ( is_array( $photos ) ) : ?>
-																		<?php foreach ($photos as $photo) : ?>
-																			<div class="swiper-slide"> 
-																				<div class="card-gallery">
-																					<div class="card-gallery__img"><img src="<?php echo $photo['url']?>" alt=""></div>
+															<div class="slider">
+																<div class="slider-gallery-min">
+																	<div class="swiper-wrapper">
+																		<?php if ( is_array( $photos ) ) : ?>
+																			<?php foreach ($photos as $photo) : ?>
+																				<div class="swiper-slide"> 
+																					<div class="card-gallery">
+																						<div class="card-gallery__img">
+																							<img src="<?php echo $photo['url']?>" alt="">
+																						</div>
+																					</div>
 																				</div>
+																			<?php endforeach; ?>
+																		<?php endif; ?>
+																	</div>
+																</div>
+																<div class="slider__navigation">
+																			<div class="swiper-button-prev"></div>
+																			<div class="slider__scrollbar">
+																				<div class="swiper-scrollbar"></div>
 																			</div>
-																		<?php endforeach; ?>
-																	<?php endif; ?>
-																</div>
-																<div class="swiper-buttons">
-																	<div class="swiper-button-next"></div>
-																	<div class="swiper-button-prev"></div>
-																</div>
-																<div class="swiper-scrollbar"></div>
+																			<div class="swiper-button-next"></div>
+																		</div>
 															</div>
+
+<!-- 																					
+															<div class="slider slider--one-sided">
+																<div class="slider__overflow">
+																	
+																	<div class="slider-service">
+																		<!-- Additional required wrapper-->
+																		<div class="swiper-wrapper">
+																			<!-- Slides-->
+																				<?php $service_slider = get_field('service-slider');?>
+
+																				<?php if ( is_array( $service_slider ) ) : ?>
+																					<?php foreach ($service_slider as $slide) : ?>
+																						<div class="swiper-slide"> 
+																							<div class="card-service"> 
+																								<div class="card-service__title"><?php echo $slide['service-slider-title']; ?></div>
+																								<div class="card-service__description">
+																									<p><?php echo $slide['service-slider-description']; ?></p>
+																								</div>
+																								<div class="card-service__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right">Заказать услугу</a></div>
+																							</div>
+																						</div>
+																					<?php endforeach; ?>
+																				<?php endif; ?>
+																		</div>
+																			
+																		<div class="slider__navigation">
+																			<div class="swiper-button-prev"></div>
+																			<div class="slider__scrollbar">
+																				<div class="swiper-scrollbar"></div>
+																			</div>
+																			<div class="swiper-button-next"></div>
+																		</div>
+																	</div>
+																</div>
+															</div> -->
+
+
 														</div>
 														<div class="accordion__buttons">
 															<a href="<?php echo get_post_type_archive_link( 'services' ); ?>" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Перейти к услугам</a>
@@ -541,7 +597,7 @@ get_header();
 	<?php endif; ?>
 
 	<!-- Задай вопрос  -->
-	<?php  if( has_term( 'possible' ) ) :?>	
+	<?php  if( has_term( 'possible', 'type' ) ) :?>	
 		<?php get_template_part( 'template-parts/question'); ?>
 	<?php endif; ?>
 

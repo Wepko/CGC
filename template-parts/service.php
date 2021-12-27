@@ -4,7 +4,9 @@
 	<div class="service__description">Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.</div>
 	<div class="service__accordion">
 		<dl class="badger-accordion js-badger-accordion">
-				<?php $cats = get_categories(); ?>
+				<?php $cats = get_categories(); 
+
+				?>
 				<?php
 				function Truncate($string, $maxLen)
 				{
@@ -16,12 +18,30 @@
 				}
 				?>
 				<?php foreach ($cats as $cat) : ?>
+					<?php 
+						$term_id = get_query_var('category');
+						$term_image = get_term_meta($cat->cat_ID,'services_bg', true );
+						$image_attributes = wp_get_attachment_image_src( $term_image,'full');
+					?>
+					<style> 
+						<?php echo "[data-id='$cat->cat_ID']"?>::before {
+							background-image: url(<?php echo"$image_attributes[0]"?>);
+							box-shadow: 1rem 2rem 4rem #202945 inset, -1rem -2rem 4rem #202945 inset, 0 -4rem 10rem #202945 inset;
+						}
+						<?php echo "[data-id='$cat->cat_ID']"?>.-ba-is-active {
+								background-image: url(<?php echo"$image_attributes[0]"?>)!important;
+								box-shadow: 1rem 2rem 4rem #202945 inset, -1rem -2rem 4rem #202945 inset, 0 -4rem 10rem #202945 inset;
+							}
+					</style>
+					
 					<dt class="badger-accordion__header">
-						<a class="badger-accordion__trigger js-badger-accordion-header">
+						<a data-id="<?php echo $cat->cat_ID?>" class="badger-accordion__trigger js-badger-accordion-header">
 							<div class="badger-accordion__trigger-title"><?php echo $cat->cat_name;?></div>
 							<div class="badger-accordion__trigger-icon"><i class="icon-plus"></i></div>
 						</a>
 					</dt>
+		
+					
 					<?php
 						$my_query = new WP_Query([
 							'post_type' => 'services',
@@ -30,6 +50,7 @@
 							'posts_per_page' => -1,
 						]);
 					?>
+
 					<?php if ($my_query->have_posts()) : ?>
 						<dd class="badger-accordion__panel js-badger-accordion-panel">
 							<div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
