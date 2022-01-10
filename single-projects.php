@@ -94,34 +94,38 @@ get_header();
 	<!-- Информация и харакктеристики -->
 	<section class="project-content">
 		<div class="container">
-			<div class="project-content__wrapper">
-				<div class="post">
-					<div class="post__title"> 
-						<h2> <span class="text-accent">Информация </span></h2>
-					</div>
-					<div class="post__content">
-						<div class="project-content__info">
-							<?php if (!empty(get_field('info_place'))) : ?>
-								<div class="project-content__info-block icon-adress-bold">
-									<h3>Место реализации</h3>
-									<p><?php echo the_field('info_place')?></p>
-								</div>
-							<?php endif; ?>
-							<?php if (!empty(get_field('info_time'))) : ?>
-								<div class="project-content__info-block icon-time">
-									<h3>Время реализации</h3>
-									<p><?php echo the_field('info_time')?> месяцев</p>
-								</div>
-							<?php endif; ?>
-				
-								<div class="project-content__info-button">
-									<a class="btn-live" href="">live Камера</a>
-								</div>
+			<?php if ( (!empty(get_field('info_time'))) || (!empty(get_field('info_place'))) ): ?>
+				<div class="project-content__wrapper">
+					<div class="post">
+						<div class="post__title"> 
+							<h2> <span class="text-accent">Информация </span></h2>
+						</div>
+						<div class="post__content">
+							<div class="project-content__info">
+								<?php if (!empty(get_field('info_place'))) : ?>
+									<div class="project-content__info-block icon-adress-bold">
+										<h3>Место реализации</h3>
+										<p><?php echo the_field('info_place')?></p>
+									</div>
+								<?php endif; ?>
+								<?php if (!empty(get_field('info_time'))) : ?>
+									<div class="project-content__info-block icon-time">
+										<h3>Время реализации</h3>
+										<p><?php echo the_field('info_time')?> месяцев</p>
+									</div>
+								<?php endif; ?>
+								
+								<!-- 
+									<div class="project-content__info-button">
+										<a class="btn-live" href="">live Камера</a>
+									</div>
+								-->
 
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			<?php endif; ?>
 			<div class="project-content__wrapper">
 				<div class="post">
 					<div class="post__title"> 
@@ -334,44 +338,6 @@ get_header();
 																			<div class="swiper-button-next"></div>
 																		</div>
 															</div>
-
-<!-- 																					
-															<div class="slider slider--one-sided">
-																<div class="slider__overflow">
-																	
-																	<div class="slider-service">
-																		<!-- Additional required wrapper-->
-																		<div class="swiper-wrapper">
-																			<!-- Slides-->
-																				<?php $service_slider = get_field('service-slider');?>
-
-																				<?php if ( is_array( $service_slider ) ) : ?>
-																					<?php foreach ($service_slider as $slide) : ?>
-																						<div class="swiper-slide"> 
-																							<div class="card-service"> 
-																								<div class="card-service__title"><?php echo $slide['service-slider-title']; ?></div>
-																								<div class="card-service__description">
-																									<p><?php echo $slide['service-slider-description']; ?></p>
-																								</div>
-																								<div class="card-service__button"><a class="btn-secondary btn-secondary--icon icon-arrow-right">Заказать услугу</a></div>
-																							</div>
-																						</div>
-																					<?php endforeach; ?>
-																				<?php endif; ?>
-																		</div>
-																			
-																		<div class="slider__navigation">
-																			<div class="swiper-button-prev"></div>
-																			<div class="slider__scrollbar">
-																				<div class="swiper-scrollbar"></div>
-																			</div>
-																			<div class="swiper-button-next"></div>
-																		</div>
-																	</div>
-																</div>
-															</div> -->
-
-
 														</div>
 														<div class="accordion__buttons">
 															<a href="<?php echo get_post_type_archive_link( 'services' ); ?>" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Перейти к услугам</a>
