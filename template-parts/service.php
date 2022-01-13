@@ -26,11 +26,11 @@
 					<style> 
 						<?php echo "[data-id='$cat->cat_ID']"?>::before {
 							background-image: url(<?php echo"$image_attributes[0]"?>);
-							box-shadow: 1rem 2rem 4rem 7rem #20294590 inset, -1rem -2rem 4rem 7rem #20294590 inset, 0 -4rem 10rem  7rem #20294590 inset;
+							box-shadow: 1rem 2rem 4rem 7rem #20294550 inset, -1rem -2rem 4rem 7rem #20294550 inset, 0 -4rem 10rem  7rem #20294550 inset;
 						}
 						<?php echo "[data-id='$cat->cat_ID']"?>.-ba-is-active {
 								background-image: url(<?php echo"$image_attributes[0]"?>)!important;
-								box-shadow: 1rem 2rem 4rem 7rem #20294527 inset, -1rem -2rem 4rem #20294527 inset, 0 -4rem 10rem #20294527 inset;
+								box-shadow: 1rem 2rem 4rem 7rem #20294545 inset, -1rem -2rem 4rem #20294545 inset, 0 -4rem 10rem #20294545 inset;
 							}
 					</style>
 					
