@@ -74,7 +74,6 @@ const queryAjax = (data, type) => {
 			const projects = response['projects'].length != 0  ? 
 			response['projects'].reduce( (prevProject, project) => prevProject + project ) :
 			'';
-
 			if ($('.projects').data('slider')) {
 				type = 'slider';
 			}
@@ -88,7 +87,6 @@ const queryAjax = (data, type) => {
 					const sliderWrapper = response['projects'].length != 0  ? 
 					response['projects'].map( (elem) => `<div class="swiper-slide">${elem}</div>`) :
 					'';
-					console.log(typeof sliderWrapper, Boolean(sliderWrapper));
 					const sliderProjects = (sliderWrapper.length != 0 || Boolean(sliderWrapper)) ? 
 					sliderWrapper.reduce( (prevProject, project) => prevProject + project ) :
 					'';

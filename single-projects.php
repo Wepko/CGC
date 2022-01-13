@@ -12,6 +12,8 @@ get_header();
 
 ?>
 
+<?php get_template_part( 'template-parts/modal-camera' ); ?>
+
 <?php 
 	$stock = get_field('stock'); 
 	$content = trim($stock->post_content);
@@ -90,11 +92,10 @@ get_header();
 			</div>
 		</div>
 	</section>
-
 	<!-- Информация и харакктеристики -->
 	<section class="project-content">
 		<div class="container">
-			<?php if ( (!empty(get_field('info_time'))) || (!empty(get_field('info_place'))) ): ?>
+			<?php if ( (!empty(get_field('info_time'))) || (!empty(get_field('info_place'))) || (!empty(get_field('camers')))): ?>
 				<div class="project-content__wrapper">
 					<div class="post">
 						<div class="post__title"> 
@@ -115,12 +116,12 @@ get_header();
 									</div>
 								<?php endif; ?>
 								
-								<!-- 
+								<?php if (!empty(get_field('camers'))) : ?>
 									<div class="project-content__info-button">
-										<a class="btn-live" href="">live Камера</a>
+										<a class="btn-live" data-custom-open="modal-2" href="#">live Камера</a>
 									</div>
-								-->
-
+								<?php endif; ?>
+					
 							</div>
 						</div>
 					</div>
@@ -309,7 +310,7 @@ get_header();
 															<div class="can-toggle demo-rebrand-1 can-toggle--size-large">
 																<input id="mini_galary" type="checkbox">
 																<label for="mini_galary">
-																		<div class="can-toggle__switch" data-checked="Видео" data-unchecked="Фото"> </div>
+																	<div class="can-toggle__switch" data-checked="Видео" data-unchecked="Фото"> </div>
 																</label>
 															</div>
 														</div>
@@ -329,14 +330,15 @@ get_header();
 																			<?php endforeach; ?>
 																		<?php endif; ?>
 																	</div>
-																</div>
-																<div class="slider__navigation">
-																			<div class="swiper-button-prev"></div>
-																			<div class="slider__scrollbar">
-																				<div class="swiper-scrollbar"></div>
-																			</div>
-																			<div class="swiper-button-next"></div>
+						
+																	<div class="slider__navigation">
+																		<div class="swiper-button-prev"></div>
+																		<div class="slider__scrollbar">
+																			<div class="swiper-scrollbar"></div>
 																		</div>
+																		<div class="swiper-button-next"></div>
+																	</div>
+																</div>
 															</div>
 														</div>
 														<div class="accordion__buttons">

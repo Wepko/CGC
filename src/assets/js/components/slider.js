@@ -51,8 +51,8 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 
 new Swiper('.slider-gallery-min', {
 	loop: false,
-	slidesPerView: 4,
-	spaceBetween: 30,
+	slidesPerView: 'auto',
+	spaceBetween: 10,
 	navigation: {
 		nextEl: ".swiper-button-next",
 		prevEl: ".swiper-button-prev",
@@ -62,6 +62,22 @@ new Swiper('.slider-gallery-min', {
 		draggable: true,
 	},
 });
+
+new Swiper('.slider-camera', {
+	loop: false,
+	slidesPerView: '1',
+	spaceBetween: 10,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	scrollbar: {
+		el: '.swiper-scrollbar',
+		draggable: true,
+	},
+});
+
+
 
 
 

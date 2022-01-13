@@ -4,7 +4,7 @@ import MicroModal from 'micromodal';
 MicroModal.init({
 	onShow: (modal, b, e) => {
 		const text = e.target.text;
-		const title =	modal.querySelector('#modal-1-title');
+		const title =	modal.querySelector('.modal__title');
 		title.innerText = text;
 	}, // [1]
 	onClose: modal => console.info(`${modal.id} is hidden`), // [2]

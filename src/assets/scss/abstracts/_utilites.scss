@@ -4,7 +4,7 @@
 	font-size: 7.5rem;
 	
 	@include respond(phone) {
-		font-size: 5.5rem;
+		font-size: 9vw;
 	}
 }
 
@@ -29,9 +29,9 @@
 }
 
 %bg-wrapper {
-    padding: 10rem 0;
-    background-color: $color-blue-dark;
-    color: $color-white;
+	padding: 10rem 0;
+	background-color: $color-blue-dark;
+	color: $color-white;
 }
 
 @mixin parent {

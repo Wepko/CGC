@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 		const linkProjects = document.querySelector(`a[href$="projects/"]`);
-		console.log(linkProjects);
+
 		linkProjects.addEventListener('click', e => {
 			e.preventDefault();
 		});

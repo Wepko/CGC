@@ -43,10 +43,20 @@
 
 	&__scrollbar {
 		margin: 0 1rem;
+		@include respond(phone) {
+			width: 100%;
+		}
 	}
 
+	.swiper-scrollbar {
+		background: transparentize(#101820, 0.7);
+		height: 1px;
+		width: 25rem;
+		@include respond(phone) {
+			width: 100%;
+		}
+	}
 }
-
 
 .slider-project {
 	width: 117rem;
@@ -71,12 +81,11 @@
 	}
 }
 
-.swiper-scrollbar {
-	background: transparentize(#101820, 0.7);
-	height: 1px;
-	width: 25rem;
-}
 
+.slider-camera {
+	width: 100%;
+	overflow: hidden;
+}
 
 
 .slider-service {
@@ -137,6 +146,24 @@
 	display: none;
 	@include respond(phone) {
 		display: block;
+	}
+}
+
+
+
+.slider-gallery-min {
+	position: relative;
+	width: 114rem;
+
+	@include respond(phone) {
+		width: 100%;
+	}
+
+	.swiper-slide {
+		width: 25.5%;
+		@include respond(phone) {
+			width: 85%;
+		}
 	}
 }
 

@@ -473,56 +473,6 @@ h2 {
 
 
 
-.slider-gallery-min {
-	position: relative;
-	width: 120rem;
-
-	@include respond(phone) {
-		font-size: 0.8rem;
-		width: 32.5rem;
-	}
-
-	.swiper-button-next::after, .swiper-button-prev::after {
-		color: $color-black;
-	}
-
-	.swiper-button-next {
-		right: 14rem;
-		@include respond(phone) {
-			right: 2.5rem;
-		}
-	}
-	.swiper-button-prev {
-		left: 75rem;
-		@include respond(phone) {
-			left: 0rem;
-		}
-	}
-
-	.swiper-buttons {
-		position: relative;
-		bottom: -5rem;
-		font-size: 1.6rem;
-		@include respond(phone) {
-			left: 0;
-			bottom: -10rem;
-		}
-	}
-
-	.swiper-scrollbar {
-		width: 20rem;
-		bottom: -5rem;
-		left: 80rem;
-		background: transparentize(#101820, 0.7);
-
-		@include respond(phone) {
-			bottom: -10rem;
-			left: 65%;
-			width: 55%;
-			transform: translateX(-85%);
-		}
-	}
-}
 
 .slider-hidden {
 	opacity: 0;
@@ -531,7 +481,7 @@ h2 {
 }
 
 .slider-project-single {
-	width: 100%;
+	width: 117rem;
 	max-height: 70rem;
 	min-height: 15rem;
 	position: relative;
