@@ -23,7 +23,7 @@ add_filter('wpcf7_form_elements', function($content) {
 
 add_filter( 'wpcf7_form_elements', 'dd_wpcf7_form_elements_replace' );
 function dd_wpcf7_form_elements_replace( $content ) {
-    // $name == Form Tag Name [textarea* your-message] 
+
     $name = 'name="text-name"';
     $str_pos = strpos( $content, $name );
     if (false !== $str_pos) {
@@ -40,7 +40,16 @@ function dd_wpcf7_form_elements_replace( $content ) {
     if (false !== $str_pos) {
       $content = substr_replace( $content, ' required="required" ', $str_pos, 0 );
     }
-
 		
     return $content;
 }
+
+
+// add_filter( 'wpcf7_form_elements', 'imp_wpcf7_form_elements' );
+// function imp_wpcf7_form_elements( $content ) {
+// 	$str_pos = strpos( $content, 'name="chkbox[]"' );
+// 	if ( $str_pos !== false ) {
+// 			$content = substr_replace( $content, ' data-custom-open="modal-checkbox" ', $str_pos, 0 );
+// 	}
+// 	return $content;
+// }

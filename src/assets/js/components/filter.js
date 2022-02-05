@@ -37,7 +37,7 @@ const createData = (filter, action='hello') => {
 
 
 
-const switcher = $('.can-toggle');
+const switcher = $('#switcher');
 
 const switcherCheckbox = switcher.find('input');
 

@@ -15,7 +15,7 @@
 		<div class="projects__filter">
 
 			<div class="projects__filter-switcher">
-				<div class="can-toggle demo-rebrand-1">
+				<div id="switcher" class="can-toggle demo-rebrand-1">
 					<input id="d" type="checkbox">
 					<label for="d">
 						<div class="can-toggle__switch" data-checked="Текущие" data-unchecked="Реализованные"></div>

@@ -10,13 +10,17 @@
       <div class="container">
         <div class="bg-service-header"> </div>
         <div class="service-header__wrapper">
-          <div class="service-header__title"><span class="text-access <?php echo strlen(get_the_title()) > 30 ? "title-small" : "" ?>" ><?php echo get_the_title(); ?></span></div>
+          <div class="service-header__title">
+						<span class="text-access <?php echo strlen(get_the_title()) > 30 ? "title-small" : "" ?>" >
+						<?php echo get_the_title(); ?>
+						</span></div>
           <div class="service-header__buttons">
 						<a class="btn-primary" href="#">Узнайте больше</a>
 						<!-- <a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#">Готовые проекты</a></div> -->
         </div>
       </div>
     </section>
+
     <section class="service-content">
       <div class="container">
         <div class="service-content__info">

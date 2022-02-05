@@ -278,7 +278,8 @@ get_header();
 				<div class="service__description">Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.</div>
 				<div class="service__accordion">
 					<dl class="badger-accordion js-badger-accordion">
-						<?php if( have_rows('services_tab_1') ): ?>
+						<?php if( have_rows('services_tab_1') ): $i = 0; ?>
+				
 							<dt class="badger-accordion__header">
 								<a class="badger-accordion__trigger js-badger-accordion-header">
 									<div class="badger-accordion__trigger-title">Сбор исходно-разрешительной документации</div>
@@ -289,8 +290,18 @@ get_header();
 								<div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
 									<?php while( have_rows('services_tab_1') ): 
 										the_row(); 
+										$i++;
 										$photos = get_sub_field('services_tab_photo');
+										$videos = get_sub_field('services_tab_video');
+	
+
+										// 			get_template_part( 'template-parts/modal-accordion', null, $videos);	
+										//	echo '<pre>';
+										// print_r($videos);
+										// echo '</pre>';
+
 									?>
+									<?php	get_template_part( 'template-parts/modal-accordion', null, [$photos, $i]);	?>
 										<dl class="badger-accordion js-badger-accordion">
 											<dt class="badger-accordion__header">
 												<a class="badger-accordion__trigger js-badger-accordion-header">
@@ -316,14 +327,38 @@ get_header();
 														</div>
 														<div class="accordion__gallery">
 															<div class="slider">
-																<div class="slider-gallery-min">
+																<div id="photo" class="slider-gallery-min-<?php echo $i;?>">
+							
 																	<div class="swiper-wrapper">
 																		<?php if ( is_array( $photos ) ) : ?>
-																			<?php foreach ($photos as $photo) : ?>
+																			<?php foreach ($photos as $index => $photo) : ?>
+																				<div class="swiper-slide"> 
+																					<div class="card-gallery" data-custom-open="modal-accordion-<?php echo $index?>">
+																						<div class="card-gallery__img">
+																							<img src="<?php echo $photo['url']?>" alt="">
+																						</div>
+																					</div>
+																				</div>
+																			<?php endforeach; ?>
+																		<?php endif; ?>
+																	</div>
+						
+																	<div class="slider__navigation">
+																		<div class="swiper-button-prev"></div>
+																		<div class="slider__scrollbar">
+																			<div class="swiper-scrollbar"></div>
+																		</div>
+																		<div class="swiper-button-next"></div>
+																	</div>
+																</div>
+																<div id="video" class="slider-gallery-min slider-hidden">
+																	<div class="swiper-wrapper">
+																		<?php if ( is_array( $videos ) ) : ?>
+																			<?php foreach ($videos as $video) : ?>
 																				<div class="swiper-slide"> 
 																					<div class="card-gallery">
 																						<div class="card-gallery__img">
-																							<img src="<?php echo $photo['url']?>" alt="">
+																							<img src="<?php echo $video['services_tab_video-cover']['url']?>" alt="">
 																						</div>
 																					</div>
 																				</div>
