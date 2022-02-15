@@ -3,12 +3,9 @@ add_filter('mailpoet_newsletter_shortcode', 'mailpoet_custom_shortcode', 10, 6);
 
 function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue, $newsletter_body, $arguments) {
   // always return the shortcode if it doesn't match your own!
-	echo 'sjdf';
-  if ($shortcode !== '[custom:table]') return $shortcode; 
-  echo 'maksim';
-	$table = 'sadgsadg';
+
   
-  return $table;
+  return 'asdf';
 }
 
 add_filter('mailpoet_newsletter_shortcode_link', 'mailpoet_custom_shortcode_referral_link', 10, 5);
