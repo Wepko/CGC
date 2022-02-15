@@ -14,7 +14,7 @@ function mailpoet_custom_shortcode_referral_link($shortcode, $newsletter, $subsc
 }
 
 
-add_filter('mailpoet_newsletter_shortcode', 'mailpoet_custom_shortcode', 10, 6);
+add_filter('mailpoet_newsletter_shortcode', 'mailpoet_custom_shortcode', 10, 5);
 
 function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue, $newsletter_body, $arguments) {
   // always return the shortcode if it doesn't match your own!
