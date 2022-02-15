@@ -5,11 +5,7 @@ function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue,
   // always return the shortcode if it doesn't match your own!
   if ($shortcode !== '[custom:table]') return $shortcode; 
   
-  $table =  "<table border=1>";
-  $table .= "<thead><tr><th>Fruit Name</th><th>Fruit Color</th></tr></thead>";
-  $table .= "<tbody><tr><td>Apple</td><td>Red</td></tr></tbody>";
-  $table .= "<tbody><tr><td>Banana</td><td>Yellow</td></tr></tbody>";
-  $table .= "</table>";
+	$table = 'sadgsadg';
   
   return $table;
 }
