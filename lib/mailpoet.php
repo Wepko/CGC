@@ -5,9 +5,9 @@ add_filter('mailpoet_newsletter_shortcode', 'mailpoet_custom_shortcode', 10, 6);
 function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue, $newsletter_body, $arguments) {
   // always return the shortcode if it doesn't match your own!
   if ($shortcode !== '[custom:table]') return $shortcode; 
-
+//	print_r();
   $table =  "<table border=1>";
-  $table .= "<thead><tr><th>$newsletter</th><th>Fruit Color</th></tr></thead>";
+  // $table .= "<thead><tr><th>$newsletter</th><th>Fruit Color</th></tr></thead>";
   $table .= "<tbody><tr><td>$subscriber</td><td>$newsletter_body</td></tr></tbody>";
   $table .= "<tbody><tr><td>$queue</td><td>$arguments</td></tr></tbody>";
   $table .= "</table>";
