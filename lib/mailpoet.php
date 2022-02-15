@@ -6,7 +6,7 @@ function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue,
   // always return the shortcode if it doesn't match your own!
   if ($shortcode !== '[custom:table]') return $shortcode; 
 	echo "newsletter";
-  print_r($newsletter);
+	echo $newsletter;
 	echo "newsletter";
 
   $table =  "<table border=1>";
