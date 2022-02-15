@@ -55,10 +55,9 @@
 						<dd class="badger-accordion__panel js-badger-accordion-panel">
 							<div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
 								<?php while($my_query->have_posts()) : $my_query->the_post();?>
-
 									<?php if ($my_query->found_posts <= 1) : ?>
 										<div class="accordion">
-											<div class="accordion__description"> 
+											<div class="accordion__description" style="max-width: 100%"> 
 												<p><?php echo Truncate(get_field('group1-service')['service-info'], 750);?></p>
 											</div>
 											<div class="accordion__buttons">
