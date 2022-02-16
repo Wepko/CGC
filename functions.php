@@ -6,6 +6,14 @@
  */
 
 
+function wpse16119876_init_session() {
+	if ( ! session_id() ) {
+		session_start();
+	}
+}
+// Start session on init hook.
+add_action( 'init', 'wpse16119876_init_session' );
+
 
 require_once('lib/helpers.php');
 require_once('lib/enqueue-assets.php');

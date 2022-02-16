@@ -3,11 +3,11 @@
 		<div class="contacts__wrapper">
 			<div class="contacts__info">
 				<div class="contacts__info-title text-accent">Контакты</div>
-				<div class="contacts__info-description">Есть над чем задуматься: сторонники тоталитаризма в науке.</div>
+				<div class="contacts__info-description"><?php echo get_field("contact-description", 117)?></div>
 				<div class="contacts__info-content">
-					<p class="icon-email">email@company.com</p>
-					<p class="icon-phone">8 800 000 00 00</p>
-					<p class="icon-adress">ул. Герасима Курина, д. 10, корп. 2</p>
+					<p class="icon-email"><?php echo get_field("contact-email", 117)?></p>
+					<p class="icon-phone"><?php echo get_field("contact-phone", 117)?></p>
+					<p class="icon-adress"><?php echo get_field("contact-adress", 117)?></p>
 				</div>
 				<div class="contacts__info-social">
 					<div class="social">

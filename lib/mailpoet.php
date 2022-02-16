@@ -1,5 +1,9 @@
 <?php 
 
+// print_r($POST);
+// $_SESSION['arrayImg'] = $abc;
+// print_r($_SESSION);
+
 add_filter('mailpoet_newsletter_shortcode', 'mailpoet_custom_shortcode', 10, 6);
 
 function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue, $newsletter_body, $arguments) {
