@@ -1,8 +1,29 @@
 <?php 
 
-// print_r($POST);
-// $_SESSION['arrayImg'] = $abc;
-// print_r($_SESSION);
+print_r($POST);
+$_SESSION['arrayImg'] = $abc;
+print_r($_SESSION);
+
+add_action(
+	'mailpoet_subscription_before_subscribe',
+	function($data, $segmentIds, $form) {
+		print_r($POST);
+		$_SESSION['arrayImg'] = $abc;
+		print_r($_SESSION);
+		print_r($data, $segmentIds, $form);
+		if ($form->id() !== 10 || !in_array(21, $segmentIds)) {
+			return;
+		}
+		
+		
+		if ($data['some_custom_field'] === 'wrong') {
+			throw new \MailPoet\UnexpectedValueException("You can not use 'wrong' in the some_custom_field.");
+		}
+	},
+	10,
+	3
+);
+
 
 add_filter('mailpoet_newsletter_shortcode', 'mailpoet_custom_shortcode', 10, 6);
 
