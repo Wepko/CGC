@@ -77,6 +77,15 @@ body {
   font-display: block;
 }
 
+.cgc-link {
+	text-decoration: none;
+	color: $color-primary;
+	transition: .5s;
+}
+.cgc-link:hover {
+	color: $color-primary-dark;
+}
+
 
 .header-clear {
   padding-top: 15rem!important;

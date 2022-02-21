@@ -11,7 +11,7 @@
 						<option value="0:200">До 200</option>
 						<option value="200:300"> От 200 до 300</option>
 						<option value="300:400"> От 300 до 400</option>
-						<option value="400:9999"> Более 400</option>
+						<option value="401:9999"> Более 400</option>
 					</select>
 				</div>
 				<div class="catalog__filter-bedroom">
@@ -19,7 +19,7 @@
 						<option value="full" data-display="Колличество спален">Любое</option>
 						<option value="0:2">2</option>
 						<option value="2:4"> От 2 до 4</option>
-						<option value="4:99"> Более 4</option>
+						<option value="5:99"> Более 4</option>
 					</select>
 				</div>
 				<div class="catalog__filter-bathroom"> 
@@ -28,7 +28,7 @@
 						<option value="0:2">2</option>
 						<option value="3:3">3</option>
 						<option value="4:4">4</option>
-						<option value="4:99"> Более 4</option>
+						<option value="5:99"> Более 4</option>
 					</select>
 				</div>
 				<div class="catalog__filter-backspace" id="reset">
