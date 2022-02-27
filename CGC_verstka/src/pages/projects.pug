@@ -14,35 +14,56 @@ block content
 	+header('header--light')
 	section.projects.header-clear
 		.container
-			.projects__title
+			.projects__title.title-h1
 				p
 					| Наши 
 					span.text-accent проекты
-				a.btn-primary.btn-primary--outline.btn-primary--icon.icon-arrow-right(href='#')  Все проекты
-			.projects__filter
-				.projects__filter-top
-					.projects__filter-switcher
-						.can-toggle.demo-rebrand-1
-							input#d(type='checkbox')
-							label(for='d')
-								.can-toggle__switch(data-checked='Текущие' data-unchecked='Реализованные')
+			form.projects__filter
+				.projects__filter-switcher
+					.can-toggle.demo-rebrand-1
+						input#d(type='checkbox')
+						label(for='d')
+							.can-toggle__switch(data-checked='Текущие' data-unchecked='Реализованные')
+					a.btn-primary.btn-primary--outline.btn-primary--icon.icon-arrow-right(href='#')  Все проекты
+				.projects__filter-services
 					.projects__filter-buttons
-						.projects__filter-button Все
-						.projects__filter-button Проектирование
-						.projects__filter-button Сбор исходно-разрешительной документации
+						.projects__filter-button
+							input#service1(type="radio", name="service") 
+							label(for="service1")   Все
+						.projects__filter-button
+							input#service2(type="radio", name="service") 
+							label(for="service2")   Проектирование
+						.projects__filter-button 
+							input#service3(type="radio", name="service")
+							label(for="service3")   Сбор исходно-разрешительной документации
+						.projects__filter-button 
+							input#service4(type="radio", name="service")
+							label(for="service4")   Архитектурное проектирование
+						.projects__filter-button 
+							input#service5(type="radio", name="service")
+							label(for="service5")   Проектирование зданий
+						.projects__filter-button 
+							input#service6(type="radio", name="service")
+							label(for="service6")   Проектирование инженерных коммуникаций
+						.projects__filter-button 
+							input#service7(type="radio", name="service")
+							label(for="service7")   Дизайн проект
+						.projects__filter-button 
+							input#service8(type="radio", name="service")
+							label(for="service8")   Проектирование систем безопасности и связи
+						.projects__filter-button 
+							input#service9(type="radio", name="service")
+							label(for="service9") Ландшафтное проектирование
+						.projects__filter-button 
+							input#service10(type="radio", name="service")
+							label(for="service10")   Строительство
+						.projects__filter-button 
+							input#service11(type="radio", name="service")
+							label(for="service1")   Сопровождение
 					.projects__filter-next
-						span Еще
-						i.icon-arrow-right 
-				.projects__filter-bottom
-					.projects__filter-buttons.hidden-js
-						.projects__filter-button Архитектурное проектирование
-						.projects__filter-button Проектирование зданий
-						.projects__filter-button Проектирование инженерных коммуникаций
-						.projects__filter-button Дизайн проект
-						.projects__filter-button Проектирование систем безопасности и связи
-						.projects__filter-button Ландшафтное проектирование
-						.projects__filter-button Строительство
-						.projects__filter-button Сопровождение
+							span Еще
+							i.icon-arrow-right 
+					
 			.projects__product
 				.card-product
 					img(src='img/home4.png' alt='')

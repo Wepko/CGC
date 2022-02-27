@@ -1,8 +1,10 @@
 .project-header {
     &__title {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
+        width: 100%;
     }
 
     &__title h1 {
@@ -10,17 +12,42 @@
         margin: 4rem 0;
     }
 
-    &__image img {
+    &__slider img {
         width: 100%;
+    }
+
+    &__square {
+        @include respond(phone) {
+            width: 100%;
+        }
+
     }
 }
 
+#plan {
+    margin-bottom: 4rem;
+    display: none;
+    @include respond(phone) {
+        display: block;
+    }
+
+}
+
+
 .square {
     border: 2px solid #e3e1db;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     height: 6rem;
     margin-left: auto;
     width: 6rem;
+
+
+    @include respond(phone) {
+        display: none;
+    }
+
+
 
     i {
         display: block;
@@ -43,17 +70,43 @@
 .project-content {
     &__wrapper {
         margin: 10rem 0;
+        @include respond(phone) {
+            margin: 5rem 0;
+        }
     }
+
+    &__stock {
+        h2 {
+            @extend %title;
+        }
+
+        &-text {
+            background: $color-primary;
+            padding: 4.5rem;
+            margin: 4.5rem 0;
+            p {
+                color: $color-white;
+                margin: 1rem 0;
+                max-width: 80rem;
+            }
+        }
+    }
+
 
     &__info {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
-       
+
+
         &-block {
             max-width: 25rem;
             margin-left: 4.5rem;
             position: relative;
-
+            @include respond(phone) {
+                margin: 2rem 0 2rem 4.5rem;
+                flex-grow: 1;
+            }
 
             h3 {
                 font-size: 1.8rem;
@@ -77,6 +130,10 @@
 
         &-button {
             margin-left: auto;
+            @include respond(phone) {
+                margin: inherit;
+                flex-grow: 1;
+            }
         }
     }
 
@@ -87,29 +144,3 @@
     }
 
 }
-
-
-
-// section.project-content
-// 		.container
-// 			+layout('Информация')
-// 				.project-content__info
-// 					.project-content__info-place
-// 						h4 Место реализации
-// 						p Проект реализован в коттеджном посёлке Прерий
-// 					.project-content__info-time
-// 						h4 Время реализации
-// 						p 12 месяцев
-// 					.project-content__info-button
-// 						a.btn-primary live Камера
-// 			+layout('Характеристики')
-// 				.project-content__description 
-// 					.project-content__description-text
-// 						p Представляем вам проект дома «Гран-Парадизо»!
-// 						p Дом спроектирован в лучших традициях архитектурного стиля прерий. Четкие линии и парящие крыши идеально вписывают здание в ландшафт, а панорамное остекление наполняет помещение естественным светом. При отделке используются натуральные материалы и естественные цвета, которые гармонично сливаются с пейзажем.
-// 						p Архитектура в стиле прерий вписывает здания в окружающую среду, сохраняя уют и простор.
-// 						p Объект сдается по договору подряда с полученным на заказчика правом собственности на дом и комплектом исходно-разрешительной документацией.
-// 					.project-content_description-feature
-// 						.features
-// 							.features-row 
-// \

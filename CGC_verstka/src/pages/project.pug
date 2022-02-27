@@ -18,14 +18,28 @@ block content
 				h1 Дом 
 					span.text-accent Дан-Бланш G+
 				.project-header__square
-					.square
+					a(href="#").square
 						i.icon-icon1
-		.project-header__image 
-			img(src="img/project.png", alt="")
-			p Описание фотографии — Дом Дан-Бланш G+
+					a(href="#")#plan.btn-primary.btn-primary--outline.btn-primary--icon.icon-icon1 Планировка
+		.project-header__slider 
+			.swiper.slider-project-single
+				.swiper-wrapper
+					.swiper-slide 
+						img(src="img/project.png", alt="")
+					.swiper-slide 
+						img(src="img/project.png", alt="")
+	
+				.swiper-button-next
+				.swiper-button-prev
 	section.project-content
 		.container
 			.project-content__wrapper
+				.project-content__stock 
+					h2 Действует 
+						span.text-accent акция 
+					.project-content__stock-text 
+						p.text-accent Задача организации, в особенности же понимание сути ресурсосберегающих технологий создаёт предпосылки для экспериментов,  
+						p поражающих по своей масштабности и грандиозности. Лишь предприниматели в сети интернет призывают нас к новым свершениям, которые, в свою очередь, должны быть представлены в исключительно положительном свете. Как принято считать, явные признаки 
 				+layout('Информация')
 					.project-content__info
 						.project-content__info-block.icon-adress-bold
@@ -313,9 +327,6 @@ block content
 													a.btn-primary Узнать больше
 													a.btn-primary.btn-primary--outline.btn-primary--icon.icon-arrow-right Готовые проекты
 							
-
-
-
 
 				dt.badger-accordion__header
 					a.badger-accordion__trigger.js-badger-accordion-header

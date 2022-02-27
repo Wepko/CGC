@@ -5,14 +5,14 @@ section.projects
 			p
 				| Наши 
 				span.text-accent проекты
-			a.btn-primary.btn-primary--outline.btn-primary--icon.icon-arrow-right(href='#')  Все проекты
 		form.projects__filter
-			.projects__filter-top.active
-				.projects__filter-switcher
-					.can-toggle.demo-rebrand-1
-						input#d(type='checkbox')
-						label(for='d')
-							.can-toggle__switch(data-checked='Текущие' data-unchecked='Реализованные')
+			.projects__filter-switcher
+				.can-toggle.demo-rebrand-1
+					input#d(type='checkbox')
+					label(for='d')
+						.can-toggle__switch(data-checked='Текущие' data-unchecked='Реализованные')
+				a.btn-primary.btn-primary--outline.btn-primary--icon.icon-arrow-right(href='#')  Все проекты
+			.projects__filter-services
 				.projects__filter-buttons
 					.projects__filter-button
 						input#service1(type="radio", name="service") 

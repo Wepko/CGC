@@ -125,3 +125,11 @@ $movement: (
 		animation: moveBox-#{$i} $animTime infinite;
 	}
 }
+
+
+.preloader--part {
+	position: absolute;
+	background: #000;
+	filter: invert(1);
+	display: block!important;
+}

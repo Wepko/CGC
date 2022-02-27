@@ -102,3 +102,12 @@ new Swiper('.slider-gallery-min', {
 		},
   });
 
+  new Swiper('.slider-project-single', {
+
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+
+});
+
