@@ -1,4 +1,4 @@
-<div class="card-project" style="background-image: url(<?php echo get_field('thumb')['url']; ?>);">
+<div class="card-project" style="background-image: url(<?php echo get_field('thumb')['url']; ?>); background-size: contain">
 	<!-- <?php if( get_field('thumb') ): ?>
 		<img src="" />
 	<?php endif; ?> -->
@@ -25,9 +25,6 @@
 			
 				<span class="icon-icon2"><?php echo $sumW . " ". "x". " " . $sumH?> м</span>
 				<span class="icon-icon4"><?php echo get_field('bathrooms')?></span>
-			</div>
-			<div class="card-project__description-text">
-			<p><?php echo get_field('content'); ?></p>
 			</div>
 		</div>
 		<div class="card-project__button">
