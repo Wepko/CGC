@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+		<?php get_template_part( 'template-parts/modal' ); ?>
 		<header class="header">
 			<div class="container">
 				<?php get_template_part( 'template-parts/nav' ); ?>
@@ -15,7 +15,7 @@
 						<?php echo get_the_title(); ?>
 						</span></div>
           <div class="service-header__buttons">
-						<a class="btn-primary" href="#">Узнайте больше</a>
+						<a class="btn-primary"  data-custom-open="modal-1" href="#">Заказать услугу</a>
 						<!-- <a class="btn-secondary btn-secondary--icon icon-arrow-right" href="#">Готовые проекты</a></div> -->
         </div>
       </div>

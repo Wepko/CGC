@@ -429,8 +429,8 @@ h2 {
 		position: relative;
 		margin: 4rem 0;
 		display: grid;
-		grid-template-columns: repeat(auto-fill,minmax(200px, 38rem));
-		grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(214px, 57.5rem));
+    grid-gap: 1.6rem;
 		@include respond(phone) {
 			justify-content: center;
 		}
