@@ -1,4 +1,4 @@
-<div class="card-project" style="background-image: url(<?php echo get_field('thumb')['url']; ?>); background-size: contain">
+<div class="card-project" style="background-image: url(<?php echo get_field('thumb')['url']; ?>); background-size: cover">
 	<!-- <?php if( get_field('thumb') ): ?>
 		<img src="" />
 	<?php endif; ?> -->
