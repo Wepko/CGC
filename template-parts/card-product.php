@@ -1,8 +1,8 @@
-<div class="card-project" style="background-image: url(<?php echo get_field('thumb')['url']; ?>); background-size: cover">
-	<!-- <?php if( get_field('thumb') ): ?>
-		<img src="" />
-	<?php endif; ?> -->
+<div class="card-project" style="background-image: url(); background-size: cover">
+	<img src="<?php echo get_field('thumb')['url']; ?>" />
+
 	<div class="card-project__components">
+		
 		<div class="card-project__tag">
 			<?php 
 				echo is_tag_cgc();
