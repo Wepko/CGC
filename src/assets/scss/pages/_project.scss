@@ -5,15 +5,14 @@
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
-		
-	}
-
-	&__title h1 {
-		@extend %title-h1;
 		margin: 8rem 0 4rem 0;
 		@include respond(phone) {
 			margin: 2rem 0 0 0 ;
 		}
+	}
+
+	&__title h1 {
+		@extend %title-h1;
 	}
 
 	&__slider {
