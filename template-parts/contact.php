@@ -7,7 +7,10 @@
 				<div class="contacts__info-content">
 					<p class="icon-email"><?php echo get_field("contact-email", 117)?></p>
 					<p class="icon-phone"><?php echo get_field("contact-phone", 117)?></p>
-					<p class="icon-adress"><?php echo get_field("contact-adress", 117)?> <br> <?php echo get_field("contact-adress_2", 117)?></p>
+					<p class="icon-adress"><?php echo get_field("contact-adress", 117)?></p>
+					<?php if (!empty(get_field("contact-adress_2", 117))) : ?>
+						<p class="icon-adress"><?php echo get_field("contact-adress_2", 117)?></p>
+					<?php endif; ?>
 				</div>
 				<div class="contacts__info-social">
 					<div class="social">
