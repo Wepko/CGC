@@ -162,18 +162,7 @@ h2 {
 	align-items: center;
 	justify-content: center;
 	z-index: 100;
-	&::before {
-		content: "";
-    display: block;
-    height: 60.5rem;
-    width: 100%;
-    background: white;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    z-index: -1;
-    box-shadow: 0px 73px 221px rgb(32 41 69 / 6%), 0px 22.0074px 66.625px rgb(32 41 69 / 4%), 0px 9.14073px 27.6726px rgb(32 41 69 / 3%), 0px 3.30602px 10.0086px rgb(32 41 69 / 2%);
-	}
+
 	&.reset {
 		margin-top: 0;
 		background-color: $color-blue-dark;
@@ -218,6 +207,19 @@ h2 {
     align-items: center;
     z-index: 1;
 
+		&::before {
+			content: "";
+			display: block;
+			min-height: 60.5rem;
+			height: 100%;
+			width: 100%;
+			background: white;
+			position: absolute;
+			top: 0;
+			left: 100%;
+			z-index: -1;
+			box-shadow: 0px 73px 221px rgb(32 41 69 / 6%), 0px 22.0074px 66.625px rgb(32 41 69 / 4%), 0px 9.14073px 27.6726px rgb(32 41 69 / 3%), 0px 3.30602px 10.0086px rgb(32 41 69 / 2%);
+		}
 
 		h2 {
 			@extend %title;
