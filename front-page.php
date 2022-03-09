@@ -75,7 +75,7 @@ get_header();
 										<div class="info-block__buttons">
 											<a class="btn-primary" data-custom-open="modal-1" href="#"><?php echo cgc_if(get_sub_field('slide-button-1'), "Заказать проект"); ?></a>
 											<a class="btn-secondary btn-secondary--icon icon-arrow-right" 
-												href="<?php echo cgc_if(get_term_link( 'possible', 'type' ), get_sub_field('slide-button-2')['slide-button-2-link']); ?>">
+												href="<?php echo cgc_if(get_sub_field('slide-button-2')['slide-button-2-link']), get_term_link( 'possible', 'type' ); ?>">
 												<?php echo cgc_if(get_sub_field('slide-button-2')['slide-button-2-name'], "Посмотреть проект"); ?>
 											</a>
 										</div>
