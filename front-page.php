@@ -29,8 +29,6 @@ get_header();
 			<!-- Additional required wrapper-->
 			<?php 
 				$slider = get_field('main-slider');
-				$swedfty = get_field('swedfty');
-
 
 			?>
 			<div class="swiper-wrapper">
@@ -49,7 +47,7 @@ get_header();
 						$select_home_features = $select_home->features;
 						//get_metadata('post', get_sub_field('select_home')->ID,)['features'][0]
 						$select_home_thumb = wp_get_attachment_url($select_home->thumb);
-				
+						
 					?>
 	
 						<div class="swiper-slide">
@@ -76,7 +74,10 @@ get_header();
 										<p class="info-block__description" style="max-width: 75rem"><?php echo cgc_if(get_sub_field('slide-description'), $select_home_features); ?></p>
 										<div class="info-block__buttons">
 											<a class="btn-primary" data-custom-open="modal-1" href="#"><?php echo cgc_if(get_sub_field('slide-button-1'), "Заказать проект"); ?></a>
-											<a class="btn-secondary btn-secondary--icon icon-arrow-right" href="<?php echo get_term_link( 'possible', 'type' ); ?>"><?php echo cgc_if(get_sub_field('slide-button-2'), "Посмотреть проект"); ?></a>
+											<a class="btn-secondary btn-secondary--icon icon-arrow-right" 
+												href="<?php echo cgc_if(get_term_link( 'possible', 'type' ), get_sub_field('slide-button-2')['slide-button-2-link']); ?>">
+												<?php echo cgc_if(get_sub_field('slide-button-2')['slide-button-2-name'], "Посмотреть проект"); ?>
+											</a>
 										</div>
 										<?php
 											$feature = get_sub_field('features')[0]['cells'];
