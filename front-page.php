@@ -152,19 +152,18 @@ get_header();
 		</div>
 	</div>
 
-	<section class="about-company gs_reveal">
+	<section class="about-company container gs_reveal">
 		<div class="about-company__title gs_reveal">
 			<h2><span class="text-accent">Информация</span><br> о компании</h2>
 		</div>
-		<p></p>
 		<div class="about-company__description gs_reveal">
-		<h2>	Информация <br><span class="text-accent">о компании</span></h2>
-		<?php echo get_field('info_description', 117); ?>
-		<div class="about-company__button">
-			<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="<?php echo get_field('info_link', 117); ?>">
-				<?php echo get_field('info_button', 117); ?>
-			</a>
-		</div>
+			<h2>	Информация <br><span class="text-accent">о компании</span></h2>
+			<?php echo get_field('info_description', 117); ?>
+			<div class="about-company__button">
+				<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="<?php echo get_field('info_link', 117); ?>">
+					<?php echo get_field('info_button', 117); ?>
+				</a>
+			</div>
 		</div>
 	</section>
 
