@@ -291,9 +291,9 @@ get_header();
 								$i++;
 								$photos = get_sub_field('services_tab_photo');
 								$videos = get_sub_field('services_tab_video');
-								echo '<pre>';
-								print_r($photos);
-								echo '</pre>';
+								// echo '<pre>';
+								// print_r($photos);
+								// echo '</pre>';
 							?>
 							<!-- <?php	get_template_part( 'template-parts/modal-accordion', null, [$photos, $i]);	?> -->
 								<dt class="badger-accordion__header">

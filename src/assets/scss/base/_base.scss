@@ -19,6 +19,13 @@ ul {
 	margin-left: 2rem; 
 }
 
+input {
+  border-radius: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
 
 html {
   // this defines what a 1rem is

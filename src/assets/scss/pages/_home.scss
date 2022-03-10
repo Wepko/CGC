@@ -492,13 +492,13 @@ h2 {
 
 
 .slider-hidden {
-	opacity: 0;
-	visibility: hidden;
-	position: absolute;
+	//opacity: 0;
+	//visibility: hidden;
+	position: relative;
 }
 
 .slider-project-single {
-	width: 117rem;
+	width: 100%;
 	max-height: 70rem;
 	min-height: 15rem;
 	position: relative;
