@@ -100,6 +100,12 @@ body {
 	}
 }
 
+.wpcf7-checkbox, .wpcf7-checkbox [name="chkbox[]"],
+.wpcf7-checkbox [name="chkbox[]"]::before {
+	color: #ccc;
+	border-color: #ccc;
+}
+ 
 
 .fc {
 	display: flex;
