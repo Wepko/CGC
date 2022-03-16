@@ -40,7 +40,7 @@ get_header();
 			<?php endif ?>
 			</div>
 			<div class="project-header__slider"> 
-				<div id="planning" class="slider-hidden">
+				<div id="planning" >
 					<div class="swiper slider-project-single">
 					
 	
