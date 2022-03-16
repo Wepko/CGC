@@ -5,13 +5,14 @@ console.log('generics.js');
 
 const sliderExterior = $('#exterior');
 $(document).ready(function() {
-	sliderExterior.addClass('slider-hidden');
+	setTimeout(() => {
+		sliderExterior.addClass('slider-hidden');
+	}, 1000)
 });
 
 $('.project-header__square').on('click', (e) => {
 	e.preventDefault();
 	
-
 	sliderExterior.toggleClass('slider-hidden');
 	$('#planning').toggleClass('slider-hidden');
 })
