@@ -492,9 +492,8 @@ h2 {
 
 
 .slider-hidden {
-	//opacity: 0;
-	//visibility: hidden;
-	position: relative;
+	opacity: 0;
+	position: absolute;
 }
 
 .slider-project-single {
