@@ -292,10 +292,10 @@ get_header();
 								$photos = get_sub_field('services_tab_photo');
 								$videos = get_sub_field('services_tab_video');
 								// echo '<pre>';
-								// print_r($photos);
+								// print_r($videos);
 								// echo '</pre>';
 							?>
-							<!-- <?php	get_template_part( 'template-parts/modal-accordion', null, [$photos, $i]);	?> -->
+							<!-- <?php	get_template_part( 'template-parts/modal-accordion', null, [$photos, $i]);	?>  -->
 								<dt class="badger-accordion__header">
 									<a class="badger-accordion__trigger js-badger-accordion-header">
 										<div class="badger-accordion__trigger-title">
@@ -314,15 +314,15 @@ get_header();
 											</div>
 											<div class="accordion__switcher">
 												<div class="can-toggle demo-rebrand-1 can-toggle--size-large">
-													<input id="mini_galary" type="checkbox">
-													<label for="mini_galary">
+													<input id="mini_galary-<?php echo $i;?>" type="checkbox">
+													<label for="mini_galary-<?php echo $i;?>">
 														<div class="can-toggle__switch" data-checked="Видео" data-unchecked="Фото"> </div>
 													</label>
 												</div>
 											</div>
 											<div class="accordion__gallery">
-												<div class="slider">
-													<div id="photo" class="slider-gallery-min-<?php echo $i;?>">
+												<div class="slider slider-<?php echo $i;?>">
+													<div id="photo" class="slider-gallery-min">
 														<div class="swiper-wrapper">
 															<?php if ( is_array( $photos ) ) : ?>
 																<?php foreach ($photos as $index => $photo) : ?>
@@ -416,6 +416,43 @@ get_header();
 		get_template_part( 'template-parts/contact', null, $theme ); 	
 	?>
 
+	<script>
+		const generationModal = (index, url,) => {
+			let divRoot = document.createElement('div');
+			let modalHtmlTemplate = 
+			`<div class="modal modal--s micromodal-slide" id="modal-accord-${index}" aria-hidden="true">
+				<div class="modal__overlay" tabindex="-1" data-custom-close="modal-accord-${index}">
+					<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+						<header class="modal__header">
+							<button class="modal__close " aria-label="Close modal" data-custom-close="modal-accord-${index}"></button>
+						</header>
+						<main class="modal__content  modal__content--form" id="modal-content">
+							<img src="${url}" style="width: 100%" alt="">
+						</main>
 
+					</div>
+				</div>
+			</div>`;
+
+			let div = document.createElement('div');
+			div.insertAdjacentHTML('afterbegin', modalHtmlTemplate);
+			divRoot.append(div);
+			document.body.append(divRoot);
+		}
+
+		const $cardsGalleryPhoto = document.querySelectorAll('#photo .card-gallery');
+		const $cardsGalleryVideo = document.querySelectorAll('#video .card-gallery');
+		const cardsGallery = [...$cardsGalleryPhoto];
+		for (const [index, cardGallery] of cardsGallery.entries()) {
+			let img = cardGallery.firstElementChild.children[0];
+			generationModal(index, img.src);
+			cardGallery.addEventListener('click', (e) => {
+				e.preventDefault();
+				MicroModal.show(`modal-accord-${index}`, {
+					closeTrigger: 'data-custom-close',
+				});
+			});
+		}
+	</script>
 
 <?php get_footer(); ?>

@@ -46,42 +46,21 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 });
 
 
-
-// const galleryThumbs1 = new Swiper('.slider-gallery-min-1', {
-// 	spaceBetween: 10,
-// 	slidesPerView: 'auto',
-// 	slideToClickedSlide: true,
-// 	loop: true,
-// 	loopedSlides: 4
-// });
-
-// const galleryMain1 = new Swiper('.slider-gallery-main-1', {
-// 	spaceBetween: 10,
-// 	navigation: {
-// 		nextEl: ".swiper-button-next",
-// 		prevEl: ".swiper-button-prev",
-// 	},
-// 	loop: true,
-// 	loopedSlides: 4
-// })
-
-// //galleryMain.controller.control = galleryThumbs;
-// //galleryThumbs.controller.control = galleryMain;
-// console.log(galleryMain1[0]);
-// galleryMain1[0].controller.control = galleryThumbs1;
-// galleryThumbs1[1].controller.control = galleryMain1;
-
-
-
-
-
-// const galleryThumbs = new Swiper('.slider-gallery-min', {
-// 	spaceBetween: 10,
-// 	slidesPerView: 'auto',
-// 	slideToClickedSlide: true,
-// 	loop: true,
-// 	loopedSlides: 4
-// });
+const galleryThumbs = new Swiper('.slider-gallery-min', {
+	spaceBetween: 10,
+	slidesPerView: 'auto',
+	slideToClickedSlide: true,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	scrollbar: {
+		el: '.swiper-scrollbar',
+		draggable: true,
+	}
+	// loop: true,
+	// loopedSlides: 4
+});
 
 // const galleryMain = new Swiper('.slider-gallery-main', {
 // 	spaceBetween: 10,
@@ -98,31 +77,9 @@ Swiper.use([EffectFade, Navigation, Pagination, Scrollbar, Controller, Parallax,
 // galleryThumbs[1].controller.control = galleryMain;
 
 
+//galleryMain.controller.control = galleryThumbs;
+//galleryThumbs.controller.control = galleryMain;
 
-
-// const galleryThumbs2 = new Swiper('.slider-gallery-min-2', {
-// 	spaceBetween: 10,
-// 	slidesPerView: 'auto',
-// 	slideToClickedSlide: true,
-// 	loop: true,
-// 	loopedSlides: 4
-// });
-
-// const galleryMain2 = new Swiper('.slider-gallery-main-2', {
-// 	spaceBetween: 10,
-// 	navigation: {
-// 		nextEl: ".swiper-button-next",
-// 		prevEl: ".swiper-button-prev",
-// 	},
-// 	loop: true,
-// 	loopedSlides: 4
-// })
-
-// //galleryMain.controller.control = galleryThumbs;
-// //galleryThumbs.controller.control = galleryMain;
-
-// galleryMain2[0].controller.control = galleryThumbs2;
-// galleryThumbs2[1].controller.control = galleryMain2;
 
 
 new Swiper('.slider-camera', {

@@ -10,6 +10,8 @@
 	}
 }
 
+
+
 .modal__overlay {
 	position: fixed;
 	top: 0;
@@ -196,4 +198,18 @@
 .micromodal-slide .modal__container,
 .micromodal-slide .modal__overlay {
 	will-change: transform;
+}
+
+//modal--strong
+.modal--s {
+	.modal__container {
+		background-color: #fff0;
+	}
+
+	.modal__close {
+		color: #fff;
+		top: 5.5rem;
+    right: -103%;
+	}
+
 }

@@ -18,6 +18,7 @@ MicroModal.init({
 	debugMode: false // [10]
 });
 
+window.MicroModal = MicroModal;
 // MicroModal.show('modal-1', {
 // 	closeTrigger: 'data-custom-close',
 // });

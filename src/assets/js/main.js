@@ -9,6 +9,5 @@ import './components/modal';
 import './components/catalog';
 import './components/filter';
 import './components/lazyload';
-import './components/mailpoet';
 
 

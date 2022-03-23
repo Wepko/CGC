@@ -165,10 +165,13 @@
             </li>
             <li class="steps__item">
               <h3>И наконец - новоселье! <br> Объект готов к эксплуатации!</h3>
-              <div class="steps__content"> <a class="btn-primary" data-custom-open="modal-1">Заказать проект</a></div>
+              <div class="steps__content"> 
+								<a class="btn-primary" data-custom-open="modal-1">Заказать проект</a>
+							</div>
             </li>
           </ul>
 					<div class="process__button">
+						<a class="btn-primary" data-custom-open="modal-1">Заказать проект</a>
 						<a href="javascript:void(0)" class="btn-secondary">Смотреть все шаги</a>
 					</div>	
         </div>

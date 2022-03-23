@@ -41,7 +41,7 @@ export const clean = () => del(['dist'])
 
 export const serve = done => {
 	server.init({
-		proxy:'http://localhost/'
+		proxy:'http://local.cgc:82/'
 	});
 	done();
 }
@@ -81,7 +81,7 @@ export const copy = () => {
 	return src(paths.other.src)
 		.pipe(dest(paths.other.dest))
 }
-console.log(__dirname);
+
 export const scripts = () => {
 	return src (paths.scripts.src)
 		.pipe(webpackStream({

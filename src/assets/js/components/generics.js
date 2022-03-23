@@ -1,7 +1,7 @@
 import $ from "jquery";
 
 
-console.log('generics.js');
+
 
 const sliderExterior = $('#exterior');
 $(document).ready(function() {
@@ -19,12 +19,18 @@ $('.project-header__square').on('click', (e) => {
 
 
 
-$('.accordion__switcher .can-toggle').on('change', (e) => {
+const switchers = $('.accordion__switcher .can-toggle');
+switchers.each((index, el) => {
+	index++;
+	el.addEventListener('change', (e) => {
+		$(`.slider-${index} #photo`).toggleClass('slider-hidden');
+		$(`.slider-${index} #video`).toggleClass('slider-hidden');
+	});
+});
 
-	$('#photo').toggleClass('slider-hidden');
-	$('#video').toggleClass('slider-hidden');
-})
 
+
+// страница about О нас
 const showBtn = document.querySelector(".process__button a") ?? null;
 const container = document.querySelector(".steps") ?? null;
 
