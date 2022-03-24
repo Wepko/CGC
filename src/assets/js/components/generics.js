@@ -4,9 +4,10 @@ import $ from "jquery";
 
 
 const sliderExterior = $('#exterior');
+const sliderPlanning = $('#planning');
 $(document).ready(function() {
 	setTimeout(() => {
-		sliderExterior.addClass('slider-hidden');
+		sliderPlanning.addClass('slider-hidden');
 	}, 1000)
 });
 
@@ -14,7 +15,7 @@ $('.project-header__square').on('click', (e) => {
 	e.preventDefault();
 	
 	sliderExterior.toggleClass('slider-hidden');
-	$('#planning').toggleClass('slider-hidden');
+	sliderPlanning.toggleClass('slider-hidden');
 })
 
 

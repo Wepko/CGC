@@ -441,7 +441,6 @@ get_header();
 		}
 
 		const $cardsGalleryPhoto = document.querySelectorAll('#photo .card-gallery');
-		const $cardsGalleryVideo = document.querySelectorAll('#video .card-gallery');
 		const cardsGallery = [...$cardsGalleryPhoto];
 		for (const [index, cardGallery] of cardsGallery.entries()) {
 			let img = cardGallery.firstElementChild.children[0];
@@ -453,6 +452,20 @@ get_header();
 				});
 			});
 		}
+
+		// const $cardsGalleryVideo = document.querySelectorAll('#video .card-gallery');
+		// const cardsGalleryV = [...$cardsGalleryVideo];
+		// for (const [index, cardGalleryV] of cardsGalleryV.entries()) {
+		// 	let img = cardGalleryV.firstElementChild.children[0];
+		// 	generationModal(index, img.src);
+		// 	cardGalleryV.addEventListener('click', (e) => {
+		// 		e.preventDefault();
+		// 		MicroModal.show(`modal-accord-${index}`, {
+		// 			closeTrigger: 'data-custom-close',
+		// 		});
+		// 	});
+		// }
+
 	</script>
 
 <?php get_footer(); ?>
