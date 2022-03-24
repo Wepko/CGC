@@ -244,13 +244,13 @@ get_header();
 	<?php endif ?>
 
 	<!-- Подпишись на проект -->
-	<?php  if( has_term( 'current', 'type' ) ) :?>
+	<!-- <?php  if( has_term( 'current', 'type' ) ) :?>
 		<div class="questions questions--subscribe">
 			<div class="container">
 				<?php dynamic_sidebar('sidebar-2'); ?>
 			</div>
-		</div>
-<!-- 
+		</div> -->
+
 		<div class="questions questions--subscribe">
 			<div class="container">
 				<div class="questions__wrapper">
@@ -273,7 +273,7 @@ get_header();
 					<div class="questions__buttons"><a class="btn-primary">Подписаться</a></div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 
 	<?php endif; ?>
 
