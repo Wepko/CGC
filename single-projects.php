@@ -43,7 +43,6 @@ get_header();
 				<div id="planning" >
 					<div class="swiper slider-project-single">
 					
-	
 						<?php 
 							$images_pl = get_field('pl_photo_gallery');
 							$images_ex = get_field('ex_photo_gallery');
@@ -82,9 +81,7 @@ get_header();
 											<?php endforeach; ?>
 										</div>
 							<?php endif; ?>
-	
-	
-	
+		
 						<div class="swiper-button-next"></div>
 						<div class="swiper-button-prev"></div>
 					</div>
@@ -420,7 +417,7 @@ get_header();
 		const generationModal = (index, url, type) => {
 			let divRoot = document.createElement('div');
 			const isVideo = (type) => {
-				if (type) {
+				if (!type) {
 					return `<img src="${url}" style="width: 100%" alt="">`;
 				} else {
 					return `
@@ -453,9 +450,10 @@ get_header();
 		const cardsGallery = [...$cardsGallery];
 		window.cardsGallery = cardsGallery;
 		for (const [index, cardGallery] of cardsGallery.entries()) {
-			console.log()
+
 			let img = cardGallery.firstElementChild.children[0];
-			let  data = img.dataset
+			let  data = img.dataset;
+			console.log(data.url);
 			generationModal(index, img.src, data.url);
 			cardGallery.addEventListener('click', (e) => {
 				e.preventDefault();
