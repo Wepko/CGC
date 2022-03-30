@@ -353,9 +353,9 @@ get_header();
 																		<div class="card-gallery">
 																			<div class="card-gallery__img">
 																				<img src="<?php echo $video['services_tab_video-cover']['url']?>" alt="">
-																					<?php if( $video ): ?>
-																							<p><?php print_r( $video['services_tab_video-file'])?></p>
-																					<?php endif; ?>
+																				
+																							<p><?php print_r($video['services_tab_video-file']);?></p>
+																				
 																			</div>
 																		</div>
 																	</div>
