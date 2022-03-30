@@ -420,7 +420,7 @@ get_header();
 		const generationModal = (index, url, type) => {
 			let divRoot = document.createElement('div');
 			const isVideo = (type) => {
-				if (!type) {
+				if (type) {
 					return `<img src="${url}" style="width: 100%" alt="">`;
 				} else {
 					return `
