@@ -420,15 +420,14 @@ get_header();
 		const generationModal = (index, url, type) => {
 			let divRoot = document.createElement('div');
 			const isVideo = (type) => {
-				return " ";
-				// if (type) {
-				// 	return `<img src="${url}" style="width: 100%" alt="">`;
-				// } else {
-				// 	return `
-				// 		<video id='video' controls="controls" preload='none' width="600" >
-				// 			<source id='mp4' src="<?php echo $video['services_tab_video-file']['url']?>" type='video/mp4' />
-				// 		</video>`;
-				// }
+				if (!type) {
+					return `<img src="${url}" style="width: 100%" alt="">`;
+				} else {
+					return `
+						<video id='video' controls="controls" preload='none' width="600" >
+							<source id='mp4' src="${type}" type='video/mp4' />
+						</video>`;
+				}
 			}
 			let modalHtmlTemplate = 
 			`<div class="modal modal--s micromodal-slide" id="modal-accord-${index}" aria-hidden="true">
@@ -439,7 +438,6 @@ get_header();
 						</header>
 						<main class="modal__content  modal__content--form" id="modal-content">
 							${isVideo(type)}
-							<img src="${url}" style="width: 100%" alt="">
 						</main>
 					</div>
 				</div>
@@ -454,11 +452,11 @@ get_header();
 		const $cardsGallery = document.querySelectorAll('.card-gallery');
 		const cardsGallery = [...$cardsGallery];
 		window.cardsGallery = cardsGallery;
-		//console.log(cardsGallery);
 		for (const [index, cardGallery] of cardsGallery.entries()) {
 			console.log()
 			let img = cardGallery.firstElementChild.children[0];
-			generationModal(index, img.src);
+			let  data = img.dataset
+			generationModal(index, img.src, data.url);
 			cardGallery.addEventListener('click', (e) => {
 				e.preventDefault();
 				MicroModal.show(`modal-accord-${index}`, {
