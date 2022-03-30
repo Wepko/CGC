@@ -355,7 +355,14 @@ get_header();
 																				<img src="<?php echo $video['services_tab_video-cover']['url']?>" alt="">
 																				
 																							<p><?php print_r($video['services_tab_video-file']);?></p>
-																				
+																						
+																						<video id='video' controls="controls" preload='none' width="600" >
+																							<source id='mp4' src="<?php echo $video['services_tab_video-file']['url']?>" type='video/mp4' />
+																						</video>
+
+
+
+
 																			</div>
 																		</div>
 																	</div>
