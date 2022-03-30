@@ -453,8 +453,7 @@ get_header();
 
 			let img = cardGallery.firstElementChild.children[0];
 			let  data = img.dataset;
-			console.log(data['url']);
-			generationModal(index, img.src, data.url);
+			generationModal(index, img.src, data.video);
 			cardGallery.addEventListener('click', (e) => {
 				e.preventDefault();
 				MicroModal.show(`modal-accord-${index}`, {
