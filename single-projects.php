@@ -353,6 +353,9 @@ get_header();
 																		<div class="card-gallery">
 																			<div class="card-gallery__img">
 																				<img src="<?php echo $video['services_tab_video-cover']['url']?>" alt="">
+																					<?php if( $video ): ?>
+																							<p><?php print_r( $video['services_tab_video-file'])?></p>
+																					<?php endif; ?>
 																			</div>
 																		</div>
 																	</div>
@@ -440,8 +443,8 @@ get_header();
 			document.body.append(divRoot);
 		}
 
-		const $cardsGalleryPhoto = document.querySelectorAll('#photo .card-gallery');
-		const cardsGallery = [...$cardsGalleryPhoto];
+		const $cardsGallery = document.querySelectorAll('.card-gallery');
+		const cardsGallery = [...$cardsGallery];
 		for (const [index, cardGallery] of cardsGallery.entries()) {
 			let img = cardGallery.firstElementChild.children[0];
 			generationModal(index, img.src);
@@ -453,18 +456,7 @@ get_header();
 			});
 		}
 
-		// const $cardsGalleryVideo = document.querySelectorAll('#video .card-gallery');
-		// const cardsGalleryV = [...$cardsGalleryVideo];
-		// for (const [index, cardGalleryV] of cardsGalleryV.entries()) {
-		// 	let img = cardGalleryV.firstElementChild.children[0];
-		// 	generationModal(index, img.src);
-		// 	cardGalleryV.addEventListener('click', (e) => {
-		// 		e.preventDefault();
-		// 		MicroModal.show(`modal-accord-${index}`, {
-		// 			closeTrigger: 'data-custom-close',
-		// 		});
-		// 	});
-		// }
+
 
 	</script>
 
