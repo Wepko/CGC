@@ -2,7 +2,7 @@
 <section class="service container <?php echo $args == 'main' ? 'service--main' : ''; ?>">
 	<div class="service__title">Наши <span class="text-accent">услуги</span></div>
 	<div class="service__description">
-		<?php the_field('description_services');?>
+		<?php echo get_field('description_services', 'services');?>
 	</div>
 	<div class="service__accordion">
 		<dl class="badger-accordion js-badger-accordion">
