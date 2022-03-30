@@ -352,8 +352,7 @@ get_header();
 																	<div class="swiper-slide"> 
 																		<div class="card-gallery">
 																			<div class="card-gallery__img" data-type="video">
-																				<img src="<?php echo $video['services_tab_video-cover']['url']?>"  alt="">
-												
+																				<img src="<?php echo $video['services_tab_video-cover']['url']?>" data-video="$video['services_tab_video-file']['url']" alt="">
 																			</div>
 																		</div>
 																	</div>
