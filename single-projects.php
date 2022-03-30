@@ -453,7 +453,7 @@ get_header();
 
 			let img = cardGallery.firstElementChild.children[0];
 			let  data = img.dataset;
-			console.log(data.url);
+			console.log(data['url']);
 			generationModal(index, img.src, data.url);
 			cardGallery.addEventListener('click', (e) => {
 				e.preventDefault();
