@@ -454,7 +454,8 @@ get_header();
 
 		const $cardsGallery = document.querySelectorAll('.card-gallery');
 		const cardsGallery = [...$cardsGallery];
-		console.log(cardsGallery);
+		window.cardsGallery = cardsGallery;
+		//console.log(cardsGallery);
 		for (const [index, cardGallery] of cardsGallery.entries()) {
 			console.log()
 			let img = cardGallery.firstElementChild.children[0];
