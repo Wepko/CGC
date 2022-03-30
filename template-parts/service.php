@@ -2,7 +2,7 @@
 <section class="service container <?php echo $args == 'main' ? 'service--main' : ''; ?>">
 	<div class="service__title">Наши <span class="text-accent">услуги</span></div>
 	<div class="service__description">
-		<?php echo get_field('description_services', 'services');?>
+		<?php echo get_field('description_services', 'services_options');?>
 		<?php echo get_field('services', 'description_services');?>
 		<?php echo get_field('description_services', 'post_type=services');?>
 		<?php echo var_dump(get_field('description_services', 'services'));?>
