@@ -1,7 +1,9 @@
 
 <section class="service container <?php echo $args == 'main' ? 'service--main' : ''; ?>">
 	<div class="service__title">Наши <span class="text-accent">услуги</span></div>
-	<div class="service__description">Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.</div>
+	<div class="service__description">
+		<?php echo the_field('description_services');?>
+	</div>
 	<div class="service__accordion">
 		<dl class="badger-accordion js-badger-accordion">
 				<?php $cats = get_categories(); 
