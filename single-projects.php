@@ -351,18 +351,13 @@ get_header();
 																<?php foreach ($videos as $video) : ?>
 																	<div class="swiper-slide"> 
 																		<div class="card-gallery">
-																			<div class="card-gallery__img">
-																				<img src="<?php echo $video['services_tab_video-cover']['url']?>" alt="">
-																				
-																							<p><?php print_r($video['services_tab_video-file']);?></p>
-																						
-																						<video id='video' controls="controls" preload='none' width="600" >
-																							<source id='mp4' src="<?php echo $video['services_tab_video-file']['url']?>" type='video/mp4' />
-																						</video>
-
-
-
-
+																			<div class="card-gallery__img" data-type="video">
+																				<img src="<?php echo $video['services_tab_video-cover']['url']?>" data-video="<?php echo $video['services_tab_video-file']['url'];?>" alt="">
+																						<!-- <p><?php print_r($video['services_tab_video-file']);?></p> -->
+																					
+																					<video id='video' controls="controls" preload='none' width="600" >
+																						<source id='mp4' src="<?php echo $video['services_tab_video-file']['url'];?>" type='video/mp4' />
+																					</video>
 																			</div>
 																		</div>
 																	</div>
@@ -427,8 +422,18 @@ get_header();
 	?>
 
 	<script>
-		const generationModal = (index, url,) => {
+		const generationModal = (index, url, type) => {
 			let divRoot = document.createElement('div');
+			const isVideo = (type) => {
+				if () {
+					return `<img src="${url}" style="width: 100%" alt="">`;
+				} else {
+					return `
+						<video id='video' controls="controls" preload='none' width="600" >
+							<source id='mp4' src="<?php echo $video['services_tab_video-file']['url']?>" type='video/mp4' />
+						</video>`;
+				}
+			}
 			let modalHtmlTemplate = 
 			`<div class="modal modal--s micromodal-slide" id="modal-accord-${index}" aria-hidden="true">
 				<div class="modal__overlay" tabindex="-1" data-custom-close="modal-accord-${index}">
@@ -437,7 +442,7 @@ get_header();
 							<button class="modal__close " aria-label="Close modal" data-custom-close="modal-accord-${index}"></button>
 						</header>
 						<main class="modal__content  modal__content--form" id="modal-content">
-							<img src="${url}" style="width: 100%" alt="">
+							${isVideo(type)}
 						</main>
 
 					</div>
@@ -452,8 +457,12 @@ get_header();
 
 		const $cardsGallery = document.querySelectorAll('.card-gallery');
 		const cardsGallery = [...$cardsGallery];
+		console.log();
 		for (const [index, cardGallery] of cardsGallery.entries()) {
+
 			let img = cardGallery.firstElementChild.children[0];
+			console.log(img);
+			console.log('main: ', img.dataset.video);
 			generationModal(index, img.src);
 			cardGallery.addEventListener('click', (e) => {
 				e.preventDefault();
