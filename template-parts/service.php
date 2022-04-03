@@ -3,9 +3,6 @@
 	<div class="service__title">Наши <span class="text-accent">услуги</span></div>
 	<div class="service__description">
 		<?php echo get_field('description_services', 'services_options');?>
-		<?php echo get_field('services', 'description_services');?>
-		<?php echo get_field('description_services', 'post_type=services');?>
-		<?php echo var_dump(get_field('description_services', 'services'));?>
 	</div>
 	<div class="service__accordion">
 		<dl class="badger-accordion js-badger-accordion">

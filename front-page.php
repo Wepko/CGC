@@ -173,26 +173,18 @@ get_header();
 
 	<section class="benefit">
 		<div class="container">
-		<div class="benefit__title">Наши <br><span class="text-accent">преимущества</span></div>
+		<div class="benefit__title"><?php echo get_field('advantage_title');?></div>
 		<div class="benefit__description">
-			<p>Приятно, граждане, наблюдать, как элементы политического процесса своевременно верифицированы. Банальные, но</p>
-			<div class="mark-items">
-			<div class="mark-items__item">
-				<p>10</p>
-				<p>Лет успешно работаем</p>
-			</div>
-			<div class="mark-items__item">
-				<p>253</p>
-				<p>Выполненых проекта</p>
-			</div>
-			<div class="mark-items__item">
-				<p>43</p>
-				<p>Как уже неоднократно</p>
-			</div>
-			<div class="mark-items__item">
-				<p>94</p>
-				<p>Предварительные выводы</p>
-			</div>
+			<p><?php echo get_field('advantage_description');?></p>
+			<div class="mark-items">			
+				<?php if( have_rows('advantage_info') ): ?>
+						<?php while( have_rows('advantage_info') ) : the_row(); ?>
+							<p><?php echo $advantage_value = get_sub_field('advantage_info-value');?></p>
+							<p><?php echo $advantage_text = get_sub_field('advantage_info-text'); ?></p>
+						<?php endwhile;?>
+					<?php	else : ?>
+						<p>Спика нету</p>
+					<?php endif; ?>
 			</div>
 		</div>
 		<div class="benefit__statistics"></div>
