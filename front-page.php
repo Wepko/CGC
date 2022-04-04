@@ -173,9 +173,9 @@ get_header();
 
 	<section class="benefit">
 		<div class="container">
-		<div class="benefit__title"><?php echo get_field('title-advantage', 229);?></div>
+		<div class="benefit__title"><?php echo get_field('advantage_title', 229);?></div>
 		<div class="benefit__description">
-			<p><?php echo get_field('description-ad', 229);?></p>
+			<p><?php echo get_field('advantage_description', 229);?></p>
 			<div class="mark-items">			
 				<?php if( have_rows('advantage_info', 229) ): ?>
 					<?php while( have_rows('advantage_info', 229) ) : the_row(); ?>
