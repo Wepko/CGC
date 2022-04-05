@@ -1,7 +1,7 @@
 .post {
     display: flex;
     flex-wrap: wrap;
-
+		margin-bottom: 6rem;
     @include respond(phone) {
       display: block;
     }
