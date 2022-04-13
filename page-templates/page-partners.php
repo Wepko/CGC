@@ -28,7 +28,7 @@
             <div class="post__content">
               <div class="partners__description">
                 <!-- <p class="text-accent">Мы вынуждены отталкиваться.</p> -->
-                <p><?php the_content() ?></p>
+                <?php the_content() ?>
               </div>
               <?php 
                 $query = new WP_Query([
