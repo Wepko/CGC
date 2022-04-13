@@ -84,14 +84,25 @@
     </section>
     <section class="process"> 
       <div class="container">
-        <h2 class="process__title">Наш <span class="text-accent">процесс</span></h2>
+        <h2 class="process__title">	<?php echo get_field('process_title');?></h2>
         <div class="process__description">
-          <p>Залогом успеха нашей компании является строгая последовательность выполнения строительных работ. Благодаря обширному опыту, мы разработали план, по которому осуществляем все процессы подготовки, проектирования и реализации. За годы деятельности наши клиенты не раз проверили его эффективность на практике.</p>
-          <p>Мы неустанно продолжаем совершенствовать наш процесс, чтобы идти в ногу со временем и даже опережать его.</p>
+					<?php echo get_field('process_description');?>
         </div>
         <div class="process__steps"> 
           <ul class="steps">
-            <li class="steps__item">
+						<?php	if( have_rows('process_step') ): ?>
+							<?php	while( have_rows('process_step') ) : the_row(); ?>
+								<li class="steps__item"> 
+									<h3><?php echo get_sub_field('process_step-title');?></h3>
+									<div class="steps__content"> 
+										<?php echo get_sub_field('process_step-description');?>
+									</div>
+								</li>
+							<?php endwhile;?>
+						<?php else : ?>
+							
+						<?php endif; ?>
+            <!-- <li class="steps__item">
               <h3>Выбор участка</h3>
               <div class="steps__content"> 
                 <p>Прежде всего необходимо выбрать участок, на котором будет производиться строительство. От его характеристик зависят многие технические тонкости, такие как глубина фундамента и используемые материалы. Поэтому на начальном этапе вместе с заказчиком мы производим поиск и подбор участка, оформляем покупку, а также проводим различного рода изыскания (топографические, геодезические, геологические и другие).</p>
@@ -173,7 +184,7 @@
               <div class="steps__content"> 
 								<a class="btn-primary" data-custom-open="modal-1">Заказать проект</a>
 							</div>
-            </li>
+            </li> -->
           </ul>
 					<div class="process__button">
 						<a class="btn-primary" data-custom-open="modal-1">Заказать проект</a>
