@@ -61,16 +61,13 @@ get_header();
 											<div class="tag"><?php the_sub_field('slide-tag'); ?></div>
 										</div>
 									<?php endif; ?>
-										<div class="info-block__title" >
+										<h1 class="info-block__title" >
 											<?php
 												$slide_title = get_sub_field('zagolovok');
 											?>
-						
-											<span class="text-accent"><?php echo cgc_if($slide_title['slide-title-bold'], "Проект дома") ?> </span><br>
-											<span><?php echo cgc_if($slide_title['slide-title'],  $select_home_title) ?></span>
-										</div>
-						
-
+												<span class="text-accent"><?php echo cgc_if($slide_title['slide-title-bold'], "Проект дома") ?> </span><br>
+												<span><?php echo cgc_if($slide_title['slide-title'],  $select_home_title) ?></span>
+											</h1>
 										<p class="info-block__description" style="max-width: 75rem"><?php echo cgc_if(get_sub_field('slide-description'), $select_home_features); ?></p>
 										<div class="info-block__buttons">
 											<a class="btn-primary" data-custom-open="modal-1" href="#"><?php echo cgc_if(get_sub_field('slide-button-1'), "Заказать проект"); ?></a>
