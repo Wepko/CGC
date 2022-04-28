@@ -365,9 +365,9 @@
 		transform: translateY(14rem);
 		
 		@include respond(phone) {
-			// width: 75%;
 			margin: 2rem auto;
 		}
+		
 		&-icons {
 			transition: .5s;
 			display: flex;

@@ -2,6 +2,15 @@
 mixin header(nameClass) 
 	header(class=['header', nameClass])
 		.container
+			.header__line 
+				.header__info
+					span.icon-phone +7 (999) 000 - 99 - 99
+					span.icon-email Info@cgc.com
+				.header__links
+					nav.navigation
+						li
+							a.icon-email(href="#") Онлайн камеры
+			hr.horizontal_rules
 			.header__wrapper
 				a.header__logo(href='index.html')
 					img.logo(src='img/icon/logo-white.svg' alt='')
@@ -16,8 +25,13 @@ mixin header(nameClass)
 								span 
 								span 
 					ul.navigation
-						li
+						li.navigation__subnav.icon-arrow-down
 							a(href='about.html') О нас
+							ul 
+								li
+									a(href='partners.html') О компании
+								li
+									a(href='partners.html') Партнёры
 						li.navigation__subnav.icon-arrow-down
 							a(href='services.html') Улсуги
 							ul
@@ -53,10 +67,13 @@ mixin header(nameClass)
 						li
 							a(href='#') Объекты в продаже
 						li
-							a(href='partners.html') Партнёры
-						li
 							a(href='contacts.html') Контакты
-
+						div.navigation__info
+							p 8 800 000 00 00
+							p email@company.com
+							a.btn-primary(href="") Заказать звонок 
+				.header__button
+					a.btn-secondary(href="#") Заказать звонок
 mixin contacts(nameClass)
 	section(class=['contacts', nameClass])
 		.container

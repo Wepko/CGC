@@ -20,7 +20,7 @@
 		height: 100vh;
 		z-index: 1;
 		display: block;
-		padding-top: 10rem;
+		padding-top: 12rem;
 		opacity: 0;
 		visibility: hidden;
 		transform: translateY(10rem);
@@ -132,7 +132,7 @@
 
 			@include respond(phone) { // width < 600?
 				top: 3rem;
-				right: 1.5rem;	
+				right: 3.5rem;	
 				transform: translateY(0%);
 				color: $color-black;
 				font-size: 1rem;
@@ -170,6 +170,21 @@
 			display: block;
 			transform: translateX(0);
 			transition: .5s;
+		}
+	}
+
+	&__info {
+		padding: 0 3rem;
+		position: absolute;
+		bottom: 5rem;
+		width: 100%;
+		p {
+			margin: 1rem 0;
+			color: $color-primary;
+		}
+
+		a.btn-primary {
+			margin: 3.2rem 0;
 		}
 	}
 }

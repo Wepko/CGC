@@ -24,6 +24,15 @@
     </div>
     <header class="header">
       <div class="container">
+        <div class="header__line"> 
+          <div class="header__info"><span class="icon-phone">+7 (999) 000 - 99 - 99</span><span class="icon-email">Info@cgc.com</span></div>
+          <div class="header__links">
+            <nav class="navigation">
+              <li><a class="icon-email" href="#">Онлайн камеры</a></li>
+            </nav>
+          </div>
+        </div>
+        <hr class="horizontal_rules"/>
         <div class="header__wrapper"><a class="header__logo" href="index.html"><img class="logo" src="img/icon/logo-white.svg" alt=""/></a>
           <nav class="header__nav">
             <div class="header__nav-menu">
@@ -33,7 +42,12 @@
               </div>
             </div>
             <ul class="navigation">
-              <li><a href="about.html">О нас</a></li>
+              <li class="navigation__subnav icon-arrow-down"><a href="about.html">О нас</a>
+                <ul> 
+                  <li><a href="partners.html">О компании</a></li>
+                  <li><a href="partners.html">Партнёры</a></li>
+                </ul>
+              </li>
               <li class="navigation__subnav icon-arrow-down"><a href="services.html">Улсуги</a>
                 <ul>
                   <li><a href="service.html">Проектирование</a></li>
@@ -56,10 +70,14 @@
                 </ul>
               </li>
               <li><a href="#">Объекты в продаже</a></li>
-              <li><a href="partners.html">Партнёры</a></li>
               <li><a href="contacts.html">Контакты</a></li>
+              <div class="navigation__info">
+                <p>8 800 000 00 00</p>
+                <p>email@company.com</p><a class="btn-primary" href="">Заказать звонок </a>
+              </div>
             </ul>
           </nav>
+          <div class="header__button"><a class="btn-secondary" href="#">Заказать звонок</a></div>
         </div>
       </div>
     </header>
