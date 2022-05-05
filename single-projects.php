@@ -200,7 +200,7 @@ get_header();
 	<?php  if( has_term( ['current', 'implemented'], 'type' ) ) :?>
 		
 		<section class="service container">
-			<div class="service__title">Перечень работ и <span class="text-accent">услуг</span></div>
+			<div class="service__title">Перечень работ <br> и <span class="text-accent">услуг</span></div>
 			<div class="service__description">Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.</div>
 			<div class="service__accordion">
 				<dl class="badger-accordion js-badger-accordion">
