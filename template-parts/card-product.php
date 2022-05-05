@@ -19,6 +19,17 @@
 		
 		<div class="card-project__title"><?php the_title(); ?></div>
 		<div class="card-project__description">
+			
+			<div class="card-project__description-price">
+		
+				<h3>
+					<?php if ( (!empty(get_field('price'))) ) : ?>
+						от <span><?php echo get_field('price')?></span> ₽
+					<?php else :?>
+						| 
+					<?php endif; ?>
+				</h3>
+			</div>
 			<div class="card-project__description-icons">
 				<span class="icon-icon1"><?php echo get_field('total_area')?> м<sup>2</sup></span>
 				<span class="icon-icon3"><?php echo get_field('bedrooms')?></span>

@@ -196,6 +196,114 @@ get_header();
 		</div>
 	</section>
 
+	<!-- Аккардион -->
+	<?php  if( has_term( ['current', 'implemented'], 'type' ) ) :?>
+		
+		<section class="service container">
+			<div class="service__title">Перечень работ и <span class="text-accent">услуг</span></div>
+			<div class="service__description">Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.</div>
+			<div class="service__accordion">
+				<dl class="badger-accordion js-badger-accordion">
+					<?php if( have_rows('services_tabs') ): $i = 0; ?>
+						<?php while( have_rows('services_tabs') ): 
+							the_row(); 
+							$i++;
+							$photos = get_sub_field('services_tab_photo');
+							$videos = get_sub_field('services_tab_video');
+							// echo '<pre>';
+							// print_r($videos);
+							// echo '</pre>';
+						?>
+						<!-- <?php	get_template_part( 'template-parts/modal-accordion', null, [$photos, $i]);	?>  -->
+							<dt class="badger-accordion__header">
+								<a class="badger-accordion__trigger js-badger-accordion-header">
+									<div class="badger-accordion__trigger-title">
+										<?php the_sub_field('services_tab_title'); ?>
+									</div>
+									<div class="badger-accordion__trigger-icon">
+										<i class="icon-plus"></i>
+									</div>
+								</a>
+							</dt>
+							<dd class="badger-accordion__panel js-badger-accordion-panel">
+								<div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
+									<div class="accordion">
+										<div class="accordion__description"> 
+											<p><?php the_sub_field('services_tab_description'); ?></p>
+										</div>
+										<div class="accordion__switcher">
+											<div class="can-toggle demo-rebrand-1 can-toggle--size-large">
+												<input id="mini_galary-<?php echo $i;?>" type="checkbox">
+												<label for="mini_galary-<?php echo $i;?>">
+													<div class="can-toggle__switch" data-checked="Видео" data-unchecked="Фото"> </div>
+												</label>
+											</div>
+										</div>
+										<div class="accordion__gallery">
+											<div class="slider slider-<?php echo $i;?>">
+												<div id="photo" class="slider-gallery-min">
+													<div class="swiper-wrapper">
+														<?php if ( is_array( $photos ) ) : ?>
+															<?php foreach ($photos as $index => $photo) : ?>
+																<div class="swiper-slide"> 
+																	<div class="card-gallery" data-custom-open="modal-accordion-<?php echo $index?>">
+																		<div class="card-gallery__img">
+																			<img src="<?php echo $photo['url']?>" alt="">
+																		</div>
+																	</div>
+																</div>
+															<?php endforeach; ?>
+														<?php endif; ?>
+													</div>
+		
+													<div class="slider__navigation">
+														<div class="swiper-button-prev"></div>
+														<div class="slider__scrollbar">
+															<div class="swiper-scrollbar"></div>
+														</div>
+														<div class="swiper-button-next"></div>
+													</div>
+												</div>
+												<div id="video" class="slider-gallery-min slider-hidden">
+													<div class="swiper-wrapper">
+														<?php if ( is_array( $videos ) ) : ?>
+															<?php foreach ($videos as $video) : ?>
+																<div class="swiper-slide"> 
+																	<div class="card-gallery">
+																		<div class="card-gallery__img" data-type="video">
+																			<img src="<?php echo $video['services_tab_video-cover']['url']?>" data-video="<?php echo $video['services_tab_video-file']['url'];?>" alt="">
+																		</div>
+																	</div>
+																</div>
+															<?php endforeach; ?>
+														<?php endif; ?>
+													</div>
+		
+													<div class="slider__navigation">
+														<div class="swiper-button-prev"></div>
+														<div class="slider__scrollbar">
+															<div class="swiper-scrollbar"></div>
+														</div>
+														<div class="swiper-button-next"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="accordion__buttons">
+											<a href="<?php echo get_post_type_archive_link( 'services' ); ?>" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Перейти к услугам</a>
+										</div>
+									</div>
+								</div>
+							</dd>
+							<?php endwhile; ?>
+					<?php endif; ?>
+				</dl>
+			</div>
+		</section>
+
+	<?php endif; ?>
+
+
 	<!-- Акция и обьект в продаже -->
 	<?php if ( (!empty($stock)) || (!empty($obj_sale_description)) ) : ?>
 		<section class="project-content">
@@ -241,6 +349,7 @@ get_header();
 	<?php endif ?>
 
 	<!-- Подпишись на проект -->
+
 	<!-- <?php  if( has_term( 'current', 'type' ) ) :?>
 		<div class="questions questions--subscribe">
 			<div class="container">
@@ -271,113 +380,6 @@ get_header();
 				</div>
 			</div>
 		</div>
-
-	<?php endif; ?>
-
-	<!-- Аккардион -->
-	<?php  if( has_term( ['current', 'implemented'], 'type' ) ) :?>
-		
-			<section class="service container">
-				<div class="service__title">Перечень <span class="text-accent">услуг</span></div>
-				<div class="service__description">Прежде всего, современная методология разработки прекрасно подходит для реализации распределения.</div>
-				<div class="service__accordion">
-					<dl class="badger-accordion js-badger-accordion">
-						<?php if( have_rows('services_tabs') ): $i = 0; ?>
-							<?php while( have_rows('services_tabs') ): 
-								the_row(); 
-								$i++;
-								$photos = get_sub_field('services_tab_photo');
-								$videos = get_sub_field('services_tab_video');
-								// echo '<pre>';
-								// print_r($videos);
-								// echo '</pre>';
-							?>
-							<!-- <?php	get_template_part( 'template-parts/modal-accordion', null, [$photos, $i]);	?>  -->
-								<dt class="badger-accordion__header">
-									<a class="badger-accordion__trigger js-badger-accordion-header">
-										<div class="badger-accordion__trigger-title">
-											<?php the_sub_field('services_tab_title'); ?>
-										</div>
-										<div class="badger-accordion__trigger-icon">
-											<i class="icon-plus"></i>
-										</div>
-									</a>
-								</dt>
-								<dd class="badger-accordion__panel js-badger-accordion-panel">
-									<div class="badger-accordion__panel-inner js-badger-accordion-panel-inner">
-										<div class="accordion">
-											<div class="accordion__description"> 
-												<p><?php the_sub_field('services_tab_description'); ?></p>
-											</div>
-											<div class="accordion__switcher">
-												<div class="can-toggle demo-rebrand-1 can-toggle--size-large">
-													<input id="mini_galary-<?php echo $i;?>" type="checkbox">
-													<label for="mini_galary-<?php echo $i;?>">
-														<div class="can-toggle__switch" data-checked="Видео" data-unchecked="Фото"> </div>
-													</label>
-												</div>
-											</div>
-											<div class="accordion__gallery">
-												<div class="slider slider-<?php echo $i;?>">
-													<div id="photo" class="slider-gallery-min">
-														<div class="swiper-wrapper">
-															<?php if ( is_array( $photos ) ) : ?>
-																<?php foreach ($photos as $index => $photo) : ?>
-																	<div class="swiper-slide"> 
-																		<div class="card-gallery" data-custom-open="modal-accordion-<?php echo $index?>">
-																			<div class="card-gallery__img">
-																				<img src="<?php echo $photo['url']?>" alt="">
-																			</div>
-																		</div>
-																	</div>
-																<?php endforeach; ?>
-															<?php endif; ?>
-														</div>
-			
-														<div class="slider__navigation">
-															<div class="swiper-button-prev"></div>
-															<div class="slider__scrollbar">
-																<div class="swiper-scrollbar"></div>
-															</div>
-															<div class="swiper-button-next"></div>
-														</div>
-													</div>
-													<div id="video" class="slider-gallery-min slider-hidden">
-														<div class="swiper-wrapper">
-															<?php if ( is_array( $videos ) ) : ?>
-																<?php foreach ($videos as $video) : ?>
-																	<div class="swiper-slide"> 
-																		<div class="card-gallery">
-																			<div class="card-gallery__img" data-type="video">
-																				<img src="<?php echo $video['services_tab_video-cover']['url']?>" data-video="<?php echo $video['services_tab_video-file']['url'];?>" alt="">
-																			</div>
-																		</div>
-																	</div>
-																<?php endforeach; ?>
-															<?php endif; ?>
-														</div>
-			
-														<div class="slider__navigation">
-															<div class="swiper-button-prev"></div>
-															<div class="slider__scrollbar">
-																<div class="swiper-scrollbar"></div>
-															</div>
-															<div class="swiper-button-next"></div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="accordion__buttons">
-												<a href="<?php echo get_post_type_archive_link( 'services' ); ?>" class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right">Перейти к услугам</a>
-											</div>
-										</div>
-									</div>
-								</dd>
-								<?php endwhile; ?>
-						<?php endif; ?>
-					</dl>
-				</div>
-			</section>
 
 	<?php endif; ?>
 
