@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ///// humburger
     const html = document.querySelector('html');
     const humburger = html.querySelector('.menu-toggle');
-    const menu = html.querySelector('.navigation');
+    const menu = html.querySelector('.header__wrapper .navigation');
 
     const links = menu.querySelectorAll('.navigation__subnav');
 
@@ -21,7 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			html.classList.toggle('active')
     })
 
-
+		menu.insertAdjacentHTML('beforeend', `<div class="navigation__info">
+		<p>8 800 000 00 00</p>
+		<p>email@company.com</p>
+		<a class="btn-primary" href="">Заказать звонок </a>
+	</div>`);
 		const linkProjects = document.querySelector(`a[href$="projects/"]`);
 
 		linkProjects.addEventListener('click', e => {

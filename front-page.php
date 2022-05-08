@@ -22,6 +22,15 @@ get_header();
 	<div class="main-page">
 		<header class="header">
 			<div class="container">
+				<div class="header__line"> 
+					<div class="header__info"><span class="icon-phone">+7 (999) 000 - 99 - 99</span><span class="icon-email">Info@cgc.com</span></div>
+					<div class="header__links">
+						<nav class="navigation">
+							<li><a class="icon-email" href="#">Онлайн камеры</a></li>
+						</nav>
+					</div>
+				</div>
+				<hr class="horizontal_rules"/>
 				<?php get_template_part( 'template-parts/nav' ); ?>
 			</div>
 		</header>
