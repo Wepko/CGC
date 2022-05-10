@@ -28,6 +28,11 @@
 	font-size: 1.6rem;
 }
 
+%none-style-link {
+	text-decoration: none;
+	color: inherit;
+}
+
 %bg-wrapper {
 	padding: 10rem 0;
 	background-color: $color-blue-dark;
