@@ -41,6 +41,10 @@
 	}
 
 	&__info {
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
 		span:nth-child(even) {
 			margin: 0 4.4rem;
 		}

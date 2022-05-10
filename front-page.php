@@ -18,12 +18,15 @@ get_header();
 
 
 	<?php get_template_part( 'template-parts/modal' ); ?>
-
+	<?php $phoneNumber = get_field("contact-phone", 117)?>
 	<div class="main-page">
 		<header class="header">
 			<div class="container">
 				<div class="header__line"> 
-					<div class="header__info"><span class="icon-phone">+7 (999) 000 - 99 - 99</span><span class="icon-email">Info@cgc.com</span></div>
+					<div class="header__info">
+						<span class="icon-phone"><a href="tel:<?php echo  $phoneNumber?>"><?php echo  $phoneNumber?></a></span>
+						<span class="icon-email"><?php echo get_field("contact-email", 117)?></span>
+					</div>
 					<div class="header__links">
 						<nav class="navigation">
 							<li><a class="icon-email" href="#">Онлайн камеры</a></li>
