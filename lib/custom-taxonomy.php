@@ -138,4 +138,20 @@ function my_custom_init() {
 		'menu_position'      => null
 	]);
 
+	// register_post_type('cameras', [
+	// 	'labels' => [
+	// 		'name' => 'Камеры',
+	// 		'menu_name' => 'Камеры'
+	// 	],
+	// 	'public'             => true,
+	// 	'publicly_queryable' => true,
+	// 	'show_ui'            => true,
+	// 	'show_in_menu'       => true,
+	// 	'query_var'          => true,
+	// 	'rewrite'            => true,
+	// 	'capability_type'    => 'post',
+	// 	'has_archive'        => false,
+	// 	'hierarchical'       => false,
+	// 	'menu_position'      => null
+	// ]);
 }

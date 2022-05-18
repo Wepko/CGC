@@ -291,15 +291,6 @@
 		}
 	}
 
-	@include respond(phone) {
-		min-width: 30.5rem;
-		min-height: 49rem;
-		max-height: none;
-		overflow: visible;
-		box-shadow: 0px 73px 221px rgba(32, 41, 69, 0.06), 0px 22px 66px rgba(32, 41, 69, 0.04), 0px 10px 27px rgba(32, 41, 69, 0.03), 0px 3px 10px rgba(32, 41, 69, 0.02);
-		margin-bottom: 3.2rem;
-	}
-
 	&__components {
 		transition: .5s;
 		color: $color-white;
@@ -443,6 +434,13 @@
 	}
 
 	@include respond(phone) {
+		min-width: 30.5rem;
+		min-height: 49rem;
+		max-height: none;
+		overflow: visible;
+		box-shadow: 0px 73px 221px rgba(32, 41, 69, 0.06), 0px 22px 66px rgba(32, 41, 69, 0.04), 0px 10px 27px rgba(32, 41, 69, 0.03), 0px 3px 10px rgba(32, 41, 69, 0.02);
+		margin-bottom: 3.2rem;
+
 		&__button a:nth-child(even) {
 			display: none;
 		}
@@ -450,7 +448,18 @@
 		&__button a:nth-child(odd) {
 			display: block;
 		}  
-	
 	}
 
+	&--camera {
+		.card-project__title {
+			transform: translateY(12rem);
+			&::before {
+				content: "Объект";
+				font-size: 1.6rem;
+			}
+		}
+		.card-product__description-text {
+			margin: 0;
+		}
+	}
 }

@@ -35,7 +35,7 @@
 				<div class="header__line"> 
 					<div class="header__info">
 						<span class="icon-phone"><a href="tel:<?php echo  $phoneNumber?>"><?php echo  $phoneNumber?></a></span>
-						<span class="icon-email"><?php echo get_field("contact-email", 117)?></span></div>
+						<span class="icon-email"><a href="mailto:<?php echo get_field("contact-email", 117)?>"><?php echo get_field("contact-email", 117)?></a></span></div>
 					<div class="header__links">
 						<nav class="navigation">
 							<li><a class="icon-email" href="#">Онлайн камеры</a></li>
