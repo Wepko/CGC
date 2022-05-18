@@ -5,7 +5,11 @@
 				<div class="contacts__info-title text-accent">Контакты</div>
 				<div class="contacts__info-description"><?php echo get_field("contact-description", 117)?></div>
 				<div class="contacts__info-content">
-					<p class="icon-email"><?php echo get_field("contact-email", 117)?></p>
+					<p class="icon-email">
+						<a href="mailto:<?php echo get_field("contact-email", 117)?>">
+							<?php echo get_field("contact-email", 117)?>
+						</a>
+					</p>
 					<p class="icon-phone">
 						<a href="tel:<?php echo get_field("contact-phone", 117)?>">
 							<?php echo get_field("contact-phone", 117)?>
