@@ -457,6 +457,9 @@
 				content: "Объект";
 				font-size: 1.6rem;
 			}
+			@include respond(phone) {
+				transform: translateY(0);
+			}
 		}
 		.card-product__description-text {
 			margin: 0;

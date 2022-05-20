@@ -10,9 +10,9 @@
 	
 
 
-  <section class="partners">
+  <section class="catalog">
       <div class="container">
-        <div class="partners__title">
+        <div class="service__title">
           <h1>
             <?php 
               $title = explode(' ',  get_the_title() );
@@ -21,6 +21,9 @@
             <span class="text-accent"><?= $title[1]?></span>
           </h1>
         </div>
+				<div class="service__description">
+					<?php the_content();?>
+				</div>
         <div class="partners__content"> 
         
 				<div class="projects__product">
@@ -30,9 +33,9 @@
 							'meta_query' => [
 								[	
 									[
-										'key' => 'camers',
-										'value' => [],
-										'compare' => 'NOT LIKE'
+										'key' => 'isActiveCamera',
+										'value' => true,
+										'compare' => '='
 									]
 								],
 							]
@@ -58,8 +61,15 @@
 			<?php
 				$query = new WP_Query([
 					'post_type' => 'projects',
-					'type' => 'possible',
-					'status' => ['object_sale', 'object_not_sale'],
+					'meta_query' => [
+						[	
+							[
+								'key' => 'isActiveCamera',
+								'value' => true,
+								'compare' => '='
+							]
+						],
+					]
 				]);
 
 				$max_pages = $query->max_num_pages;

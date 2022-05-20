@@ -18,7 +18,7 @@
 		]); ?> 
 
 	</nav>
-	<div class="header__button"><a class="btn-secondary" href="#">Заказать звонок</a></div>
+	<div class="header__button"><a class="btn-secondary" data-custom-open="modal-1" href="#">Заказать звонок</a></div>
 </div>
 
 

@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 		menu.insertAdjacentHTML('beforeend', `<div class="navigation__info">
-		<p>8 800 000 00 00</p>
-		<p>email@company.com</p>
+		<p>+7 (495) 136-21-36 </p>
+		<p>info@cgc.ru</p>
 		<a class="btn-primary" href="">Заказать звонок </a>
 	</div>`);
 		const linkProjects = document.querySelector(`a[href$="projects/"]`);

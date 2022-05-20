@@ -10,12 +10,12 @@
 		<div class="card-project__description">
 	
 			<div class="card-product__description-text">
-				<p><?php echo get_field('content');?></p>
+				<p><?php echo get_field('description_camera');?></p>
 			</div>
 		</div>
 		<div class="card-project__button">
-			<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" href="<?php the_permalink(); ?>">Смотреть камеры</a>
-			<a class="btn-secondary" data-custom-open="modal-camera-<?php echo $args['id'];?>" data-cameraId="<?php echo $args['id'];?>" href="javascript:void(0);"> Смотреть камеры</a>
+			<a class="btn-primary btn-primary--outline btn-primary--icon icon-arrow-right" data-custom-open="modal-camera-<?php echo $args['id'];?>" href="javascript:void(0);">Смотреть камеры</a>
+			<a class="btn-secondary" data-custom-open="modal-camera-<?php echo $args['id'];?>" href="javascript:void(0);"> Смотреть камеры</a>
 		</div>
 	</div>
 </div>		

@@ -15,9 +15,9 @@
 					'meta_query' => [
 						[	
 							[
-								'key' => 'camers',
-								'value' => [],
-								'compare' => 'NOT LIKE'
+								'key' => 'isActiveCamera',
+								'value' => true,
+								'compare' => '='
 							]
 						],
 					]
@@ -29,7 +29,10 @@
 				<div class="slider__overflow">
 					<div class="slider-project">	
 						<div class="swiper-wrapper">
-				
+						<?php echo '<pre>';
+							print_r($query->sub_fields);
+							echo '</pre>';
+							?> 
 								<?php if ($query->have_posts()) :?>
 									<?php while($query->have_posts()) : $query->the_post(); $id = get_the_ID();?>
 										<div class="swiper-slide">
