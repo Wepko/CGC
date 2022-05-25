@@ -85,6 +85,11 @@
 .slider-camera {
 	width: 100%;
 	overflow: hidden;
+	.swiper-slide {
+		frame {
+			width: 100%;
+		}
+	}
 }
 
 
