@@ -90,6 +90,7 @@ blockquote {
 
 
 
+
 .cgc-link {
 	text-decoration: none;
 	color: $color-primary;
@@ -240,4 +241,20 @@ blockquote {
 }
 .icon-adress:before {
   content: "\e913";
+}
+.icon-camera {
+	position: relative;
+}
+
+.icon-camera::before {
+	content: "";
+	background-repeat: no-repeat;
+	background-image: url(../img/icon/camera.svg);
+	background-size: cover;
+	width: 2rem;
+	height: 2rem;
+	position: absolute;
+	top: 50%;
+	left: -2.5rem;
+	transform: translateY(-50%);
 }

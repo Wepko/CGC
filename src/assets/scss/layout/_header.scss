@@ -106,7 +106,9 @@
       }
 
     }
-
+		.icon-camera::before {
+			filter: invert(0.5);
+		}
     .navigation {
       &__subnav::before {color: $color-black;}
       &__subnav ul {margin:0;box-shadow: 0px -103px 353px rgba(32, 41, 69, 0.07), 0px -37.5967px 128.851px rgba(32, 41, 69, 0.0482987), 0px -18.2525px 62.5547px rgba(32, 41, 69, 0.0389404), 0px -8.94771px 30.6655px rgba(32, 41, 69, 0.0310596), 0px -3.53794px 12.1252px rgba(32, 41, 69, 0.0217013);}
@@ -151,6 +153,9 @@
       }
 
     }
+		.icon-camera::before {
+			filter: invert(0.5);
+		}
 
     .header__wrapper {
       padding: 1.5rem 0;

@@ -38,7 +38,7 @@
 						<span class="icon-email"><a href="mailto:<?php echo get_field("contact-email", 117)?>"><?php echo get_field("contact-email", 117)?></a></span></div>
 					<div class="header__links">
 						<nav class="navigation">
-							<li><a class="icon-email" href="/camers">Онлайн камеры</a></li>
+							<li><a class="icon-camera" href="/camers">Онлайн камеры</a></li>
 						</nav>
 					</div>
 				</div>

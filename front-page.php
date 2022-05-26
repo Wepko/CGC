@@ -33,7 +33,7 @@ get_header();
 					</div>
 					<div class="header__links">
 						<nav class="navigation">
-							<li><a class="icon-email" href="/camers">Онлайн камеры</a></li>
+							<li><a class="icon-camera" href="/camers">Онлайн камеры</a></li>
 						</nav>
 					</div>
 				</div>
