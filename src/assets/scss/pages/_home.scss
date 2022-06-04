@@ -494,6 +494,11 @@ h2 {
 	min-height: 15rem;
 	position: relative;
 	overflow: hidden;
+
+	img {
+		height: auto;
+	}
+
 	.swiper-button-next::after,.swiper-button-prev::after {
 		content: 'prev';
 		font-family: 'swiper-icons';

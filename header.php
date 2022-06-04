@@ -18,12 +18,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php wp_head(); ?>
+		<title><?php wp_title(''); ?></title>
 	</head>
 	<body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 
 <?php
-
 	$cgc_is_single = (is_single() && get_post_type() == 'services');
 	// Если ты на ходишься не на главной странице то выводи header и
 	// Если ты на ходишься не на странице single к категории services то выводи header
