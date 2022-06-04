@@ -187,8 +187,8 @@
             </li> -->
           </ul>
 					<div class="process__button">
-						<a class="btn-primary" data-custom-open="modal-1">Заказать проект</a>
-						<a href="javascript:void(0)" class="btn-secondary">Смотреть все шаги</a>
+						<!-- <a class="btn-primary" data-custom-open="modal-1" href="javascript:void(0)">Заказать проект</a> -->
+						<a class="btn-secondary" href="javascript:void(0)" >Смотреть все шаги</a>
 					</div>	
         </div>
       </div>

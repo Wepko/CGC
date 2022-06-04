@@ -115,7 +115,7 @@ get_header();
 								
 								<?php if (!empty(get_field('camers'))) : ?>
 									<div class="project-content__info-button">
-										<a class="btn-live" data-custom-open="modal-2" href="#">live Камера</a>
+										<a class="btn-live" data-custom-open="modal-2" href="javascript.void()">live Камера</a>
 									</div>
 								<?php endif; ?>
 					
