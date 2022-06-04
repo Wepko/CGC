@@ -45,12 +45,12 @@ function showAll() {
 
   showBtn.addEventListener("click", function () {
     open = !open;
-		console.log(scrollHeight);
+		console.log(container.scrollHeight);
     if (container.style.maxHeight) {
       container.style.maxHeight = null; 
     } else {
       container.style.maxHeight = container.scrollHeight + "px";
-			window.scroll(0, scrollHeight);
+			window.scroll(0, container.scrollHeight);
     }
 
     if (open) {
