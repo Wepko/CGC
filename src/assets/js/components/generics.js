@@ -48,6 +48,7 @@ function showAll() {
 
     if (container.style.maxHeight) {
       container.style.maxHeight = null;
+			window.scroll(0, scrollHeight); 
     } else {
       container.style.maxHeight = container.scrollHeight + "px";
     }
