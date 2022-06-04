@@ -47,11 +47,10 @@ function showAll() {
     open = !open;
 		console.log(container.scrollHeight);
     if (container.style.maxHeight) {
-      container.style.maxHeight = null; 
-			window.scroll(0, container.scrollHeight);
+      container.style.maxHeight = null;
+			setTimeout(() => {window.scroll(0, container.scrollHeight);}, 2500);
     } else {
       container.style.maxHeight = container.scrollHeight + "px";
-		
     }
 
     if (open) {
