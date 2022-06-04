@@ -48,9 +48,10 @@ function showAll() {
 		console.log(container.scrollHeight);
     if (container.style.maxHeight) {
       container.style.maxHeight = null; 
+			window.scroll(0, container.scrollHeight);
     } else {
       container.style.maxHeight = container.scrollHeight + "px";
-			window.scroll(0, container.scrollHeight);
+		
     }
 
     if (open) {
