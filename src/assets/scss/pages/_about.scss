@@ -107,6 +107,12 @@
 
 	  &:nth-last-child(1) {
 		  border: none;
+			p {
+				@include respond(phone) {
+					position: absolute;
+					left: 0;
+				}
+			}
 	  }
 
 	  h3, .steps__content {
