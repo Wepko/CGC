@@ -14,14 +14,13 @@
 	border-radius: 0;
 	outline: none;
 	cursor: pointer;
-    @include respond(phone) {
-        width: 100%;
-        text-align: center;
-        &::before {
-           right: 10rem;
-        }
-
-	}
+	@include respond(phone) {
+		width: 100%;
+		text-align: center;
+		&::before {
+			right: 10rem;
+		}
+}
 
 }
 
@@ -30,6 +29,9 @@
 	right: 3.7rem;
 	top: 50%;
 	transform: translateY(-50%);
+	@include respond(phone) {
+		right: 3rem;
+	}
 }
 
 .btn-primary {
@@ -48,6 +50,9 @@
 
 	&--icon {
 		padding-right: 7rem;
+		@include respond(phone) {
+			padding-right: 6rem;
+		}
 	}
 
 	&--outline {
