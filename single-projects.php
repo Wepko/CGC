@@ -12,8 +12,8 @@ get_header();
 
 ?>
 
-<?php get_template_part( 'template-parts/modal-camera' ); ?>
 
+<?php get_template_part( 'template-parts/modal-camera', null, ["id" => 2]);?>
 <?php 
 	$stock = get_field('stock'); 
 	$content = trim($stock->post_content);
@@ -115,7 +115,7 @@ get_header();
 								
 								<?php if (!empty(get_field('camers'))) : ?>
 									<div class="project-content__info-button">
-										<a class="btn-live" data-custom-open="modal-2" href="javascript.void()">live Камера</a>
+										<a href="javascript:void(0);" data-custom-open="modal-camera-2" class="btn-live" >live Камера </a>
 									</div>
 								<?php endif; ?>
 					
@@ -246,7 +246,7 @@ get_header();
 														<?php if ( is_array( $photos ) ) : ?>
 															<?php foreach ($photos as $index => $photo) : ?>
 																<div class="swiper-slide"> 
-																	<div class="card-gallery" data-custom-open="modal-accordion-<?php echo $index?>">
+																	<div class="card-gallery" data-custom-open="modal-accord-<?php echo $index?>">
 																		<div class="card-gallery__img">
 																			<img src="<?php echo $photo['url']?>" alt="">
 																		</div>
