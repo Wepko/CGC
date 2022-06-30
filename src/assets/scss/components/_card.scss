@@ -451,6 +451,11 @@
 	}
 
 	&--camera {
+		.card-project__components {
+			@include respond(phone) {
+				padding: 3.2rem 3.2rem;
+			}
+		}
 		.card-project__title {
 			transform: translateY(12rem);
 			&::before {
@@ -461,8 +466,10 @@
 				transform: translateY(0);
 			}
 		}
+
 		.card-product__description-text {
 			margin: 0;
 		}
+
 	}
 }
