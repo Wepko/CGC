@@ -31,7 +31,7 @@ const paths = {
 		dest: 'dist/assets/'
 	},
 	scripts: {
-		src: ['src/assets/js/main.js'],
+		src: ['src/assets/js/main.js', 'src/assets/js/admin.js'],
 		dest: 'dist/assets/js'
 	}
 }
@@ -88,6 +88,7 @@ export const scripts = () => {
 			mode: 'production',
 			performance: { hints: false },
 			entry: {
+				admin: path.resolve(__dirname + "/src/assets/js/admin.js"),
 				main : path.resolve(__dirname + "/src/assets/js/main.js"),
 				slider : path.resolve(__dirname + "/src/assets/js/components/slider.js")
 			},

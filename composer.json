@@ -1,0 +1,17 @@
+{
+    "name": "wepko/wp-pro",
+    "autoload": {
+        "psr-4": {
+            "Wepko\\WpPro\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Wepko",
+            "email": "61320774+Wepko@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.6"
+    }
+}

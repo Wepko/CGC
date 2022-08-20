@@ -359,12 +359,12 @@ get_header();
 
 		<div class="questions questions--subscribe">
 			<div class="container">
-				<div class="questions__wrapper">
+				<form action="mailer.php" method="POST" id="mail" class="questions__wrapper">
 					<div class="questions__title">Подпишись 
 						<div class="text-accent">На проект</div>
 					</div>
 					<div class="fc">
-					<div class="questions__description">Укажите адрес электронной почты, на который вы хотели бы  получать уведомления об изменениях на донном объекте</div>
+						<div class="questions__description">Укажите адрес электронной почты, на который вы хотели бы  получать уведомления об изменениях на донном объекте</div>
 						<div class="form__field">
 							<div class="inputbox">
 							<span class="wpcf7-form-control-wrap text-phone">
@@ -375,9 +375,10 @@ get_header();
 							</div>
 						</div>
 					</div>
-					<div></div>
-					<div class="questions__buttons"><a class="btn-primary">Подписаться</a></div>
-				</div>
+					<div class="questions__buttons">
+						<input type="submit" value="Подписаться" class="btn-primary" data-post-id="<?php echo get_the_ID(); ?>">
+					</div>
+				</form>
 			</div>
 		</div>
 
