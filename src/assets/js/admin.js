@@ -51,7 +51,7 @@ $('.send-mail button').on('click', function() {
 		fontSize: '18px'
 	});
 
-
+	console.log(true_obj.ajaxurl);
 	$.ajax({
 		type: "POST",
 		url: true_obj.ajaxurl,
