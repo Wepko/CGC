@@ -355,7 +355,7 @@ function email() {
 	// // ];
 	// // echo json_encode($response, JSON_UNESCAPED_UNICODE);
 
-	print_r(dirname(__DIR__) . '/vendor/autoload.php');
+	require(dirname(__DIR__) . '/vendor/autoload.php');
 	$message = $_POST['message'];
 	$post_id = $_POST['post_id'];
 	$mail_list = get_field( "mail_list", $post_id );
