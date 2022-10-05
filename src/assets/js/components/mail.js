@@ -28,6 +28,7 @@ form.on('submit', (e) => {
 			`
 
 			const htmlSubscribe = `<p style="text-align:center">${htmlIcon}</p>`;
+			
 			$('.questions.questions--subscribe').html(htmlSubscribe);
 		},
 		success(result) {
@@ -56,9 +57,9 @@ form.on('submit', (e) => {
 				</div>
 			`;
 			console.log("итог", result);
-			// const response = JSON.parse(result);
-			// console.log(response);
-			$('.questions.questions--subscribe').html(htmlSubscribe);
+			setTimeout(() => {
+				$('.questions.questions--subscribe').html(htmlSubscribe);
+			}, 1500)
 		}
 	})
 
