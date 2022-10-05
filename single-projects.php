@@ -359,7 +359,7 @@ get_header();
 
 		<div class="questions questions--subscribe">
 			<div class="container">
-				<form action="mailer.php" method="POST" id="mail" class="questions__wrapper">
+				<form method="POST" id="mail" class="questions__wrapper">
 					<div class="questions__title">Подпишись 
 						<div class="text-accent">На проект</div>
 					</div>
