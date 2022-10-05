@@ -356,6 +356,11 @@ function email() {
 	// // echo json_encode($response, JSON_UNESCAPED_UNICODE);
 
 	require(dirname(__DIR__) . '/vendor/autoload.php');
+	// $author_id = get_the_author_meta('ID');
+	// $author_field = get_field('email_username', $author_id );
+	// print_r(get_field('email_username', 'profile.php'));
+	print_r($author_id);
+
 	$message = $_POST['message'];
 	$post_id = $_POST['post_id'];
 	$mail_list = get_field( "mail_list", $post_id );

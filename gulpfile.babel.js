@@ -41,7 +41,7 @@ export const clean = () => del(['dist'])
 
 export const serve = done => {
 	server.init({
-		proxy:'http://local.cgc:82/'
+		proxy:'http://local.cgc/'
 	});
 	done();
 }
