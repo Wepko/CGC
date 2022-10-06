@@ -59,7 +59,7 @@ form.on('submit', (e) => {
 			console.log("итог", result);
 			setTimeout(() => {
 				$('.questions.questions--subscribe').html(htmlSubscribe);
-			}, 1500)
+			}, 3000)
 		}
 	})
 
